@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デザインシステムを「育てる」ための3つの原則 — melta note</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../scripts/ds-config.js"></script>
+  <link rel="stylesheet" href="../scripts/ds-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Article prose styles */
+    .prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
+    .prose p { margin-bottom: 1.5rem; }
+    .prose ul, .prose ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .prose li { margin-bottom: 0.5rem; }
+    .prose blockquote { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .prose pre { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .prose figure { margin-top: 2rem; margin-bottom: 2rem; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- ===== Header ===== -->
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold text-slate-900">melta note</a>
+      <div class="flex items-center gap-3">
+        <!-- Search -->
+        <button aria-label="検索" class="inline-flex items-center justify-center w-10 h-10 text-body rounded-lg hover:bg-gray-100 transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+        <!-- Notifications -->
+        <button aria-label="通知" class="inline-flex items-center justify-center w-10 h-10 text-body rounded-lg hover:bg-gray-100 transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        </button>
+        <!-- Write button -->
+        <a href="#" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+          投稿する
+        </a>
+        <!-- User avatar -->
+        <div role="img" aria-label="中村 美咲" class="w-8 h-8 rounded-full bg-primary-50 flex items-center justify-center text-xs font-medium text-primary-600 cursor-pointer">NM</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Article ===== -->
+  <main class="max-w-3xl mx-auto px-6 py-10">
+
+    <!-- Article Header -->
+    <article>
+      <header>
+        <h1 class="text-3xl font-bold text-slate-900">デザインシステムを「育てる」ための3つの原則</h1>
+        <p class="mt-3 text-base text-slate-500">デザインシステムは「作って終わり」ではない。チームと共に成長するための考え方。</p>
+
+        <!-- Author info -->
+        <div class="mt-6 flex items-center gap-4">
+          <div role="img" aria-label="田中 慎太郎" class="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-base font-medium text-primary-600 flex-shrink-0">TS</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <a href="#" class="text-sm font-medium text-slate-900 hover:underline">田中 慎太郎</a>
+              <button class="inline-flex items-center justify-center px-3 py-1 text-xs font-medium text-primary-600 bg-white border border-primary-600 rounded-full hover:bg-primary-50 transition-colors">フォロー</button>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">2026年2月28日 ・ 12分で読めます</p>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">デザインシステム</span>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">UI設計</span>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">チーム開発</span>
+        </div>
+      </header>
+
+      <!-- Hero image -->
+      <figure class="mt-8">
+        <div class="w-full aspect-[16/9] bg-slate-200 rounded-xl flex items-center justify-center">
+          <span class="text-sm text-slate-500">カバー画像</span>
+        </div>
+      </figure>
+
+      <!-- Article body -->
+      <div class="prose mt-10 border-t border-slate-200 pt-10">
+
+        <p class="text-base text-body">
+          デザインシステムの構築プロジェクトに関わったことがある人なら、誰しも「完成」のタイミングに悩んだことがあるでしょう。色やタイポグラフィの基盤を整え、ボタンやカードのコンポーネントを揃え、ドキュメントを書き上げたとき、それはひとまずの区切りです。しかし本当の挑戦は、そこから始まります。
+        </p>
+        <p class="text-base text-body">
+          この記事では、デザインシステムを長期的に運用し「育てていく」ための3つの原則を紹介します。私自身が3年間の運用を通じて学んだことをまとめました。
+        </p>
+
+        <h2 class="text-2xl font-semibold text-slate-900">1. Single Source of Truth を徹底する</h2>
+
+        <p class="text-base text-body">
+          最も重要なのは「正しい情報がどこにあるか」を全員が知っていることです。Figma のライブラリ、コードのコンポーネント、ドキュメントサイト — 情報源が複数あると、必ず矛盾が生まれます。
+        </p>
+
+        <blockquote class="border-l-4 border-primary-600 pl-5 py-1 bg-primary-50/50 rounded-r-lg">
+          <p class="text-base text-body italic">
+            「ドキュメントに書いてあることとFigmaの仕様が違う」という状況は、デザインシステムの信頼を最も早く損なうパターンです。
+          </p>
+        </blockquote>
+
+        <p class="text-base text-body">
+          私たちのチームでは、以下のルールを設けています：
+        </p>
+        <ul class="text-base text-body list-disc">
+          <li><strong class="font-medium text-slate-900">仕様の正規版はMarkdownファイル</strong> — Figmaやコードはあくまで「表現」であり、仕様の原本はバージョン管理されたテキスト</li>
+          <li><strong class="font-medium text-slate-900">重複を見つけたら参照に置き換える</strong> — 同じ情報が2箇所以上にあったら、片方を「参照」に変更する</li>
+          <li><strong class="font-medium text-slate-900">禁止パターンは1ファイルに集約</strong> — 各コンポーネントに散らばった禁止事項を1つのファイル（SSOT）にまとめ、他はそこを参照する</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-slate-900">2. 「なぜ」を記録する</h2>
+
+        <p class="text-base text-body">
+          コンポーネントの仕様だけでなく、その判断の理由を残すことが極めて重要です。「なぜこの色なのか」「なぜこのスペーシングなのか」という意思決定の文脈が失われると、後から参加したメンバーが根拠なく変更してしまいます。
+        </p>
+
+        <h3 class="text-xl font-semibold text-slate-900">意思決定ログの例</h3>
+
+        <p class="text-base text-body">
+          以下は実際に私たちが記録している意思決定の例です：
+        </p>
+
+        <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 bg-gray-50">
+                <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">項目</th>
+                <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">決定</th>
+                <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">理由</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-slate-900">本文サイズ</td>
+                <td class="py-3 px-4 text-body">18px</td>
+                <td class="py-3 px-4 text-body">日本語の可読性。デジタル庁準拠</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-slate-900">エラー色</td>
+                <td class="py-3 px-4 text-body">red-500</td>
+                <td class="py-3 px-4 text-body">認知的に最も直感的。WCAG AAは3.76:1で僅差</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-slate-900">カード角丸</td>
+                <td class="py-3 px-4 text-body">rounded-xl</td>
+                <td class="py-3 px-4 text-body">柔らかい印象。角丸なしは「冷たい」</td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 text-slate-900">行間</td>
+                <td class="py-3 px-4 text-body">200%</td>
+                <td class="py-3 px-4 text-body">長文の日本語テキストの可読性確保</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-base text-body">
+          このように理由が記録されていれば、「なぜ <code class="px-1.5 py-0.5 bg-slate-100 rounded text-sm font-mono text-slate-900">rounded-xl</code> なのか？ <code class="px-1.5 py-0.5 bg-slate-100 rounded text-sm font-mono text-slate-900">rounded-lg</code> ではダメなのか？」という議論に即座に答えられます。
+        </p>
+
+        <h2 class="text-2xl font-semibold text-slate-900">3. フィードバックループを回す</h2>
+
+        <p class="text-base text-body">
+          デザインシステムは使われて初めて価値を持ちます。使い手であるデザイナーやエンジニアからのフィードバックを定期的に収集し、改善に活かす仕組みが不可欠です。
+        </p>
+
+        <!-- Alert callout -->
+        <div class="bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4 flex gap-3">
+          <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <div>
+            <p class="text-sm font-medium">実践のヒント</p>
+            <p class="text-sm mt-1">月に1度「DSレビュー会」を開催し、使いにくかったコンポーネントや不足しているパターンについて議論しましょう。小さな改善を積み重ねることが、システムへの信頼を築きます。</p>
+          </div>
+        </div>
+
+        <p class="text-base text-body">
+          私たちが実践しているフィードバックの仕組みは3つです：
+        </p>
+        <ol class="text-base text-body list-decimal">
+          <li><strong class="font-medium text-slate-900">Slack チャンネル</strong> — <code class="px-1.5 py-0.5 bg-slate-100 rounded text-sm font-mono text-slate-900">#design-system</code> で日常的な質問・提案を受け付ける</li>
+          <li><strong class="font-medium text-slate-900">月次レビュー</strong> — 実際のプロダクト画面でDSの適用状況をチェック。禁止パターンの検出や、新しいパターンの発見に</li>
+          <li><strong class="font-medium text-slate-900">四半期アンケート</strong> — 満足度・使いやすさ・改善要望を定量的に収集。トレンドを追跡する</li>
+        </ol>
+
+        <!-- Pull quote -->
+        <figure class="border-t border-b border-slate-200 py-8 my-8 text-center">
+          <blockquote>
+            <p class="text-2xl font-semibold text-slate-900">デザインシステムは「製品」ではなく「生態系」である</p>
+          </blockquote>
+          <figcaption class="mt-3 text-sm text-slate-500">— ブラッド・フロスト『Atomic Design』より意訳</figcaption>
+        </figure>
+
+        <h2 class="text-2xl font-semibold text-slate-900">おわりに</h2>
+
+        <p class="text-base text-body">
+          デザインシステムは、一度作ったら終わりのドキュメントではありません。チームのニーズに応じて進化し続ける「生きた仕組み」です。
+        </p>
+        <p class="text-base text-body">
+          Single Source of Truth の徹底、意思決定の記録、フィードバックループ — この3つの原則を守ることで、システムはチームと共に成長していきます。完璧を目指すのではなく、小さな改善を続けることが、結果として強固なシステムを生み出すのだと思います。
+        </p>
+        <p class="text-base text-body">
+          あなたのチームでも、ぜひ「育てる」視点でデザインシステムに取り組んでみてください。
+        </p>
+      </div>
+
+      <!-- ===== Article Actions ===== -->
+      <div class="mt-10 pt-6 border-t border-slate-200 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <!-- Like -->
+          <button class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            128
+          </button>
+          <!-- Comment count -->
+          <button class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z"/></svg>
+            14
+          </button>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- Bookmark -->
+          <button aria-label="ブックマーク" class="inline-flex items-center justify-center w-10 h-10 text-body rounded-lg hover:bg-gray-100 transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+          </button>
+          <!-- Share -->
+          <button aria-label="共有" class="inline-flex items-center justify-center w-10 h-10 text-body rounded-lg hover:bg-gray-100 transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== Author Card ===== -->
+      <div class="mt-8 bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="flex items-start gap-4">
+          <div role="img" aria-label="田中 慎太郎" class="w-14 h-14 rounded-full bg-primary-50 flex items-center justify-center text-lg font-medium text-primary-600 flex-shrink-0">TS</div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <div>
+                <a href="#" class="text-lg font-semibold text-slate-900 hover:underline">田中 慎太郎</a>
+                <p class="text-sm text-slate-500 mt-0.5">デザインエンジニア / デザインシステム推進</p>
+              </div>
+              <button class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors">フォロー</button>
+            </div>
+            <p class="mt-3 text-sm text-body">SaaS企業でデザインシステムの構築と運用を担当。Tailwind CSS と Figma をこよなく愛する。週末はコーヒーを淹れながらOSSにコントリビュート。</p>
+            <div class="mt-3 flex gap-4 text-xs text-slate-500">
+              <span><strong class="text-slate-900 font-medium">42</strong> 記事</span>
+              <span><strong class="text-slate-900 font-medium">1,280</strong> フォロワー</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== Comments ===== -->
+    <section class="mt-14">
+      <h2 class="text-2xl font-semibold text-slate-900">コメント <span class="text-slate-500 font-normal text-lg">14</span></h2>
+
+      <!-- Comment form -->
+      <div class="mt-6 bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+        <div class="flex gap-4">
+          <div role="img" aria-label="中村 美咲" class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center text-sm font-medium text-primary-600 flex-shrink-0">NM</div>
+          <div class="flex-1">
+            <textarea rows="3" placeholder="コメントを書く..." class="w-full px-3 py-2 text-base text-slate-900 bg-white border border-slate-300 rounded-lg placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-colors resize-y"></textarea>
+            <div class="mt-3 flex justify-end">
+              <button class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors">コメントする</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comments list -->
+      <div class="mt-6 space-y-6">
+        <!-- Comment 1 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+          <div class="flex gap-4">
+            <div role="img" aria-label="佐藤 健一" class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-sm font-medium text-emerald-600 flex-shrink-0">SK</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <a href="#" class="text-sm font-medium text-slate-900 hover:underline">佐藤 健一</a>
+                <span class="text-xs text-slate-500">2時間前</span>
+              </div>
+              <p class="mt-2 text-sm text-body">SSOTの考え方、とても共感します。私たちのチームでもFigmaとドキュメントの乖離に悩んでいたので、Markdownを正規版にするアプローチを試してみます。</p>
+              <div class="mt-2 flex items-center gap-3">
+                <button class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  12
+                </button>
+                <button class="text-xs text-slate-500 hover:text-slate-700 transition-colors">返信する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+          <div class="flex gap-4">
+            <div role="img" aria-label="鈴木 あかり" class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-sm font-medium text-amber-600 flex-shrink-0">SA</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <a href="#" class="text-sm font-medium text-slate-900 hover:underline">鈴木 あかり</a>
+                <span class="text-xs text-slate-500">5時間前</span>
+              </div>
+              <p class="mt-2 text-sm text-body">月次レビューの取り組み、参考になりました。「禁止パターンの検出」は具体的にどのようにチェックされていますか？手動でしょうか、それとも何かツールを使っていますか？</p>
+              <div class="mt-2 flex items-center gap-3">
+                <button class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  8
+                </button>
+                <button class="text-xs text-slate-500 hover:text-slate-700 transition-colors">返信する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment 3 (author reply) -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm ml-12">
+          <div class="flex gap-4">
+            <div role="img" aria-label="田中 慎太郎" class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center text-sm font-medium text-primary-600 flex-shrink-0">TS</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <a href="#" class="text-sm font-medium text-slate-900 hover:underline">田中 慎太郎</a>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">著者</span>
+                <span class="text-xs text-slate-500">4時間前</span>
+              </div>
+              <p class="mt-2 text-sm text-body">鈴木さん、コメントありがとうございます！基本的にはGrepベースの検索スクリプトを使っています。<code class="px-1 py-0.5 bg-slate-100 rounded text-xs font-mono text-slate-900">text-black</code> や <code class="px-1 py-0.5 bg-slate-100 rounded text-xs font-mono text-slate-900">shadow-lg</code> などの禁止パターンをリストにして一括チェックしています。詳しくは別記事でまとめますね。</p>
+              <div class="mt-2 flex items-center gap-3">
+                <button class="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 transition-colors">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  15
+                </button>
+                <button class="text-xs text-slate-500 hover:text-slate-700 transition-colors">返信する</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <button class="inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors">
+          すべてのコメントを表示
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== Related Articles ===== -->
+    <section class="mt-14">
+      <h2 class="text-2xl font-semibold text-slate-900">関連記事</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Related 1 -->
+        <a href="#" class="block bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="w-full aspect-[16/9] bg-slate-200 flex items-center justify-center">
+            <span class="text-sm text-slate-500">サムネイル</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-slate-900">Tailwind CSS 4 で変わるデザインシステムの作り方</h3>
+            <p class="mt-2 text-sm text-body line-clamp-2">Tailwind CSS 4 の @theme ディレクティブを活用して、より管理しやすいデザイントークンを定義する方法を解説します。</p>
+            <div class="mt-3 flex items-center gap-2">
+              <div role="img" aria-label="田中 慎太郎" class="w-6 h-6 rounded-full bg-primary-50 flex items-center justify-center text-xs font-medium text-primary-600">TS</div>
+              <span class="text-xs text-slate-500">田中 慎太郎 ・ 2026-02-20</span>
+            </div>
+          </div>
+        </a>
+        <!-- Related 2 -->
+        <a href="#" class="block bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+          <div class="w-full aspect-[16/9] bg-slate-200 flex items-center justify-center">
+            <span class="text-sm text-slate-500">サムネイル</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-slate-900">禁止パターンを自動検出する仕組みを作った話</h3>
+            <p class="mt-2 text-sm text-body line-clamp-2">デザインシステムの禁止パターンをCIで自動チェックする仕組みを構築しました。grep + GitHub Actions で実現。</p>
+            <div class="mt-3 flex items-center gap-2">
+              <div role="img" aria-label="田中 慎太郎" class="w-6 h-6 rounded-full bg-primary-50 flex items-center justify-center text-xs font-medium text-primary-600">TS</div>
+              <span class="text-xs text-slate-500">田中 慎太郎 ・ 2026-02-14</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="mt-14 border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">&copy; 2026 melta note. All rights reserved.</p>
+      <nav class="flex items-center gap-6">
+        <a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">利用規約</a>
+        <a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">プライバシー</a>
+        <a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">お問い合わせ</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

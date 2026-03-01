@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>melta UI Icons — Full Icon Reference</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/ds-config.js"></script>
+  <link rel="stylesheet" href="scripts/ds-theme.css">
+
+  <style>
+    /* --- Icon cell hover --- */
+    .icon-cell { transition: background-color 150ms ease, box-shadow 150ms ease; cursor: pointer; }
+    .icon-cell:hover { background-color: var(--bg-surface-alt); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+
+    /* --- Tab underline --- */
+    .tab-btn { position: relative; }
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 2px;
+      background: #2563eb;
+      border-radius: 1px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- ====================================================================
+       Header (Sticky)
+       ==================================================================== -->
+  <header class="sticky top-0 z-30 bg-white border-b border-slate-200 px-6 h-14 flex items-center justify-between" style="background:var(--bg-surface);border-color:var(--border-default);">
+    <div class="flex items-center gap-3">
+      <span class="text-lg font-bold" style="color:var(--text-heading);">melta UI</span>
+      <span class="text-xs font-medium px-2 py-0.5 rounded-full" style="color:var(--text-muted);background:var(--bg-page-alt);">Icons</span>
+      <a href="showcase.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 ml-2">&larr; Showcase へ戻る</a>
+    </div>
+    <button id="dark-mode-toggle" aria-label="ダークモード切替" class="w-10 h-10 inline-flex items-center justify-center rounded-lg border text-slate-500 hover:bg-gray-50 transition-colors" style="border-color:var(--border-default);">
+      <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg id="icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+  </header>
+
+  <!-- ====================================================================
+       Sidebar (Fixed)
+       ==================================================================== -->
+  <aside class="ds-sidebar fixed left-0 top-14 w-56 h-[calc(100vh-3.5rem)] border-r overflow-y-auto py-4 z-30" style="background:var(--bg-surface);border-color:var(--border-default);">
+    <nav aria-label="アイコンページナビゲーション" class="px-3 space-y-0.5">
+      <a href="#section-overview" data-nav="overview" class="block px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors" style="color:var(--text-default);">Overview</a>
+      <a href="#section-explorer" data-nav="explorer" class="block px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors" style="color:var(--text-default);">Icon Explorer</a>
+      <a href="#section-sizes" data-nav="sizes" class="block px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors" style="color:var(--text-default);">Sizes</a>
+      <a href="#section-colors" data-nav="colors" class="block px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors" style="color:var(--text-default);">Colors</a>
+      <a href="#section-mapping" data-nav="mapping" class="block px-3 py-1.5 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors" style="color:var(--text-default);">Name Mapping</a>
+    </nav>
+  </aside>
+
+  <!-- ====================================================================
+       Main Content
+       ==================================================================== -->
+  <main class="ml-56 pt-14">
+    <div class="max-w-6xl mx-auto px-8 py-12">
+
+      <!-- ============================================================
+           Section: Overview
+           ============================================================ -->
+      <section id="section-overview" data-section="overview" class="mb-14">
+        <h2 class="text-3xl font-bold mb-1" style="color:var(--text-heading);">アイコン一覧</h2>
+        <p class="text-base mb-8" style="color:var(--text-default);">melta UI で使用可能な全222アイコン。Charcoal Icons（プライマリ）+ Lucide Icons（セカンダリ補完）。</p>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-3 gap-6 mb-8">
+          <div class="rounded-xl border p-6 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <p class="text-sm font-medium mb-1" style="color:var(--text-muted);">合計</p>
+            <p class="text-3xl font-bold" style="color:var(--text-heading);">222</p>
+            <p class="text-xs mt-1" style="color:var(--text-muted);">アイコン</p>
+          </div>
+          <div class="rounded-xl border p-6 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <p class="text-sm font-medium mb-1" style="color:var(--text-muted);">Charcoal Icons 2.0</p>
+            <p class="text-3xl font-bold" style="color:var(--text-heading);">207</p>
+            <p class="text-xs mt-1" style="color:var(--text-muted);">fill ベース / PascalCase</p>
+          </div>
+          <div class="rounded-xl border p-6 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <p class="text-sm font-medium mb-1" style="color:var(--text-muted);">Lucide Icons</p>
+            <p class="text-3xl font-bold" style="color:var(--text-heading);">15</p>
+            <p class="text-xs mt-1" style="color:var(--text-muted);">stroke ベース / kebab-case</p>
+          </div>
+        </div>
+
+        <!-- Dual Source Explanation -->
+        <div class="grid grid-cols-2 gap-6">
+          <div class="rounded-xl border p-6 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <h4 class="text-lg font-semibold mb-2" style="color:var(--text-heading);">Charcoal Icons 2.0</h4>
+            <p class="text-sm mb-2" style="color:var(--text-default);">プライマリ — pixiv design system 由来</p>
+            <code class="text-xs font-mono px-2 py-0.5 rounded" style="background:var(--bg-page-alt);color:var(--text-default);">fill="currentColor"</code>
+            <p class="text-xs mt-2" style="color:var(--text-muted);">assets/icons/{Name}.svg (PascalCase)</p>
+          </div>
+          <div class="rounded-xl border p-6 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <h4 class="text-lg font-semibold mb-2" style="color:var(--text-heading);">Lucide Icons</h4>
+            <p class="text-sm mb-2" style="color:var(--text-default);">セカンダリ補完 — SaaS/ダッシュボード向け</p>
+            <code class="text-xs font-mono px-2 py-0.5 rounded" style="background:var(--bg-page-alt);color:var(--text-default);">stroke="currentColor" fill="none"</code>
+            <p class="text-xs mt-2" style="color:var(--text-muted);">assets/icons/lucide/{name}.svg (kebab-case)</p>
+          </div>
+        </div>
+
+        <!-- Local server note -->
+        <div class="mt-6 rounded-lg p-4 border" style="background:var(--bg-page-alt);border-color:var(--border-default);">
+          <p class="text-sm" style="color:var(--text-default);">
+            <strong>Note:</strong> アイコンは <code class="font-mono text-xs px-1 py-0.5 rounded" style="background:var(--bg-surface);">fetch()</code> で動的に読み込みます。
+            <code class="font-mono text-xs">file://</code> では動作しません。ローカルサーバーで開いてください:
+            <code class="font-mono text-xs px-1 py-0.5 rounded" style="background:var(--bg-surface);">npx serve .</code> または
+            <code class="font-mono text-xs px-1 py-0.5 rounded" style="background:var(--bg-surface);">python3 -m http.server</code>
+          </p>
+        </div>
+      </section>
+
+      <div class="border-t mb-14" style="border-color:var(--border-default);"></div>
+
+      <!-- ============================================================
+           Section: Icon Explorer
+           ============================================================ -->
+      <section id="section-explorer" data-section="explorer" class="mb-14">
+        <h2 class="text-3xl font-bold mb-1" style="color:var(--text-heading);">Icon Explorer</h2>
+        <p class="text-base mb-6" style="color:var(--text-default);">クリックでアイコン名をコピー。</p>
+
+        <!-- Tabs -->
+        <div class="flex items-center gap-1 border-b mb-6" style="border-color:var(--border-default);">
+          <button data-tab="all" class="tab-btn active px-4 py-2 text-sm font-semibold text-primary-600 transition-colors">All <span class="text-xs font-normal" style="color:var(--text-muted);">(222)</span></button>
+          <button data-tab="charcoal" class="tab-btn px-4 py-2 text-sm font-medium transition-colors" style="color:var(--text-muted);">Charcoal <span class="text-xs font-normal">(207)</span></button>
+          <button data-tab="lucide" class="tab-btn px-4 py-2 text-sm font-medium transition-colors" style="color:var(--text-muted);">Lucide <span class="text-xs font-normal">(15)</span></button>
+        </div>
+
+        <!-- Search -->
+        <div class="relative mb-4 leading-normal">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" style="color:var(--text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="icon-search" type="text" placeholder="アイコン名で検索..." class="w-full pl-10 pr-4 py-2 text-base border rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600" style="background:var(--input-bg);border-color:var(--input-border);color:var(--text-default);">
+        </div>
+
+        <!-- Count -->
+        <p id="icon-count" class="text-sm mb-4" style="color:var(--text-muted);">222 件表示</p>
+
+        <!-- Grid -->
+        <div id="icon-grid" class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+          <!-- Icons will be dynamically loaded here -->
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="icon-loading" class="text-center py-16">
+          <p class="text-base" style="color:var(--text-muted);">アイコンを読み込み中...</p>
+        </div>
+
+        <!-- Empty state -->
+        <div id="icon-empty" class="hidden text-center py-16">
+          <p class="text-base" style="color:var(--text-muted);">一致するアイコンがありません</p>
+        </div>
+      </section>
+
+      <div class="border-t mb-14" style="border-color:var(--border-default);"></div>
+
+      <!-- ============================================================
+           Section: Sizes
+           ============================================================ -->
+      <section id="section-sizes" data-section="sizes" class="mb-14">
+        <h2 class="text-3xl font-bold mb-1" style="color:var(--text-heading);">Size Reference</h2>
+        <p class="text-base mb-8" style="color:var(--text-default);">SVG は全て 24px 基準。表示サイズは Tailwind クラスで制御。</p>
+
+        <div class="rounded-xl border p-8 shadow-sm" style="background:var(--bg-surface);border-color:var(--border-default);">
+          <div class="flex items-end gap-12">
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-lg" style="background:var(--bg-page-alt);">
+                <svg id="size-icon-16" class="w-4 h-4" style="color:var(--text-default);" fill="currentColor" viewBox="0 0 24 24"></svg>
+              </div>
+              <p class="text-sm font-medium mt-2" style="color:var(--text-heading);">w-4 h-4</p>
+              <p class="text-xs" style="color:var(--text-muted);">16px</p>
+              <p class="text-xs" style="color:var(--text-muted);">テーブル行、バッジ内</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-lg" style="background:var(--bg-page-alt);">
+                <svg id="size-icon-20" class="w-5 h-5" style="color:var(--text-default);" fill="currentColor" viewBox="0 0 24 24"></svg>
+              </div>
+              <p class="text-sm font-medium mt-2" style="color:var(--text-heading);">w-5 h-5</p>
+              <p class="text-xs text-primary-600 font-medium">20px (標準)</p>
+              <p class="text-xs" style="color:var(--text-muted);">ボタン、ナビ、フォーム</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-lg" style="background:var(--bg-page-alt);">
+                <svg id="size-icon-24" class="w-6 h-6" style="color:var(--text-default);" fill="currentColor" viewBox="0 0 24 24"></svg>
+              </div>
+              <p class="text-sm font-medium mt-2" style="color:var(--text-heading);">w-6 h-6</p>
+              <p class="text-xs" style="color:var(--text-muted);">24px</p>
+              <p class="text-xs" style="color:var(--text-muted);">ページヘッダー</p>
+            </div>
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto flex items-center justify-center rounded-lg" style="background:var(--bg-page-alt);">
+                <svg id="size-icon-32" class="w-8 h-8" style="color:var(--text-default);" fill="currentColor" viewBox="0 0 24 24"></svg>
+              </div>
+              <p class="text-sm font-medium mt-2" style="color:var(--text-heading);">w-8 h-8</p>
+              <p class="text-xs" style="color:var(--text-muted);">32px</p>
+              <p class="text-xs" style="color:var(--text-muted);">タブバー、空状態</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="border-t mb-14" style="border-color:var(--border-default);"></div>
+
+      <!-- ============================================================
+           Section: Colors
+           ============================================================ -->
+      <section id="section-colors" data-section="colors" class="mb-14">
+        <h2 class="text-3xl font-bold mb-1" style="color:var(--text-heading);">Color Rules</h2>
+        <p class="text-base mb-8" style="color:var(--text-default);">用途別のカラー指定。コントラスト比 3:1 以上（WCAG AA — UI要素基準）。</p>
+
+        <div class="rounded-xl border shadow-sm overflow-hidden" style="background:var(--bg-surface);border-color:var(--border-default);">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b" style="border-color:var(--border-default);">
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">用途</th>
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">Tailwind クラス</th>
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">プレビュー</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y" style="--tw-divide-opacity:1;border-color:var(--border-default);">
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">標準（ナビ、補助）</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-body</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-body" class="w-5 h-5 text-body" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">無効/プレースホルダー</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-slate-400</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-disabled" class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">アクティブ/選択中</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-primary-600</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-active" class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">成功</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-emerald-600</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-success" class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">警告</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-amber-600</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-warning" class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">エラー/危険</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-red-500</td>
+                <td class="px-6 py-3">
+                  <svg id="color-icon-error" class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"></svg>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-3" style="color:var(--text-default);">色付き背景上</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-white</td>
+                <td class="px-6 py-3">
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-600">
+                    <svg id="color-icon-white" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"></svg>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="border-t mb-14" style="border-color:var(--border-default);"></div>
+
+      <!-- ============================================================
+           Section: Name Mapping
+           ============================================================ -->
+      <section id="section-mapping" data-section="mapping" class="mb-14">
+        <h2 class="text-3xl font-bold mb-1" style="color:var(--text-heading);">Name Mapping</h2>
+        <p class="text-base mb-8" style="color:var(--text-default);">Charcoal は pixiv 由来の命名が多く、一般的な概念と名前が一致しない場合がある。</p>
+
+        <div class="rounded-xl border shadow-sm overflow-hidden" style="background:var(--bg-surface);border-color:var(--border-default);">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b" style="border-color:var(--border-default);">
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">一般的な概念</th>
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">Charcoal アイコン名</th>
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">プレビュー</th>
+                <th class="text-left px-6 py-3 text-xs font-medium uppercase" style="color:var(--text-muted);">備考</th>
+              </tr>
+            </thead>
+            <tbody id="mapping-tbody" class="divide-y" style="--tw-divide-opacity:1;border-color:var(--border-default);">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2"></div>
+
+  <!-- ====================================================================
+       Script
+       ==================================================================== -->
+  <script>
+    /* =====================================================================
+       Icon Data
+       ===================================================================== */
+    const CHARCOAL_ICONS = [
+      'Add','AddImage','AddModel','AddPeople','AddRubi','AddText','Alart','Announcement','Ar',
+      'Archive','ArrowDown','ArrowUp','Artwork','Back','Binet','Body','BodyEdit','Book',
+      'BookmarkOff','BookmarkOn','BringBackward','BringForward','Calendar','Camera','CameraVideo',
+      'Cart','ChangeCharacter','ChatBot','Check','ChromaticAberration','Click','Close','Codes',
+      'Collapse','Collection','Comment','CommentFill','CommentOff','CommentOn','CommentOutline',
+      'Contest','Contrast','Copy','Delete','Description','DeviceRotation','Discovery','Dot',
+      'DotAlt','Down','DownloadAlt','Duplicate','Dust','Edit','Emoji','Error','ErrorOctagon',
+      'Events','Expand','FaceEdit','Fashion','Feed','File','Filter','Flare','FormatAlignCenter',
+      'FormatAlignJustified','FormatAlignLeft','FormatAlignRight','FormatColorFill',
+      'FormatColorFillNoColor','FormatFontFamily','FormatFontSize','FormatLetterSpacing',
+      'FormatLineSpacing','Fov','FrameEffect','FrameSize','Gift','Glow','Groups','HairEdit',
+      'Hashtag','Hide','HightlightText','Home','HorizontalWriting','Hue','Idea','Image',
+      'ImageAlt','ImageHidden','ImageReplace','ImageResponse','Images','ImgContain','ImgCover',
+      'Index','Info','Invalid','Invoice','ItemRemove','LatestWorks','Like','LikeOff','LikeOn',
+      'LikeOnPrivate','Link','List','LockLock','LockUnlock','Login','Logout','Manga','Menu',
+      'Message','Microphone','MobilePhone','More','Move1','MultiSelect','Next','Nextworks',
+      'NoImage','Notification','NotificationOff','NovelViewerSettings','Novels','OpenInNew',
+      'Options','OptionsAlt','Overlay','Palette','Pan','Pause','PauseAlt','Pencil','PencilAdd',
+      'PencilDraw','PencilLive','PencilText','Person','Play','Pose','Prev','Projects','PullDown',
+      'PullUp','Question','QuestionOutline','Ranking','ReadHorizontalLeft','ReadHorizontalRight',
+      'ReadVertical','Redo','Reload','ReloadLoop','Remove','Reorder','Reply','Roll',
+      'RollHorizontal','RollVertical','Rotate90DegreesC','Rotate90DegreesCc','RotateRight',
+      'SansSerif','Saturation','Save','Search','Send','Serif','Services','Set','Settings',
+      'ShareAndroid','ShareIos','Shopping','Show','ShowOutline','Shutter','Smile','Speaker',
+      'Star','Subtract','Sun','Temperature','Text','Thread','Trash','TrashAlt','Undo','Up',
+      'Upload','UploadAlt','Usagi','UsagiAlt','User','Users','VerticalWriting','Video','View',
+      'ViewGrid2Columns','ViewGrid3Columns','ViewList','Warning','ZoomIn'
+    ];
+
+    const LUCIDE_ICONS = [
+      'activity','bar-chart-2','clock','cloud','credit-card','database','folder',
+      'globe','key','monitor','phone','server','shield','trending-down','trending-up'
+    ];
+
+    const NAME_MAPPING = [
+      { general: 'ChevronDown', charcoal: 'PullDown', note: '太めのV字' },
+      { general: 'ChevronUp', charcoal: 'PullUp', note: '太めのV字' },
+      { general: 'ChevronLeft', charcoal: 'Prev / Back', note: 'Back は viewBox 16x16' },
+      { general: 'ChevronRight', charcoal: 'Next', note: '' },
+      { general: 'Email/Mail', charcoal: 'Message', note: '封筒アイコン' },
+      { general: 'Lock', charcoal: 'LockLock', note: '南京錠' },
+      { general: 'Unlock', charcoal: 'LockUnlock', note: '' },
+      { general: 'Payment', charcoal: 'Invoice', note: '通貨記号付き書類' },
+      { general: 'Calendar', charcoal: 'Calendar / Events', note: '' },
+      { general: 'Notification/Bell', charcoal: 'Notification', note: '' },
+      { general: 'Eye/Show', charcoal: 'Show / ShowOutline', note: '' },
+      { general: 'Eye-off/Hide', charcoal: 'Hide', note: '' },
+      { general: 'Edit (pencil)', charcoal: 'Pencil', note: '24x24。Edit は 32x32' },
+    ];
+
+    /* =====================================================================
+       SVG Cache & Fetch
+       ===================================================================== */
+    const svgCache = {};
+
+    async function fetchSvg(name, source) {
+      const key = source + '/' + name;
+      if (svgCache[key]) return svgCache[key];
+
+      const path = source === 'charcoal'
+        ? 'assets/icons/' + name + '.svg'
+        : 'assets/icons/lucide/' + name + '.svg';
+
+      try {
+        const res = await fetch(path);
+        if (!res.ok) throw new Error(res.status);
+        const text = await res.text();
+        svgCache[key] = text;
+        return text;
+      } catch (e) {
+        svgCache[key] = null;
+        return null;
+      }
+    }
+
+    function injectSvg(container, svgText, sizeClass) {
+      if (!svgText) {
+        container.innerHTML = '<span class="text-xs" style="color:var(--text-muted);">?</span>';
+        return;
+      }
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(svgText, 'image/svg+xml');
+      const svg = doc.querySelector('svg');
+      if (!svg) { container.innerHTML = '?'; return; }
+
+      // Reset and apply classes
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.removeAttribute('class');
+      svg.classList.add(...(sizeClass || 'w-5 h-5').split(' '));
+      svg.style.color = 'inherit';
+
+      container.appendChild(svg);
+    }
+
+    /* =====================================================================
+       Build Icon Grid
+       ===================================================================== */
+    const grid = document.getElementById('icon-grid');
+    const loading = document.getElementById('icon-loading');
+    const empty = document.getElementById('icon-empty');
+    const countEl = document.getElementById('icon-count');
+
+    // Build all icon cell elements first
+    const allCells = [];
+
+    CHARCOAL_ICONS.forEach(function(name) {
+      const cell = document.createElement('div');
+      cell.className = 'icon-cell flex flex-col items-center justify-center p-3 rounded-xl border text-center';
+      cell.style.cssText = 'background:var(--bg-surface);border-color:var(--border-default);';
+      cell.setAttribute('data-name', name.toLowerCase());
+      cell.setAttribute('data-source', 'charcoal');
+      cell.setAttribute('data-icon-name', name);
+      cell.setAttribute('title', name);
+      cell.innerHTML = '<div class="icon-preview w-10 h-10 flex items-center justify-center rounded-lg mx-auto" style="color:var(--text-default);"></div>' +
+        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>';
+      allCells.push(cell);
+    });
+
+    LUCIDE_ICONS.forEach(function(name) {
+      const cell = document.createElement('div');
+      cell.className = 'icon-cell flex flex-col items-center justify-center p-3 rounded-xl border text-center';
+      cell.style.cssText = 'background:var(--bg-surface);border-color:var(--border-default);';
+      cell.setAttribute('data-name', name.toLowerCase());
+      cell.setAttribute('data-source', 'lucide');
+      cell.setAttribute('data-icon-name', name);
+      cell.setAttribute('title', name + ' (Lucide)');
+      cell.innerHTML = '<div class="icon-preview w-10 h-10 flex items-center justify-center rounded-lg mx-auto" style="color:var(--text-default);"></div>' +
+        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>';
+      allCells.push(cell);
+    });
+
+    // Append all cells to grid
+    allCells.forEach(function(cell) { grid.appendChild(cell); });
+
+    // Click handler for copy
+    grid.addEventListener('click', function(e) {
+      const cell = e.target.closest('.icon-cell');
+      if (!cell) return;
+      const name = cell.getAttribute('data-icon-name');
+      navigator.clipboard.writeText(name).then(function() {
+        showToast(name + ' をコピーしました');
+      });
+    });
+
+    // Batch-load SVGs
+    async function loadIconsBatch(cells, batchSize) {
+      for (var i = 0; i < cells.length; i += batchSize) {
+        var batch = cells.slice(i, i + batchSize);
+        await Promise.all(batch.map(async function(cell) {
+          var name = cell.getAttribute('data-icon-name');
+          var source = cell.getAttribute('data-source');
+          var preview = cell.querySelector('.icon-preview');
+          var svgText = await fetchSvg(name, source);
+          injectSvg(preview, svgText, 'w-5 h-5');
+        }));
+      }
+      loading.classList.add('hidden');
+    }
+
+    loadIconsBatch(allCells, 30);
+
+    /* =====================================================================
+       Populate Size Reference & Color Rules (after first SVG loads)
+       ===================================================================== */
+    async function populateStaticSections() {
+      // Use Info icon for size/color demos
+      var infoSvg = await fetchSvg('Info', 'charcoal');
+      if (!infoSvg) return;
+
+      // Size reference
+      ['size-icon-16','size-icon-20','size-icon-24','size-icon-32'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el || !infoSvg) return;
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(infoSvg, 'image/svg+xml');
+        var svg = doc.querySelector('svg');
+        if (!svg) return;
+        // Copy inner content to existing SVG element
+        el.innerHTML = svg.innerHTML;
+        // Copy viewBox
+        if (svg.getAttribute('viewBox')) el.setAttribute('viewBox', svg.getAttribute('viewBox'));
+      });
+
+      // Color rules
+      ['color-icon-body','color-icon-disabled','color-icon-active','color-icon-success','color-icon-warning','color-icon-error','color-icon-white'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el || !infoSvg) return;
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(infoSvg, 'image/svg+xml');
+        var svg = doc.querySelector('svg');
+        if (!svg) return;
+        el.innerHTML = svg.innerHTML;
+        if (svg.getAttribute('viewBox')) el.setAttribute('viewBox', svg.getAttribute('viewBox'));
+      });
+
+      // Name Mapping table
+      var tbody = document.getElementById('mapping-tbody');
+      for (var i = 0; i < NAME_MAPPING.length; i++) {
+        var m = NAME_MAPPING[i];
+        var firstName = m.charcoal.split(' / ')[0].trim();
+        var mappingSvg = await fetchSvg(firstName, 'charcoal');
+
+        var tr = document.createElement('tr');
+        var previewHtml = '<td class="px-6 py-3"><div class="w-8 h-8 flex items-center justify-center" style="color:var(--text-default);"></div></td>';
+
+        tr.innerHTML =
+          '<td class="px-6 py-3" style="color:var(--text-default);">' + m.general + '</td>' +
+          '<td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">' + m.charcoal + '</td>' +
+          previewHtml +
+          '<td class="px-6 py-3" style="color:var(--text-muted);">' + m.note + '</td>';
+
+        if (mappingSvg) {
+          var previewContainer = tr.querySelector('div');
+          injectSvg(previewContainer, mappingSvg, 'w-5 h-5');
+        }
+
+        tbody.appendChild(tr);
+      }
+    }
+
+    populateStaticSections();
+
+    /* =====================================================================
+       Tab Switching
+       ===================================================================== */
+    var tabBtns = document.querySelectorAll('[data-tab]');
+    var currentTab = 'all';
+
+    tabBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        currentTab = btn.getAttribute('data-tab');
+        tabBtns.forEach(function(b) {
+          b.classList.remove('active', 'text-primary-600', 'font-semibold');
+          b.style.color = 'var(--text-muted)';
+          b.classList.add('font-medium');
+        });
+        btn.classList.add('active', 'text-primary-600', 'font-semibold');
+        btn.classList.remove('font-medium');
+        btn.style.color = '';
+        applyFilters();
+      });
+    });
+
+    /* =====================================================================
+       Search Filter
+       ===================================================================== */
+    var searchInput = document.getElementById('icon-search');
+    searchInput.addEventListener('input', function() {
+      applyFilters();
+    });
+
+    function applyFilters() {
+      var query = searchInput.value.toLowerCase().trim();
+      var visibleCount = 0;
+
+      allCells.forEach(function(cell) {
+        var name = cell.getAttribute('data-name');
+        var source = cell.getAttribute('data-source');
+
+        var matchTab = currentTab === 'all' || source === currentTab;
+        var matchSearch = !query || name.indexOf(query) !== -1;
+
+        if (matchTab && matchSearch) {
+          cell.style.display = '';
+          visibleCount++;
+        } else {
+          cell.style.display = 'none';
+        }
+      });
+
+      countEl.textContent = visibleCount + ' 件表示';
+      empty.classList.toggle('hidden', visibleCount > 0);
+    }
+
+    /* =====================================================================
+       Toast
+       ===================================================================== */
+    function showToast(message) {
+      var container = document.getElementById('toast-container');
+      var toast = document.createElement('div');
+      toast.className = 'flex items-center gap-2 px-4 py-2.5 rounded-lg shadow-md text-sm font-medium';
+      toast.style.cssText = 'background:var(--bg-surface);color:var(--text-default);border:1px solid var(--border-default);animation:toastSlideIn 200ms ease-out;';
+      toast.innerHTML = '<svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>' + message;
+      container.appendChild(toast);
+
+      setTimeout(function() {
+        toast.style.animation = 'toastSlideOut 200ms ease-in forwards';
+        setTimeout(function() { toast.remove(); }, 200);
+      }, 1500);
+    }
+
+  </script>
+  <script src="scripts/ds-dark-mode.js"></script>
+  <script src="scripts/ds-scrollspy.js"></script>
+
+</body>
+</html>
