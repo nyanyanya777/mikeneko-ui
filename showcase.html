@@ -85,104 +85,109 @@
 <body class="bg-gray-50 min-h-screen">
 
   <!-- ====================================================================
-       Header (Sticky)
+       Sidebar (Fixed — 3-Zone: Header / Navigation / Footer)
        ==================================================================== -->
-  <header class="ds-showcase-chrome sticky top-0 z-30 border-b px-6 h-14 flex items-center justify-between" style="background:var(--bg-surface);border-color:var(--border-default);">
-    <div class="flex items-center gap-3">
-      <span class="text-lg font-bold" style="color:var(--text-heading);">melta UI</span>
-      <span class="text-xs font-medium px-2 py-0.5 rounded-full" style="color:var(--text-muted);background:var(--bg-page-alt);">Showcase</span>
+  <aside class="ds-showcase-chrome ds-sidebar fixed left-0 top-0 w-64 h-screen border-r flex flex-col z-30" style="background:var(--bg-surface);border-color:var(--border-default);">
+
+    <!-- Header Zone -->
+    <div class="px-4 py-4 border-b flex-shrink-0" style="border-color:var(--border-default);">
+      <div class="flex items-center gap-2">
+        <span class="text-lg font-bold" style="color:var(--text-heading);">melta UI</span>
+        <span class="text-xs font-medium px-2 py-0.5 rounded-full" style="color:var(--text-muted);background:var(--bg-page-alt);">Showcase</span>
+      </div>
     </div>
-    <button id="dark-mode-toggle" aria-label="ダークモード切替" class="w-10 h-10 inline-flex items-center justify-center rounded-lg border text-slate-500 hover:bg-gray-50 transition-colors" style="border-color:var(--border-default);">
-      <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <svg id="icon-moon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
-  </header>
 
-  <!-- ====================================================================
-       Sidebar (Fixed)
-       ==================================================================== -->
-  <aside class="ds-showcase-chrome ds-sidebar fixed left-0 top-14 w-64 h-[calc(100vh-3.5rem)] border-r overflow-y-auto py-4 z-30" style="background:var(--bg-surface);border-color:var(--border-default);">
-    <nav aria-label="ショーケースナビゲーション" class="px-3">
+    <!-- Navigation Zone -->
+    <nav aria-label="ショーケースナビゲーション" class="flex-1 overflow-y-auto px-3 py-4 space-y-1">
       <!-- Overview -->
-      <a href="#section-overview" data-nav="overview" class="block px-3 py-1.5 text-sm font-medium text-slate-700 rounded-lg hover:bg-gray-50 transition-colors mb-2">概要</a>
+      <a href="#section-overview" data-nav="overview" class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">概要</a>
 
-      <!-- Foundations -->
-      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-3 hover:text-slate-700">
-        Foundations
+      <!-- 基盤 -->
+      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-4 py-1.5 text-xs font-semibold tracking-wider mt-3" style="color:var(--text-muted);">
+        基盤
         <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="ds-nav-group-items open ml-1 space-y-0.5">
-        <a href="#section-color" data-nav="color" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">カラー</a>
-        <a href="#section-typography" data-nav="typography" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">タイポグラフィ</a>
-        <a href="#section-spacing" data-nav="spacing" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">スペーシング</a>
-        <a href="#section-elevation" data-nav="elevation" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">エレベーション</a>
-        <a href="#section-icons" data-nav="icons" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">アイコン</a>
+      <div class="ds-nav-group-items open space-y-0.5">
+        <a href="#section-color" data-nav="color" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">カラー</a>
+        <a href="#section-typography" data-nav="typography" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">タイポグラフィ</a>
+        <a href="#section-spacing" data-nav="spacing" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">スペーシング</a>
+        <a href="#section-elevation" data-nav="elevation" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">エレベーション</a>
+        <a href="#section-icons" data-nav="icons" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">アイコン</a>
       </div>
 
-      <!-- Components -->
-      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-3 hover:text-slate-700">
-        Components
+      <!-- コンポーネント -->
+      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-4 py-1.5 text-xs font-semibold tracking-wider mt-3" style="color:var(--text-muted);">
+        コンポーネント
         <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="ds-nav-group-items open ml-1 space-y-0.5">
-        <a href="#section-button" data-nav="button" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">ボタン</a>
-        <a href="#section-card" data-nav="card" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">カード</a>
-        <a href="#section-textfield" data-nav="textfield" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">テキストフィールド</a>
-        <a href="#section-select" data-nav="select" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">セレクト</a>
-        <a href="#section-badge" data-nav="badge" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">バッジ</a>
-        <a href="#section-tag" data-nav="tag" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">タグ</a>
-        <a href="#section-alert" data-nav="alert" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Alert</a>
-        <a href="#section-modal" data-nav="modal" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">モーダル</a>
-        <a href="#section-dropdown" data-nav="dropdown" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Dropdown</a>
-        <a href="#section-toast" data-nav="toast" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Toast</a>
-        <a href="#section-tabs" data-nav="tabs" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">タブ</a>
-        <a href="#section-accordion" data-nav="accordion" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Accordion</a>
-        <a href="#section-toggle" data-nav="toggle" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Toggle</a>
-        <a href="#section-checkbox" data-nav="checkbox" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Checkbox</a>
-        <a href="#section-radio" data-nav="radio" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Radio</a>
-        <a href="#section-tooltip" data-nav="tooltip" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Tooltip</a>
-        <a href="#section-table" data-nav="table" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">テーブル</a>
-        <a href="#section-pagination" data-nav="pagination" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Pagination</a>
-        <a href="#section-breadcrumb" data-nav="breadcrumb" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Breadcrumb</a>
-        <a href="#section-avatar" data-nav="avatar" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Avatar</a>
-        <a href="#section-progress" data-nav="progress" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Progress</a>
-        <a href="#section-skeleton" data-nav="skeleton" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Skeleton</a>
-        <a href="#section-list" data-nav="list" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">リスト</a>
-        <a href="#section-divider" data-nav="divider" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Divider</a>
-        <a href="#section-stepper" data-nav="stepper" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Stepper</a>
-        <a href="#section-datepicker" data-nav="datepicker" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Date Picker</a>
-        <a href="#section-sidebar" data-nav="sidebar" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Sidebar</a>
+      <div class="ds-nav-group-items open space-y-0.5">
+        <a href="#section-button" data-nav="button" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ボタン</a>
+        <a href="#section-card" data-nav="card" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">カード</a>
+        <a href="#section-textfield" data-nav="textfield" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">テキストフィールド</a>
+        <a href="#section-select" data-nav="select" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">セレクト</a>
+        <a href="#section-badge" data-nav="badge" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">バッジ</a>
+        <a href="#section-tag" data-nav="tag" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">タグ</a>
+        <a href="#section-alert" data-nav="alert" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">アラート</a>
+        <a href="#section-modal" data-nav="modal" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">モーダル</a>
+        <a href="#section-dropdown" data-nav="dropdown" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ドロップダウン</a>
+        <a href="#section-toast" data-nav="toast" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">トースト</a>
+        <a href="#section-tabs" data-nav="tabs" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">タブ</a>
+        <a href="#section-accordion" data-nav="accordion" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">アコーディオン</a>
+        <a href="#section-toggle" data-nav="toggle" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">トグル</a>
+        <a href="#section-checkbox" data-nav="checkbox" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">チェックボックス</a>
+        <a href="#section-radio" data-nav="radio" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ラジオ</a>
+        <a href="#section-tooltip" data-nav="tooltip" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ツールチップ</a>
+        <a href="#section-table" data-nav="table" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">テーブル</a>
+        <a href="#section-pagination" data-nav="pagination" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ページネーション</a>
+        <a href="#section-breadcrumb" data-nav="breadcrumb" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">パンくずリスト</a>
+        <a href="#section-avatar" data-nav="avatar" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">アバター</a>
+        <a href="#section-progress" data-nav="progress" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">プログレス</a>
+        <a href="#section-skeleton" data-nav="skeleton" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">スケルトン</a>
+        <a href="#section-list" data-nav="list" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">リスト</a>
+        <a href="#section-divider" data-nav="divider" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ディバイダー</a>
+        <a href="#section-stepper" data-nav="stepper" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ステッパー</a>
+        <a href="#section-datepicker" data-nav="datepicker" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">デートピッカー</a>
+        <a href="#section-sidebar" data-nav="sidebar" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">サイドバー</a>
       </div>
 
-      <!-- Patterns -->
-      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-3 hover:text-slate-700">
-        Patterns
+      <!-- パターン -->
+      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-4 py-1.5 text-xs font-semibold tracking-wider mt-3" style="color:var(--text-muted);">
+        パターン
         <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="ds-nav-group-items open ml-1 space-y-0.5">
-        <a href="#section-layout-pattern" data-nav="layout-pattern" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">レイアウト</a>
-        <a href="#section-form-pattern" data-nav="form-pattern" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">フォーム</a>
-        <a href="#section-navigation-pattern" data-nav="navigation-pattern" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">ナビゲーション</a>
+      <div class="ds-nav-group-items open space-y-0.5">
+        <a href="#section-layout-pattern" data-nav="layout-pattern" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">レイアウト</a>
+        <a href="#section-form-pattern" data-nav="form-pattern" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">フォーム</a>
+        <a href="#section-navigation-pattern" data-nav="navigation-pattern" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">ナビゲーション</a>
       </div>
 
-      <!-- States & Feedback -->
-      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mt-3 hover:text-slate-700">
-        States &amp; Feedback
+      <!-- 状態・フィードバック -->
+      <button onclick="toggleNavGroup(this)" class="w-full flex items-center justify-between px-4 py-1.5 text-xs font-semibold tracking-wider mt-3" style="color:var(--text-muted);">
+        状態・フィードバック
         <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="ds-nav-group-items open ml-1 space-y-0.5">
-        <a href="#section-interaction-states" data-nav="interaction-states" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">インタラクション状態</a>
-        <a href="#section-empty-state" data-nav="empty-state" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Empty State</a>
-        <a href="#section-emotional-feedback" data-nav="emotional-feedback" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Emotional Feedback</a>
-        <a href="#section-do-dont" data-nav="do-dont" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Do / Don't</a>
+      <div class="ds-nav-group-items open space-y-0.5">
+        <a href="#section-interaction-states" data-nav="interaction-states" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">インタラクション状態</a>
+        <a href="#section-empty-state" data-nav="empty-state" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">空状態</a>
+        <a href="#section-emotional-feedback" data-nav="emotional-feedback" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">感情フィードバック</a>
+        <a href="#section-do-dont" data-nav="do-dont" class="flex items-center gap-3 px-4 py-1.5 text-sm font-medium rounded-lg transition-colors" style="color:var(--text-default);">良い例・悪い例</a>
       </div>
     </nav>
+
+    <!-- Footer Zone -->
+    <div class="px-4 py-3 border-t flex-shrink-0 flex items-center justify-between" style="border-color:var(--border-default);">
+      <span class="text-xs" style="color:var(--text-muted);">v1.1 — 40 sections</span>
+      <button id="dark-mode-toggle" aria-label="ダークモード切替" class="w-8 h-8 inline-flex items-center justify-center rounded-lg transition-colors" style="color:var(--text-muted);">
+        <svg id="icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
   </aside>
 
   <!-- ====================================================================
        Main Content
        ==================================================================== -->
-  <main class="ml-64 pt-14">
+  <main class="ml-64">
     <div class="max-w-5xl mx-auto px-8 py-12">
 
       <!-- ======================================================================

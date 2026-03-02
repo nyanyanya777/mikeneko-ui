@@ -38,10 +38,13 @@ html[data-theme="dark"] body {
 .ds-sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
 .ds-sidebar::-webkit-scrollbar { width: 4px; }
 .ds-sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+.ds-sidebar a[data-nav]:hover {
+  background: var(--bg-page-alt);
+}
 .ds-sidebar a.active {
-  color: var(--sidebar-active-color);
+  color: var(--sidebar-active-color) !important;
   font-weight: 600;
-  background: var(--sidebar-active-bg);
+  background: var(--sidebar-active-bg) !important;
 }
 .ds-nav-group-items { display: none; }
 .ds-nav-group-items.open { display: block; }
