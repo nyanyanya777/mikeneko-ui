@@ -26,6 +26,35 @@
 
 ---
 
+## HTMLテンプレート
+
+> Tailwind CDN 使用時は以下を `<head>` に必ず含める。`primary-*` が未定義だとセマンティックカラーが機能しない。
+
+```html
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
+          400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
+          800:'#1e40af',900:'#1e3a5f',950:'#172554'
+        }
+      },
+      fontFamily: {
+        sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>.text-body { color: #3d4b5f; }</style>
+```
+
+---
+
 ## クイックリファレンス
 
 ### レイアウト
@@ -43,23 +72,30 @@
 本文               : text-base text-body leading-relaxed（18px, line-height 2.0）
 フォーム制御ラベル : 包含 <div> に leading-normal（body の lh 2.0 リセット）
 空状態メッセージ   : text-base text-slate-500 text-center py-16
+フォントスタック     : Inter, Hiragino Sans, Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif
 ```
 
 ### コンポーネント
 ```
 カード             : bg-white rounded-xl border border-slate-200 p-6 shadow-sm
 カードグリッド     : grid grid-cols-2 md:grid-cols-3 gap-6
-CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700
-サブボタン         : inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50
+CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 cursor-pointer
+サブボタン         : inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 cursor-pointer
 入力欄             : w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600
 セレクト           : appearance-none pl-3 pr-10 + relative wrapper + SVG chevron（absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4）← ネイティブ矢印は使用禁止
 横並びフォーム     : flex flex-wrap items-end gap-4（外枠）+ 各 div.leading-normal > label + 要素 h-11 leading-normal（py-2 外す）+ ボタン h-11 inline-flex items-center（→ patterns/form.md 必読）
 バッジ（成功）     : bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium
 タグ（削除可能）   : inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium + ×ボタン
-フィルターチップ   : inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border + aria-selected
+フィルターチップ   : inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border cursor-pointer + aria-selected
 Alert（Info）      : bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4
 Alert（Error）     : bg-red-50 border border-red-200 text-red-800 rounded-lg p-4
-Accordion トリガー : w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900
+Alert（Warning）    : bg-amber-50 border border-amber-200 text-amber-800 rounded-lg p-4
+テーブル外枠         : bg-white rounded-xl border border-slate-200 overflow-hidden
+テーブルヘッダ行     : border-b border-slate-200 bg-gray-50
+テーブルヘッダセル   : <th scope="col"> text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider
+テーブルデータ行     : hover:bg-gray-50 transition-colors
+テーブルデータセル   : py-3 px-4 text-sm（主値 text-slate-900 / 副値 text-body）
+Accordion トリガー : w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900 cursor-pointer
 ディバイダー（水平）: border-t border-slate-200（<hr> or role="separator"）
 ディバイダー（テキスト付き）: flex items-center gap-4 + 両側 flex-1 border-t border-slate-200 + 中央 text-sm text-slate-500
 ディバイダー（垂直）: border-l border-slate-200 self-stretch + role="separator" aria-orientation="vertical"
@@ -75,25 +111,28 @@ Date Picker Day    : w-10 h-10 inline-flex items-center justify-center text-sm r
 Charcoal           : w-5 h-5 fill="currentColor" text-body ← assets/icons/{Name}.svg（プライマリ・207個）
 Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/lucide/{name}.svg（補完・15個）
 小サイズ           : w-4 h-4 ← 同SVGをTailwindで縮小（Charcoal優先、Lucide補完）
-アイコンボタン     : w-10 h-10 inline-flex items-center justify-center + aria-label 必須
+アイコンボタン     : w-10 h-10 inline-flex items-center justify-center cursor-pointer + aria-label 必須
 ```
 
 ### ナビゲーション
 ```
 サイドバー（標準）  : w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen
 サイドバー（コンパクト）: w-16 items-center（アイコンのみ + aria-label + title 必須）
+サイドバー構成       : 3ゾーン必須（Header + nav + Footer mt-auto border-t）
+サイドバー nav       : <nav aria-label="メインナビゲーション"> 必須
+ナビアイコン         : flex-shrink-0 を付与
 ナビ（Active）     : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg + aria-current="page"
 ナビ（Default）    : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors
-タブ（Active）     : text-sm font-semibold text-primary-600 border-b-2 border-primary-600
-タブ（Inactive）   : text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700
+タブ（Active）     : text-sm font-semibold text-primary-600 border-b-2 border-primary-600 cursor-pointer
+タブ（Inactive）   : text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 cursor-pointer
 パンくずリスト     : text-sm + text-slate-500 hover:text-slate-700 / 現在ページ text-slate-900 font-medium
-ページネーション   : w-10 h-10 rounded-lg + Active bg-primary-600 text-white / Inactive bg-white border
+ページネーション   : w-10 h-10 rounded-lg cursor-pointer + Active bg-primary-600 text-white / Inactive bg-white border
 ```
 
 ### データ・フィードバック
 ```
-アバター（M）      : w-10 h-10 rounded-full（イニシャル: bg-primary-50 text-primary-600 font-medium）
-プログレスバー     : bg-slate-200 rounded-full h-2（フィル: bg-primary-600 rounded-full h-2）
+アバター（M）      : w-10 h-10 rounded-full（イニシャル: bg-primary-50 text-primary-600 font-medium）+ role="img" aria-label="名前"
+プログレスバー     : bg-slate-200 rounded-full h-2（フィル: bg-primary-600 rounded-full h-2）+ role="progressbar" aria-valuenow aria-valuemin="0" aria-valuemax="100"
 スケルトン         : bg-slate-200 rounded-md skeleton-pulse + aria-busy="true" role="status"
 空状態             : text-center py-16 + アイコン(w-16 h-16 bg-slate-100 rounded-full) + 見出し + 説明 + CTAボタン
 ツールチップ       : bg-slate-600 text-white text-sm rounded-lg shadow-sm px-3 py-2（width: max-content, max-width: 20rem）
@@ -117,6 +156,9 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | プレースホルダーのみのラベル | 必ず `<label>` を使用 |
 | 派手なグラデーション / ネオンカラー / 過剰なアニメーション | セマンティックカラー、150〜300ms フィードバックに限定 |
 | フォーム制御ラベル包含divの `leading-normal` 省略 | 包含 `<div>` に `leading-normal` 付与 |
+| `bg-indigo-*` / `bg-blue-*` 等のハードコード | `primary-*` を使用（theme.md で定義） |
+| `<th>` の `scope` 省略 | `<th scope="col">` 必須 |
+| `<nav>` の `aria-label` 省略 | `aria-label="メインナビゲーション"` 必須 |
 
 > 全禁止パターン（71項目）: `prohibited.md` 参照
 

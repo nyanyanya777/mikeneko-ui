@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnPath - コース詳細</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
+            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
+            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif']
+        }
+      }
+    }
+  }
+  </script>
+  <style>.text-body { color: #3d4b5f; }</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between">
+      <h1 class="text-xl font-bold text-slate-900">LearnPath</h1>
+      <nav aria-label="メインナビゲーション" class="flex items-center gap-6">
+        <a href="#" class="text-sm font-medium text-body hover:text-slate-700 transition-colors">コース一覧</a>
+        <a href="#" class="text-sm font-medium text-primary-600" aria-current="page">マイコース</a>
+        <a href="#" class="text-sm font-medium text-body hover:text-slate-700 transition-colors">証明書</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="渡辺恵">渡</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="パンくずリスト" class="text-sm mb-6">
+      <ol class="flex items-center gap-2">
+        <li><a href="#" class="text-slate-500 hover:text-slate-700">マイコース</a></li>
+        <li class="text-slate-400">/</li>
+        <li class="text-slate-900 font-medium" aria-current="page">Webデザイン基礎</li>
+      </ol>
+    </nav>
+
+    <h2 class="text-3xl font-bold text-slate-900">Webデザイン基礎</h2>
+    <p class="text-base text-body leading-relaxed mt-2">HTML/CSS/JavaScriptの基礎からレスポンシブデザインまでを学びます。</p>
+
+    <!-- Overall Progress -->
+    <div class="mt-8 bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <div class="flex items-center justify-between mb-3">
+        <p class="text-sm font-medium text-slate-900">コース全体の進捗</p>
+        <p class="text-sm font-semibold text-primary-600">65%</p>
+      </div>
+      <div class="bg-slate-200 rounded-full h-2" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="コース進捗">
+        <div class="bg-primary-600 rounded-full h-2" style="width: 65%"></div>
+      </div>
+      <div class="flex items-center gap-6 mt-4 text-sm text-body">
+        <span>全 8 レッスン中 5 完了</span>
+        <span class="border-l border-slate-200 self-stretch" role="separator" aria-orientation="vertical"></span>
+        <span>残り約 3 時間</span>
+        <span class="border-l border-slate-200 self-stretch" role="separator" aria-orientation="vertical"></span>
+        <span>修了期限: 2026/03/31</span>
+      </div>
+    </div>
+
+    <!-- Stepper -->
+    <div class="mt-12">
+      <h3 class="text-lg font-semibold text-slate-900 mb-6">学習ステップ</h3>
+      <div class="flex items-center mb-10">
+        <!-- Step 1: Completed -->
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="ml-2 text-sm font-medium text-slate-900">HTML基礎</span>
+        </div>
+        <div class="flex-1 h-0.5 mx-3 bg-primary-600"></div>
+
+        <!-- Step 2: Completed -->
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="ml-2 text-sm font-medium text-slate-900">CSS基礎</span>
+        </div>
+        <div class="flex-1 h-0.5 mx-3 bg-primary-600"></div>
+
+        <!-- Step 3: Active -->
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full border-2 border-primary-600 text-primary-600 inline-flex items-center justify-center text-sm font-semibold">3</div>
+          <span class="ml-2 text-sm font-medium text-primary-600">JavaScript</span>
+        </div>
+        <div class="flex-1 h-0.5 mx-3 bg-slate-200"></div>
+
+        <!-- Step 4: Upcoming -->
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 inline-flex items-center justify-center text-sm">4</div>
+          <span class="ml-2 text-sm font-medium text-slate-500">レスポンシブ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 my-10">
+      <div class="flex-1 border-t border-slate-200"></div>
+      <span class="text-sm text-slate-500">レッスン一覧</span>
+      <div class="flex-1 border-t border-slate-200"></div>
+    </div>
+
+    <!-- Accordion: Lessons -->
+    <div class="space-y-3">
+      <!-- Lesson 1: Completed -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="false">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-600 text-white inline-flex items-center justify-center">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span>1. HTMLの基本構造</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span>
+            <svg class="w-5 h-5 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 2: Completed -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="false">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-600 text-white inline-flex items-center justify-center">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span>2. セマンティックHTML</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span>
+            <svg class="w-5 h-5 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 3: Completed -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="false">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-600 text-white inline-flex items-center justify-center">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span>3. CSSセレクタとプロパティ</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span>
+            <svg class="w-5 h-5 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 4: Completed -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="false">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-600 text-white inline-flex items-center justify-center">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span>4. Flexbox & Gridレイアウト</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span>
+            <svg class="w-5 h-5 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 5: Completed -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="false">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-primary-600 text-white inline-flex items-center justify-center">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <span>5. CSSアニメーション</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span>
+            <svg class="w-5 h-5 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 6: Active -->
+      <div class="bg-white rounded-xl border-2 border-primary-200 shadow-sm">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-900" aria-expanded="true">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full border-2 border-primary-600 text-primary-600 inline-flex items-center justify-center text-xs font-semibold">6</div>
+            <span>6. JavaScript基礎 — 変数と関数</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-primary-50 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">学習中</span>
+            <svg class="w-5 h-5 text-body rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+        <div class="px-6 pb-6">
+          <hr class="border-t border-slate-200 mb-4" role="separator">
+          <p class="text-sm text-body leading-relaxed">変数の宣言（let/const）、関数定義、スコープの概念を学びます。実践演習で簡単なインタラクションを実装しましょう。</p>
+          <div class="mt-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-xs text-body">レッスン進捗</p>
+              <p class="text-xs font-medium text-primary-600">40%</p>
+            </div>
+            <div class="bg-slate-200 rounded-full h-2" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="レッスン6の進捗">
+              <div class="bg-primary-600 rounded-full h-2" style="width: 40%"></div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <button class="cursor-pointer inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700">学習を続ける</button>
+            <button class="cursor-pointer inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50">ノートを見る</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lesson 7: Upcoming -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm opacity-75">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-500" aria-expanded="false" disabled>
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-slate-100 text-slate-500 inline-flex items-center justify-center text-xs">7</div>
+            <span>7. DOM操作とイベント</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-slate-100 text-slate-500 px-2.5 py-0.5 rounded-full text-xs font-medium">未着手</span>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+
+      <!-- Lesson 8: Upcoming -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm opacity-75">
+        <button class="cursor-pointer w-full flex items-center justify-between py-4 px-6 text-left text-base font-medium text-slate-500" aria-expanded="false" disabled>
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-slate-100 text-slate-500 inline-flex items-center justify-center text-xs">8</div>
+            <span>8. レスポンシブデザイン実践</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="bg-slate-100 text-slate-500 px-2.5 py-0.5 rounded-full text-xs font-medium">未着手</span>
+            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Info Alert -->
+    <div class="mt-10 bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4">
+      <div class="flex items-start gap-3">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p class="text-sm">全レッスンを完了すると修了証明書が発行されます。期限内に完了しましょう。</p>
+      </div>
+    </div>
+
+    <!-- Instructors -->
+    <div class="mt-12">
+      <h3 class="text-lg font-semibold text-slate-900 mb-4">講師</h3>
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="木村健太">木</div>
+          <div>
+            <p class="text-sm font-medium text-slate-900">木村健太</p>
+            <p class="text-xs text-body">フロントエンドエンジニア</p>
+          </div>
+        </div>
+        <div class="border-l border-slate-200 self-stretch" role="separator" aria-orientation="vertical"></div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="伊藤麻美">伊</div>
+          <div>
+            <p class="text-sm font-medium text-slate-900">伊藤麻美</p>
+            <p class="text-xs text-body">UIデザイナー</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

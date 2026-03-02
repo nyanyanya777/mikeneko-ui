@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudBox - ファイル管理</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; }
+    .text-body { color: #3d4b5f; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen">
+      <div class="px-6 py-5 border-b border-slate-200">
+        <h1 class="text-lg font-bold text-slate-900">CloudBox</h1>
+      </div>
+      <div class="px-3 py-3">
+        <button class="w-full inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          アップロード
+        </button>
+      </div>
+      <nav class="flex-1 px-3 py-2 space-y-1 overflow-y-auto">
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg" aria-current="page">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          マイファイル
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+          共有ファイル
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          スター付き
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          最近使用
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          ゴミ箱
+        </a>
+      </nav>
+      <div class="px-4 py-4 border-t border-slate-200">
+        <div class="text-sm">
+          <div class="flex justify-between text-body mb-1">
+            <span>ストレージ</span>
+            <span>24.3 / 50 GB</span>
+          </div>
+          <div class="bg-slate-200 rounded-full h-2">
+            <div class="bg-indigo-600 rounded-full h-2" style="width: 48.6%"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 overflow-y-auto">
+      <div class="max-w-7xl mx-auto px-8 py-12">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm mb-6">
+          <a href="#" class="text-slate-500 hover:text-slate-700">マイファイル</a>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-slate-900 font-medium">プロジェクト資料</span>
+        </nav>
+
+        <div class="flex items-center justify-between">
+          <h2 class="text-3xl font-bold text-slate-900">プロジェクト資料</h2>
+          <div class="flex gap-3">
+            <button class="inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg>
+              並び替え
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-700">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              新規フォルダ
+            </button>
+          </div>
+        </div>
+
+        <!-- Folders -->
+        <div class="mt-10">
+          <h3 class="text-sm font-semibold text-body mb-3">フォルダ</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-300 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <svg class="w-10 h-10 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">デザイン</p>
+                  <p class="text-xs text-body">12ファイル</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-300 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <svg class="w-10 h-10 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">仕様書</p>
+                  <p class="text-xs text-body">8ファイル</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-300 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <svg class="w-10 h-10 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">議事録</p>
+                  <p class="text-xs text-body">24ファイル</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-indigo-300 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <svg class="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">契約書</p>
+                  <p class="text-xs text-body">6ファイル</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Files -->
+        <div class="mt-10">
+          <h3 class="text-sm font-semibold text-body mb-3">ファイル</h3>
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-slate-200 bg-slate-50">
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">ファイル名</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">サイズ</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">更新日</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">共有</th>
+                  <th class="text-right text-sm font-medium text-body px-6 py-3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-slate-200 hover:bg-gray-50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-8 h-8 text-indigo-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+                      <span class="text-sm text-slate-900">プロジェクト計画書.pdf</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-sm text-body">4.2 MB</td>
+                  <td class="px-6 py-4 text-sm text-body">3月1日</td>
+                  <td class="px-6 py-4">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">田</div>
+                      <div class="w-6 h-6 rounded-full bg-amber-50 text-amber-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">佐</div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="w-8 h-8 inline-flex items-center justify-center rounded-lg hover:bg-gray-100" aria-label="その他">
+                      <svg class="w-4 h-4 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01"/></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b border-slate-200 hover:bg-gray-50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-8 h-8 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+                      <span class="text-sm text-slate-900">予算管理表.xlsx</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-sm text-body">1.8 MB</td>
+                  <td class="px-6 py-4 text-sm text-body">2月28日</td>
+                  <td class="px-6 py-4">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">鈴</div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="w-8 h-8 inline-flex items-center justify-center rounded-lg hover:bg-gray-100" aria-label="その他">
+                      <svg class="w-4 h-4 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01"/></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <svg class="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+                      <span class="text-sm text-slate-900">ワイヤーフレーム_v2.fig</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-sm text-body">12.5 MB</td>
+                  <td class="px-6 py-4 text-sm text-body">2月25日</td>
+                  <td class="px-6 py-4">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">田</div>
+                      <div class="w-6 h-6 rounded-full bg-amber-50 text-amber-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">佐</div>
+                      <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 font-medium inline-flex items-center justify-center text-xs border-2 border-white">鈴</div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="w-8 h-8 inline-flex items-center justify-center rounded-lg hover:bg-gray-100" aria-label="その他">
+                      <svg class="w-4 h-4 text-body" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01"/></svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

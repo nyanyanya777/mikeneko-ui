@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - プロジェクト管理</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; }
+    .text-body { color: #3d4b5f; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen">
+      <div class="px-6 py-5 border-b border-slate-200">
+        <h1 class="text-lg font-bold text-slate-900">TaskFlow</h1>
+      </div>
+      <nav class="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg" aria-current="page">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+          ダッシュボード
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          プロジェクト
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          チーム
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          カレンダー
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          設定
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 overflow-y-auto">
+      <div class="max-w-7xl mx-auto px-8 py-12">
+        <div class="flex items-center justify-between">
+          <h2 class="text-3xl font-bold text-slate-900">ダッシュボード</h2>
+          <button class="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            新規タスク
+          </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">進行中</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">12</p>
+            <p class="text-xs text-emerald-600 mt-2">+3 今週</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">完了</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">48</p>
+            <p class="text-xs text-emerald-600 mt-2">+8 今週</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">期限超過</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">3</p>
+            <p class="text-xs text-red-600 mt-2">要対応</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">チームメンバー</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">8</p>
+            <p class="text-xs text-body mt-2">アクティブ</p>
+          </div>
+        </div>
+
+        <!-- Recent Tasks -->
+        <div class="mt-10">
+          <h3 class="text-lg font-semibold text-slate-900 mb-4">最近のタスク</h3>
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-slate-200 bg-slate-50">
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">タスク名</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">担当</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">ステータス</th>
+                  <th class="text-left text-sm font-medium text-body px-6 py-3">期限</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-slate-200">
+                  <td class="px-6 py-4 text-sm text-slate-900">LP デザインリニューアル</td>
+                  <td class="px-6 py-4"><div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">田</div></td>
+                  <td class="px-6 py-4"><span class="bg-amber-50 text-amber-700 px-2.5 py-0.5 rounded-full text-xs font-medium">進行中</span></td>
+                  <td class="px-6 py-4 text-sm text-body">3月5日</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-6 py-4 text-sm text-slate-900">API ドキュメント整備</td>
+                  <td class="px-6 py-4"><div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">佐</div></td>
+                  <td class="px-6 py-4"><span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">完了</span></td>
+                  <td class="px-6 py-4 text-sm text-body">3月1日</td>
+                </tr>
+                <tr class="border-b border-slate-200">
+                  <td class="px-6 py-4 text-sm text-slate-900">ユーザーテスト実施</td>
+                  <td class="px-6 py-4"><div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">鈴</div></td>
+                  <td class="px-6 py-4"><span class="bg-red-50 text-red-700 px-2.5 py-0.5 rounded-full text-xs font-medium">期限超過</span></td>
+                  <td class="px-6 py-4 text-sm text-red-600">2月28日</td>
+                </tr>
+                <tr>
+                  <td class="px-6 py-4 text-sm text-slate-900">パフォーマンス改善</td>
+                  <td class="px-6 py-4"><div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">山</div></td>
+                  <td class="px-6 py-4"><span class="bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full text-xs font-medium">未着手</span></td>
+                  <td class="px-6 py-4 text-sm text-body">3月10日</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="grid grid-cols-2 gap-6 mt-10">
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">スプリント進捗</h3>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-body">Sprint 12</span>
+                  <span class="text-slate-900 font-medium">75%</span>
+                </div>
+                <div class="bg-slate-200 rounded-full h-2">
+                  <div class="bg-indigo-600 rounded-full h-2" style="width: 75%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="text-body">Sprint 11</span>
+                  <span class="text-slate-900 font-medium">100%</span>
+                </div>
+                <div class="bg-slate-200 rounded-full h-2">
+                  <div class="bg-emerald-500 rounded-full h-2" style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">チーム稼働</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">田</div>
+                <div class="flex-1">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-900">田中</span>
+                    <span class="text-body">5タスク</span>
+                  </div>
+                  <div class="bg-slate-200 rounded-full h-1.5 mt-1">
+                    <div class="bg-indigo-600 rounded-full h-1.5" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">佐</div>
+                <div class="flex-1">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-900">佐藤</span>
+                    <span class="text-body">3タスク</span>
+                  </div>
+                  <div class="bg-slate-200 rounded-full h-1.5 mt-1">
+                    <div class="bg-indigo-600 rounded-full h-1.5" style="width: 50%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">鈴</div>
+                <div class="flex-1">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-slate-900">鈴木</span>
+                    <span class="text-body">4タスク</span>
+                  </div>
+                  <div class="bg-slate-200 rounded-full h-1.5 mt-1">
+                    <div class="bg-indigo-600 rounded-full h-1.5" style="width: 70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

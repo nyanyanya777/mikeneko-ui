@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeopleOS - 人事管理</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; }
+    .text-body { color: #3d4b5f; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen">
+      <div class="px-6 py-5 border-b border-slate-200">
+        <h1 class="text-lg font-bold text-slate-900">PeopleOS</h1>
+      </div>
+      <nav class="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-lg" aria-current="page">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+          ダッシュボード
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          社員名簿
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          勤怠管理
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          給与明細
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          組織図
+        </a>
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          採用管理
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 overflow-y-auto">
+      <div class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-3xl font-bold text-slate-900">ダッシュボード</h2>
+        <p class="text-base text-body mt-1">2026年3月の人事概要</p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">総社員数</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">142</p>
+            <p class="text-xs text-emerald-600 mt-2">今月 +3名</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">出勤率</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">96.2%</p>
+            <p class="text-xs text-emerald-600 mt-2">前月比 +0.5%</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">有給消化率</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">68%</p>
+            <p class="text-xs text-amber-600 mt-2">目標: 80%</p>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <p class="text-sm text-body">採用進行中</p>
+            <p class="text-3xl font-bold text-slate-900 mt-1">7</p>
+            <p class="text-xs text-body mt-2">ポジション</p>
+          </div>
+        </div>
+
+        <!-- Department & Announcements -->
+        <div class="grid grid-cols-3 gap-6 mt-10">
+          <div class="col-span-2 bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">部署別人員</h3>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-body w-24">エンジニア</span>
+                <div class="flex-1 bg-slate-200 rounded-full h-3">
+                  <div class="bg-indigo-600 rounded-full h-3" style="width: 42%"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-900 w-12 text-right">60名</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-body w-24">デザイン</span>
+                <div class="flex-1 bg-slate-200 rounded-full h-3">
+                  <div class="bg-amber-500 rounded-full h-3" style="width: 14%"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-900 w-12 text-right">20名</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-body w-24">営業</span>
+                <div class="flex-1 bg-slate-200 rounded-full h-3">
+                  <div class="bg-emerald-500 rounded-full h-3" style="width: 21%"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-900 w-12 text-right">30名</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-body w-24">管理</span>
+                <div class="flex-1 bg-slate-200 rounded-full h-3">
+                  <div class="bg-red-500 rounded-full h-3" style="width: 11%"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-900 w-12 text-right">16名</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-body w-24">その他</span>
+                <div class="flex-1 bg-slate-200 rounded-full h-3">
+                  <div class="bg-slate-400 rounded-full h-3" style="width: 11%"></div>
+                </div>
+                <span class="text-sm font-medium text-slate-900 w-12 text-right">16名</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">お知らせ</h3>
+            <div class="space-y-4">
+              <div class="pb-3 border-b border-slate-200">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="bg-red-50 text-red-700 px-2.5 py-0.5 rounded-full text-xs font-medium">重要</span>
+                  <span class="text-xs text-body">3月1日</span>
+                </div>
+                <p class="text-sm text-slate-900">年度末評価の提出期限は3月15日です</p>
+              </div>
+              <div class="pb-3 border-b border-slate-200">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-full text-xs font-medium">制度</span>
+                  <span class="text-xs text-body">2月28日</span>
+                </div>
+                <p class="text-sm text-slate-900">リモートワーク制度を改定しました</p>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">イベント</span>
+                  <span class="text-xs text-body">2月25日</span>
+                </div>
+                <p class="text-sm text-slate-900">3月の社内勉強会スケジュール公開</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Birthday & New Joiners -->
+        <div class="grid grid-cols-2 gap-6 mt-10">
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">今月の入社</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 py-2">
+                <div class="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-sm">高</div>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">高橋 翔太</p>
+                  <p class="text-xs text-body">エンジニアリング部 ・ 3月1日入社</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 py-2">
+                <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 font-medium inline-flex items-center justify-center text-sm">渡</div>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">渡辺 結衣</p>
+                  <p class="text-xs text-body">デザイン部 ・ 3月1日入社</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 py-2">
+                <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 font-medium inline-flex items-center justify-center text-sm">小</div>
+                <div>
+                  <p class="text-sm font-medium text-slate-900">小林 大樹</p>
+                  <p class="text-xs text-body">営業部 ・ 3月16日入社予定</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900 mb-4">承認待ち申請</h3>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between py-2 border-b border-slate-200">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-600 font-medium inline-flex items-center justify-center text-xs">山</div>
+                  <div>
+                    <p class="text-sm text-slate-900">山田 太郎</p>
+                    <p class="text-xs text-body">有給休暇申請 3/10-3/12</p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">承認</button>
+                  <button class="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">却下</button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-slate-200">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-amber-50 text-amber-600 font-medium inline-flex items-center justify-center text-xs">伊</div>
+                  <div>
+                    <p class="text-sm text-slate-900">伊藤 真理</p>
+                    <p class="text-xs text-body">経費精算 ¥32,400</p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">承認</button>
+                  <button class="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">却下</button>
+                </div>
+              </div>
+              <div class="flex items-center justify-between py-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 font-medium inline-flex items-center justify-center text-xs">加</div>
+                  <div>
+                    <p class="text-sm text-slate-900">加藤 健一</p>
+                    <p class="text-xs text-body">リモートワーク申請 3/5</p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="px-3 py-1.5 text-xs font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">承認</button>
+                  <button class="px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">却下</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
