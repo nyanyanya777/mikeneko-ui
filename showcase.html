@@ -8,7 +8,7 @@
   @melta-showcase-index
   @version: 1.1
   @generated: 2026-03-01
-  @sections: 39
+  @sections: 40
     - id: "overview"            type: "overview"     line: ~284
     - id: "color"               type: "foundation"   line: ~347
     - id: "typography"          type: "foundation"   line: ~479
@@ -41,6 +41,7 @@
     - id: "divider"             type: "component"    line: ~2010  variants: "horizontal,text,vertical,heavy"
     - id: "stepper"             type: "component"    line: ~2080  variants: "horizontal,vertical"
     - id: "datepicker"          type: "component"    line: ~2180  variants: "default,today-button"
+    - id: "sidebar"             type: "component"    line: ~2365  variants: "standard,compact"
     - id: "layout-pattern"      type: "pattern"      line: ~2000
     - id: "form-pattern"        type: "pattern"      line: ~2052
     - id: "navigation-pattern"  type: "pattern"      line: ~2125
@@ -150,6 +151,7 @@
         <a href="#section-divider" data-nav="divider" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Divider</a>
         <a href="#section-stepper" data-nav="stepper" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Stepper</a>
         <a href="#section-datepicker" data-nav="datepicker" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Date Picker</a>
+        <a href="#section-sidebar" data-nav="sidebar" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Sidebar</a>
       </div>
 
       <!-- Patterns -->
@@ -2357,6 +2359,132 @@
         <p class="text-sm text-slate-500 mt-3">→ 仕様詳細: <code class="font-mono">components/datepicker.md</code></p>
       </section>
       <!-- @end: datepicker -->
+
+      <div class="ds-divider"></div>
+
+      <!-- ======================================================================
+           @section: sidebar
+           @type: component
+           @label: サイドバー (Sidebar)
+           @variants: standard, compact
+           @see: components/sidebar.md
+           ====================================================================== -->
+      <section id="section-sidebar" data-section="sidebar" data-component="sidebar">
+        <h2 class="text-3xl font-bold text-slate-900 mb-1">サイドバー</h2>
+        <p class="text-base text-body mb-6">アプリケーションのメインナビゲーション。標準（w-64）とコンパクト（w-16）の2バリアント</p>
+
+        <!-- Mini diagram: Standard + Compact side by side -->
+        <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-slate-900 mb-4">バリアント比較</h3>
+          <div class="flex gap-6">
+            <!-- Standard sidebar skeleton -->
+            <div class="w-56 bg-white border border-slate-200 rounded-lg flex flex-col overflow-hidden" style="height: 280px;">
+              <div class="px-4 py-3 border-b border-slate-200">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 bg-primary-100 rounded"></div>
+                  <div class="h-3 bg-slate-200 rounded w-20"></div>
+                </div>
+              </div>
+              <div class="flex-1 px-3 py-3 space-y-1">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider px-1">Standard (w-64)</span>
+                <div class="flex items-center gap-2 px-2 py-1.5 bg-primary-50 rounded-lg">
+                  <div class="w-4 h-4 bg-primary-200 rounded"></div>
+                  <div class="h-2.5 bg-primary-200 rounded w-20"></div>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-1.5 rounded-lg">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                  <div class="h-2.5 bg-slate-200 rounded w-16"></div>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-1.5 rounded-lg">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                  <div class="h-2.5 bg-slate-200 rounded w-24"></div>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-1.5 rounded-lg">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                  <div class="h-2.5 bg-slate-200 rounded w-14"></div>
+                </div>
+              </div>
+              <div class="px-3 py-3 border-t border-slate-200">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 bg-primary-50 rounded-full"></div>
+                  <div class="space-y-1">
+                    <div class="h-2 bg-slate-200 rounded w-16"></div>
+                    <div class="h-1.5 bg-slate-100 rounded w-20"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Compact sidebar skeleton -->
+            <div class="w-14 bg-white border border-slate-200 rounded-lg flex flex-col items-center overflow-hidden" style="height: 280px;">
+              <div class="py-3 border-b border-slate-200 w-full flex justify-center">
+                <div class="w-6 h-6 bg-primary-100 rounded"></div>
+              </div>
+              <div class="flex-1 py-3 space-y-2 flex flex-col items-center">
+                <span class="text-[8px] font-mono text-slate-400">w-16</span>
+                <div class="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center">
+                  <div class="w-4 h-4 bg-primary-200 rounded"></div>
+                </div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                </div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                </div>
+                <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                  <div class="w-4 h-4 bg-slate-200 rounded"></div>
+                </div>
+              </div>
+              <div class="py-3 border-t border-slate-200 w-full flex justify-center">
+                <div class="w-7 h-7 bg-primary-50 rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code block: Standard sidebar nav item -->
+        <div class="ds-code-block mt-6 relative">
+          <div class="flex items-center justify-between px-4 py-2 bg-slate-800 rounded-t-lg">
+            <span class="text-xs text-slate-400 font-mono">HTML — 標準サイドバー ナビアイテム</span>
+            <button onclick="copyCode(this)" class="text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
+          </div>
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="sidebar-standard" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;aside class="w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen"&gt;
+  &lt;!-- Header --&gt;
+  &lt;div class="px-6 py-4 border-b border-slate-200"&gt;
+    &lt;span class="text-lg font-bold text-slate-900"&gt;App Name&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Navigation --&gt;
+  &lt;nav class="flex-1 overflow-y-auto px-4 py-4 space-y-1" aria-label="メインナビゲーション"&gt;
+    &lt;a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg" aria-current="page"&gt;
+      &lt;!-- Icon --&gt; ダッシュボード
+    &lt;/a&gt;
+    &lt;a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors"&gt;
+      &lt;!-- Icon --&gt; プロジェクト
+    &lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;!-- Footer --&gt;
+  &lt;div class="px-4 py-4 border-t border-slate-200 mt-auto"&gt;
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;div class="w-8 h-8 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center text-sm font-medium"&gt;T&lt;/div&gt;
+      &lt;span class="text-sm text-slate-700"&gt;Taro Yamada&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/aside&gt;</code></pre>
+        </div>
+
+        <!-- Demo link -->
+        <div class="mt-6 flex items-center gap-4">
+          <a href="examples/sidebar-demo.html" target="_blank" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors">
+            フルデモを見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-3">→ 仕様詳細: <code class="font-mono">components/sidebar.md</code></p>
+      </section>
+      <!-- @end: sidebar -->
 
       <div class="ds-divider"></div>
 
