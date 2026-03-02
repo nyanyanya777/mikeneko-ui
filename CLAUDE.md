@@ -60,6 +60,14 @@ CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary
 Alert（Info）      : bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4
 Alert（Error）     : bg-red-50 border border-red-200 text-red-800 rounded-lg p-4
 Accordion トリガー : w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900
+ディバイダー（水平）: border-t border-slate-200（<hr> or role="separator"）
+ディバイダー（テキスト付き）: flex items-center gap-4 + 両側 flex-1 border-t border-slate-200 + 中央 text-sm text-slate-500
+ディバイダー（垂直）: border-l border-slate-200 self-stretch + role="separator" aria-orientation="vertical"
+Stepper Indicator  : w-8 h-8 rounded-full inline-flex items-center justify-center text-sm（Completed: bg-primary-600 text-white / Active: border-2 border-primary-600 / Upcoming: bg-slate-100 text-slate-500）
+Stepper Connector  : flex-1 h-0.5 mx-3（完了区間: bg-primary-600 / 未着手: bg-slate-200）
+Date Picker Trigger: w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-base + Calendar アイコン
+Date Picker Popup  : absolute mt-1 w-[320px] bg-white rounded-xl border border-slate-200 shadow-md z-20 p-4
+Date Picker Day    : w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg（Selected: bg-primary-600 text-white / Today: font-semibold text-primary-600）
 ```
 
 ### アイコン
@@ -110,7 +118,7 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | 派手なグラデーション / ネオンカラー / 過剰なアニメーション | セマンティックカラー、150〜300ms フィードバックに限定 |
 | フォーム制御ラベル包含divの `leading-normal` 省略 | 包含 `<div>` に `leading-normal` 付与 |
 
-> 全禁止パターン（58項目）: `prohibited.md` 参照
+> 全禁止パターン（71項目）: `prohibited.md` 参照
 
 ---
 
@@ -118,7 +126,7 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 
 **Foundations (10)**: color, spacing, typography, elevation, radius, motion, z-index, icons, accessibility, emotional-feedback — 各 `foundations/{name}.md`
 
-**Components (24)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton — 各 `components/{name}.md`（Icon は `foundations/icons.md`）
+**Components (27)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton, datepicker, divider, stepper — 各 `components/{name}.md`（Icon は `foundations/icons.md`）
 
 **Patterns (5)**: layout, form, navigation, interaction-states, responsive — 各 `patterns/{name}.md`
 
@@ -143,6 +151,9 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | レスポンシブ対応 | + patterns/responsive.md → layout.md |
 | アクセシビリティ確認 | + foundations/accessibility.md |
 | アイコン選択 | + foundations/icons.md |
+| ウィザード / ステップ画面 | + stepper.md → button.md |
+| 日付入力フォーム | + datepicker.md → textfield.md → form.md |
+| セクション分割 | + divider.md → layout.md |
 | テーマカスタマイズ | theme.md → foundations/color.md（CLAUDE.md 不要） |
 | DS変更 / 新コンポーネント | フル読み込み |
 

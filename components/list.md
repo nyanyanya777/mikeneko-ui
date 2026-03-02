@@ -165,7 +165,7 @@
 
 ---
 
-## 6. Tailwindサンプル
+## 6. Tailwind サンプル
 
 ### Link List（ナビゲーション）
 

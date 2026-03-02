@@ -125,7 +125,7 @@ Checked → Unchecked（クリックで全解除）
 
 ---
 
-## 6. Tailwindサンプル
+## 6. Tailwind サンプル
 
 > primary カラーの具体値は `theme.md` を参照。
 

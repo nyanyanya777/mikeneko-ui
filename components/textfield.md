@@ -122,6 +122,8 @@
 | Disabled | `disabled` 属性を使用。`aria-disabled` ではなく HTML ネイティブの `disabled` を推奨 |
 | コントラスト | ラベル・入力テキスト・エラーテキストすべて WCAG AA (4.5:1) を満たす |
 
+> 共通: prohibited.md「フォーム」参照
+
 ---
 
 ## 6. Tailwind サンプル

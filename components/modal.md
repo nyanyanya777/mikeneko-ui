@@ -151,6 +151,8 @@
 | Escape キー | モーダルを閉じる |
 | 背面スクロール | モーダル表示中は `body` に `overflow-hidden` を付与し、背面スクロールを防止 |
 
+> 共通: prohibited.md「モーダル」参照
+
 ---
 
 ## 6. Tailwind サンプル

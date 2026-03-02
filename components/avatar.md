@@ -68,7 +68,9 @@ flex -space-x-2
 
 ---
 
-## 4. スタイル
+## 4. 振る舞い
+
+> このコンポーネントは静的表示のため、スタイル仕様を記載する。
 
 ### 画像アバター
 
@@ -96,7 +98,21 @@ rounded-full border-2 border-white bg-slate-100 flex items-center justify-center
 
 ---
 
-## 5. サンプルコード
+## 5. アクセシビリティ
+
+| 属性 | 値 |
+|------|------|
+| `alt` | 画像に必ず代替テキストを設定 |
+| `role="img"` + `aria-label` | イニシャルアバターにユーザー名を設定 |
+| `aria-label` | ステータスドットに状態を記述 |
+| グループ | 各アバターに個別の `alt` テキスト |
+| 装飾的な場合 | `alt=""` で読み上げをスキップ |
+
+> 共通: prohibited.md「カラー」参照
+
+---
+
+## 6. Tailwind サンプル
 
 ### 画像アバター（3サイズ）
 
@@ -134,15 +150,3 @@ rounded-full border-2 border-white bg-slate-100 flex items-center justify-center
   <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-xs font-medium text-body">+3</div>
 </div>
 ```
-
----
-
-## 6. アクセシビリティ
-
-| 属性 | 値 |
-|------|------|
-| `alt` | 画像に必ず代替テキストを設定 |
-| `role="img"` + `aria-label` | イニシャルアバターにユーザー名を設定 |
-| `aria-label` | ステータスドットに状態を記述 |
-| グループ | 各アバターに個別の `alt` テキスト |
-| 装飾的な場合 | `alt=""` で読み上げをスキップ |

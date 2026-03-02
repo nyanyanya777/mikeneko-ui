@@ -48,7 +48,7 @@
 
 ---
 
-## 4. スタイル
+## 4. 振る舞い
 
 ### Tab
 
@@ -78,7 +78,60 @@ py-4
 
 ---
 
-## 5. サンプルコード
+## 5. アクセシビリティ
+
+| 属性 | 値 |
+|------|------|
+| `role="tablist"` | タブリストのコンテナ |
+| `role="tab"` | 各タブボタン |
+| `role="tabpanel"` | 各コンテンツパネル |
+| `aria-selected` | `"true"` / `"false"` |
+| `aria-controls` | 対応するパネルの id |
+| `aria-labelledby` | パネルに対応するタブの id |
+| `tabindex` | Active: `"0"` / Inactive: `"-1"` |
+
+### キーボード操作
+
+| キー | 動作 |
+|------|------|
+| `←` / `→` | 前/次のタブに移動（disabled をスキップ） |
+| `Home` | 最初のタブに移動 |
+| `End` | 最後のタブに移動 |
+
+### キーボードナビゲーション JavaScript
+
+```javascript
+function handleTabKeydown(tablistId, event) {
+  var tablist = document.getElementById(tablistId);
+  var tabs = Array.from(tablist.querySelectorAll('[role="tab"]:not([disabled])'));
+  var index = tabs.indexOf(event.target);
+  var next = -1;
+  switch (event.key) {
+    case 'ArrowRight': next = (index + 1) % tabs.length; break;
+    case 'ArrowLeft': next = (index - 1 + tabs.length) % tabs.length; break;
+    case 'Home': next = 0; break;
+    case 'End': next = tabs.length - 1; break;
+    default: return;
+  }
+  event.preventDefault();
+  switchTab(tablistId, tabs[next].id);
+  tabs[next].focus();
+}
+```
+
+サンプル HTML の各タブボタンに `onkeydown` を追加する:
+
+```html
+<button role="tab" ... onclick="switchTab('tablist-1', 'tab-1')" onkeydown="handleTabKeydown('tablist-1', event)">
+  一般
+</button>
+```
+
+> 共通: prohibited.md「カラー」「アクセシビリティ」参照
+
+---
+
+## 6. Tailwind サンプル
 
 ### 基本タブ
 
@@ -140,55 +193,4 @@ function switchTab(tablistId, activeTabId) {
     }
   });
 }
-```
-
----
-
-## 6. アクセシビリティ
-
-| 属性 | 値 |
-|------|------|
-| `role="tablist"` | タブリストのコンテナ |
-| `role="tab"` | 各タブボタン |
-| `role="tabpanel"` | 各コンテンツパネル |
-| `aria-selected` | `"true"` / `"false"` |
-| `aria-controls` | 対応するパネルの id |
-| `aria-labelledby` | パネルに対応するタブの id |
-| `tabindex` | Active: `"0"` / Inactive: `"-1"` |
-
-### キーボード操作
-
-| キー | 動作 |
-|------|------|
-| `←` / `→` | 前/次のタブに移動（disabled をスキップ） |
-| `Home` | 最初のタブに移動 |
-| `End` | 最後のタブに移動 |
-
-### キーボードナビゲーション JavaScript
-
-```javascript
-function handleTabKeydown(tablistId, event) {
-  var tablist = document.getElementById(tablistId);
-  var tabs = Array.from(tablist.querySelectorAll('[role="tab"]:not([disabled])'));
-  var index = tabs.indexOf(event.target);
-  var next = -1;
-  switch (event.key) {
-    case 'ArrowRight': next = (index + 1) % tabs.length; break;
-    case 'ArrowLeft': next = (index - 1 + tabs.length) % tabs.length; break;
-    case 'Home': next = 0; break;
-    case 'End': next = tabs.length - 1; break;
-    default: return;
-  }
-  event.preventDefault();
-  switchTab(tablistId, tabs[next].id);
-  tabs[next].focus();
-}
-```
-
-サンプル HTML の各タブボタンに `onkeydown` を追加する:
-
-```html
-<button role="tab" ... onclick="switchTab('tablist-1', 'tab-1')" onkeydown="handleTabKeydown('tablist-1', event)">
-  一般
-</button>
 ```

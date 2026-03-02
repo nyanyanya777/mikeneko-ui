@@ -8,7 +8,7 @@
   @melta-showcase-index
   @version: 1.1
   @generated: 2026-03-01
-  @sections: 36
+  @sections: 39
     - id: "overview"            type: "overview"     line: ~284
     - id: "color"               type: "foundation"   line: ~347
     - id: "typography"          type: "foundation"   line: ~479
@@ -38,6 +38,9 @@
     - id: "progress"            type: "component"    line: ~1772  variants: "default,complete"
     - id: "skeleton"            type: "component"    line: ~1823  variants: "card,list,table,spinner,dot-loader"
     - id: "list"                type: "component"    line: ~1945  variants: "default"
+    - id: "divider"             type: "component"    line: ~2010  variants: "horizontal,text,vertical,heavy"
+    - id: "stepper"             type: "component"    line: ~2080  variants: "horizontal,vertical"
+    - id: "datepicker"          type: "component"    line: ~2180  variants: "default,today-button"
     - id: "layout-pattern"      type: "pattern"      line: ~2000
     - id: "form-pattern"        type: "pattern"      line: ~2052
     - id: "navigation-pattern"  type: "pattern"      line: ~2125
@@ -144,6 +147,9 @@
         <a href="#section-progress" data-nav="progress" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Progress</a>
         <a href="#section-skeleton" data-nav="skeleton" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Skeleton</a>
         <a href="#section-list" data-nav="list" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">リスト</a>
+        <a href="#section-divider" data-nav="divider" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Divider</a>
+        <a href="#section-stepper" data-nav="stepper" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Stepper</a>
+        <a href="#section-datepicker" data-nav="datepicker" class="block px-3 py-1.5 text-sm text-slate-600 rounded-lg hover:bg-gray-50 transition-colors">Date Picker</a>
       </div>
 
       <!-- Patterns -->
@@ -2060,6 +2066,301 @@
       <div class="ds-divider"></div>
 
       <!-- ======================================================================
+           @section: divider
+           @type: component
+           @label: Divider
+           @variants: horizontal, text, vertical, heavy
+           @see: components/divider.md
+           ====================================================================== -->
+      <section id="section-divider" data-section="divider" data-component="divider">
+        <h2 class="text-3xl font-bold text-slate-900 mb-1">Divider</h2>
+        <p class="text-base text-body mb-6">セクション間やコンテンツ間の視覚的な区切り</p>
+
+        <!-- Horizontal (default) -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4">水平（デフォルト）</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4">
+          <p class="text-sm text-body mb-4">セクション A のコンテンツ</p>
+          <hr class="border-t border-slate-200 my-4">
+          <p class="text-sm text-body mt-4">セクション B のコンテンツ</p>
+        </div>
+
+        <!-- Text Divider -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8">テキスト付き</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4">
+          <div class="space-y-4">
+            <button type="button" class="w-full inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors">メールでログイン</button>
+            <div role="separator" class="flex items-center gap-4">
+              <div class="flex-1 border-t border-slate-200"></div>
+              <span class="text-sm text-slate-500 flex-shrink-0">または</span>
+              <div class="flex-1 border-t border-slate-200"></div>
+            </div>
+            <button type="button" class="w-full inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 transition-colors">Googleでログイン</button>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8">垂直</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4">
+          <div class="flex items-center gap-6 h-12">
+            <span class="text-sm font-medium text-slate-900">メニュー A</span>
+            <div role="separator" aria-orientation="vertical" class="border-l border-slate-200 self-stretch"></div>
+            <span class="text-sm font-medium text-slate-900">メニュー B</span>
+            <div role="separator" aria-orientation="vertical" class="border-l border-slate-200 self-stretch"></div>
+            <span class="text-sm font-medium text-slate-900">メニュー C</span>
+          </div>
+        </div>
+
+        <!-- Heavy -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8">濃い線</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4">
+          <p class="text-sm text-body mb-4">濃い区切りが必要な場合</p>
+          <hr class="border-t border-slate-300 my-4">
+          <p class="text-sm text-body mt-4">標準（slate-200）との使い分け</p>
+        </div>
+
+        <div class="ds-code-block mt-4 relative">
+          <div class="flex items-center justify-between px-4 py-2 bg-slate-800 rounded-t-lg">
+            <span class="text-xs text-slate-400 font-mono">HTML</span>
+            <button onclick="copyCode(this)" class="text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
+          </div>
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="divider-text" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;!-- 水平 --&gt;
+&lt;hr class="border-t border-slate-200 my-6"&gt;
+
+&lt;!-- テキスト付き --&gt;
+&lt;div role="separator" class="flex items-center gap-4 my-6"&gt;
+  &lt;div class="flex-1 border-t border-slate-200"&gt;&lt;/div&gt;
+  &lt;span class="text-sm text-slate-500"&gt;または&lt;/span&gt;
+  &lt;div class="flex-1 border-t border-slate-200"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 垂直 --&gt;
+&lt;div role="separator" aria-orientation="vertical"
+  class="border-l border-slate-200 self-stretch"&gt;&lt;/div&gt;</code></pre>
+        </div>
+        <p class="text-sm text-slate-500 mt-3">→ 仕様詳細: <code class="font-mono">components/divider.md</code></p>
+      </section>
+      <!-- @end: divider -->
+
+      <div class="ds-divider"></div>
+
+      <!-- ======================================================================
+           @section: stepper
+           @type: component
+           @label: Stepper
+           @variants: horizontal, vertical
+           @see: components/stepper.md
+           ====================================================================== -->
+      <section id="section-stepper" data-section="stepper" data-component="stepper">
+        <h2 class="text-3xl font-bold text-slate-900 mb-1">Stepper</h2>
+        <p class="text-base text-body mb-6">マルチステッププロセスの進捗表示。3状態: Completed / Active / Upcoming</p>
+
+        <!-- Horizontal -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4">水平</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4">
+          <div role="list" class="flex items-center">
+            <!-- Step 1: Completed -->
+            <div role="listitem" class="flex items-center">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+                  <span class="sr-only">完了:</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <span class="text-sm font-medium text-slate-900 mt-2">アカウント</span>
+              </div>
+            </div>
+            <!-- Connector: Completed -->
+            <div class="flex-1 h-0.5 mx-3 bg-primary-600 -mt-6"></div>
+            <!-- Step 2: Active -->
+            <div role="listitem" class="flex items-center">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+                  2
+                </div>
+                <span class="text-sm font-semibold text-primary-600 mt-2">プロフィール</span>
+              </div>
+            </div>
+            <!-- Connector: Upcoming -->
+            <div class="flex-1 h-0.5 mx-3 bg-slate-200 -mt-6"></div>
+            <!-- Step 3: Upcoming -->
+            <div role="listitem" class="flex items-center">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-medium inline-flex items-center justify-center text-sm flex-shrink-0">
+                  3
+                </div>
+                <span class="text-sm font-medium text-slate-500 mt-2">確認</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8">垂直（ラベル + 説明付き）</h3>
+        <div class="ds-preview bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-4 max-w-md">
+          <div role="list">
+            <!-- Step 1: Completed -->
+            <div role="listitem" class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+                  <span class="sr-only">完了:</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div class="w-0.5 flex-1 my-1 bg-primary-600"></div>
+              </div>
+              <div class="pb-6">
+                <p class="text-sm font-medium text-slate-900">アカウント作成</p>
+                <p class="text-xs text-slate-500 mt-0.5">メールアドレスとパスワードを設定しました</p>
+              </div>
+            </div>
+            <!-- Step 2: Active -->
+            <div role="listitem" class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+                  2
+                </div>
+                <div class="w-0.5 flex-1 my-1 bg-slate-200"></div>
+              </div>
+              <div class="pb-6">
+                <p class="text-sm font-semibold text-primary-600">プロフィール設定</p>
+                <p class="text-xs text-slate-500 mt-0.5">名前とアバターを設定してください</p>
+              </div>
+            </div>
+            <!-- Step 3: Upcoming -->
+            <div role="listitem" class="flex gap-4">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-medium inline-flex items-center justify-center text-sm flex-shrink-0">
+                  3
+                </div>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-500">完了</p>
+                <p class="text-xs text-slate-500 mt-0.5">設定内容を確認して完了します</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-code-block mt-4 relative">
+          <div class="flex items-center justify-between px-4 py-2 bg-slate-800 rounded-t-lg">
+            <span class="text-xs text-slate-400 font-mono">HTML</span>
+            <button onclick="copyCode(this)" class="text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
+          </div>
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="stepper-horizontal" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div role="list" class="flex items-center"&gt;
+  &lt;!-- Completed --&gt;
+  &lt;div role="listitem"&gt;
+    &lt;div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center"&gt;
+      &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="flex-1 h-0.5 mx-3 bg-primary-600"&gt;&lt;/div&gt;
+  &lt;!-- Active --&gt;
+  &lt;div role="listitem"&gt;
+    &lt;div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center" aria-current="step"&gt;2&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="flex-1 h-0.5 mx-3 bg-slate-200"&gt;&lt;/div&gt;
+  &lt;!-- Upcoming --&gt;
+  &lt;div role="listitem"&gt;
+    &lt;div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 font-medium inline-flex items-center justify-center"&gt;3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <p class="text-sm text-slate-500 mt-3">→ 仕様詳細: <code class="font-mono">components/stepper.md</code></p>
+      </section>
+      <!-- @end: stepper -->
+
+      <div class="ds-divider"></div>
+
+      <!-- ======================================================================
+           @section: datepicker
+           @type: component
+           @label: Date Picker
+           @variants: default, today-button
+           @see: components/datepicker.md
+           ====================================================================== -->
+      <section id="section-datepicker" data-section="datepicker" data-component="datepicker">
+        <h2 class="text-3xl font-bold text-slate-900 mb-1">Date Picker</h2>
+        <p class="text-base text-body mb-6">カレンダーポップアップによる日付選択。キーボード完全対応</p>
+
+        <div class="ds-interactive-demo">
+          <h3 class="text-lg font-semibold text-slate-900 mb-3">インタラクティブデモ</h3>
+          <div class="max-w-xs">
+            <div class="relative" id="showcase-dp-wrapper">
+              <label for="showcase-dp-trigger" class="block text-sm font-medium text-slate-900 mb-1">日付</label>
+              <button id="showcase-dp-trigger" type="button"
+                role="combobox" aria-haspopup="dialog" aria-expanded="false" aria-controls="showcase-dp-popup"
+                onclick="showcaseDpToggle()"
+                class="w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-base hover:border-slate-400 transition-colors focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 focus:outline-none">
+                <svg class="w-5 h-5 text-slate-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                </svg>
+                <span id="showcase-dp-display" class="flex-1 text-left text-slate-500">日付を選択</span>
+                <svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                </svg>
+              </button>
+              <input type="hidden" id="showcase-dp-value" name="date" value="">
+
+              <div id="showcase-dp-popup" role="dialog" aria-label="カレンダー" class="hidden absolute mt-1 w-[320px] bg-white rounded-xl border border-slate-200 shadow-md z-20 p-4">
+                <div class="flex items-center justify-between mb-3">
+                  <button type="button" aria-label="前の月" onclick="showcaseDpPrev()" class="w-8 h-8 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors">
+                    <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                  </button>
+                  <span id="showcase-dp-month" class="text-base font-semibold text-slate-900"></span>
+                  <button type="button" aria-label="次の月" onclick="showcaseDpNext()" class="w-8 h-8 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors">
+                    <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                  </button>
+                </div>
+                <div class="grid grid-cols-7 text-center mb-1">
+                  <span class="text-xs font-medium text-slate-500 py-2">日</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">月</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">火</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">水</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">木</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">金</span>
+                  <span class="text-xs font-medium text-slate-500 py-2">土</span>
+                </div>
+                <div id="showcase-dp-grid" role="grid" class="grid grid-cols-7 text-center"></div>
+                <div class="border-t border-slate-200 mt-3 pt-3">
+                  <button type="button" onclick="showcaseDpToday()" class="w-full text-center text-sm font-medium text-primary-600 hover:text-primary-700 py-1.5 rounded-lg hover:bg-primary-50 transition-colors">今日</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm text-slate-500 mt-3">矢印キーで日付移動 / Enter で選択 / Escape で閉じる / PageUp/Down で月送り</p>
+        </div>
+
+        <div class="ds-code-block mt-6 relative">
+          <div class="flex items-center justify-between px-4 py-2 bg-slate-800 rounded-t-lg">
+            <span class="text-xs text-slate-400 font-mono">HTML</span>
+            <button onclick="copyCode(this)" class="text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
+          </div>
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="datepicker-default" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div class="relative" id="dp-wrapper"&gt;
+  &lt;label class="block text-sm font-medium text-slate-900 mb-1"&gt;日付&lt;/label&gt;
+  &lt;button role="combobox" aria-haspopup="dialog" aria-expanded="false"
+    class="w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-base"&gt;
+    &lt;svg class="w-5 h-5 text-slate-500" fill="currentColor" viewBox="0 0 24 24"&gt;...&lt;/svg&gt;
+    &lt;span class="flex-1 text-left"&gt;日付を選択&lt;/span&gt;
+    &lt;svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24"&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;input type="hidden" name="date"&gt;
+  &lt;div role="dialog" aria-label="カレンダー"
+    class="absolute mt-1 w-[320px] bg-white rounded-xl border border-slate-200 shadow-md z-20 p-4"&gt;
+    &lt;!-- Month Header + Day Grid + Today Button --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <p class="text-sm text-slate-500 mt-3">→ 仕様詳細: <code class="font-mono">components/datepicker.md</code></p>
+      </section>
+      <!-- @end: datepicker -->
+
+      <div class="ds-divider"></div>
+
+      <!-- ======================================================================
            @section: layout-pattern
            @type: pattern
            @label: レイアウト (Layout Pattern)
@@ -2538,7 +2839,7 @@
           </div>
         </div>
 
-        <p class="text-sm text-slate-500 mt-6">→ 全58項目: <code class="font-mono">prohibited.md</code></p>
+        <p class="text-sm text-slate-500 mt-6">→ 全71項目: <code class="font-mono">prohibited.md</code></p>
       </section>
       <!-- @end: do-dont -->
 
@@ -2865,6 +3166,112 @@
       container.insertBefore(tag, input);
       input.value = '';
     }
+
+    /* --- Date Picker (Showcase) --- */
+    (function() {
+      var dpYear, dpMonth, dpSelected = null;
+      var dpToday = new Date();
+      dpYear = dpToday.getFullYear();
+      dpMonth = dpToday.getMonth();
+
+      function dpRender() {
+        var label = document.getElementById('showcase-dp-month');
+        if (!label) return;
+        label.textContent = dpYear + '\u5E74 ' + (dpMonth + 1) + '\u6708';
+        var grid = document.getElementById('showcase-dp-grid');
+        grid.innerHTML = '';
+        var firstDay = new Date(dpYear, dpMonth, 1).getDay();
+        var daysInMonth = new Date(dpYear, dpMonth + 1, 0).getDate();
+        for (var i = 0; i < firstDay; i++) {
+          var empty = document.createElement('div');
+          empty.className = 'w-10 h-10';
+          grid.appendChild(empty);
+        }
+        for (var d = 1; d <= daysInMonth; d++) {
+          var cell = document.createElement('button');
+          cell.setAttribute('role', 'gridcell');
+          cell.setAttribute('type', 'button');
+          cell.textContent = d;
+          var isToday = (d === dpToday.getDate() && dpMonth === dpToday.getMonth() && dpYear === dpToday.getFullYear());
+          var isSel = dpSelected && (d === dpSelected.getDate() && dpMonth === dpSelected.getMonth() && dpYear === dpSelected.getFullYear());
+          var cls = 'w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-inset';
+          if (isSel) { cls += ' bg-primary-600 text-white font-medium'; cell.setAttribute('aria-selected', 'true'); }
+          else if (isToday) { cls += ' font-semibold text-primary-600 hover:bg-primary-50'; cell.setAttribute('aria-current', 'date'); }
+          else { cls += ' text-slate-900 hover:bg-gray-50'; }
+          cell.className = cls;
+          (function(day) { cell.onclick = function() { dpSelect(dpYear, dpMonth, day); }; })(d);
+          grid.appendChild(cell);
+        }
+      }
+
+      function dpSelect(y, m, d) {
+        dpSelected = new Date(y, m, d);
+        var iso = y + '-' + String(m + 1).padStart(2, '0') + '-' + String(d).padStart(2, '0');
+        document.getElementById('showcase-dp-value').value = iso;
+        var disp = document.getElementById('showcase-dp-display');
+        disp.textContent = iso;
+        disp.classList.remove('text-slate-500');
+        disp.classList.add('text-slate-900');
+        showcaseDpToggle();
+      }
+
+      window.showcaseDpToggle = function() {
+        var popup = document.getElementById('showcase-dp-popup');
+        var trigger = document.getElementById('showcase-dp-trigger');
+        var isOpen = !popup.classList.contains('hidden');
+        if (isOpen) {
+          popup.classList.add('hidden');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          popup.classList.remove('hidden');
+          trigger.setAttribute('aria-expanded', 'true');
+          dpRender();
+          setTimeout(function() {
+            var focus = popup.querySelector('[aria-selected="true"]') || popup.querySelector('[aria-current="date"]') || popup.querySelector('[role="gridcell"]');
+            if (focus) focus.focus();
+          }, 50);
+        }
+      };
+      window.showcaseDpPrev = function() { dpMonth--; if (dpMonth < 0) { dpMonth = 11; dpYear--; } dpRender(); };
+      window.showcaseDpNext = function() { dpMonth++; if (dpMonth > 11) { dpMonth = 0; dpYear++; } dpRender(); };
+      window.showcaseDpToday = function() { dpYear = dpToday.getFullYear(); dpMonth = dpToday.getMonth(); dpSelect(dpToday.getFullYear(), dpToday.getMonth(), dpToday.getDate()); };
+
+      // Outside click
+      document.addEventListener('click', function(e) {
+        var wrapper = document.getElementById('showcase-dp-wrapper');
+        var popup = document.getElementById('showcase-dp-popup');
+        if (wrapper && popup && !wrapper.contains(e.target) && !popup.classList.contains('hidden')) {
+          popup.classList.add('hidden');
+          document.getElementById('showcase-dp-trigger').setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Keyboard nav in grid
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          var popup = document.getElementById('showcase-dp-popup');
+          if (popup && !popup.classList.contains('hidden')) {
+            popup.classList.add('hidden');
+            document.getElementById('showcase-dp-trigger').setAttribute('aria-expanded', 'false');
+            document.getElementById('showcase-dp-trigger').focus();
+            e.stopPropagation();
+          }
+        }
+        if (!e.target.closest('#showcase-dp-grid')) return;
+        var cells = Array.from(document.querySelectorAll('#showcase-dp-grid [role="gridcell"]'));
+        var idx = cells.indexOf(e.target);
+        if (idx === -1) return;
+        var ni = -1;
+        if (e.key === 'ArrowRight') ni = Math.min(idx + 1, cells.length - 1);
+        else if (e.key === 'ArrowLeft') ni = Math.max(idx - 1, 0);
+        else if (e.key === 'ArrowDown') ni = Math.min(idx + 7, cells.length - 1);
+        else if (e.key === 'ArrowUp') ni = Math.max(idx - 7, 0);
+        else if (e.key === 'PageUp') { e.preventDefault(); showcaseDpPrev(); return; }
+        else if (e.key === 'PageDown') { e.preventDefault(); showcaseDpNext(); return; }
+        if (ni >= 0 && ni !== idx) { e.preventDefault(); cells[ni].focus(); }
+      });
+
+      dpRender();
+    })();
 
     /* --- Empty State Variant Switcher --- */
     function showEmptyVariant(variant) {

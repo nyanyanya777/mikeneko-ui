@@ -54,7 +54,7 @@
 
 ---
 
-## 4. スタイル
+## 4. 振る舞い
 
 ### Container
 
@@ -84,7 +84,21 @@ transition-opacity duration-200
 
 ---
 
-## 5. サンプルコード
+## 5. アクセシビリティ
+
+| 属性 | 値 |
+|------|------|
+| `role` | `"tooltip"` |
+| `aria-describedby` | トリガー要素に設定（tooltip の id を参照） |
+| 表示トリガー | hover + focus（キーボードa11y 対応） |
+| Escape キー | 全ツールチップを非表示にする |
+| アイコンボタン | `aria-label` 必須（テキストがないため） |
+
+> 共通: prohibited.md「カラー」「アクセシビリティ」参照
+
+---
+
+## 6. Tailwind サンプル
 
 ### 基本（Top）
 
@@ -154,15 +168,3 @@ document.addEventListener('keydown', function(e) {
   }
 });
 ```
-
----
-
-## 6. アクセシビリティ
-
-| 属性 | 値 |
-|------|------|
-| `role` | `"tooltip"` |
-| `aria-describedby` | トリガー要素に設定（tooltip の id を参照） |
-| 表示トリガー | hover + focus（キーボードa11y 対応） |
-| Escape キー | 全ツールチップを非表示にする |
-| アイコンボタン | `aria-label` 必須（テキストがないため） |
