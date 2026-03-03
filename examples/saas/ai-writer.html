@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WriteFlow — AIライティングアシスタント</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
+            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
+            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif']
+        }
+      }
+    }
+  }
+  </script>
+  <style>.text-body { color: #3d4b5f; }</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <div class="flex h-screen">
+
+    <!-- ========== Sidebar ========== -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col h-screen">
+
+      <!-- Zone 1: Header -->
+      <div class="px-4 py-5">
+        <a href="#" class="flex items-center gap-2.5 text-xl font-bold text-slate-900">
+          <!-- Pen/Quill icon -->
+          <svg class="w-7 h-7 text-primary-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+            <path d="m15 5 4 4"/>
+          </svg>
+          WriteFlow
+        </a>
+      </div>
+
+      <!-- Zone 2: Navigation -->
+      <nav aria-label="メインナビゲーション" class="flex-1 px-3 space-y-1 overflow-y-auto">
+        <!-- Active: ダッシュボード -->
+        <a href="#" aria-current="page" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          ダッシュボード
+        </a>
+
+        <!-- ドキュメント -->
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <line x1="10" y1="9" x2="8" y2="9"/>
+          </svg>
+          ドキュメント
+        </a>
+
+        <!-- テンプレート -->
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18"/>
+            <path d="M9 21V9"/>
+          </svg>
+          テンプレート
+        </a>
+
+        <!-- ブランドボイス -->
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+          </svg>
+          ブランドボイス
+        </a>
+
+        <!-- 使用量 -->
+        <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+          <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/>
+            <path d="m19 9-5 5-4-4-3 3"/>
+          </svg>
+          使用量
+        </a>
+      </nav>
+
+      <!-- Zone 3: Footer -->
+      <div class="mt-auto border-t border-slate-200 px-4 py-4">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="山田 太郎">山田</span>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-slate-900 truncate">山田 太郎</p>
+            <p class="text-xs text-slate-500 truncate">Proプラン</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== Main Content ========== -->
+    <main class="flex-1 overflow-y-auto">
+      <div class="max-w-5xl mx-auto px-8 py-12">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="パンくずリスト" class="mb-6">
+          <ol class="flex items-center gap-2 text-sm">
+            <li>
+              <a href="#" class="text-slate-500 hover:text-slate-700 transition-colors">ダッシュボード</a>
+            </li>
+            <li class="text-slate-400" aria-hidden="true">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </li>
+            <li>
+              <span class="text-slate-900 font-medium" aria-current="page">ドキュメント</span>
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="flex items-center justify-between mb-8">
+          <h1 class="text-3xl font-bold text-slate-900">ドキュメント</h1>
+          <button type="button" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 cursor-pointer transition-colors">
+            <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            新規作成
+          </button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="border-b border-slate-200 mb-6">
+          <div class="flex gap-6" role="tablist" aria-label="ドキュメントフィルター">
+            <button role="tab" aria-selected="true" class="text-sm font-semibold text-primary-600 border-b-2 border-primary-600 pb-3 cursor-pointer">すべて</button>
+            <button role="tab" aria-selected="false" class="text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 pb-3 cursor-pointer">下書き</button>
+            <button role="tab" aria-selected="false" class="text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 pb-3 cursor-pointer">公開済み</button>
+            <button role="tab" aria-selected="false" class="text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 pb-3 cursor-pointer">アーカイブ</button>
+          </div>
+        </div>
+
+        <!-- Search + Filter -->
+        <div class="flex flex-wrap items-end gap-4 mb-8">
+          <div class="leading-normal flex-1 min-w-[240px]">
+            <label for="search-docs" class="block text-sm font-medium text-slate-700 mb-1">検索</label>
+            <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input id="search-docs" type="text" placeholder="ドキュメントを検索..." class="w-full pl-10 pr-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600 focus:outline-none transition-colors">
+            </div>
+          </div>
+          <div class="leading-normal min-w-[180px]">
+            <label for="filter-category" class="block text-sm font-medium text-slate-700 mb-1">カテゴリ</label>
+            <div class="relative">
+              <select id="filter-category" class="w-full appearance-none pl-3 pr-10 py-2 text-base border border-slate-300 rounded-lg bg-white text-slate-900 focus:ring-2 focus:ring-primary-500/50 focus:outline-none transition-colors">
+                <option value="">すべて</option>
+                <option value="blog">ブログ</option>
+                <option value="sns">SNS</option>
+                <option value="email">メール</option>
+                <option value="ads">広告</option>
+              </select>
+              <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Document Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+
+          <!-- Card 1: 2026年春のマーケティング戦略 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex items-start justify-between mb-3">
+              <span class="bg-primary-50 text-primary-700 px-2.5 py-0.5 rounded-full text-xs font-medium">ブログ</span>
+              <button type="button" aria-label="その他の操作" class="w-10 h-10 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <svg class="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="1"/>
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="12" cy="19" r="1"/>
+                </svg>
+              </button>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">2026年春のマーケティング戦略</h3>
+            <p class="text-sm text-body mb-4">春のキャンペーンに向けた包括的なマーケティング戦略ドキュメント。ターゲット設定からKPIまでを網羅。</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="田中">田中</span>
+                <div>
+                  <p class="text-xs text-slate-500">3,200文字</p>
+                  <p class="text-xs text-slate-400">更新 2時間前</p>
+                </div>
+              </div>
+              <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 2: 新機能リリースノート v2.5 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex items-start justify-between mb-3">
+              <span class="bg-violet-50 text-violet-700 px-2.5 py-0.5 rounded-full text-xs font-medium">メール</span>
+              <button type="button" aria-label="その他の操作" class="w-10 h-10 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <svg class="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="1"/>
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="12" cy="19" r="1"/>
+                </svg>
+              </button>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">新機能リリースノート v2.5</h3>
+            <p class="text-sm text-body mb-4">v2.5で追加された新機能の紹介メール。AIアシスタント機能の強化ポイントを中心に解説。</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="佐藤">佐藤</span>
+                <div>
+                  <p class="text-xs text-slate-500">1,800文字</p>
+                  <p class="text-xs text-slate-400">更新 5時間前</p>
+                </div>
+              </div>
+              <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 3: Instagram投稿：新商品紹介 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex items-start justify-between mb-3">
+              <span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium">SNS</span>
+              <button type="button" aria-label="その他の操作" class="w-10 h-10 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <svg class="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="1"/>
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="12" cy="19" r="1"/>
+                </svg>
+              </button>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Instagram投稿：新商品紹介</h3>
+            <p class="text-sm text-body mb-4">新商品のInstagram投稿テキスト。ハッシュタグ戦略とキャプション案を含む。</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-amber-50 text-amber-700 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="鈴木">鈴木</span>
+                <div>
+                  <p class="text-xs text-slate-500">280文字</p>
+                  <p class="text-xs text-slate-400">更新 1日前</p>
+                </div>
+              </div>
+              <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 4: Google広告：春キャンペーン -->
+          <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <div class="flex items-start justify-between mb-3">
+              <span class="bg-amber-50 text-amber-700 px-2.5 py-0.5 rounded-full text-xs font-medium">広告</span>
+              <button type="button" aria-label="その他の操作" class="w-10 h-10 inline-flex items-center justify-center rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                <svg class="w-5 h-5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="5" r="1"/>
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="12" cy="19" r="1"/>
+                </svg>
+              </button>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Google広告：春キャンペーン</h3>
+            <p class="text-sm text-body mb-4">春のプロモーション向けGoogle広告コピー。見出しと説明文の複数バリエーション。</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="田中">田中</span>
+                <div>
+                  <p class="text-xs text-slate-500">150文字</p>
+                  <p class="text-xs text-slate-400">更新 2日前</p>
+                </div>
+              </div>
+              <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Alert (Info) + Progress Bar -->
+        <div class="bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4 mb-4">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <div class="flex-1">
+              <p class="text-sm font-medium">今月の残り生成文字数: 45,000 / 100,000文字</p>
+              <div class="mt-3">
+                <div class="bg-primary-200 rounded-full h-2" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" aria-label="生成文字数の使用量">
+                  <div class="bg-primary-600 rounded-full h-2" style="width: 55%;"></div>
+                </div>
+                <p class="text-xs mt-1.5 text-primary-700">55% 使用済み</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
