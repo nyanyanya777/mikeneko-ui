@@ -2,4 +2,5 @@
 .claude/
 .vscode/
 node_modules/
+dist/
 verification/

@@ -3,7 +3,7 @@ tailwind.config = {
     extend: {
       colors: {
         primary: {
-          50:  '#eff6ff',
+          50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
           300: '#93c5fd',
@@ -22,13 +22,13 @@ tailwind.config = {
         mono: ['JetBrains Mono','SF Mono','monospace'],
       },
       fontSize: {
-        xs:   ['0.8125rem', { lineHeight: '1.4' }],
-        sm:   ['0.9375rem', { lineHeight: '1.7' }],
-        base: ['1.125rem',  { lineHeight: '2.0' }],
-        lg:   ['1.25rem',   { lineHeight: '1.5' }],
-        xl:   ['1.375rem',  { lineHeight: '1.4' }],
-        '2xl': ['1.625rem', { lineHeight: '1.4' }],
-        '3xl': ['2rem',     { lineHeight: '1.4' }],
+        xs: ['0.8125rem', { lineHeight: '1.4' }],
+        sm: ['0.9375rem', { lineHeight: '1.7' }],
+        base: ['1.125rem', { lineHeight: '2.0' }],
+        lg: ['1.25rem', { lineHeight: '1.5' }],
+        xl: ['1.375rem', { lineHeight: '1.4' }],
+        2xl: ['1.625rem', { lineHeight: '1.4' }],
+        3xl: ['2rem', { lineHeight: '1.4' }],
       },
     },
   },

@@ -8,9 +8,12 @@
 |--------|------------|------|
 | クイック | CLAUDE.md のみ | 単体UIの生成（ボタン、カード等） |
 | 標準 | + theme.md + 関連 component md | ページ単位の生成 |
+| MCP | MCP ツール（`get_token` / `get_component`）| AI ツール統合 |
 | フル | 全ファイル（下記の読み順に従う） | 新規プロジェクト構築・DS変更 |
 
 > クイックリファレンスだけで基本的なUIは生成可能。コンポーネント仕様が必要な場合のみ該当 md を追加で読み込む。
+
+**機械可読データ**: `tokens/tokens.json`（~120トークン）+ `metadata/components.json`（27コンポーネント）
 
 **フル読み順**: CLAUDE.md → design_philosophy.md → theme.md → foundations/ → components/ → patterns/ → prohibited.md（プロジェクト側に `theme.md` がある場合はそちらを優先）
 

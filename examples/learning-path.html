@@ -5,7 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kotoba — ことばを学ぼう</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../scripts/ds-config.js"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: {
+            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
+            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
+            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+          },
+          body: '#3d4b5f',
+        },
+        fontFamily: {
+          sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif'],
+          mono: ['JetBrains Mono','SF Mono','monospace'],
+        },
+        fontSize: {
+          xs: ['0.8125rem', { lineHeight: '1.4' }],
+          sm: ['0.9375rem', { lineHeight: '1.7' }],
+          base: ['1.125rem', { lineHeight: '2.0' }],
+          lg: ['1.25rem', { lineHeight: '1.5' }],
+          xl: ['1.375rem', { lineHeight: '1.4' }],
+          '2xl': ['1.625rem', { lineHeight: '1.4' }],
+          '3xl': ['2rem', { lineHeight: '1.4' }],
+        },
+      },
+    },
+  }
+  </script>
   <link rel="stylesheet" href="../scripts/ds-theme.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
