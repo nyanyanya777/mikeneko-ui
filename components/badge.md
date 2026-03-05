@@ -81,26 +81,26 @@
 ### ステータスバッジ
 
 ```html
+<!-- デフォルト/ニュートラル -->
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">未着手</span>
+
 <!-- 成功/完了 -->
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
 
 <!-- 警告/進行中 -->
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
 
 <!-- エラー/ブロック -->
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700">ブロック</span>
-
-<!-- ニュートラル/未着手 -->
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">未着手</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700">ブロック</span>
 
 <!-- アクセント -->
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">新規</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">新規</span>
 ```
 
 ### ドット付きバッジ
 
 ```html
-<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">
   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
   オンライン
 </span>
@@ -115,7 +115,7 @@
 ### アウトラインバッジ
 
 ```html
-<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border border-slate-300 text-slate-700">下書き</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-slate-300 text-slate-700">下書き</span>
 ```
 
 ### 削除可能タグ
@@ -126,8 +126,8 @@
 
 ```html
 <div class="flex flex-wrap gap-2">
-  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
-  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">フロントエンド</span>
-  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">優先度: 高</span>
+  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
+  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">フロントエンド</span>
+  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">優先度: 高</span>
 </div>
 ```

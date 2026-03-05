@@ -110,7 +110,7 @@ transition-opacity duration-200
     onmouseleave="hideTooltip('tooltip-1')"
     onfocus="showTooltip('tooltip-1')"
     onblur="hideTooltip('tooltip-1')"
-    class="inline-flex items-center justify-center gap-2 px-4 py-2 text-base font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+    class="inline-flex items-center justify-center gap-2 px-4 py-2 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     ボタン
   </button>
   <div id="tooltip-1" role="tooltip"

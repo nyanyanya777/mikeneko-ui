@@ -137,7 +137,7 @@ Inactive:  ┌──────────────────┐
 
 ```html
 <!-- Primary -->
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
   デザイン
   <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -145,7 +145,7 @@ Inactive:  ┌──────────────────┐
 </span>
 
 <!-- Slate -->
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
   アーカイブ
   <button type="button" aria-label="アーカイブを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -153,7 +153,7 @@ Inactive:  ┌──────────────────┐
 </span>
 
 <!-- Emerald -->
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">
   完了済み
   <button type="button" aria-label="完了済みを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-emerald-400 hover:text-emerald-600 hover:bg-emerald-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -161,7 +161,7 @@ Inactive:  ┌──────────────────┐
 </span>
 
 <!-- Amber -->
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
   優先
   <button type="button" aria-label="優先を削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-amber-400 hover:text-amber-600 hover:bg-amber-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -169,7 +169,7 @@ Inactive:  ┌──────────────────┐
 </span>
 
 <!-- Red -->
-<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700">
   緊急
   <button type="button" aria-label="緊急を削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-red-400 hover:text-red-600 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -196,13 +196,13 @@ Inactive:  ┌──────────────────┐
 
 ```html
 <div role="list" class="flex flex-wrap gap-2">
-  <span role="listitem" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+  <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     デザイン
     <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
-  <span role="listitem" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+  <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     開発
     <button type="button" aria-label="開発を削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -237,13 +237,13 @@ Inactive:  ┌──────────────────┐
 ```html
 <div class="w-full border border-slate-300 rounded-lg focus-within:ring-2 focus-within:ring-primary-500/50 focus-within:border-primary-500 px-3 py-2 flex flex-wrap gap-2 items-center">
   <!-- 既存タグ -->
-  <span role="listitem" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+  <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     JavaScript
     <button type="button" aria-label="JavaScriptを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
-  <span role="listitem" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+  <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     React
     <button type="button" aria-label="Reactを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>

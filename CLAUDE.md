@@ -82,13 +82,13 @@ tailwind.config = {
 ```
 カード             : bg-white rounded-xl border border-slate-200 p-6 shadow-sm
 カードグリッド     : grid grid-cols-2 md:grid-cols-3 gap-6
-CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 cursor-pointer
-サブボタン         : inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 cursor-pointer
+CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 cursor-pointer
+サブボタン         : inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 cursor-pointer
 入力欄             : w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600
 セレクト           : appearance-none pl-3 pr-10 + relative wrapper + SVG chevron（absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4）← ネイティブ矢印は使用禁止
 横並びフォーム     : flex flex-wrap items-end gap-4（外枠）+ 各 div.leading-normal > label + 要素 h-11 leading-normal（py-2 外す）+ ボタン h-11 inline-flex items-center（→ patterns/form.md 必読）
-バッジ（成功）     : bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full text-xs font-medium
-タグ（削除可能）   : inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium + ×ボタン
+バッジ（デフォルト）: bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium
+タグ（削除可能）   : inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium + ×ボタン
 フィルターチップ   : inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border cursor-pointer + aria-selected
 Alert（Info）      : bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4
 Alert（Error）     : bg-red-50 border border-red-200 text-red-800 rounded-lg p-4

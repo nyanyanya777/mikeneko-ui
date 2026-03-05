@@ -164,7 +164,7 @@
 <button
   type="button"
   aria-haspopup="dialog"
-  class="px-4 py-2 text-base font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors">
+  class="px-4 py-2 text-[1rem] font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors">
   削除する
 </button>
 
@@ -190,8 +190,8 @@
     </div>
     <!-- Footer -->
     <div class="px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
-      <button class="px-4 py-2 text-base font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
-      <button class="px-4 py-2 text-base font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors">削除する</button>
+      <button class="px-4 py-2 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
+      <button class="px-4 py-2 text-[1rem] font-medium text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors">削除する</button>
     </div>
   </div>
 </div>
@@ -242,8 +242,8 @@
       </div>
       <!-- Footer -->
       <div class="px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
-        <button type="button" class="px-4 py-2 text-base font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
-        <button type="submit" class="px-4 py-2 text-base font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
+        <button type="button" class="px-4 py-2 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
+        <button type="submit" class="px-4 py-2 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
       </div>
     </form>
   </div>
@@ -280,8 +280,8 @@
     </div>
     <!-- Footer -->
     <div class="px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
-      <button class="px-4 py-2 text-base font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">戻る</button>
-      <button class="px-4 py-2 text-base font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 transition-colors">ページを離れる</button>
+      <button class="px-4 py-2 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">戻る</button>
+      <button class="px-4 py-2 text-[1rem] font-medium text-white bg-amber-600 rounded-lg hover:bg-amber-700 transition-colors">ページを離れる</button>
     </div>
   </div>
 </div>

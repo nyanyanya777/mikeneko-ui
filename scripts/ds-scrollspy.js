@@ -11,7 +11,9 @@
         if (entry.isIntersecting) {
           var id = entry.target.getAttribute('data-section');
           navLinks.forEach(function(link) {
+            var wasActive = link.classList.contains('active');
             link.classList.remove('active');
+            if (wasActive) link.classList.add('ds-visited');
             if (link.getAttribute('data-nav') === id) {
               link.classList.add('active');
               // Scroll active link into view in sidebar
@@ -47,15 +49,25 @@
     });
   }
 
-  // --- Scroll Progress Bar ---
+  // --- Scroll Progress Bar + Header Scroll State ---
   var progressBar = document.getElementById('scroll-progress');
-  if (progressBar) {
+  var header = document.getElementById('showcase-header');
+  if (progressBar || header) {
     window.addEventListener('scroll', function() {
       var h = document.documentElement;
       var scrollTop = h.scrollTop || document.body.scrollTop;
-      var scrollHeight = h.scrollHeight - h.clientHeight;
-      var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      progressBar.style.width = pct + '%';
+      if (progressBar) {
+        var scrollHeight = h.scrollHeight - h.clientHeight;
+        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        progressBar.style.width = pct + '%';
+      }
+      if (header) {
+        if (scrollTop > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
     }, { passive: true });
   }
 

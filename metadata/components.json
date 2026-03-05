@@ -8,12 +8,12 @@
       "description": "CTA / secondary / icon button。3階層ヒエラルキー。",
       "docPath": "components/button.md",
       "variants": [
-        { "name": "contained", "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
-        { "name": "outlined",  "tailwind": "inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
-        { "name": "neutral",   "tailwind": "inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-base font-medium hover:bg-slate-200 transition-colors" },
-        { "name": "lighted",   "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-100 transition-colors" },
-        { "name": "danger",    "tailwind": "inline-flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-colors" },
-        { "name": "subtle",    "tailwind": "inline-flex items-center justify-center gap-2 text-slate-700 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" }
+        { "name": "contained", "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
+        { "name": "outlined",  "tailwind": "inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
+        { "name": "neutral",   "tailwind": "inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-slate-200 transition-colors" },
+        { "name": "lighted",   "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-100 transition-colors" },
+        { "name": "danger",    "tailwind": "inline-flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-colors" },
+        { "name": "subtle",    "tailwind": "inline-flex items-center justify-center gap-2 text-slate-700 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" }
       ],
       "sizes": [
         { "name": "large",  "tailwind": "px-5 py-2.5 text-base" },
@@ -26,7 +26,7 @@
         "focusRing": "focus:ring-2 focus:ring-primary-500/50"
       },
       "prohibited": ["py-0.5 (minimum py-1.5)", "同スタイルボタン並列配置", "アイコンボタンのaria-label省略"],
-      "htmlSample": "<button class=\"inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 cursor-pointer\">保存</button>"
+      "htmlSample": "<button class=\"inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 cursor-pointer\">保存</button>"
     },
     {
       "id": "card",
@@ -271,11 +271,11 @@
       "description": "ステータス・カウント表示。Status / Dot / Count / Outline の4バリエーション。",
       "docPath": "components/badge.md",
       "variants": [
-        { "name": "success", "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700" },
-        { "name": "warning", "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700" },
-        { "name": "danger",  "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700" },
-        { "name": "neutral", "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
-        { "name": "accent",  "tailwind": "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700" }
+        { "name": "neutral", "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
+        { "name": "success", "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700" },
+        { "name": "warning", "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700" },
+        { "name": "danger",  "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700" },
+        { "name": "accent",  "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700" }
       ],
       "sizes": [],
       "accessibility": {
@@ -284,7 +284,7 @@
         "focusRing": "N/A"
       },
       "prohibited": ["色だけで情報伝達"],
-      "htmlSample": "<span class=\"inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700\">完了</span>"
+      "htmlSample": "<span class=\"inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700\">未着手</span>"
     },
     {
       "id": "tag",
@@ -293,8 +293,8 @@
       "description": "削除可能なタグ / フィルターチップ。",
       "docPath": "components/tag.md",
       "variants": [
-        { "name": "basic",       "tailwind": "inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
-        { "name": "removable",   "tailwind": "inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
+        { "name": "basic",       "tailwind": "inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
+        { "name": "removable",   "tailwind": "inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700" },
         { "name": "filter-chip", "tailwind": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border border-slate-200 cursor-pointer bg-white text-slate-700" }
       ],
       "sizes": [],
@@ -304,7 +304,7 @@
         "focusRing": "focus:ring-2 focus:ring-primary-500/50"
       },
       "prohibited": ["削除ボタンのaria-label省略"],
-      "htmlSample": "<div class=\"inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700\"><span>タグ</span><button aria-label=\"削除\" class=\"text-slate-500 hover:text-slate-700\">×</button></div>"
+      "htmlSample": "<div class=\"inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700\"><span>タグ</span><button aria-label=\"削除\" class=\"text-slate-500 hover:text-slate-700\">×</button></div>"
     },
     {
       "id": "table",

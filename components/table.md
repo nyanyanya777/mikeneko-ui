@@ -140,14 +140,14 @@
       <tr class="hover:bg-gray-50 transition-colors">
         <td class="py-3 px-4 text-slate-900">アイテムA</td>
         <td class="py-3 px-4">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
         </td>
         <td class="py-3 px-4 text-body">2026-01-15</td>
       </tr>
       <tr class="hover:bg-gray-50 transition-colors">
         <td class="py-3 px-4 text-slate-900">アイテムB</td>
         <td class="py-3 px-4">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
         </td>
         <td class="py-3 px-4 text-body">2026-01-20</td>
       </tr>
@@ -173,7 +173,7 @@
       <tr class="hover:bg-gray-50 transition-colors">
         <td class="py-3 px-4 text-slate-900">アイテムA</td>
         <td class="py-3 px-4">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">完了</span>
         </td>
         <td class="py-3 px-4 text-body">2026-01-15</td>
         <td class="py-3 px-4 text-right">
@@ -194,7 +194,7 @@
       <tr class="hover:bg-gray-50 transition-colors">
         <td class="py-3 px-4 text-slate-900">アイテムB</td>
         <td class="py-3 px-4">
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">進行中</span>
         </td>
         <td class="py-3 px-4 text-body">2026-01-20</td>
         <td class="py-3 px-4 text-right">

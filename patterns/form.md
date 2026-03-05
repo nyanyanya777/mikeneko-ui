@@ -49,11 +49,11 @@
   <!-- アクション -->
   <div class="flex justify-end gap-3 pt-4">
     <button type="button"
-      class="px-4 py-2 text-base font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
+      class="px-4 py-2 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
       キャンセル
     </button>
     <button type="submit"
-      class="px-4 py-2 text-base font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+      class="px-4 py-2 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
       送信する
     </button>
   </div>
@@ -103,11 +103,11 @@
   <!-- アクション -->
   <div class="flex justify-end gap-3 pt-4 border-t border-slate-200">
     <button type="button"
-      class="px-4 py-2 text-base font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
+      class="px-4 py-2 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">
       キャンセル
     </button>
     <button type="submit"
-      class="px-4 py-2 text-base font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+      class="px-4 py-2 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
       保存する
     </button>
   </div>

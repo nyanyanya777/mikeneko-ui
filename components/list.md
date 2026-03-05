@@ -203,7 +203,7 @@
   <div class="flex items-center justify-between px-4 py-3">
     <dt class="text-sm text-body">優先度</dt>
     <dd>
-      <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
         高
       </span>
     </dd>
@@ -311,7 +311,7 @@
     <div class="min-w-0 flex-1">
       <h3 class="text-sm font-medium text-slate-900 truncate">MVP検証エピック</h3>
     </div>
-    <span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium flex-shrink-0 bg-emerald-50 text-emerald-700">
+    <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0 bg-emerald-50 text-emerald-700">
       完了
     </span>
   </li>
@@ -319,7 +319,7 @@
     <div class="min-w-0 flex-1">
       <h3 class="text-sm font-medium text-slate-900 truncate">カンバンUI改善</h3>
     </div>
-    <span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium flex-shrink-0 bg-amber-50 text-amber-700">
+    <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0 bg-amber-50 text-amber-700">
       進行中
     </span>
   </li>
@@ -327,7 +327,7 @@
     <div class="min-w-0 flex-1">
       <h3 class="text-sm font-medium text-slate-900 truncate">KPIダッシュボード</h3>
     </div>
-    <span class="ml-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium flex-shrink-0 bg-slate-100 text-slate-700">
+    <span class="ml-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium flex-shrink-0 bg-slate-100 text-slate-700">
       未着手
     </span>
   </li>
