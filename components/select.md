@@ -123,7 +123,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「フォーム」参照
+> 共通: `foundations/prohibited.md`「フォーム」参照
 
 - ラベルなしのセレクト
 - `<option>` の `value=""` をプレースホルダーとして使い、送信可能にすること
@@ -133,7 +133,7 @@
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 ### 6-1. 基本
 

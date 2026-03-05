@@ -13,7 +13,7 @@ font-mono: "JetBrains Mono", "SF Mono", monospace
 
 Tailwind CSS 4のデフォルト`font-sans`を使用。日本語環境ではシステムフォントにフォールバック。
 
-> プロジェクト固有のフォントは `theme.md` の Font Stack で上書き可能。
+> プロジェクト固有のフォントは `foundations/theme.md` の Font Stack で上書き可能。
 
 ---
 
@@ -96,4 +96,4 @@ CSSベースレイヤーで以下を適用:
 
 ## 禁止パターン
 
-> `prohibited.md`「タイポグラフィ」参照
+> `foundations/prohibited.md`「タイポグラフィ」参照

@@ -138,7 +138,7 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「フォーム」「カラー」参照
+> 共通: `foundations/prohibited.md`「フォーム」「カラー」参照
 
 - 単一のラジオボタンの使用（2つ以上の選択肢が必要。ON/OFF は Checkbox か Toggle Switch を使う）
 
@@ -146,7 +146,7 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 > **行間の注意**: `body { line-height: 2.0 }` 環境では、ラベル + 説明テキストを含む `<div>` に `leading-normal` を付与して行間をリセットすること。詳細は `foundations/typography.md` 参照。
 

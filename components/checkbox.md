@@ -121,13 +121,13 @@ Checked → Unchecked（クリックで全解除）
 
 ### 禁止事項
 
-> `prohibited.md`「フォーム」「カラー」参照
+> `foundations/prohibited.md`「フォーム」「カラー」参照
 
 ---
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 > **行間の注意**: `body { line-height: 2.0 }` 環境では、チェックボックスグループの包含 `<div>` に `leading-normal` を付与して行間をリセットすること。詳細は `foundations/typography.md` 参照。
 

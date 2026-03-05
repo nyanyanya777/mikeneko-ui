@@ -92,7 +92,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「カラー」参照
+> 共通: `foundations/prohibited.md`「カラー」参照
 
 - 色だけで通知の種類を伝達すること（アイコンを必ず併用）
 - 一時的なフィードバックに Alert を使うこと（Toast を使用する）
@@ -102,7 +102,7 @@
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 > アイコンは `assets/icons/` の Charcoal Icons を使用（fill ベース）。
 
 ### 6-1. Info

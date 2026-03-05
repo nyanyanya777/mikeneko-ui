@@ -96,7 +96,7 @@ Line : border-l border-slate-200 self-stretch
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「ディバイダー」参照
+> 共通: `foundations/prohibited.md`「ディバイダー」参照
 
 - `<div>` + `border-b` で水平区切りを実装すること（`<hr>` を使用する）
 - `border-slate-400` 以上の濃い区切り線（`border-slate-200` / `border-slate-300` のみ）

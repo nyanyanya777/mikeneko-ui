@@ -129,7 +129,7 @@
 
 ### 4-3. フレームワーク連携
 
-フレームワーク固有の実装は `theme.md` の Tech Stack に従う。
+フレームワーク固有の実装は `foundations/theme.md` の Tech Stack に従う。
 
 ### 4-4. モーダルの重ね表示
 

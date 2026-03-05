@@ -27,7 +27,7 @@ export function loadComponents(): ComponentsData {
   return componentsCache!;
 }
 
-/** Built-in prohibition rules extracted from prohibited.md */
+/** Built-in prohibition rules extracted from foundations/prohibited.md */
 export function getProhibitionRules(): ProhibitionRule[] {
   return [
     { pattern: "text-black", reason: "純黒はコントラストが強すぎる", alternative: "text-slate-900" },

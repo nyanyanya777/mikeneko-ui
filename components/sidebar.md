@@ -170,7 +170,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「スペーシング・レイアウト」「アクセシビリティ」参照
+> 共通: `foundations/prohibited.md`「スペーシング・レイアウト」「アクセシビリティ」参照
 
 - `aria-label` なしの `<nav>` 要素
 - `aria-current="page"` なしの Active 状態（色のみでの伝達）
@@ -182,7 +182,7 @@
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 ### 6-1. 標準サイドバー（3ゾーン + グループ）
 

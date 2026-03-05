@@ -8,7 +8,7 @@
 ## 1. 原則
 
 - **Dropdown パターン踏襲**: テキストフィールド風トリガー + ポップアップ（`dropdown.md` と同じ z-index・shadow 体系）
-- **`YYYY-MM-DD` 固定**: 表示・格納ともに ISO 8601 形式（`theme.md` 準拠）
+- **`YYYY-MM-DD` 固定**: 表示・格納ともに ISO 8601 形式（`foundations/theme.md` 準拠）
 - **キーボード完全対応**: 矢印キーでの日付ナビ、Enter で選択、Escape で閉じる
 - **ネイティブ不使用**: `<input type="date">` はブラウザ間で表示が不統一のため、カスタム実装する
 
@@ -169,7 +169,7 @@ Button         : w-full text-center text-sm font-medium text-primary-600 hover:t
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「Date Picker」参照
+> 共通: `foundations/prohibited.md`「Date Picker」参照
 
 - `<input type="date">` のネイティブ表示を使用すること
 - カレンダーポップアップに `shadow-lg` 以上を使用すること（`shadow-md` を使用する）

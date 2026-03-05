@@ -120,13 +120,13 @@ Enabled → Disabled（条件未達時）
 
 ### 禁止事項
 
-> `prohibited.md`「ボタン」「カラー」参照
+> `foundations/prohibited.md`「ボタン」「カラー」参照
 
 ---
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 ### Contained（Primary CTA）
 

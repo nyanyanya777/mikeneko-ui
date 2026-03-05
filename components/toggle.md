@@ -109,7 +109,7 @@ ON → OFF（クリック / Space / Enter）
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「フォーム」「カラー」参照
+> 共通: `foundations/prohibited.md`「フォーム」「カラー」参照
 
 - ラベルなしのトグルスイッチ
 - 色だけで ON/OFF を伝達すること（Thumb の位置変化を必ず併用）
@@ -120,7 +120,7 @@ ON → OFF（クリック / Space / Enter）
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 > **行間の注意**: `body { line-height: 2.0 }` 環境では、ラベル + 説明テキストを含む `<div>` に `leading-normal` を付与して行間をリセットすること。詳細は `foundations/typography.md` 参照。
 

@@ -23,7 +23,7 @@
 
 ## 哲学由来の禁止（melta UI）
 
-> 全項目は `design_philosophy.md` の「Avoid」セクションを参照。以下は実装上とくに重要な項目のみ抜粋。
+> 全項目は `foundations/design_philosophy.md` の「Avoid」セクションを参照。以下は実装上とくに重要な項目のみ抜粋。
 
 | 禁止 | 理由 | 代替 |
 |------|------|------|

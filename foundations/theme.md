@@ -1,7 +1,7 @@
 # Theme Configuration
 
 > プロジェクトごとのカスタマイズはこのファイルで完結する。
-> プロジェクト側に `design-system/theme.md` がある場合はそちらの値で上書きされる。
+> プロジェクト側に `design-system/foundations/theme.md` がある場合はそちらの値で上書きされる。
 
 ---
 

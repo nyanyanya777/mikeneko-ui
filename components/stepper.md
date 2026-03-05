@@ -122,7 +122,7 @@ Path: M5 13l4 4L19 7（stroke-linecap="round" stroke-linejoin="round"）
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「ステッパー」参照
+> 共通: `foundations/prohibited.md`「ステッパー」参照
 
 - 色だけでステップ状態を区別すること（アイコン + ボーダー + 背景を併用する）
 - `aria-current="step"` を Active ステップに付与しないこと

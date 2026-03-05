@@ -14,7 +14,7 @@ MCP サーバー + 機械可読トークン（`tokens.json`）により、Claude
 - **Tailwind CSS 4 ネイティブ** — クラス規約 + セマンティックトークンで構築。ビルドステップ不要
 - **WCAG 2.1 AA 準拠** — テキストコントラスト比 4.5:1 以上を全コンポーネントで保証
 - **27 コンポーネント + 10 ファウンデーション + 5 パターン** — 実用的な SaaS UI を構築可能な規模
-- **単一 HTML ショーケース** — `showcase.html` で全コンポーネントをインタラクティブに確認
+- **単一 HTML ショーケース** — `docs/showcase.html` で全コンポーネントをインタラクティブに確認
 - **ダークモード対応** — CSS 変数ベースのテーマ切り替え
 
 ## クイックスタート
@@ -59,7 +59,7 @@ MCP ツール:
 ### 手動での利用
 
 1. Tailwind CSS 4 をプロジェクトに導入する
-2. `theme.md` に記載された CSS 変数をプロジェクトに追加する
+2. `foundations/theme.md` に記載された CSS 変数をプロジェクトに追加する
 3. 各コンポーネントの `.md` ファイルを参照し、クラスを適用する
 
 ## ディレクトリ構成
@@ -70,11 +70,25 @@ design-system/
 ├── tokens/tokens.json       # デザイントークン SSOT（~120トークン）
 ├── metadata/components.json # 27コンポーネントメタデータ
 ├── src/                     # MCP サーバー（TypeScript）
+├── scripts/                 # ランタイム CSS/JS（HTML から読み込み）
+│   ├── ds-theme.css         # テーマ CSS 変数
+│   ├── ds-config.js         # Tailwind 拡張設定
+│   ├── ds-dark-mode.js      # ダークモード切替
+│   └── ds-scrollspy.js      # ScrollSpy
+├── tools/                   # ビルドスクリプト（npm run generate/validate）
+│   ├── generate-css.ts      # tokens.json → ds-theme.css
+│   ├── generate-tailwind.ts # tokens.json → ds-config.js
+│   └── validate-tokens.ts   # トークン整合性チェック
 ├── .mcp.json                # Claude Code MCP 登録
 ├── .cursor/rules/           # Cursor 用 DS ルール
-├── design_philosophy.md     # 設計思想
-├── theme.md                 # テーマ・CSS変数・ダークモード
-├── foundations/             # 基盤定義（10ファイル）
+├── docs/                    # ドキュメント・ショーケース
+│   ├── showcase.html        # 全コンポーネントショーケース
+│   ├── icons.html           # アイコン一覧
+│   └── internal/            # 内部プロセス文書
+├── foundations/             # 基盤定義（10ファイル + 設計思想・テーマ・禁止パターン）
+│   ├── design_philosophy.md # 設計思想
+│   ├── theme.md             # テーマ・CSS変数・ダークモード
+│   ├── prohibited.md        # 禁止パターン一覧（71項目）
 │   ├── color.md
 │   ├── typography.md
 │   ├── spacing.md
@@ -96,10 +110,11 @@ design-system/
 │   ├── navigation.md
 │   ├── interaction-states.md
 │   └── responsive.md
-├── prohibited.md            # 禁止パターン一覧（71項目）
-├── showcase.html            # 全コンポーネントショーケース
 ├── examples/                # 検証ページ
-│   └── *.html
+│   ├── *.html               # メイン検証ページ（8件）
+│   ├── quality-check/       # 品質チェック（15件）
+│   ├── saas/                # SaaS サンプル（3件）
+│   └── stay/                # 宿泊サービスサンプル（2件）
 └── assets/icons/            # アイコン（Charcoal 207 + Lucide 15）
 ```
 
@@ -108,7 +123,7 @@ design-system/
 | モード | 読むファイル | 用途 |
 |--------|------------|------|
 | クイック | `CLAUDE.md` のみ | 単体UIの生成（ボタン、カード等） |
-| 標準 | + `theme.md` + 関連コンポーネント md | ページ単位の生成 |
+| 標準 | + `foundations/theme.md` + 関連コンポーネント md | ページ単位の生成 |
 | フル | 全ファイル | 新規プロジェクト構築・DS変更 |
 
 ## 設計原則
@@ -119,7 +134,7 @@ design-system/
 4. **Minimal** — 1つの View に使う色は3色まで（背景・アクセント・テキスト）
 5. **Grid** — スペーシングは4の倍数を基本、8の倍数を推奨
 
-詳細は `design_philosophy.md` を参照。
+詳細は `foundations/design_philosophy.md` を参照。
 
 ## コンポーネント一覧
 
@@ -163,6 +178,10 @@ design-system/
 | `examples/article.html` | メディア記事ページ |
 | `examples/learning-path.html` | 学習プラットフォーム |
 | `examples/sidebar-demo.html` | Sidebar コンポーネントデモ |
+| `examples/task-dashboard.html` | タスクダッシュボード |
+| `examples/quality-check/` | 品質チェック 15 ページ（PM・CRM・会計・チャット 等） |
+| `examples/saas/` | SaaS サンプル 3 ページ（AI Writer・API・Design Review） |
+| `examples/stay/` | 宿泊サービスサンプル 2 ページ（一覧・詳細） |
 
 ## ライセンス
 

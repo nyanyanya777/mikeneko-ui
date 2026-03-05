@@ -100,4 +100,4 @@
 
 ## 禁止パターン
 
-> `prohibited.md`「スペーシング・レイアウト」参照
+> `foundations/prohibited.md`「スペーシング・レイアウト」参照

@@ -88,7 +88,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「テーブル」参照
+> 共通: `foundations/prohibited.md`「テーブル」参照
 
 - `<div>` でテーブルを模倣すること（データテーブルには `<table>` を使用する）
 

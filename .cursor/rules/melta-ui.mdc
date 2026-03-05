@@ -47,5 +47,5 @@ globs: ["**/*.html", "**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.svelte"]
 ## Reference
 - Full tokens: `tokens/tokens.json`
 - Component specs: `metadata/components.json`
-- Prohibition rules: `prohibited.md`
-- Design philosophy: `design_philosophy.md`
+- Prohibition rules: `foundations/prohibited.md`
+- Design philosophy: `foundations/design_philosophy.md`

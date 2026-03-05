@@ -89,7 +89,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「カラー」参照
+> 共通: `foundations/prohibited.md`「カラー」参照
 
 - Trigger に `<div>` や `<a>` を使用すること（`<button>` を使用する）
 - パネル内の重要な情報をキーボードで到達不能にすること

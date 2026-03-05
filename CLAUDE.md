@@ -7,7 +7,7 @@
 | モード | 読むファイル | 用途 |
 |--------|------------|------|
 | クイック | CLAUDE.md のみ | 単体UIの生成（ボタン、カード等） |
-| 標準 | + theme.md + 関連 component md | ページ単位の生成 |
+| 標準 | + foundations/theme.md + 関連 component md | ページ単位の生成 |
 | MCP | MCP ツール（`get_token` / `get_component`）| AI ツール統合 |
 | フル | 全ファイル（下記の読み順に従う） | 新規プロジェクト構築・DS変更 |
 
@@ -15,7 +15,7 @@
 
 **機械可読データ**: `tokens/tokens.json`（~120トークン）+ `metadata/components.json`（27コンポーネント）
 
-**フル読み順**: CLAUDE.md → design_philosophy.md → theme.md → foundations/ → components/ → patterns/ → prohibited.md（プロジェクト側に `theme.md` がある場合はそちらを優先）
+**フル読み順**: CLAUDE.md → foundations/design_philosophy.md → foundations/theme.md → foundations/ → components/ → patterns/ → foundations/prohibited.md（プロジェクト側に `foundations/theme.md` がある場合はそちらを優先）
 
 ---
 
@@ -159,11 +159,11 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | プレースホルダーのみのラベル | 必ず `<label>` を使用 |
 | 派手なグラデーション / ネオンカラー / 過剰なアニメーション | セマンティックカラー、150〜300ms フィードバックに限定 |
 | フォーム制御ラベル包含divの `leading-normal` 省略 | 包含 `<div>` に `leading-normal` 付与 |
-| `bg-indigo-*` / `bg-blue-*` 等のハードコード | `primary-*` を使用（theme.md で定義） |
+| `bg-indigo-*` / `bg-blue-*` 等のハードコード | `primary-*` を使用（foundations/theme.md で定義） |
 | `<th>` の `scope` 省略 | `<th scope="col">` 必須 |
 | `<nav>` の `aria-label` 省略 | `aria-label="メインナビゲーション"` 必須 |
 
-> 全禁止パターン（71項目）: `prohibited.md` 参照
+> 全禁止パターン（71項目）: `foundations/prohibited.md` 参照
 
 ---
 
@@ -182,11 +182,11 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | タスク | 読み込むファイル（順序） |
 |--------|------------------------|
 | 単体コンポーネント生成 | CLAUDE.md のみ |
-| ページ生成 | + theme.md → patterns/layout.md → 関連 component md |
-| ダークモード対応 | + theme.md（CSS変数）→ foundations/color.md（Dark列） |
+| ページ生成 | + foundations/theme.md → patterns/layout.md → 関連 component md |
+| ダークモード対応 | + foundations/theme.md（CSS変数）→ foundations/color.md（Dark列） |
 | フォーム画面 | + patterns/form.md → textfield / select / checkbox / button |
 | データ一覧 | + table.md → pagination.md → badge.md |
-| ダッシュボード | + theme.md → layout.md → card / table / progress / badge |
+| ダッシュボード | + foundations/theme.md → layout.md → card / table / progress / badge |
 | 設定画面 | + tabs.md → toggle / select / radio |
 | モーダル / 確認 | + modal.md → button.md |
 | Loading / 空状態 | + skeleton.md → interaction-states.md |
@@ -199,11 +199,11 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | ウィザード / ステップ画面 | + stepper.md → button.md |
 | 日付入力フォーム | + datepicker.md → textfield.md → form.md |
 | セクション分割 | + divider.md → layout.md |
-| テーマカスタマイズ | theme.md → foundations/color.md（CLAUDE.md 不要） |
+| テーマカスタマイズ | foundations/theme.md → foundations/color.md（CLAUDE.md 不要） |
 | DS変更 / 新コンポーネント | フル読み込み |
 
 ---
 
 ## テーマ・カラー変数・ダークモード
 
-> テーマ設定・CSS変数定義・ダークモード切替: `theme.md` を参照。
+> テーマ設定・CSS変数定義・ダークモード切替: `foundations/theme.md` を参照。

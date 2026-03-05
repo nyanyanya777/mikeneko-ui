@@ -129,7 +129,7 @@
 
 ### 禁止事項
 
-> 共通: `prohibited.md`「アクセシビリティ」参照
+> 共通: `foundations/prohibited.md`「アクセシビリティ」参照
 
 - ホバーだけでメニューを開くこと（アクセシビリティ問題）
 - `aria-haspopup` なしのトリガー
@@ -140,7 +140,7 @@
 
 ## 6. Tailwind サンプル
 
-> primary カラーの具体値は `theme.md` を参照。
+> primary カラーの具体値は `foundations/theme.md` を参照。
 
 ### 6-1. 基本
 
