@@ -93,7 +93,7 @@
 /* --- Nav Group Toggle --- */
 function toggleNavGroup(btn) {
   var items = btn.nextElementSibling;
-  var arrow = btn.querySelector('svg:last-child');
+  var arrow = btn.lastElementChild;
   items.classList.toggle('open');
   if (arrow) arrow.style.transform = items.classList.contains('open') ? '' : 'rotate(-90deg)';
 }
