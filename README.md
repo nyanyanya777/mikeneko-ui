@@ -1,46 +1,163 @@
 # melta UI
 
-> 声を張らずに伝わるUI ── AI-Ready Design System for Tailwind CSS
+**人間にも、AIにも、読めるデザインシステム。**
 
-## melta UI とは
+---
 
-Tailwind CSS 4 のクラス規約と Markdown リファレンスで構成された **AI-Ready デザインシステム** です。
-MCP サーバー + 機械可読トークン（`tokens.json`）により、Claude Code / Cursor / Windsurf から統一的にアクセスできます。
+デザインシステムは、人間のためだけのものだった。
+スタイルガイドを読み、コンポーネントの意図を汲み取り、文脈に合わせて判断する——それはデザイナーとエンジニアの仕事だった。
 
-## 特徴
+しかし今、UIを書くのは人間だけではない。
 
-- **AI-Ready** — MCP サーバー + `tokens.json` + `.cursor/rules/` でマルチ AI ツール対応
-- **AI ファースト設計** — `CLAUDE.md` を起点とした段階的読み込みで、必要な情報だけを効率的に参照
-- **Tailwind CSS 4 ネイティブ** — クラス規約 + セマンティックトークンで構築。ビルドステップ不要
-- **WCAG 2.1 AA 準拠** — テキストコントラスト比 4.5:1 以上を全コンポーネントで保証
-- **27 コンポーネント + 10 ファウンデーション + 5 パターン** — 実用的な SaaS UI を構築可能な規模
-- **単一 HTML ショーケース** — `docs/showcase.html` で全コンポーネントをインタラクティブに確認
-- **ダークモード対応** — CSS 変数ベースのテーマ切り替え
+AIがコードを生成し、コンポーネントを選び、レイアウトを組む時代に、
+デザインシステムは **「人間が読める」だけでは足りない。**
 
-## クイックスタート
+melta UI は、この問いに対する一つの答えである。
 
-### AI（Claude Code）での利用
+Markdown ドキュメントは人間が読み、JSON トークンは機械が読む。
+`CLAUDE.md` を起点とした段階的な読み込み構造は、AI の限られたコンテキストウィンドウに最適化されている。
+MCP サーバーを介せば、AI エージェントはトークンの検索からルール検証まで、プログラマティックに実行できる。
+
+**人間の可読性を犠牲にせず、AIの可読性を加える。** 両立こそが、melta UI の設計思想である。
+
+---
+
+## Architecture — 2つの読み手のための構造
+
+```
+                    ┌─────────────────────────────┐
+                    │         melta UI             │
+                    └──────────────┬──────────────┘
+                                   │
+                 ┌─────────────────┼─────────────────┐
+                 │                 │                  │
+          ┌──────▼──────┐  ┌──────▼──────┐  ┌───────▼───────┐
+          │  for Human  │  │  for Both   │  │    for AI     │
+          └──────┬──────┘  └──────┬──────┘  └───────┬───────┘
+                 │                │                  │
+        foundations/*.md    CLAUDE.md          tokens.json
+        components/*.md    design_philosophy   components.json
+        patterns/*.md      showcase.html       MCP Server
+        prohibited.md      Melta-UI.pen        .cursor/rules/
+```
+
+| レイヤー | 形式 | 読み手 | 役割 |
+|---------|------|--------|------|
+| **Markdown ドキュメント** | `.md` 42ファイル | 人間 | 設計意図・使い方・判断基準を自然言語で記述 |
+| **CLAUDE.md** | `.md` 1ファイル | 人間 + AI | エントリーポイント。クイックリファレンスとタスク別読み込みガイド |
+| **デザイントークン** | `tokens.json` | AI | ~120トークンの機械可読な単一ソース（色・間隔・書体・影・角丸・動き） |
+| **コンポーネントメタデータ** | `components.json` | AI | 27コンポーネントのバリアント・サイズ・HTML サンプル・禁止パターン |
+| **MCP サーバー** | TypeScript | AI エージェント | トークン検索・コンポーネント取得・ルール検証・全文検索をツールとして公開 |
+| **Cursor ルール** | `.mdc` 3ファイル | AI (Cursor) | カラー・コンポーネント・禁止パターンをエディタ内ルールとして提供 |
+| **Pencil デザインファイル** | `.pen` | 人間 + AI | 32コンポーネントをビジュアルデザインツール上で再利用可能な形で収録 |
+
+---
+
+## AI にとっての読みやすさとは何か
+
+従来のデザインシステムは、Figma のビジュアルと人間向けの散文で構成されていた。
+AI にとって、それは「読めるが、使いにくい」情報だった。
+
+melta UI は以下の設計で AI の可読性を確保している。
+
+### 1. 段階的読み込み — コンテキストを浪費しない
+
+AI のコンテキストウィンドウは有限である。全ファイルを一度に読む必要はない。
+
+| モード | 読むファイル | 用途 |
+|--------|------------|------|
+| クイック | `CLAUDE.md` のみ | 単体UIの生成（ボタン、カード等） |
+| 標準 | + `foundations/theme.md` + 関連コンポーネント md | ページ単位の生成 |
+| MCP | MCP ツール（`get_token` / `get_component`） | AI ツール統合 |
+| フル | 全ファイル | 新規プロジェクト構築・DS変更 |
+
+`CLAUDE.md` だけで基本的な UI は生成できる。必要に応じて深く読む——人間のドキュメント閲覧と同じ体験を AI に提供している。
+
+### 2. 機械可読データ — 解釈ではなく参照
+
+```jsonc
+// tokens.json — AI はこの JSON を直接参照する
+{
+  "color": {
+    "primary": {
+      "600": { "value": "#2563eb", "tailwind": "primary-600" }
+    }
+  }
+}
+```
+
+```jsonc
+// components.json — コンポーネントの仕様を構造化データで宣言
+{
+  "id": "button",
+  "variants": ["primary", "secondary", "destructive"],
+  "sizes": ["sm", "md", "lg"],
+  "prohibited": ["py-0.5", "shadow-lg"],
+  "htmlSample": "<button class=\"inline-flex items-center ...\">"
+}
+```
+
+Markdown から意図を読み取るのではなく、JSON から値を引く。曖昧さのない参照を可能にしている。
+
+### 3. MCP サーバー — 対話的なアクセス
+
+```
+Human: 「ユーザー一覧テーブルを作って」
+
+AI (内部):
+  1. get_component("table")   → 仕様・HTMLサンプル取得
+  2. get_component("pagination") → ページ送り仕様取得
+  3. check_rule("text-black shadow-lg") → 禁止パターン検出
+  4. → DS準拠の HTML を生成
+```
+
+AI エージェントは MCP ツールを通じて、必要な情報だけをオンデマンドで取得する。
+
+### 4. セマンティックな命名 — 意図が名前に宿る
+
+```html
+<!-- AI が文脈を推論できる命名 -->
+<div class="bg-surface-primary text-body border-default">
+
+<!-- 推論できない命名 -->
+<div class="bg-white text-gray-600 border-gray-200">
+```
+
+`surface-primary` は「主要な面」、`text-body` は「本文テキスト」——名前が意図を運ぶ。
+
+---
+
+## 人間にとっての読みやすさ
+
+AI のために人間の体験を犠牲にはしない。
+
+- **自然言語のドキュメント** — 42ファイルの Markdown が設計意図・判断基準・使い方を人間の言葉で記述
+- **設計思想の明文化** — 「声を張らずに伝わるUI」という Core Belief から、7つの Design Principles まで
+- **インタラクティブなショーケース** — `docs/showcase.html` で全コンポーネントを動かして確認
+- **検証ページ** — 実際の SaaS 画面で DS の実用性を検証（プロジェクト管理、アナリティクス、ヘルプデスク等）
+- **禁止パターン** — 71項目の「やってはいけないこと」を明示。迷いを減らす
+
+---
+
+## Quick Start
+
+### Claude Code
 
 1. このリポジトリをプロジェクトルートに配置する
 2. Claude Code が `CLAUDE.md` を自動で読み込む
-3. UIを指示するだけでデザインシステム準拠のコードが生成される
+3. UI を指示するだけで DS 準拠のコードが生成される
 
 ```
 「ユーザー一覧のテーブルを作って」
 → table.md + pagination.md + badge.md を参照し、DS準拠のHTMLを生成
 ```
 
-### MCP サーバーでの利用（Claude Code / Cursor）
+### MCP サーバー（Claude Code / Cursor）
 
 ```bash
-# 依存インストール + ビルド
 npm install && npm run build
-
-# Claude Code に MCP サーバーを登録
 claude mcp add melta-ui node ./dist/index.js
 ```
-
-MCP ツール:
 
 | ツール | 説明 | 入力例 |
 |--------|------|--------|
@@ -49,84 +166,31 @@ MCP ツール:
 | `check_rule` | 禁止パターンチェック | `{ "classes": "text-black shadow-2xl" }` |
 | `search` | 全文検索 | `{ "query": "card" }` |
 
-### Cursor での利用
+### Cursor
 
-`.cursor/rules/` に 3 つのルールファイルが含まれています:
-- `melta-ui.mdc` — DS 全体ルール（カラー・スペーシング・禁止パターン）
+`.cursor/rules/` に 3 つのルールファイルを同梱:
+- `melta-ui.mdc` — DS 全体ルール
 - `color-system.mdc` — カラートークン一覧
 - `components.mdc` — 27 コンポーネントの Tailwind クラス一覧
 
-### 手動での利用
+### Pencil
 
-1. Tailwind CSS 4 をプロジェクトに導入する
-2. `foundations/theme.md` に記載された CSS 変数をプロジェクトに追加する
-3. 各コンポーネントの `.md` ファイルを参照し、クラスを適用する
-
-## ディレクトリ構成
+`docs/Melta-UI.pen` に全 32 コンポーネントを `reusable: true` で収録。
 
 ```
-design-system/
-├── CLAUDE.md                # AI向け指示書（エントリーポイント）
-├── tokens/tokens.json       # デザイントークン SSOT（~120トークン）
-├── metadata/components.json # 27コンポーネントメタデータ
-├── src/                     # MCP サーバー（TypeScript）
-├── scripts/                 # ランタイム CSS/JS（HTML から読み込み）
-│   ├── ds-theme.css         # テーマ CSS 変数
-│   ├── ds-config.js         # Tailwind 拡張設定
-│   ├── ds-dark-mode.js      # ダークモード切替
-│   └── ds-scrollspy.js      # ScrollSpy
-├── tools/                   # ビルドスクリプト（npm run generate/validate）
-│   ├── generate-css.ts      # tokens.json → ds-theme.css
-│   ├── generate-tailwind.ts # tokens.json → ds-config.js
-│   └── validate-tokens.ts   # トークン整合性チェック
-├── .mcp.json                # Claude Code MCP 登録
-├── .cursor/rules/           # Cursor 用 DS ルール
-├── docs/                    # ドキュメント・ショーケース
-│   ├── showcase.html        # 全コンポーネントショーケース
-│   ├── icons.html           # アイコン一覧
-│   └── internal/            # 内部プロセス文書
-├── foundations/             # 基盤定義（10ファイル + 設計思想・テーマ・禁止パターン）
-│   ├── design_philosophy.md # 設計思想
-│   ├── theme.md             # テーマ・CSS変数・ダークモード
-│   ├── prohibited.md        # 禁止パターン一覧（71項目）
-│   ├── color.md
-│   ├── typography.md
-│   ├── spacing.md
-│   ├── elevation.md
-│   ├── radius.md
-│   ├── motion.md
-│   ├── z-index.md
-│   ├── icons.md
-│   ├── accessibility.md
-│   └── emotional-feedback.md
-├── components/              # コンポーネント仕様（27ファイル）
-│   ├── button.md
-│   ├── card.md
-│   ├── ...
-│   └── skeleton.md
-├── patterns/                # パターン・ガイドライン（5ファイル）
-│   ├── layout.md
-│   ├── form.md
-│   ├── navigation.md
-│   ├── interaction-states.md
-│   └── responsive.md
-├── examples/                # 検証ページ
-│   ├── *.html               # メイン検証ページ（8件）
-│   ├── quality-check/       # 品質チェック（15件）
-│   ├── saas/                # SaaS サンプル（3件）
-│   └── stay/                # 宿泊サービスサンプル（2件）
-└── assets/icons/            # アイコン（Charcoal 207 + Lucide 15）
+「Melta-UI.pen にダッシュボード画面を作って」
+→ Card, Table, Badge, Avatar 等の ref を組み合わせて画面を自動構成
 ```
 
-## 読み込みモード
+### 手動
 
-| モード | 読むファイル | 用途 |
-|--------|------------|------|
-| クイック | `CLAUDE.md` のみ | 単体UIの生成（ボタン、カード等） |
-| 標準 | + `foundations/theme.md` + 関連コンポーネント md | ページ単位の生成 |
-| フル | 全ファイル | 新規プロジェクト構築・DS変更 |
+1. Tailwind CSS 4 をプロジェクトに導入
+2. `foundations/theme.md` の CSS 変数をプロジェクトに追加
+3. 各コンポーネントの `.md` を参照してクラスを適用
 
-## 設計原則
+---
+
+## Design Principles
 
 1. **Layered** — Background → Surface → Text/Object の3層でUIを構成する
 2. **Contrast** — テキストは背景に対して WCAG 2.1 準拠（4.5:1 以上）
@@ -134,62 +198,61 @@ design-system/
 4. **Minimal** — 1つの View に使う色は3色まで（背景・アクセント・テキスト）
 5. **Grid** — スペーシングは4の倍数を基本、8の倍数を推奨
 
-詳細は `foundations/design_philosophy.md` を参照。
+> 詳細は `foundations/design_philosophy.md` を参照。
 
-## コンポーネント一覧
+---
 
-| コンポーネント | 用途 |
-|---------------|------|
-| Button | CTA・サブアクション・アイコンボタン |
-| Card | 情報のグルーピング・サーフェス |
-| Checkbox | 複数選択の入力 |
-| Modal | 確認ダイアログ・情報表示 |
-| Sidebar | ナビゲーション（標準・コンパクト） |
-| TextField | テキスト入力・検索 |
-| Select | ドロップダウン選択 |
-| Dropdown | アクションメニュー |
-| Radio | 単一選択の入力 |
-| Toggle | オン/オフの切り替え |
-| Toast | 一時的な通知フィードバック |
-| List | アイテムの一覧表示 |
-| Badge | ステータス・カウント表示 |
-| Tag | ラベル・カテゴリ表示（削除可能） |
-| Table | データの表形式表示 |
-| Tooltip | 補足情報のホバー表示 |
-| Tabs | コンテンツの切り替え |
-| Breadcrumb | 階層ナビゲーション |
-| Pagination | ページ送り |
-| Avatar | ユーザーアイコン・イニシャル |
-| Progress | 進捗バー |
-| Alert | 重要な通知・警告 |
-| Accordion | 折りたたみコンテンツ |
-| Skeleton | ローディング状態 |
-| Divider | セクション間の区切り線 |
-| Stepper | マルチステップの進捗表示 |
-| Date Picker | カレンダーによる日付選択 |
+## Components
 
-## 検証ページ
+27 コンポーネント + 10 ファウンデーション + 5 パターン。
 
-| ファイル | 内容 |
-|---------|------|
-| `examples/taskflow.html` | プロジェクト管理 SaaS |
-| `examples/metrica.html` | アナリティクス SaaS |
-| `examples/helpdesk.html` | カスタマーサポート SaaS |
-| `examples/article.html` | メディア記事ページ |
-| `examples/learning-path.html` | 学習プラットフォーム |
-| `examples/sidebar-demo.html` | Sidebar コンポーネントデモ |
-| `examples/task-dashboard.html` | タスクダッシュボード |
-| `examples/quality-check/` | 品質チェック 15 ページ（PM・CRM・会計・チャット 等） |
-| `examples/saas/` | SaaS サンプル 3 ページ（AI Writer・API・Design Review） |
-| `examples/stay/` | 宿泊サービスサンプル 2 ページ（一覧・詳細） |
+| カテゴリ | コンポーネント |
+|---------|--------------|
+| **入力** | Button, TextField, Select, Checkbox, Radio, Toggle, Date Picker |
+| **ナビゲーション** | Sidebar, Tabs, Breadcrumb, Pagination |
+| **データ表示** | Card, Table, List, Badge, Tag, Avatar, Progress |
+| **フィードバック** | Modal, Toast, Alert, Tooltip, Skeleton |
+| **構造** | Accordion, Dropdown, Divider, Stepper |
 
-## ライセンス
+---
 
-MIT License — 詳細は [LICENSE](./LICENSE) を参照。
+## Directory
+
+```
+design-system/
+├── CLAUDE.md                 # AI 向けエントリーポイント
+├── tokens/tokens.json        # デザイントークン SSOT（~120トークン）
+├── metadata/components.json  # 27 コンポーネントメタデータ
+├── src/                      # MCP サーバー（TypeScript）
+├── foundations/              # 基盤定義（13ファイル）
+│   ├── design_philosophy.md  #   設計思想
+│   ├── theme.md              #   テーマ・CSS変数・ダークモード
+│   ├── prohibited.md         #   禁止パターン（71項目）
+│   └── color, typography, spacing, elevation, radius,
+│       motion, z-index, icons, accessibility, emotional-feedback
+├── components/               # コンポーネント仕様（27ファイル）
+├── patterns/                 # パターン（5ファイル）
+│   └── layout, form, navigation, interaction-states, responsive
+├── docs/
+│   ├── showcase.html         # 全コンポーネントショーケース
+│   └── Melta-UI.pen          # Pencil デザインファイル（32コンポーネント）
+├── examples/                 # 検証ページ（SaaS サンプル等 28件）
+├── assets/icons/             # Charcoal 207 + Lucide 15
+├── scripts/                  # ランタイム CSS/JS
+├── tools/                    # ビルドスクリプト
+├── .mcp.json                 # Claude Code MCP 登録
+└── .cursor/rules/            # Cursor 用ルール
+```
+
+---
+
+## License
+
+MIT License — [LICENSE](./LICENSE)
 
 同梱アイコンのライセンスは [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) を参照。
 
-## 謝辞
+### Acknowledgments
 
 - [Charcoal Icons](https://github.com/pixiv/charcoal)（pixiv Inc.）— Apache License 2.0
 - [Lucide Icons](https://github.com/lucide-icons/lucide) — ISC License
