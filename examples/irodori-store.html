@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRODORI Store - セレクトショップ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary-50: #fff1f2;
+      --primary-100: #ffe4e6;
+      --primary-200: #fecdd3;
+      --primary-300: #fda4af;
+      --primary-400: #fb7185;
+      --primary-500: #f43f5e;
+      --primary-600: #e11d48;
+      --primary-700: #be123c;
+      --primary-800: #9f1239;
+      --primary-900: #881337;
+      --primary-950: #4c0519;
+    }
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontSize: {
+            'xs': ['0.8125rem', { lineHeight: '1.125rem' }],
+            'sm': ['0.9375rem', { lineHeight: '1.375rem' }],
+            'base': ['1.125rem', { lineHeight: '1.75rem' }],
+            'lg': ['1.25rem', { lineHeight: '1.75rem' }],
+            'xl': ['1.375rem', { lineHeight: '1.875rem' }],
+            '2xl': ['1.625rem', { lineHeight: '2rem' }],
+            '3xl': ['2rem', { lineHeight: '2.25rem' }],
+          },
+          colors: {
+            'primary': {
+              50: 'var(--primary-50)', 100: 'var(--primary-100)', 200: 'var(--primary-200)',
+              300: 'var(--primary-300)', 400: 'var(--primary-400)', 500: 'var(--primary-500)',
+              600: 'var(--primary-600)', 700: 'var(--primary-700)', 800: 'var(--primary-800)',
+              900: 'var(--primary-900)', 950: 'var(--primary-950)',
+            },
+            'body': '#3d4b5f',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-body min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center gap-8">
+          <a href="#" class="text-xl font-bold text-slate-900 tracking-tight">IRODORI <span class="text-primary-600">Store</span></a>
+          <!-- Navigation -->
+          <nav class="hidden md:flex items-center gap-6" aria-label="メインナビゲーション">
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">新着</a>
+            <a href="#" class="text-sm font-medium text-primary-600">カテゴリ</a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">ランキング</a>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">セール</a>
+          </nav>
+        </div>
+        <!-- Search & Cart -->
+        <div class="flex items-center gap-4">
+          <div class="relative hidden sm:block">
+            <label for="header-search" class="sr-only">商品を検索</label>
+            <input id="header-search" type="text" placeholder="商品を検索..." class="bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 w-64">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <button class="relative p-2 text-slate-600 hover:text-slate-900 transition-colors" aria-label="カート">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-primary-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">3</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-6">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="パンくずリスト" class="mb-6">
+      <ol class="flex items-center gap-2 text-sm text-slate-500">
+        <li><a href="#" class="hover:text-slate-700 transition-colors">ホーム</a></li>
+        <li>
+          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </li>
+        <li><a href="#" class="hover:text-slate-700 transition-colors">レディース</a></li>
+        <li>
+          <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </li>
+        <li class="text-slate-900 font-medium" aria-current="page">トップス</li>
+      </ol>
+    </nav>
+
+    <!-- Page Title -->
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-slate-900">トップス</h1>
+      <p class="text-sm text-slate-500 mt-1">42件の商品</p>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4 mb-8">
+      <div class="flex flex-wrap items-end gap-4">
+        <!-- Category Select -->
+        <div class="flex-1 min-w-[160px]">
+          <label for="filter-category" class="block text-xs font-medium text-slate-500 mb-1.5">カテゴリ</label>
+          <div class="relative">
+            <select id="filter-category" class="appearance-none w-full bg-white border border-slate-300 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <option>すべて</option>
+              <option>Tシャツ</option>
+              <option>ブラウス</option>
+              <option>ニット</option>
+              <option>カーディガン</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Price Select -->
+        <div class="flex-1 min-w-[160px]">
+          <label for="filter-price" class="block text-xs font-medium text-slate-500 mb-1.5">価格帯</label>
+          <div class="relative">
+            <select id="filter-price" class="appearance-none w-full bg-white border border-slate-300 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <option>すべて</option>
+              <option>~5,000円</option>
+              <option>5,000~10,000円</option>
+              <option>10,000~20,000円</option>
+              <option>20,000円~</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Sort Select -->
+        <div class="flex-1 min-w-[160px]">
+          <label for="filter-sort" class="block text-xs font-medium text-slate-500 mb-1.5">並び替え</label>
+          <div class="relative">
+            <select id="filter-sort" class="appearance-none w-full bg-white border border-slate-300 rounded-lg pl-3 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <option>おすすめ順</option>
+              <option>新着順</option>
+              <option>価格が安い順</option>
+              <option>価格が高い順</option>
+              <option>人気順</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Filter Button -->
+        <div>
+          <button class="bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors px-4 py-2 text-sm">
+            絞り込む
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-3 gap-6 mb-10">
+
+      <!-- Product 1 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/linen-shirt/400/300" alt="リネンブレンド オーバーサイズシャツ" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">NEW</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">ブラウス</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">リネンブレンド オーバーサイズシャツ</h3>
+          <p class="text-base font-bold text-slate-900">&#165;8,900</p>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/cashmere-knit/400/300" alt="カシミヤタッチ Vネックニット" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700">SALE</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">ニット</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">カシミヤタッチ Vネックニット</h3>
+          <div class="flex items-center gap-2">
+            <p class="text-base font-bold text-primary-600">&#165;5,900</p>
+            <p class="text-sm text-slate-500 line-through">&#165;9,800</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/organic-tee/400/300" alt="オーガニックコットン ロゴTシャツ" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700">NEW</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">Tシャツ</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">オーガニックコットン ロゴTシャツ</h3>
+          <p class="text-base font-bold text-slate-900">&#165;4,500</p>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/sheer-cardigan/400/300" alt="シアーニット ロングカーディガン" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">カーディガン</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">シアーニット ロングカーディガン</h3>
+          <p class="text-base font-bold text-slate-900">&#165;12,800</p>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/satin-blouse/400/300" alt="サテン パフスリーブブラウス" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-red-700">SALE</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">ブラウス</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">サテン パフスリーブブラウス</h3>
+          <div class="flex items-center gap-2">
+            <p class="text-base font-bold text-primary-600">&#165;6,400</p>
+            <p class="text-sm text-slate-500 line-through">&#165;10,800</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden group">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/seed/border-tee/400/300" alt="ボーダー ドロップショルダーTシャツ" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">Tシャツ</span>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-1">ボーダー ドロップショルダーTシャツ</h3>
+          <p class="text-base font-bold text-slate-900">&#165;5,200</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="ページネーション" class="flex items-center justify-center mb-10">
+      <div class="flex items-center gap-1">
+        <a href="#" class="text-slate-600 hover:bg-slate-100 px-3 py-1 rounded-lg text-sm transition-colors" aria-label="前のページ">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </a>
+        <a href="#" class="bg-primary-600 text-white px-3 py-1 rounded-lg text-sm" aria-current="page">1</a>
+        <a href="#" class="text-slate-600 hover:bg-slate-100 px-3 py-1 rounded-lg text-sm transition-colors">2</a>
+        <a href="#" class="text-slate-600 hover:bg-slate-100 px-3 py-1 rounded-lg text-sm transition-colors">3</a>
+        <span class="text-slate-400 px-2 text-sm">...</span>
+        <a href="#" class="text-slate-600 hover:bg-slate-100 px-3 py-1 rounded-lg text-sm transition-colors">12</a>
+        <a href="#" class="text-slate-600 hover:bg-slate-100 px-3 py-1 rounded-lg text-sm transition-colors" aria-label="次のページ">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+      <div class="grid grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-sm font-semibold text-slate-900 mb-3">IRODORI Store</h3>
+          <p class="text-xs text-slate-500">厳選されたアイテムを集めたセレクトショップ。毎日の暮らしに彩りを。</p>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-3">ショッピング</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">新着アイテム</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">ランキング</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">セール</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-3">サポート</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">配送について</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">返品・交換</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-3">会社情報</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">会社概要</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">プライバシーポリシー</a></li>
+            <li><a href="#" class="text-sm text-slate-500 hover:text-slate-700 transition-colors">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-200 mt-8 pt-6">
+        <p class="text-xs text-slate-500 text-center">&copy; 2026 IRODORI Store. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
