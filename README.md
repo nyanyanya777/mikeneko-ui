@@ -152,6 +152,45 @@ AI のために人間の体験を犠牲にはしない。
 → table.md + pagination.md + badge.md を参照し、DS準拠のHTMLを生成
 ```
 
+#### 初回セットアップ — `/teach-impeccable`
+
+フォークしたら、まず `/teach-impeccable` を実行してプロジェクトのデザインコンテキストを設定する。
+
+```
+/teach-impeccable
+```
+
+このコマンドは以下を行う:
+1. コードベースを自動調査（トークン・コンポーネント・設計哲学を収集）
+2. 対話形式でユーザー層・ブランド・美的方向性をヒアリング
+3. `CLAUDE.md` に **Design Context** セクションを永続化
+
+一度実行すれば、以降のすべてのセッションで AI が同じデザイン原則に従って UI を生成する。
+
+> **前提**: [impeccable](https://github.com/pbakaus/impeccable) スキルのインストールが必要。
+> ```bash
+> claude skills add pbakaus/impeccable
+> ```
+
+#### デザイン品質スキル
+
+impeccable には `/teach-impeccable` 以外にも、UI の品質を高めるスキルが含まれている:
+
+| スキル | 用途 |
+|--------|------|
+| `/critique` | UX観点のデザイン評価 |
+| `/polish` | 出荷前の最終品質チェック |
+| `/audit` | アクセシビリティ・パフォーマンスの総合監査 |
+| `/distill` | 不要な複雑さの除去 |
+| `/harden` | エラーハンドリング・i18n・エッジケース強化 |
+| `/animate` | 目的のあるアニメーション追加 |
+| `/clarify` | UXコピー・ラベル・エラーメッセージの改善 |
+| `/bolder` / `/quieter` | ビジュアルの強弱調整 |
+| `/colorize` | 戦略的な配色追加 |
+| `/adapt` | レスポンシブ・マルチデバイス対応 |
+| `/normalize` | デザインシステムへの正規化 |
+| `/extract` | 再利用可能コンポーネントの抽出 |
+
 ### MCP サーバー（Claude Code / Cursor）
 
 ```bash
