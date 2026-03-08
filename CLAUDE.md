@@ -126,7 +126,7 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 ナビアイコン         : flex-shrink-0 を付与
 ナビ（Active）     : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg + aria-current="page"
 ナビ（Default）    : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors
-タブ（Active）     : text-sm font-semibold text-primary-600 border-b-2 border-primary-600 cursor-pointer
+タブ（Active）     : text-sm font-semibold text-primary-600 border-b-2 border-primary-600 cursor-default
 タブ（Inactive）   : text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 cursor-pointer
 パンくずリスト     : text-sm + text-slate-500 hover:text-slate-700 / 現在ページ text-slate-900 font-medium
 ページネーション   : w-10 h-10 rounded-lg cursor-pointer + Active bg-primary-600 text-white / Inactive bg-white border

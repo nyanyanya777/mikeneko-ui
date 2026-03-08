@@ -37,8 +37,8 @@
 
 | 状態 | スタイル |
 |------|---------|
-| Active | `text-primary-600 font-semibold border-b-2 border-primary-600` |
-| Inactive | `text-slate-500 font-medium border-b-2 border-transparent hover:text-slate-700` |
+| Active | `text-primary-600 font-semibold border-b-2 border-primary-600 cursor-default` |
+| Inactive | `text-slate-500 font-medium border-b-2 border-transparent hover:text-slate-700 cursor-pointer` |
 | Disabled | `text-slate-300 border-b-2 border-transparent cursor-not-allowed` |
 
 ### 3-2. フォーカス
@@ -139,12 +139,12 @@ function handleTabKeydown(tablistId, event) {
 <div>
   <div role="tablist" aria-label="設定タブ" class="flex border-b border-slate-200" id="tablist-1">
     <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0"
-      class="px-4 py-2.5 text-sm font-semibold text-primary-600 border-b-2 border-primary-600 outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 transition-colors"
+      class="px-4 py-2.5 text-sm font-semibold text-primary-600 border-b-2 border-primary-600 cursor-default outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 transition-colors"
       onclick="switchTab('tablist-1', 'tab-1')">
       一般
     </button>
     <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1"
-      class="px-4 py-2.5 text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 transition-colors"
+      class="px-4 py-2.5 text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 transition-colors"
       onclick="switchTab('tablist-1', 'tab-2')">
       通知
     </button>
@@ -179,15 +179,15 @@ function switchTab(tablistId, activeTabId) {
     if (tab.id === activeTabId) {
       tab.setAttribute('aria-selected', 'true');
       tab.setAttribute('tabindex', '0');
-      tab.classList.remove('text-slate-500', 'border-transparent', 'font-medium');
-      tab.classList.add('text-primary-600', 'border-primary-600', 'font-semibold');
+      tab.classList.remove('text-slate-500', 'border-transparent', 'font-medium', 'cursor-pointer');
+      tab.classList.add('text-primary-600', 'border-primary-600', 'font-semibold', 'cursor-default');
       if (panel) panel.classList.remove('hidden');
     } else {
       tab.setAttribute('aria-selected', 'false');
       tab.setAttribute('tabindex', '-1');
-      tab.classList.remove('text-primary-600', 'border-primary-600', 'font-semibold');
+      tab.classList.remove('text-primary-600', 'border-primary-600', 'font-semibold', 'cursor-default');
       if (!tab.disabled) {
-        tab.classList.add('text-slate-500', 'border-transparent', 'font-medium');
+        tab.classList.add('text-slate-500', 'border-transparent', 'font-medium', 'cursor-pointer');
       }
       if (panel) panel.classList.add('hidden');
     }
