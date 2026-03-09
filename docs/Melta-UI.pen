@@ -32,11 +32,12 @@
       "y": 120,
       "name": "Button/Primary",
       "reusable": true,
+      "height": 40,
       "fill": "#2563eb",
       "cornerRadius": 8,
       "gap": 8,
       "padding": [
-        8,
+        0,
         16
       ],
       "justifyContent": "center",
@@ -62,6 +63,7 @@
       "y": 120,
       "name": "Button/Secondary",
       "reusable": true,
+      "height": 40,
       "fill": "#1e293b",
       "cornerRadius": 8,
       "stroke": {
@@ -71,7 +73,7 @@
       },
       "gap": 8,
       "padding": [
-        8,
+        0,
         16
       ],
       "justifyContent": "center",
@@ -97,11 +99,12 @@
       "y": 120,
       "name": "Button/Destructive",
       "reusable": true,
+      "height": 40,
       "fill": "#ef4444",
       "cornerRadius": 8,
       "gap": 8,
       "padding": [
-        8,
+        0,
         16
       ],
       "justifyContent": "center",
@@ -387,7 +390,8 @@
               "content": "This is an informational alert message.",
               "lineHeight": 1.7,
               "fontFamily": "Inter",
-              "fontSize": 15
+              "fontSize": 15,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -450,7 +454,8 @@
               "content": "Something went wrong. Please try again.",
               "lineHeight": 1.7,
               "fontFamily": "Inter",
-              "fontSize": 15
+              "fontSize": 15,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -513,7 +518,8 @@
               "content": "Please review before proceeding.",
               "lineHeight": 1.7,
               "fontFamily": "Inter",
-              "fontSize": 15
+              "fontSize": 15,
+              "fontWeight": "normal"
             }
           ]
         }
@@ -2253,7 +2259,8 @@
                       "fill": "$melta-text-muted",
                       "content": "ユーザー",
                       "fontFamily": "$--font-secondary",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2287,7 +2294,8 @@
                       "fill": "$melta-text-muted",
                       "content": "レポート",
                       "fontFamily": "$--font-secondary",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2321,7 +2329,8 @@
                       "fill": "$melta-text-muted",
                       "content": "設定",
                       "fontFamily": "$--font-secondary",
-                      "fontSize": 14
+                      "fontSize": 14,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
