@@ -42,7 +42,7 @@ globs: ["**/*.html", "**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.svelte"]
 - `bg-yellow-*` → use `bg-amber-*`
 - `bg-indigo-*` / `bg-blue-*` → use `primary-*`
 - `font-light` → use `font-normal`+
-- `py-0.5` on buttons → use `py-1.5`+
+- `py-0.5` on buttons → use `h-8`+ (S: `h-8` / M: `h-10` / L: `h-12`)
 
 ## Reference
 - Full tokens: `tokens/tokens.json`

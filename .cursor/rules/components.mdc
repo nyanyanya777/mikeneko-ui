@@ -7,10 +7,12 @@ globs: ["**/*.html", "**/*.tsx", "**/*.jsx", "**/*.vue", "**/*.svelte"]
 
 ## Button
 ```
-CTA:     inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 cursor-pointer
-Sub:     inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 cursor-pointer
-Danger:  inline-flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-red-600 cursor-pointer
-Sizes:   Large px-5 py-2.5 text-base | Medium px-4 py-2 text-[1rem] | Small px-3 py-1.5 text-[0.875rem]
+CTA:     inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+Sub:     inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 cursor-pointer
+Danger:  inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-red-500 text-white rounded-lg hover:bg-red-600 cursor-pointer
+Sizes:   Large h-12 px-6 text-[1rem] | Medium h-10 px-4 text-[1rem] | Small h-8 px-3 text-[0.875rem]
+Icon:    Large w-12 h-12 | Medium w-10 h-10 | Small w-8 h-8
+Icon+Text: pl-3 pr-4 (M) | pl-2.5 pr-3 (S) | pl-5 pr-6 (L) — asymmetric padding
 ```
 
 ## Card
