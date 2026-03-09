@@ -57,7 +57,7 @@
 |------|------|------|
 | `rounded-none` on cards | UIの統一感を損なう | `rounded-xl`（12px） |
 | `shadow-lg` / `shadow-2xl` | 影が強すぎてノイズになる | `shadow-sm` 〜 `shadow-md`（オーバーレイ: `shadow-xl`） |
-| `py-0.5` for buttons | タップターゲットが小さすぎる（44px未満） | `py-1.5` 以上 |
+| `py-0.5` for buttons | タップターゲットが小さすぎる | `h-8` 以上（S: `h-8` / M: `h-10` / L: `h-12`） |
 | `p-0` on cards | コンテンツが窮屈になる | `p-5` 以上 |
 | `gap-0` between sections | セクションの区切りが不明瞭 | `gap-6` 以上 |
 | `m-0` for page content | ページ端にコンテンツが張り付く | `px-6 py-8` 以上 |

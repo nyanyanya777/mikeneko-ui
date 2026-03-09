@@ -246,7 +246,7 @@
 ### インラインスピナー（ボタン内）
 
 ```html
-<button disabled class="inline-flex items-center gap-2 px-4 py-2 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
+<button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
   <div class="inline-spinner"></div>
   送信中...
 </button>

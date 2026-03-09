@@ -8,25 +8,35 @@
       "description": "CTA / secondary / icon button。3階層ヒエラルキー。",
       "docPath": "components/button.md",
       "variants": [
-        { "name": "contained", "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
-        { "name": "outlined",  "tailwind": "inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
-        { "name": "neutral",   "tailwind": "inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-slate-200 transition-colors" },
-        { "name": "lighted",   "tailwind": "inline-flex items-center justify-center gap-2 bg-primary-50 text-primary-600 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-100 transition-colors" },
-        { "name": "danger",    "tailwind": "inline-flex items-center justify-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-colors" },
-        { "name": "subtle",    "tailwind": "inline-flex items-center justify-center gap-2 text-slate-700 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" }
+        { "name": "contained", "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
+        { "name": "outlined",  "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" },
+        { "name": "neutral",   "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors" },
+        { "name": "lighted",   "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-50 text-primary-600 rounded-lg hover:bg-primary-100 transition-colors" },
+        { "name": "danger",    "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-colors" },
+        { "name": "subtle",    "tailwind": "inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium text-slate-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors" }
       ],
       "sizes": [
-        { "name": "large",  "tailwind": "px-5 py-2.5 text-base" },
-        { "name": "medium", "tailwind": "px-4 py-2 text-[1rem]" },
-        { "name": "small",  "tailwind": "px-3 py-1.5 text-[0.875rem]" }
+        { "name": "large",  "tailwind": "h-12 px-6 text-[1rem]", "height": "48px" },
+        { "name": "medium", "tailwind": "h-10 px-4 text-[1rem]", "height": "40px" },
+        { "name": "small",  "tailwind": "h-8 px-3 text-[0.875rem]", "height": "32px" }
+      ],
+      "iconButton": [
+        { "name": "large",  "tailwind": "w-12 h-12", "icon": "w-5 h-5" },
+        { "name": "medium", "tailwind": "w-10 h-10", "icon": "w-5 h-5" },
+        { "name": "small",  "tailwind": "w-8 h-8", "icon": "w-4 h-4" }
+      ],
+      "iconTextPadding": [
+        { "name": "large",  "tailwind": "pl-5 pr-6" },
+        { "name": "medium", "tailwind": "pl-3 pr-4" },
+        { "name": "small",  "tailwind": "pl-2.5 pr-3" }
       ],
       "accessibility": {
         "role": "button",
         "required": ["aria-label (icon-only buttons)"],
         "focusRing": "focus:ring-2 focus:ring-primary-500/50"
       },
-      "prohibited": ["py-0.5 (minimum py-1.5)", "同スタイルボタン並列配置", "アイコンボタンのaria-label省略"],
-      "htmlSample": "<button class=\"inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 cursor-pointer\">保存</button>"
+      "prohibited": ["py-0.5 (minimum h-8)", "同スタイルボタン並列配置", "アイコンボタンのaria-label省略"],
+      "htmlSample": "<button class=\"inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer\">保存</button>"
     },
     {
       "id": "card",
@@ -179,7 +189,7 @@
         "focusRing": "focus-visible:ring-2 focus-visible:ring-primary-500/50"
       },
       "prohibited": ["キーボードナビなし", "aria-haspopup省略"],
-      "htmlSample": "<div class=\"relative inline-block\"><button aria-haspopup=\"menu\" class=\"px-4 py-2 bg-white border border-slate-200 rounded-lg hover:bg-gray-50\">メニュー</button><div role=\"menu\" class=\"absolute top-full mt-1 w-48 bg-white rounded-lg border border-slate-200 shadow-md z-20 py-1\"><a role=\"menuitem\" class=\"flex items-center gap-3 px-4 py-2 text-sm text-body hover:bg-gray-50\">編集</a></div></div>"
+      "htmlSample": "<div class=\"relative inline-block\"><button aria-haspopup=\"menu\" class=\"h-10 px-4 bg-white border border-slate-200 rounded-lg hover:bg-gray-50\">メニュー</button><div role=\"menu\" class=\"absolute top-full mt-1 w-48 bg-white rounded-lg border border-slate-200 shadow-md z-20 py-1\"><a role=\"menuitem\" class=\"flex items-center gap-3 px-4 py-2 text-sm text-body hover:bg-gray-50\">編集</a></div></div>"
     },
     {
       "id": "radio",

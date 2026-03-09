@@ -152,7 +152,7 @@
     aria-haspopup="true"
     aria-expanded="false"
     onclick="toggleMenu('basic-menu', this)"
-    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
+    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
     オプション
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -178,7 +178,7 @@
     aria-haspopup="true"
     aria-expanded="false"
     onclick="toggleMenu('icon-menu', this)"
-    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
+    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
     アカウント
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -214,7 +214,7 @@
     aria-haspopup="true"
     aria-expanded="false"
     onclick="toggleMenu('group-menu', this)"
-    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
+    class="inline-flex items-center gap-2 bg-white text-slate-700 border border-slate-200 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">
     その他
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>

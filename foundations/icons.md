@@ -253,7 +253,7 @@ Charcoal に存在しない SaaS / ダッシュボード向けアイコン。`as
 ### ボタン内アイコン
 
 ```html
-<button class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700">
+<button class="inline-flex items-center gap-2 h-10 px-4 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700">
   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
     <!-- assets/icons/Add.svg の中身 -->
   </svg>
@@ -288,7 +288,7 @@ Charcoal に存在しない SaaS / ダッシュボード向けアイコン。`as
 
 ```html
 <!-- Lucide: stroke ベース -->
-<button class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-body bg-white border border-slate-200 rounded-lg hover:bg-gray-50">
+<button class="inline-flex items-center gap-2 h-10 px-4 text-sm font-medium text-body bg-white border border-slate-200 rounded-lg hover:bg-gray-50">
   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <!-- assets/icons/lucide/bar-chart-2.svg の中身 -->
     <line x1="18" x2="18" y1="20" y2="10"/>

@@ -82,8 +82,14 @@ tailwind.config = {
 ```
 カード             : bg-white rounded-xl border border-slate-200 p-6 shadow-sm
 カードグリッド     : grid grid-cols-2 md:grid-cols-3 gap-6
-CTAボタン          : inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-primary-700 cursor-pointer
-サブボタン         : inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-[1rem] font-medium hover:bg-gray-50 cursor-pointer
+CTAボタン（M）     : inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+CTAボタン（L）     : inline-flex items-center justify-center gap-2 h-12 px-6 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+CTAボタン（S）     : inline-flex items-center justify-center gap-1.5 h-8 px-3 text-[0.875rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+サブボタン         : inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 cursor-pointer
+Icon+Textボタン    : inline-flex items-center justify-center gap-2 h-10 pl-3 pr-4 text-[1rem] font-medium（アイコン側を狭く）
+アイコンボタン（M）: w-10 h-10 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-5 h-5）
+アイコンボタン（S）: w-8 h-8 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-4 h-4）
+アイコンボタン（L）: w-12 h-12 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-5 h-5）
 入力欄             : w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600
 セレクト           : appearance-none pl-3 pr-10 + relative wrapper + SVG chevron（absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4）← ネイティブ矢印は使用禁止
 横並びフォーム     : flex flex-wrap items-end gap-4（外枠）+ 各 div.leading-normal > label + 要素 h-11 leading-normal（py-2 外す）+ ボタン h-11 inline-flex items-center（→ patterns/form.md 必読）
@@ -114,7 +120,7 @@ Date Picker Day    : w-10 h-10 inline-flex items-center justify-center text-sm r
 Charcoal           : w-5 h-5 fill="currentColor" text-body ← assets/icons/{Name}.svg（プライマリ・207個）
 Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/lucide/{name}.svg（補完・15個）
 小サイズ           : w-4 h-4 ← 同SVGをTailwindで縮小（Charcoal優先、Lucide補完）
-アイコンボタン     : w-10 h-10 inline-flex items-center justify-center cursor-pointer + aria-label 必須
+アイコンボタン     : w-8/w-10/w-12 h-8/h-10/h-12（S/M/L）inline-flex items-center justify-center cursor-pointer + aria-label 必須
 ```
 
 ### ナビゲーション
@@ -153,7 +159,7 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 | `shadow-lg` / `shadow-2xl` | `shadow-sm` 〜 `shadow-md`（オーバーレイ: `shadow-xl`） |
 | `border-gray-100` | `border-slate-200` |
 | `text-gray-400` for body | `text-body` (#3d4b5f) |
-| `py-0.5` for buttons | `py-1.5` 以上 |
+| `py-0.5` for buttons | `h-8` 以上（S: `h-8` / M: `h-10` / L: `h-12`） |
 | 色だけで情報伝達 | アイコン/テキストを併用 |
 | `tracking-tight` | 見出し1%、本文2%を基本 |
 | プレースホルダーのみのラベル | 必ず `<label>` を使用 |
