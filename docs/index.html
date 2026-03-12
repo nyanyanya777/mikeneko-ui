@@ -15,12 +15,12 @@
   <link rel="icon" href="Meltan_favicon.svg" type="image/svg+xml">
   <!--
   @melta-showcase-index
-  @version: 2.2
+  @version: 2.3
   @generated: 2026-03-07
   @sections: 40
   @component-groups: "Action & Input", "Data Display", "Navigation", "Feedback & Overlay"
     - id: "overview"            type: "overview"     line: ~271
-    - id: "color"               type: "foundation"   line: ~413
+    - id: "color"               type: "foundation"   line: ~413  subsections: "primary, status, text-hierarchy, semantic, dark-preview, wireframe"
     - id: "typography"          type: "foundation"   line: ~976
     - id: "spacing"             type: "foundation"   line: ~1076
     - id: "elevation"           type: "foundation"   line: ~1127
@@ -65,6 +65,9 @@
     - id: "do-dont"             type: "reference"    line: ~4006
   -->
 
+  <script>
+  var MELTA_VERSION = '1.2';
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
   tailwind.config = {
@@ -77,6 +80,14 @@
             800:'#1e40af',900:'#1e3a5f',950:'#172554'
           },
           body: '#3d4b5f',
+          wf: {
+            bg: '#FFFFFF',
+            surface: '#F5F5F5',
+            border: '#E0E0E0',
+            text: '#333333',
+            'text-sub': '#888888',
+            accent: '#666666',
+          },
         },
         fontFamily: {
           sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif'],
@@ -97,7 +108,7 @@
   </script>
   <!--
   @tailwind-config
-  {"theme.extend.colors.primary":{"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a5f","950":"#172554"},"theme.extend.colors.body":"#3d4b5f","theme.extend.fontSize":{"xs":["0.8125rem",{"lineHeight":"1.4"}],"sm":["0.9375rem",{"lineHeight":"1.7"}],"base":["1.125rem",{"lineHeight":"2.0"}],"lg":["1.25rem",{"lineHeight":"1.5"}],"xl":["1.375rem",{"lineHeight":"1.4"}],"2xl":["1.625rem",{"lineHeight":"1.4"}],"3xl":["2rem",{"lineHeight":"1.4"}]}}
+  {"theme.extend.colors.primary":{"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a5f","950":"#172554"},"theme.extend.colors.body":"#3d4b5f","theme.extend.colors.wf":{"bg":"#FFFFFF","surface":"#F5F5F5","border":"#E0E0E0","text":"#333333","text-sub":"#888888","accent":"#666666"},"theme.extend.fontSize":{"xs":["0.8125rem",{"lineHeight":"1.4"}],"sm":["0.9375rem",{"lineHeight":"1.7"}],"base":["1.125rem",{"lineHeight":"2.0"}],"lg":["1.25rem",{"lineHeight":"1.5"}],"xl":["1.375rem",{"lineHeight":"1.4"}],"2xl":["1.625rem",{"lineHeight":"1.4"}],"3xl":["2rem",{"lineHeight":"1.4"}]}}
   -->
   <link rel="stylesheet" href="../scripts/ds-theme.css">
 
@@ -191,8 +202,15 @@
       height: 1px;
       background: linear-gradient(90deg, transparent 0%, var(--border-default, #e2e8f0) 20%, var(--border-default, #e2e8f0) 80%, transparent 100%);
       margin-top: 4rem;
-      margin-bottom: 4rem;
+      margin-bottom: 0;
     }
+    /*
+     * Showcase 余白ルール（セクション内サブセクション）:
+     *   - 各サブセクションのコンテナ div に mb-8 を付与（次の h3 との間隔確保）
+     *   - h3 は mb-4 のみ（mt は前のコンテナの mb-8 で担保）
+     *   - セクション間は ds-divider-fade (mt-4rem) + ds-section-animate (pt-4rem) で確保
+     *   - 末尾のサブセクションでも mb-8 を省略しない（後から追加される場合に備える）
+     */
 
     /* ==========================================================================
        4. ds-typo-* — タイポグラフィウォーターフォール
@@ -415,7 +433,7 @@
         </div>
         <div>
           <span class="text-sm font-bold leading-none" style="color:var(--text-heading);">melta UI</span>
-          <span class="block text-[10px] leading-tight mt-0.5" style="color:var(--text-muted);">Design System v1.1</span>
+          <span class="block text-[10px] leading-tight mt-0.5 ds-version-label" style="color:var(--text-muted);">Design System v1.2</span>
         </div>
       </div>
     </div>
@@ -555,7 +573,7 @@
 
     <!-- Footer Zone -->
     <div class="px-4 py-3 border-t flex-shrink-0" style="border-color:var(--border-default);">
-      <p class="text-xs leading-relaxed" style="color:var(--text-muted);">melta UI v1.1</p>
+      <p class="text-xs leading-relaxed ds-version-label" style="color:var(--text-muted);">melta UI v1.2</p>
       <p class="text-xs leading-relaxed" style="color:var(--text-muted);">40 sections &middot; MIT License</p>
     </div>
   </aside>
@@ -576,6 +594,7 @@
           <a href="../examples/index.html" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg text-xs font-medium transition-colors hover:bg-gray-100" style="color:var(--text-muted);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             Sample Sites
+            <span class="inline-flex items-center h-4 px-1.5 rounded text-[10px] font-semibold leading-none" style="background:var(--sidebar-active-bg, #eff6ff);color:var(--sidebar-active-color, #2563eb);">Variants</span>
           </a>
           <a href="https://github.com/tsubotax/melta-ui" target="_blank" rel="noopener noreferrer" class="w-9 h-9 inline-flex items-center justify-center rounded-lg transition-colors hover:bg-gray-100" style="color:var(--text-muted);" aria-label="GitHub">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -953,7 +972,7 @@
 
         <!-- Dark Mode Preview -->
         <h3 class="text-xl font-semibold text-slate-900 mb-4" style="color:var(--text-heading);">ダークモードプレビュー</h3>
-        <div class="dark-preview">
+        <div class="dark-preview mb-8">
           <p class="text-sm text-slate-400 mb-3">html[data-theme="dark"] 適用時のプレビュー</p>
           <div class="dp-surface mb-3">
             <p style="color:#f1f5f9" class="font-semibold mb-1">見出しテキスト <code class="text-xs font-mono" style="color:#94a3b8">text-slate-100</code></p>
@@ -971,6 +990,37 @@
             <button class="h-10 px-4 rounded-lg text-sm font-medium text-white" style="background:#2563eb;">送信</button>
           </div>
         </div>
+
+        <!-- Wireframe Palette -->
+        <h3 class="text-xl font-semibold text-slate-900 mb-4" style="color:var(--text-heading);">ワイヤーフレーム</h3>
+        <p class="text-sm text-body mb-4" style="color:var(--text-default);">低忠実度プロトタイプ用のニュートラルパレット。<code class="font-mono text-xs">--wf-*</code> CSS変数 / <code class="font-mono text-xs">bg-wf-*</code> Tailwindクラスで利用可能。</p>
+        <div class="flex flex-wrap gap-4 mb-8">
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#FFFFFF;box-shadow:0 0 0 3px rgba(0,0,0,0.08);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">bg</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#FFFFFF</p></div>
+          </div>
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#F5F5F5;box-shadow:0 0 0 3px rgba(0,0,0,0.08);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">surface</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#F5F5F5</p></div>
+          </div>
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#E0E0E0;box-shadow:0 0 0 3px rgba(0,0,0,0.08);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">border</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#E0E0E0</p></div>
+          </div>
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#333333;box-shadow:0 0 0 3px rgba(51,51,51,0.15);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">text</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#333333</p></div>
+          </div>
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#888888;box-shadow:0 0 0 3px rgba(136,136,136,0.15);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">text-sub</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#888888</p></div>
+          </div>
+          <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
+            <div class="ds-status-swatch" style="background:#666666;box-shadow:0 0 0 3px rgba(102,102,102,0.15);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">accent</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">#666666</p></div>
+          </div>
+        </div>
+
         <p class="text-sm text-slate-500 mt-2" style="color:var(--text-muted);">→ 詳細: <code class="font-mono">foundations/color.md</code> / <code class="font-mono">theme.md</code></p>
       </section>
       <!-- @end: color -->
@@ -3793,6 +3843,43 @@
         </div>
         <p class="text-base text-body mb-6" style="color:var(--text-default);">Loading / Empty / Error / Complete — 4つの画面状態</p>
 
+        <!-- S/V/P Classification Table -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6" style="background:var(--bg-surface);border-color:var(--border-default);">
+          <h3 class="text-sm font-semibold mb-3" style="color:var(--text-heading);">S/V/P 分類</h3>
+          <div class="overflow-x-auto">
+            <table class="ds-token-table w-full text-sm" data-token-group="svp-classification">
+              <thead>
+                <tr class="border-b border-slate-200">
+                  <th scope="col" class="text-left py-2 text-xs font-medium text-slate-500 uppercase">分類</th>
+                  <th scope="col" class="text-left py-2 text-xs font-medium text-slate-500 uppercase">トリガー</th>
+                  <th scope="col" class="text-left py-2 text-xs font-medium text-slate-500 uppercase">本番残存</th>
+                  <th scope="col" class="text-left py-2 text-xs font-medium text-slate-500 uppercase">URLパラメータ</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="py-2 font-medium" style="color:var(--text-heading);">State</td>
+                  <td class="py-2" style="color:var(--text-default);">データ / 通信状態で自動決定</td>
+                  <td class="py-2"><span class="inline-flex items-center h-5 px-2 rounded-full text-[11px] font-medium" style="background:rgba(5,150,105,0.1);color:#059669;">Yes</span></td>
+                  <td class="py-2 font-mono text-xs" style="color:var(--text-muted);">—</td>
+                </tr>
+                <tr>
+                  <td class="py-2 font-medium" style="color:var(--text-heading);">Variant</td>
+                  <td class="py-2" style="color:var(--text-default);">props / class で静的に切替</td>
+                  <td class="py-2"><span class="inline-flex items-center h-5 px-2 rounded-full text-[11px] font-medium" style="background:rgba(5,150,105,0.1);color:#059669;">Yes</span></td>
+                  <td class="py-2 font-mono text-xs" style="color:var(--text-muted);">?variant=outlined</td>
+                </tr>
+                <tr>
+                  <td class="py-2 font-medium" style="color:var(--text-heading);">Pattern</td>
+                  <td class="py-2" style="color:var(--text-default);">複数コンポーネントの組合せ</td>
+                  <td class="py-2"><span class="inline-flex items-center h-5 px-2 rounded-full text-[11px] font-medium" style="background:rgba(5,150,105,0.1);color:#059669;">Yes</span></td>
+                  <td class="py-2 font-mono text-xs" style="color:var(--text-muted);">?pattern=form-card</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <div class="flex gap-3 mb-6">
           <button id="state-btn-loading" onclick="showState('loading')" style="background-color:#2563eb;color:#fff;border-color:#2563eb" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">Loading</button>
           <button id="state-btn-empty" onclick="showState('empty')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Empty</button>
@@ -4597,6 +4684,11 @@
         }
       });
     }
+
+  // --- バージョン同期（MELTA_VERSION 一元管理） ---
+  document.querySelectorAll('.ds-version-label').forEach(function(el) {
+    el.textContent = el.textContent.replace(/v[\d.]+/, 'v' + MELTA_VERSION);
+  });
 
   </script>
 </body>

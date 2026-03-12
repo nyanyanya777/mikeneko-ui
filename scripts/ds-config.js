@@ -16,6 +16,14 @@ tailwind.config = {
           950: '#172554',
         },
         body: '#3d4b5f',
+        wf: {
+          bg: 'var(--wf-bg)',
+          surface: 'var(--wf-surface)',
+          border: 'var(--wf-border)',
+          text: 'var(--wf-text)',
+          'text-sub': 'var(--wf-text-sub)',
+          accent: 'var(--wf-accent)',
+        },
       },
       fontFamily: {
         sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif'],

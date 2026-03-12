@@ -37,6 +37,7 @@ export interface Tokens {
     easing: Record<string, TokenValue>;
   };
   zIndex: Record<string, TokenValue>;
+  wireframe?: Record<string, TokenValue>;
 }
 
 /** Component variant */
@@ -76,6 +77,48 @@ export interface ComponentMeta {
 export interface ComponentsData {
   version: string;
   components: ComponentMeta[];
+}
+
+/** Screen state (user-toggled via in-app UI) */
+export interface ScreenState {
+  id: string;
+  label: string;
+  query?: string;
+}
+
+/** Screen variant (system/data-driven condition) */
+export interface ScreenVariant {
+  id: string;
+  label: string;
+  query: string;
+}
+
+/** Screen pattern (design alternative for comparison) */
+export interface ScreenPattern {
+  id: string;
+  label: string;
+  description?: string;
+  query: string;
+  group?: string;
+}
+
+/** Single screen metadata */
+export interface ScreenMeta {
+  id: string;
+  label: string;
+  path: string;
+  category?: string;
+  states: ScreenState[];
+  variants: ScreenVariant[];
+  patterns: ScreenPattern[];
+  linksTo: string[];
+  components: string[];
+}
+
+/** screens.json root structure */
+export interface ScreensData {
+  version: string;
+  screens: ScreenMeta[];
 }
 
 /** Prohibition rule for check_rule */

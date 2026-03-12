@@ -42,6 +42,10 @@
     .card-hover { transition: transform 200ms ease, box-shadow 200ms ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(0,0,0,0.12); }
     .color-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .variant-links { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #e2e8f0; }
+    .variant-link { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 500; background: #f1f5f9; color: #475569; text-decoration: none; transition: background 150ms, color 150ms; }
+    .variant-link:hover { background: #e0e7ff; color: #4338ca; }
+    .variant-link svg { width: 12px; height: 12px; }
   </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -86,23 +90,41 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="cards-grid">
 
       <!-- 1. Kintsugi -->
-      <a href="kintsugi.html" class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden block" data-category="saas tob">
-        <div class="h-2" style="background:#2563eb;"></div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="color-dot" style="background:#2563eb;"></div>
-            <span class="text-xs font-medium text-slate-500">Blue &middot; ToB/SaaS</span>
+      <div class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" data-category="saas tob">
+        <a href="kintsugi.html" class="block">
+          <div class="h-2" style="background:#2563eb;"></div>
+          <div class="p-6 pb-0">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="color-dot" style="background:#2563eb;"></div>
+              <span class="text-xs font-medium text-slate-500">Blue &middot; ToB/SaaS</span>
+            </div>
+            <h2 class="text-lg font-bold text-slate-900">Kintsugi</h2>
+            <p class="text-sm text-body mt-1">プロジェクト管理 SaaS</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Sidebar</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Card</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Progress</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Badge</span>
+            </div>
           </div>
-          <h2 class="text-lg font-bold text-slate-900">Kintsugi</h2>
-          <p class="text-sm text-body mt-1">プロジェクト管理 SaaS</p>
-          <div class="mt-4 flex flex-wrap gap-1.5">
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Sidebar</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Card</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Progress</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Badge</span>
+        </a>
+        <div class="px-6 pb-5">
+          <div class="variant-links">
+            <a href="kintsugi.html" class="variant-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              Default
+            </a>
+            <a href="kintsugi.html?_v=loading" class="variant-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4m-7.07-3.93l2.83-2.83m8.48-8.48l2.83-2.83M2 12h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83"/></svg>
+              Loading
+            </a>
+            <a href="kintsugi.html?_v=empty" class="variant-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/></svg>
+              Empty
+            </a>
           </div>
         </div>
-      </a>
+      </div>
 
       <!-- 2. IRODORI Store -->
       <a href="irodori-store.html" class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden block" data-category="toc">
@@ -257,23 +279,37 @@
       </a>
 
       <!-- 10. Aozora Booking -->
-      <a href="aozora-booking.html" class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden block" data-category="toc">
-        <div class="h-2" style="background:#d97706;"></div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="color-dot" style="background:#d97706;"></div>
-            <span class="text-xs font-medium text-slate-500">Amber &middot; Gourmet/ToC</span>
+      <div class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" data-category="toc">
+        <a href="aozora-booking.html" class="block">
+          <div class="h-2" style="background:#d97706;"></div>
+          <div class="p-6 pb-0">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="color-dot" style="background:#d97706;"></div>
+              <span class="text-xs font-medium text-slate-500">Amber &middot; Gourmet/ToC</span>
+            </div>
+            <h2 class="text-lg font-bold text-slate-900">青空Booking</h2>
+            <p class="text-sm text-body mt-1">レストラン予約</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Card</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">TextField</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Toast</span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Badge</span>
+            </div>
           </div>
-          <h2 class="text-lg font-bold text-slate-900">青空Booking</h2>
-          <p class="text-sm text-body mt-1">レストラン予約</p>
-          <div class="mt-4 flex flex-wrap gap-1.5">
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Card</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">TextField</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Toast</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Badge</span>
+        </a>
+        <div class="px-6 pb-5">
+          <div class="variant-links">
+            <a href="aozora-booking.html" class="variant-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              Default
+            </a>
+            <a href="aozora-booking.html?_v=loading" class="variant-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4m-7.07-3.93l2.83-2.83m8.48-8.48l2.83-2.83M2 12h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83"/></svg>
+              Loading
+            </a>
           </div>
         </div>
-      </a>
+      </div>
 
     </div>
 

@@ -47,6 +47,16 @@ function buildVarBlock(
 const lightVars = buildVarBlock(tokens.color.semantic.light);
 const darkVars = buildVarBlock(tokens.color.semantic.dark);
 
+// Wireframe vars (always available in :root alongside brand tokens)
+const wfTokens = (tokens as Record<string, unknown>).wireframe as
+  | Record<string, { cssVar: string; value: string }>
+  | undefined;
+const wfVars = wfTokens
+  ? Object.entries(wfTokens)
+      .map(([, t]) => `  ${t.cssVar}: ${t.value};`)
+      .join("\n")
+  : "";
+
 const bodyLineHeight = tokens.typography.lineHeight.body.value;
 const bodyLetterSpacing = tokens.typography.letterSpacing.body.value;
 const headingLineHeight = tokens.typography.lineHeight.heading.value;
@@ -127,6 +137,7 @@ h1, h2, h3, h4, h5, h6 { line-height: ${headingLineHeight}; letter-spacing: ${he
 ${lightVars}
   --sidebar-active-color: #2563eb;
   --sidebar-active-bg: #eff6ff;
+${wfVars ? `\n${wfVars}` : ""}
 }
 
 /* --- Dark Theme --- */

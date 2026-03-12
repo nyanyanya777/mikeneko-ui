@@ -22,6 +22,13 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.4; letter-spacing: 0.01em; }
   --input-border: #cbd5e1;
   --sidebar-active-color: #2563eb;
   --sidebar-active-bg: #eff6ff;
+
+  --wf-bg: #FFFFFF;
+  --wf-surface: #F5F5F5;
+  --wf-border: #E0E0E0;
+  --wf-text: #333333;
+  --wf-text-sub: #888888;
+  --wf-accent: #666666;
 }
 
 /* --- Dark Theme --- */

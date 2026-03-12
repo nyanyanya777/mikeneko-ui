@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../scripts/ds-state-switcher.js"></script>
   <style>
     :root {
       --primary-50: #fffbeb;
@@ -24,6 +25,8 @@
       --primary-950: #451a03;
     }
     body { font-family: 'Inter', sans-serif; }
+    @keyframes skeletonPulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .skeleton-pulse { animation: skeletonPulse 1.5s ease-in-out infinite; }
   </style>
   <script>
     tailwind.config = {
@@ -157,6 +160,9 @@
 
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-6 py-8">
+
+    <!-- Default variant -->
+    <div data-variant="default">
     <!-- Alert Info -->
     <div class="border-l-4 p-4 rounded-r-lg border-blue-500 bg-blue-50 text-blue-800 mb-8 flex items-center gap-3">
       <svg class="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -385,6 +391,41 @@
         </ul>
       </div>
     </section>
+    </div><!-- /data-variant="default" -->
+
+    <!-- Loading variant -->
+    <div data-variant="loading" style="display:none">
+      <div aria-busy="true" role="status">
+        <div class="h-5 bg-slate-200 rounded-md w-32 skeleton-pulse mb-6"></div>
+        <div class="grid grid-cols-2 gap-6 mb-8">
+          <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="aspect-video bg-slate-200 skeleton-pulse"></div>
+            <div class="p-5 space-y-3">
+              <div class="h-5 bg-slate-200 rounded-md w-3/4 skeleton-pulse"></div>
+              <div class="flex gap-2">
+                <div class="h-6 bg-slate-200 rounded-md w-16 skeleton-pulse"></div>
+                <div class="h-6 bg-slate-200 rounded-md w-16 skeleton-pulse"></div>
+              </div>
+              <div class="h-3 bg-slate-200 rounded-md w-1/2 skeleton-pulse"></div>
+              <div class="h-3 bg-slate-200 rounded-md w-2/3 skeleton-pulse"></div>
+            </div>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="aspect-video bg-slate-200 skeleton-pulse"></div>
+            <div class="p-5 space-y-3">
+              <div class="h-5 bg-slate-200 rounded-md w-3/4 skeleton-pulse"></div>
+              <div class="flex gap-2">
+                <div class="h-6 bg-slate-200 rounded-md w-16 skeleton-pulse"></div>
+                <div class="h-6 bg-slate-200 rounded-md w-16 skeleton-pulse"></div>
+              </div>
+              <div class="h-3 bg-slate-200 rounded-md w-1/2 skeleton-pulse"></div>
+              <div class="h-3 bg-slate-200 rounded-md w-2/3 skeleton-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /data-variant="loading" -->
+
   </main>
 
   <!-- Footer -->

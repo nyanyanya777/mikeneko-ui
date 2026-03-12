@@ -44,7 +44,8 @@ tailwind.config = {
           50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
           400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
           800:'#1e40af',900:'#1e3a5f',950:'#172554'
-        }
+        },
+        wf: { bg:'#FFFFFF', surface:'#F5F5F5', border:'#E0E0E0', text:'#333333', 'text-sub':'#888888', accent:'#666666' }
       },
       fontFamily: {
         sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif']
@@ -145,6 +146,17 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 スケルトン         : bg-slate-200 rounded-md skeleton-pulse + aria-busy="true" role="status"
 空状態             : text-center py-16 + アイコン(w-16 h-16 bg-slate-100 rounded-full) + 見出し + 説明 + CTAボタン
 ツールチップ       : bg-slate-600 text-white text-sm rounded-lg shadow-sm px-3 py-2（width: max-content, max-width: 20rem）
+```
+
+### ワイヤーフレーム（低忠実度プロトタイプ用）
+```
+背景               : bg-wf-bg (#FFFFFF)
+サーフェス         : bg-wf-surface (#F5F5F5)
+ボーダー           : border-wf-border (#E0E0E0)
+テキスト           : text-wf-text (#333333)
+サブテキスト       : text-wf-text-sub (#888888)
+アクセント         : text-wf-accent / bg-wf-accent (#666666)
+CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-text-sub / --wf-accent
 ```
 
 ---

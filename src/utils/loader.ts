@@ -1,13 +1,14 @@
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Tokens, ComponentsData, ProhibitionRule } from "./types.js";
+import type { Tokens, ComponentsData, ScreensData, ProhibitionRule } from "./types.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
 let tokensCache: Tokens | null = null;
 let componentsCache: ComponentsData | null = null;
+let screensCache: ScreensData | null = null;
 
 export function loadTokens(): Tokens {
   if (!tokensCache) {
@@ -25,6 +26,15 @@ export function loadComponents(): ComponentsData {
     );
   }
   return componentsCache!;
+}
+
+export function loadScreens(): ScreensData {
+  if (!screensCache) {
+    screensCache = JSON.parse(
+      readFileSync(resolve(root, "metadata/screens.json"), "utf-8")
+    );
+  }
+  return screensCache!;
 }
 
 /** Built-in prohibition rules extracted from foundations/prohibited.md */

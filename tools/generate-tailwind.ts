@@ -60,6 +60,14 @@ ${Object.entries(primaryColors)
   .join("\n")}
         },
         body: '${tokens.color.body.value}',
+        wf: {
+          bg: 'var(--wf-bg)',
+          surface: 'var(--wf-surface)',
+          border: 'var(--wf-border)',
+          text: 'var(--wf-text)',
+          'text-sub': 'var(--wf-text-sub)',
+          accent: 'var(--wf-accent)',
+        },
       },
       fontFamily: {
 ${Object.entries(fontFamilies)
