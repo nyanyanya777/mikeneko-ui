@@ -97,9 +97,9 @@ Icon+Textボタン    : inline-flex items-center justify-center gap-2 h-10 pl-3 
 バッジ（デフォルト）: bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium
 タグ（削除可能）   : inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium + ×ボタン
 フィルターチップ   : inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border cursor-pointer + aria-selected
-Alert（Info）      : bg-primary-50 border border-primary-200 text-primary-800 rounded-lg p-4
-Alert（Error）     : bg-red-50 border border-red-200 text-red-800 rounded-lg p-4
-Alert（Warning）    : bg-amber-50 border border-amber-200 text-amber-800 rounded-lg p-4
+Alert（Info）      : flex items-start gap-3 p-4 bg-primary-50 border border-primary-200 text-primary-800 rounded-lg（border-l-4 禁止）
+Alert（Error）     : flex items-start gap-3 p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg（border-l-4 禁止）
+Alert（Warning）    : flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg（border-l-4 禁止）
 テーブル外枠         : bg-white rounded-xl border border-slate-200 overflow-hidden
 テーブルヘッダ行     : border-b border-slate-200 bg-gray-50
 テーブルヘッダセル   : <th scope="col"> text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider
@@ -172,6 +172,7 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 | `border-gray-100` | `border-slate-200` |
 | `text-gray-400` for body | `text-body` (#3d4b5f) |
 | `py-0.5` for buttons | `h-8` 以上（S: `h-8` / M: `h-10` / L: `h-12`） |
+| カード/Alert上部・左端のカラーバー（`border-t-4` / `border-l-4` / 色付き `div`） | `border border-*-200 rounded-lg` で全周ボーダー |
 | 色だけで情報伝達 | アイコン/テキストを併用 |
 | `tracking-tight` | 見出し1%、本文2%を基本 |
 | プレースホルダーのみのラベル | 必ず `<label>` を使用 |
@@ -181,7 +182,7 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 | `<th>` の `scope` 省略 | `<th scope="col">` 必須 |
 | `<nav>` の `aria-label` 省略 | `aria-label="メインナビゲーション"` 必須 |
 
-> 全禁止パターン（71項目）: `foundations/prohibited.md` 参照
+> 全禁止パターン（71項目）+ AI生成パターンの排除: `foundations/prohibited.md` 参照
 
 ---
 
