@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヘルプセンター</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <div class="max-w-7xl mx-auto px-8 py-12">
+    <!-- ページヘッダー -->
+    <h1 class="text-3xl font-bold text-slate-900 mb-2">ヘルプセンター</h1>
+    <p class="text-body mb-8">よくある質問と使い方ガイド</p>
+
+    <!-- 検索バー -->
+    <div class="mb-10">
+      <div class="relative max-w-2xl">
+        <input type="search" placeholder="キーワードで検索..." class="w-full px-4 py-3 pl-12 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </div>
+    </div>
+
+    <!-- カテゴリカード -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <a href="#" class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-2xl transition-shadow duration-300">
+        <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">はじめかた</h3>
+        <p class="text-sm text-body">アカウント作成から初期設定まで</p>
+        <span class="inline-block mt-3 text-sm font-medium text-blue-600">12記事 →</span>
+      </a>
+      <a href="#" class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-2xl transition-shadow duration-300">
+        <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">設定ガイド</h3>
+        <p class="text-sm text-body">各種設定の詳細な説明</p>
+        <span class="inline-block mt-3 text-sm font-medium text-blue-600">8記事 →</span>
+      </a>
+      <a href="#" class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-2xl transition-shadow duration-300">
+        <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">FAQ</h3>
+        <p class="text-sm text-body">よくある質問と回答</p>
+        <span class="inline-block mt-3 text-sm font-medium text-blue-600">24記事 →</span>
+      </a>
+    </div>
+
+    <!-- FAQ アコーディオン -->
+    <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+      <h2 class="text-xl font-semibold text-slate-900 mb-6">よくある質問</h2>
+
+      <div class="divide-y divide-slate-200">
+        <details class="group">
+          <summary class="w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900 cursor-pointer list-none">
+            アカウントのパスワードを変更するには？
+            <svg class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-4 text-base text-body leading-relaxed">
+            設定画面の「セキュリティ」タブから、現在のパスワードと新しいパスワードを入力して変更できます。パスワードは8文字以上で、英数字と記号を含める必要があります。
+          </div>
+        </details>
+
+        <details class="group">
+          <summary class="w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900 cursor-pointer list-none">
+            チームメンバーを招待するには？
+            <svg class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-4 text-base text-body leading-relaxed">
+            ダッシュボードの「チーム」セクションから「メンバーを招待」ボタンをクリックし、招待したい方のメールアドレスを入力してください。
+          </div>
+        </details>
+
+        <details class="group">
+          <summary class="w-full flex items-center justify-between py-4 text-left text-base font-medium text-slate-900 cursor-pointer list-none">
+            料金プランを変更するには？
+            <svg class="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pb-4 text-base text-body leading-relaxed">
+            設定画面の「プラン」タブから現在のプランの確認と変更ができます。アップグレードは即時反映、ダウングレードは次回請求日から適用されます。
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="mt-10 bg-white rounded-xl border border-slate-200 p-0 shadow-sm">
+      <div class="text-center">
+        <h2 class="text-xl font-semibold text-slate-900 mb-2">お探しの情報が見つかりませんか？</h2>
+        <p class="text-body mb-6">サポートチームがお手伝いします</p>
+        <div class="flex justify-center gap-4">
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-primary-700 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            メールで問い合わせ
+          </a>
+          <a href="#" class="inline-flex items-center justify-center gap-2 bg-white text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-base font-medium hover:bg-gray-50 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            チャットサポート
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
