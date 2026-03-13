@@ -13,7 +13,7 @@
 
 > クイックリファレンスだけで基本的なUIは生成可能。コンポーネント仕様が必要な場合のみ該当 md を追加で読み込む。
 
-**機械可読データ**: `tokens/tokens.json`（~120トークン）+ `metadata/components.json`（28コンポーネント）
+**機械可読データ**: `tokens/tokens.json`（~106トークン）+ `metadata/components.json`（28コンポーネント）
 
 **フル読み順**: CLAUDE.md → foundations/design_philosophy.md → foundations/theme.md → foundations/ → components/ → patterns/ → foundations/prohibited.md（プロジェクト側に `foundations/theme.md` がある場合はそちらを優先）
 
@@ -98,8 +98,9 @@ Icon+Textボタン    : inline-flex items-center justify-center gap-2 h-10 pl-3 
 タグ（削除可能）   : inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium + ×ボタン
 フィルターチップ   : inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm border cursor-pointer + aria-selected
 Alert（Info）      : flex items-start gap-3 p-4 bg-primary-50 border border-primary-200 text-primary-800 rounded-lg（border-l-4 禁止）
+Alert（Success）   : flex items-start gap-3 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-lg（border-l-4 禁止）
+Alert（Warning）   : flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg（border-l-4 禁止）
 Alert（Error）     : flex items-start gap-3 p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg（border-l-4 禁止）
-Alert（Warning）    : flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg（border-l-4 禁止）
 テーブル外枠         : bg-white rounded-xl border border-slate-200 overflow-hidden
 テーブルヘッダ行     : border-b border-slate-200 bg-gray-50
 テーブルヘッダセル   : <th scope="col"> text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider

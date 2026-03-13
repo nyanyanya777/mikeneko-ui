@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../assets/Meltan_favicon.svg" type="image/svg+xml">
-  <title>Shirokane — プロジェクト管理（Wireframe）</title>
+  <title>Shirokane — カンバンボード（Wireframe）</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,20 +24,34 @@
   }
   </script>
   <style>
-    body { font-family: 'Inter', 'Hiragino Sans', sans-serif; }
+    body {
+      font-family: 'Inter', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      line-height: 2.0;
+      letter-spacing: 0.02em;
+    }
+    h1, h2, h3, h4 { line-height: 1.4; letter-spacing: 0.01em; }
     .wf-card { transition: box-shadow 150ms ease; }
     .wf-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .wf-nav-active { background: #E0E0E0; }
     .wf-progress { height: 6px; border-radius: 3px; background: #E0E0E0; overflow: hidden; }
     .wf-progress-fill { height: 100%; border-radius: 3px; background: #666666; }
-    .wf-avatar { width: 28px; height: 28px; border-radius: 50%; background: #E0E0E0; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: #666666; flex-shrink: 0; }
-    .wf-badge { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border-radius: 10px; font-size: 11px; font-weight: 500; background: #F5F5F5; color: #666666; border: 1px solid #E0E0E0; }
-    .wf-skeleton { background: #E0E0E0; border-radius: 4px; }
-    /* annotation */
+    .wf-avatar {
+      width: 28px; height: 28px; border-radius: 50%; background: #E0E0E0;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 600; color: #666666; flex-shrink: 0;
+    }
+    .wf-badge {
+      display: inline-flex; align-items: center; height: 20px; padding: 0 8px;
+      border-radius: 10px; font-size: 11px; font-weight: 500;
+      background: #F5F5F5; color: #666666; border: 1px solid #E0E0E0;
+    }
+    .wf-badge-high { background: #333333; color: #FFFFFF; border-color: #333333; }
+    .wf-badge-low { background: #FFFFFF; color: #888888; border-color: #E0E0E0; }
+    .wf-drag-handle { cursor: grab; color: #E0E0E0; }
+    .wf-drag-handle:hover { color: #888888; }
     .wf-annotation {
       position: fixed; bottom: 16px; right: 16px; z-index: 50;
-      background: #333333; color: #FFFFFF; font-size: 12px; padding: 10px 16px; border-radius: 8px;
-      max-width: 280px; line-height: 1.5;
+      background: #333333; color: #FFFFFF; font-size: 12px; padding: 10px 16px;
+      border-radius: 8px; max-width: 300px; line-height: 1.5;
     }
   </style>
 </head>
@@ -45,7 +59,7 @@
 
   <!-- Sidebar -->
   <aside class="w-56 bg-wf-surface border-r border-wf-border flex flex-col h-screen flex-shrink-0">
-    <!-- Logo -->
+    <!-- Header -->
     <div class="px-4 py-4 border-b border-wf-border">
       <div class="flex items-center gap-2">
         <div class="w-7 h-7 rounded-lg bg-wf-accent flex items-center justify-center">
@@ -56,56 +70,88 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="flex-1 px-3 py-3 space-y-0.5" aria-label="メインナビゲーション">
-      <a href="#" class="wf-nav-active flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text" aria-current="page">
+    <nav class="flex-1 px-3 py-3 space-y-0.5 overflow-y-auto" aria-label="メインナビゲーション">
+      <p class="px-3 pt-2 pb-1 text-[10px] font-semibold text-wf-text-sub uppercase tracking-wider">プロジェクト</p>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors cursor-pointer">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         ダッシュボード
       </a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors">
-        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-        タスク
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text bg-wf-border/60" aria-current="page">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+        ボード
       </a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors">
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        バックログ
+      </a>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        タイムライン
+      </a>
+
+      <hr class="my-3 border-wf-border" role="separator">
+
+      <p class="px-3 pt-2 pb-1 text-[10px] font-semibold text-wf-text-sub uppercase tracking-wider">チーム</p>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors cursor-pointer">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
         メンバー
       </a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors">
-        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        レポート
-      </a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors">
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 text-sm font-medium rounded-lg text-wf-text-sub hover:bg-wf-border/40 transition-colors cursor-pointer">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
         設定
       </a>
     </nav>
 
     <!-- Footer -->
-    <div class="px-3 py-3 border-t border-wf-border">
+    <div class="mt-auto px-3 py-3 border-t border-wf-border">
+      <!-- Sprint Progress -->
+      <div class="px-3 py-2">
+        <div class="flex items-center justify-between mb-1.5">
+          <span class="text-[10px] font-medium text-wf-text-sub uppercase tracking-wider">Sprint 進捗</span>
+          <span class="text-[10px] font-semibold text-wf-text">68%</span>
+        </div>
+        <div class="wf-progress" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+          <div class="wf-progress-fill" style="width:68%"></div>
+        </div>
+      </div>
+      <hr class="my-2 border-wf-border" role="separator">
       <div class="flex items-center gap-2.5 px-3 py-2">
-        <div class="wf-avatar">T</div>
+        <div class="wf-avatar" role="img" aria-label="坪田 朋">T</div>
         <div>
           <p class="text-xs font-medium text-wf-text leading-none">坪田 朋</p>
-          <p class="text-[10px] text-wf-text-sub leading-tight mt-0.5">CPO</p>
+          <p class="text-[10px] text-wf-text-sub leading-tight mt-0.5">プロダクトオーナー</p>
         </div>
       </div>
     </div>
   </aside>
 
-  <!-- Main -->
-  <main class="flex-1 min-h-screen overflow-auto">
-    <!-- Header -->
-    <header class="sticky top-0 z-10 bg-wf-bg border-b border-wf-border">
-      <div class="px-8 flex items-center justify-between h-12">
-        <div class="flex items-center gap-3">
-          <h1 class="text-sm font-bold text-wf-text">ダッシュボード</h1>
-          <span class="wf-badge">Sprint 14</span>
+  <!-- Main Content -->
+  <main class="flex-1 min-h-screen overflow-hidden flex flex-col">
+    <!-- Top Bar -->
+    <header class="sticky top-0 z-10 bg-wf-bg border-b border-wf-border flex-shrink-0">
+      <div class="px-8 flex items-center justify-between h-14">
+        <div class="flex items-center gap-4">
+          <h1 class="text-base font-bold text-wf-text">melta UI プロジェクト</h1>
+          <div class="relative leading-normal">
+            <select class="appearance-none pl-3 pr-8 py-1.5 text-xs font-medium border border-wf-border rounded-lg bg-wf-surface text-wf-text cursor-pointer focus:outline-none focus:ring-1 focus:ring-wf-accent/30" aria-label="スプリント選択">
+              <option>Sprint 14</option>
+              <option>Sprint 13</option>
+              <option>Sprint 12</option>
+            </select>
+            <svg class="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-wf-text-sub pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="wf-badge">87 完了</span>
+            <span class="wf-badge">34 進行中</span>
+            <span class="wf-badge">7 超過</span>
+          </div>
         </div>
         <div class="flex items-center gap-3">
-          <div class="relative">
-            <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            <input type="text" placeholder="検索…" class="pl-8 pr-3 py-1.5 text-xs border border-wf-border rounded-lg bg-wf-surface text-wf-text focus:outline-none focus:ring-1 focus:ring-wf-accent/30 w-48">
+          <div class="relative leading-normal">
+            <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" placeholder="タスクを検索..." aria-label="タスク検索" class="pl-9 pr-3 py-1.5 text-sm border border-wf-border rounded-lg bg-wf-surface text-wf-text focus:outline-none focus:ring-1 focus:ring-wf-accent/30 w-52">
           </div>
-          <button class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium bg-wf-accent text-white rounded-lg hover:opacity-90 transition-opacity cursor-pointer">
+          <button class="inline-flex items-center gap-1.5 h-8 px-3 text-xs font-medium bg-wf-accent text-white rounded-lg hover:opacity-90 transition-opacity cursor-pointer" aria-label="新規タスクを作成">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
             新規タスク
           </button>
@@ -113,256 +159,397 @@
       </div>
     </header>
 
-    <!-- Content -->
-    <div class="px-8 py-6">
+    <!-- Kanban Board -->
+    <div class="flex-1 overflow-x-auto overflow-y-hidden">
+      <div class="flex gap-5 px-8 py-6 h-full min-w-max">
 
-      <!-- KPI Cards -->
-      <div class="grid grid-cols-4 gap-4 mb-6">
-        <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-          <p class="text-[11px] font-medium text-wf-text-sub uppercase tracking-wide">総タスク</p>
-          <p class="text-2xl font-bold text-wf-text mt-1">128</p>
-          <div class="wf-progress mt-3"><div class="wf-progress-fill" style="width:100%"></div></div>
-        </div>
-        <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-          <p class="text-[11px] font-medium text-wf-text-sub uppercase tracking-wide">進行中</p>
-          <p class="text-2xl font-bold text-wf-text mt-1">34</p>
-          <div class="wf-progress mt-3"><div class="wf-progress-fill" style="width:26.5%"></div></div>
-        </div>
-        <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-          <p class="text-[11px] font-medium text-wf-text-sub uppercase tracking-wide">完了</p>
-          <p class="text-2xl font-bold text-wf-text mt-1">87</p>
-          <div class="wf-progress mt-3"><div class="wf-progress-fill" style="width:68%"></div></div>
-        </div>
-        <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-          <p class="text-[11px] font-medium text-wf-text-sub uppercase tracking-wide">期限超過</p>
-          <p class="text-2xl font-bold text-wf-text mt-1">7</p>
-          <div class="wf-progress mt-3"><div class="wf-progress-fill" style="width:5.5%"></div></div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-3 gap-6">
-        <!-- Task List (2/3) -->
-        <div class="col-span-2">
-          <div class="bg-wf-bg border border-wf-border rounded-xl overflow-hidden">
-            <!-- Table Header -->
-            <div class="px-4 py-3 border-b border-wf-border bg-wf-surface flex items-center justify-between">
-              <h2 class="text-sm font-semibold text-wf-text">タスク一覧</h2>
-              <div class="flex items-center gap-2">
-                <button class="wf-badge cursor-pointer hover:bg-wf-border/60 transition-colors">すべて</button>
-                <button class="wf-badge cursor-pointer hover:bg-wf-border/60 transition-colors">進行中</button>
-                <button class="wf-badge cursor-pointer hover:bg-wf-border/60 transition-colors">レビュー待ち</button>
-              </div>
+        <!-- Column: Backlog -->
+        <section class="w-72 flex flex-col flex-shrink-0" aria-label="Backlog">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <h2 class="text-sm font-semibold text-wf-text">Backlog</h2>
+              <span class="wf-badge">5</span>
             </div>
-            <!-- Table -->
-            <table class="w-full text-sm">
-              <thead>
-                <tr class="border-b border-wf-border">
-                  <th scope="col" class="text-left py-2.5 px-4 text-[11px] font-medium text-wf-text-sub uppercase tracking-wider w-8">
-                    <input type="checkbox" class="rounded border-wf-border cursor-pointer">
-                  </th>
-                  <th scope="col" class="text-left py-2.5 px-4 text-[11px] font-medium text-wf-text-sub uppercase tracking-wider">タスク</th>
-                  <th scope="col" class="text-left py-2.5 px-4 text-[11px] font-medium text-wf-text-sub uppercase tracking-wider">担当</th>
-                  <th scope="col" class="text-left py-2.5 px-4 text-[11px] font-medium text-wf-text-sub uppercase tracking-wider">優先度</th>
-                  <th scope="col" class="text-left py-2.5 px-4 text-[11px] font-medium text-wf-text-sub uppercase tracking-wider">期日</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-wf-border">
-                <tr class="hover:bg-wf-surface/60 transition-colors">
-                  <td class="py-3 px-4"><input type="checkbox" class="rounded border-wf-border cursor-pointer"></td>
-                  <td class="py-3 px-4">
-                    <p class="text-sm font-medium text-wf-text">トークン JSON の v3 スキーマ移行</p>
-                    <p class="text-[11px] text-wf-text-sub mt-0.5">DS-142 · Design System</p>
-                  </td>
-                  <td class="py-3 px-4"><div class="wf-avatar">A</div></td>
-                  <td class="py-3 px-4"><span class="wf-badge">高</span></td>
-                  <td class="py-3 px-4 text-xs text-wf-text-sub">3/15</td>
-                </tr>
-                <tr class="hover:bg-wf-surface/60 transition-colors">
-                  <td class="py-3 px-4"><input type="checkbox" class="rounded border-wf-border cursor-pointer"></td>
-                  <td class="py-3 px-4">
-                    <p class="text-sm font-medium text-wf-text">Showcase ページの S/V/P テーブル追加</p>
-                    <p class="text-[11px] text-wf-text-sub mt-0.5">DS-145 · Showcase</p>
-                  </td>
-                  <td class="py-3 px-4"><div class="wf-avatar">T</div></td>
-                  <td class="py-3 px-4"><span class="wf-badge">中</span></td>
-                  <td class="py-3 px-4 text-xs text-wf-text-sub">3/18</td>
-                </tr>
-                <tr class="hover:bg-wf-surface/60 transition-colors">
-                  <td class="py-3 px-4"><input type="checkbox" class="rounded border-wf-border cursor-pointer"></td>
-                  <td class="py-3 px-4">
-                    <p class="text-sm font-medium text-wf-text">MCP サーバーに get_pattern ツール追加</p>
-                    <p class="text-[11px] text-wf-text-sub mt-0.5">DS-148 · MCP</p>
-                  </td>
-                  <td class="py-3 px-4"><div class="wf-avatar">K</div></td>
-                  <td class="py-3 px-4"><span class="wf-badge">中</span></td>
-                  <td class="py-3 px-4 text-xs text-wf-text-sub">3/20</td>
-                </tr>
-                <tr class="hover:bg-wf-surface/60 transition-colors">
-                  <td class="py-3 px-4"><input type="checkbox" class="rounded border-wf-border cursor-pointer"></td>
-                  <td class="py-3 px-4">
-                    <p class="text-sm font-medium text-wf-text">アクセシビリティ監査レポート作成</p>
-                    <p class="text-[11px] text-wf-text-sub mt-0.5">DS-150 · Foundation</p>
-                  </td>
-                  <td class="py-3 px-4"><div class="wf-avatar">M</div></td>
-                  <td class="py-3 px-4"><span class="wf-badge">低</span></td>
-                  <td class="py-3 px-4 text-xs text-wf-text-sub">3/25</td>
-                </tr>
-                <tr class="hover:bg-wf-surface/60 transition-colors">
-                  <td class="py-3 px-4"><input type="checkbox" class="rounded border-wf-border cursor-pointer"></td>
-                  <td class="py-3 px-4">
-                    <p class="text-sm font-medium text-wf-text">Datepicker コンポーネントのキーボード操作</p>
-                    <p class="text-[11px] text-wf-text-sub mt-0.5">DS-153 · Component</p>
-                  </td>
-                  <td class="py-3 px-4"><div class="wf-avatar">S</div></td>
-                  <td class="py-3 px-4"><span class="wf-badge">高</span></td>
-                  <td class="py-3 px-4 text-xs text-wf-text-sub">3/14</td>
-                </tr>
-              </tbody>
-            </table>
-            <!-- Pagination -->
-            <div class="px-4 py-3 border-t border-wf-border flex items-center justify-between">
-              <p class="text-[11px] text-wf-text-sub">1–5 / 34件</p>
-              <div class="flex items-center gap-1">
-                <button class="w-8 h-8 rounded-lg border border-wf-border text-wf-text-sub inline-flex items-center justify-center hover:bg-wf-surface transition-colors cursor-pointer" aria-label="前へ">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M15 19l-7-7 7-7"/></svg>
-                </button>
-                <button class="w-8 h-8 rounded-lg bg-wf-accent text-white inline-flex items-center justify-center text-xs font-medium cursor-pointer">1</button>
-                <button class="w-8 h-8 rounded-lg border border-wf-border text-wf-text-sub inline-flex items-center justify-center text-xs font-medium hover:bg-wf-surface transition-colors cursor-pointer">2</button>
-                <button class="w-8 h-8 rounded-lg border border-wf-border text-wf-text-sub inline-flex items-center justify-center text-xs font-medium hover:bg-wf-surface transition-colors cursor-pointer">3</button>
-                <button class="w-8 h-8 rounded-lg border border-wf-border text-wf-text-sub inline-flex items-center justify-center hover:bg-wf-surface transition-colors cursor-pointer" aria-label="次へ">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
-                </button>
-              </div>
-            </div>
+            <button class="w-7 h-7 inline-flex items-center justify-center rounded-lg hover:bg-wf-surface transition-colors cursor-pointer" aria-label="Backlogにタスクを追加">
+              <svg class="w-4 h-4 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
           </div>
-        </div>
+          <div class="flex-1 space-y-3 overflow-y-auto pb-4">
+            <!-- Task Card -->
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">ダッシュボードのレスポンシブ対応</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-160 · Frontend</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-high">高</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/20</span>
+                      <div class="wf-avatar" role="img" aria-label="青木 健太">A</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-        <!-- Right Column (1/3) -->
-        <div class="space-y-4">
-          <!-- Sprint Progress -->
-          <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-            <h3 class="text-sm font-semibold text-wf-text mb-3">Sprint 進捗</h3>
-            <div class="space-y-3">
-              <div>
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs text-wf-text">フロントエンド</span>
-                  <span class="text-[11px] text-wf-text-sub">72%</span>
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">Toast コンポーネントのアニメーション改善</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-161 · Component</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge">中</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/22</span>
+                      <div class="wf-avatar" role="img" aria-label="松本 遥">M</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="wf-progress"><div class="wf-progress-fill" style="width:72%"></div></div>
               </div>
-              <div>
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs text-wf-text">バックエンド</span>
-                  <span class="text-[11px] text-wf-text-sub">58%</span>
-                </div>
-                <div class="wf-progress"><div class="wf-progress-fill" style="width:58%"></div></div>
-              </div>
-              <div>
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs text-wf-text">デザイン</span>
-                  <span class="text-[11px] text-wf-text-sub">91%</span>
-                </div>
-                <div class="wf-progress"><div class="wf-progress-fill" style="width:91%"></div></div>
-              </div>
-              <div>
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-xs text-wf-text">QA</span>
-                  <span class="text-[11px] text-wf-text-sub">35%</span>
-                </div>
-                <div class="wf-progress"><div class="wf-progress-fill" style="width:35%"></div></div>
-              </div>
-            </div>
-          </div>
+            </article>
 
-          <!-- Team -->
-          <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-            <h3 class="text-sm font-semibold text-wf-text mb-3">チーム</h3>
-            <div class="space-y-2.5">
-              <div class="flex items-center gap-2.5">
-                <div class="wf-avatar">T</div>
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
                 <div class="flex-1 min-w-0">
-                  <p class="text-xs font-medium text-wf-text truncate">坪田 朋</p>
-                  <p class="text-[10px] text-wf-text-sub">8 タスク</p>
+                  <p class="text-sm font-medium text-wf-text leading-snug">E2Eテストの CI パイプライン構築</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-162 · Infra</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-low">低</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/28</span>
+                      <div class="wf-avatar" role="img" aria-label="佐藤 大輝">S</div>
+                    </div>
+                  </div>
                 </div>
-                <span class="wf-badge">CPO</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <div class="wf-avatar">A</div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-xs font-medium text-wf-text truncate">青木 健太</p>
-                  <p class="text-[10px] text-wf-text-sub">12 タスク</p>
-                </div>
-                <span class="wf-badge">Eng</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <div class="wf-avatar">K</div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-xs font-medium text-wf-text truncate">加藤 美咲</p>
-                  <p class="text-[10px] text-wf-text-sub">6 タスク</p>
-                </div>
-                <span class="wf-badge">Eng</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <div class="wf-avatar">M</div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-xs font-medium text-wf-text truncate">松本 遥</p>
-                  <p class="text-[10px] text-wf-text-sub">5 タスク</p>
-                </div>
-                <span class="wf-badge">Design</span>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <div class="wf-avatar">S</div>
-                <div class="flex-1 min-w-0">
-                  <p class="text-xs font-medium text-wf-text truncate">佐藤 大輝</p>
-                  <p class="text-[10px] text-wf-text-sub">3 タスク</p>
-                </div>
-                <span class="wf-badge">QA</span>
-              </div>
-            </div>
-          </div>
+            </article>
 
-          <!-- Recent Activity -->
-          <div class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
-            <h3 class="text-sm font-semibold text-wf-text mb-3">最近のアクティビティ</h3>
-            <div class="space-y-3">
-              <div class="flex gap-2.5">
-                <div class="wf-avatar text-[10px]">T</div>
-                <div>
-                  <p class="text-xs text-wf-text"><span class="font-medium">坪田</span> が DS-145 を完了にしました</p>
-                  <p class="text-[10px] text-wf-text-sub mt-0.5">3分前</p>
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">トークン JSON の v3 スキーマ移行</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-142 · Foundation</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-high">高</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/15</span>
+                      <div class="wf-avatar" role="img" aria-label="加藤 美咲">K</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="flex gap-2.5">
-                <div class="wf-avatar text-[10px]">A</div>
-                <div>
-                  <p class="text-xs text-wf-text"><span class="font-medium">青木</span> が DS-142 にコメントしました</p>
-                  <p class="text-[10px] text-wf-text-sub mt-0.5">15分前</p>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">i18n 多言語対応の基盤設計</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-163 · Foundation</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-low">低</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">4/5</span>
+                      <div class="wf-avatar" role="img" aria-label="坪田 朋">T</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="flex gap-2.5">
-                <div class="wf-avatar text-[10px]">K</div>
-                <div>
-                  <p class="text-xs text-wf-text"><span class="font-medium">加藤</span> が DS-148 を作成しました</p>
-                  <p class="text-[10px] text-wf-text-sub mt-0.5">1時間前</p>
-                </div>
-              </div>
-              <div class="flex gap-2.5">
-                <div class="wf-avatar text-[10px]">M</div>
-                <div>
-                  <p class="text-xs text-wf-text"><span class="font-medium">松本</span> が DS-150 をレビュー依頼しました</p>
-                  <p class="text-[10px] text-wf-text-sub mt-0.5">2時間前</p>
-                </div>
-              </div>
-            </div>
+            </article>
           </div>
-        </div>
+        </section>
+
+        <!-- Column: In Progress -->
+        <section class="w-72 flex flex-col flex-shrink-0" aria-label="In Progress">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <h2 class="text-sm font-semibold text-wf-text">In Progress</h2>
+              <span class="wf-badge">4</span>
+            </div>
+            <button class="w-7 h-7 inline-flex items-center justify-center rounded-lg hover:bg-wf-surface transition-colors cursor-pointer" aria-label="In Progressにタスクを追加">
+              <svg class="w-4 h-4 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+          </div>
+          <div class="flex-1 space-y-3 overflow-y-auto pb-4">
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">Datepicker キーボードナビゲーション実装</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-153 · Component</p>
+                  <div class="wf-progress mt-2" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                    <div class="wf-progress-fill" style="width:45%"></div>
+                  </div>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-high">高</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/14</span>
+                      <div class="wf-avatar" role="img" aria-label="佐藤 大輝">S</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">MCP サーバーに get_pattern ツール追加</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-148 · MCP</p>
+                  <div class="wf-progress mt-2" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <div class="wf-progress-fill" style="width:70%"></div>
+                  </div>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge">中</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/20</span>
+                      <div class="wf-avatar" role="img" aria-label="加藤 美咲">K</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">Showcase S/V/P メタデータテーブル</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-145 · Showcase</p>
+                  <div class="wf-progress mt-2" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <div class="wf-progress-fill" style="width:85%"></div>
+                  </div>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge">中</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/18</span>
+                      <div class="wf-avatar" role="img" aria-label="坪田 朋">T</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">Stepper コンポーネント新規作成</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-155 · Component</p>
+                  <div class="wf-progress mt-2" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                    <div class="wf-progress-fill" style="width:30%"></div>
+                  </div>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-high">高</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/16</span>
+                      <div class="wf-avatar" role="img" aria-label="青木 健太">A</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Column: Review -->
+        <section class="w-72 flex flex-col flex-shrink-0" aria-label="Review">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <h2 class="text-sm font-semibold text-wf-text">Review</h2>
+              <span class="wf-badge">3</span>
+            </div>
+            <button class="w-7 h-7 inline-flex items-center justify-center rounded-lg hover:bg-wf-surface transition-colors cursor-pointer" aria-label="Reviewにタスクを追加">
+              <svg class="w-4 h-4 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+          </div>
+          <div class="flex-1 space-y-3 overflow-y-auto pb-4">
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">アクセシビリティ監査レポート作成</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-150 · Foundation</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge wf-badge-low">低</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/25</span>
+                      <div class="wf-avatar" role="img" aria-label="松本 遥">M</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">禁止パターン v2 ドキュメント更新</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-156 · Documentation</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge">中</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/19</span>
+                      <div class="wf-avatar" role="img" aria-label="坪田 朋">T</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-bg border border-wf-border rounded-xl p-4 wf-card">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text leading-snug">Select コンポーネントのカスタム矢印統一</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-157 · Component</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <span class="wf-badge">中</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/21</span>
+                      <div class="wf-avatar" role="img" aria-label="佐藤 大輝">S</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Column: Done -->
+        <section class="w-72 flex flex-col flex-shrink-0" aria-label="Done">
+          <div class="flex items-center justify-between mb-3 px-1">
+            <div class="flex items-center gap-2">
+              <h2 class="text-sm font-semibold text-wf-text">Done</h2>
+              <span class="wf-badge">4</span>
+            </div>
+            <button class="w-7 h-7 inline-flex items-center justify-center rounded-lg hover:bg-wf-surface transition-colors cursor-pointer" aria-label="Doneにタスクを追加">
+              <svg class="w-4 h-4 text-wf-text-sub" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4v16m8-8H4"/></svg>
+            </button>
+          </div>
+          <div class="flex-1 space-y-3 overflow-y-auto pb-4">
+            <article class="bg-wf-surface border border-wf-border rounded-xl p-4 wf-card opacity-75">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text-sub leading-snug line-through">ボタン高さを Option C (h-10) に統一</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-140 · Component</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <svg class="w-4 h-4 text-wf-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/10</span>
+                      <div class="wf-avatar" role="img" aria-label="青木 健太">A</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-surface border border-wf-border rounded-xl p-4 wf-card opacity-75">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text-sub leading-snug line-through">LICENSE ファイルのサードパーティ分離</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-138 · Meta</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <svg class="w-4 h-4 text-wf-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/8</span>
+                      <div class="wf-avatar" role="img" aria-label="坪田 朋">T</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-surface border border-wf-border rounded-xl p-4 wf-card opacity-75">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text-sub leading-snug line-through">Divider コンポーネント仕様策定</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-151 · Component</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <svg class="w-4 h-4 text-wf-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/9</span>
+                      <div class="wf-avatar" role="img" aria-label="松本 遥">M</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="bg-wf-surface border border-wf-border rounded-xl p-4 wf-card opacity-75">
+              <div class="flex items-start gap-2">
+                <span class="wf-drag-handle mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="5" r="1.5"/><circle cx="15" cy="5" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="15" cy="19" r="1.5"/></svg>
+                </span>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-medium text-wf-text-sub leading-snug line-through">カラーバー禁止ルール全面適用</p>
+                  <p class="text-[11px] text-wf-text-sub mt-1">DS-152 · Foundation</p>
+                  <div class="flex items-center justify-between mt-3">
+                    <svg class="w-4 h-4 text-wf-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-wf-text-sub">3/11</span>
+                      <div class="wf-avatar" role="img" aria-label="加藤 美咲">K</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="flex-shrink-0 border-t border-wf-border px-8 py-3 flex items-center justify-between bg-wf-bg">
+      <p class="text-[11px] text-wf-text-sub">Shirokane — melta UI ワイヤーフレームトークンで構築</p>
+      <p class="text-[11px] text-wf-text-sub">全 16 タスク · Sprint 14 · 2026-03-13</p>
+    </footer>
   </main>
 
-  <!-- Wireframe Annotation -->
-  <div class="wf-annotation">
-    Wireframe — <code class="font-mono">wf-*</code> トークンのみで構成。色彩なし・構造とレイアウトの検証用。
+  <!-- Wireframe Annotation Overlay -->
+  <div class="wf-annotation" role="status">
+    <p class="font-medium mb-1">Wireframe Prototype</p>
+    <p><code class="font-mono text-[11px]">wf-*</code> トークンのみで構成。<code class="font-mono text-[11px]">primary-*</code> 不使用。構造とレイアウトの検証用プロトタイプ。</p>
   </div>
 
 </body>

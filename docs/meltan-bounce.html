@@ -9,10 +9,19 @@
       margin: 0;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       background: #fafafa;
       font-family: 'Inter', sans-serif;
+      gap: 60px;
+      padding: 40px 0;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 80px;
     }
 
@@ -156,11 +165,110 @@
       80% { transform: scaleX(1.15); opacity: 0.8; }
     }
 
+    /* --- Showcase variants (as used in index.html) --- */
+
+    /* Hero Bounce — 48px, 2.4s cycle (bounce + pause) */
+    .hero-bounce .meltan {
+      width: 48px; height: 48px;
+      animation: meltan-hero-bounce 2.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    }
+    .hero-bounce .meltan-shadow {
+      width: 28px; height: 5px;
+      animation: meltan-hero-shadow 2.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    }
+
+    @keyframes meltan-hero-bounce {
+      0%, 5% { transform: translateY(0) scaleX(1) scaleY(1); }
+      8% { transform: translateY(4px) scaleX(1.12) scaleY(0.88); }
+      18% { transform: translateY(-24px) scaleX(0.92) scaleY(1.08); }
+      22% { transform: translateY(-26px) scaleX(1) scaleY(1); }
+      32% { transform: translateY(2px) scaleX(1.08) scaleY(0.92); }
+      38%, 100% { transform: translateY(0) scaleX(1) scaleY(1); }
+    }
+    @keyframes meltan-hero-shadow {
+      0%, 5% { transform: scaleX(1); opacity: 0.8; }
+      8% { transform: scaleX(1.3); opacity: 0.9; }
+      18%, 22% { transform: scaleX(0.5); opacity: 0.3; }
+      32% { transform: scaleX(1.2); opacity: 0.85; }
+      38%, 100% { transform: scaleX(1); opacity: 0.8; }
+    }
+
+    /* Section Hop — 20px, 2s (gentle hop + head tilt) */
+    .section-hop .meltan {
+      width: 20px; height: 20px;
+      animation: meltan-section-hop 2s ease-in-out infinite;
+    }
+    .section-hop .meltan-shadow {
+      width: 12px; height: 3px;
+      animation: meltan-section-hop-shadow 2s ease-in-out infinite;
+    }
+
+    @keyframes meltan-section-hop {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      15% { transform: translateY(1px) scaleY(0.95) scaleX(1.05); }
+      40% { transform: translateY(-8px) scaleY(1.04) scaleX(0.96); }
+      55% { transform: translateY(-8px) scaleY(1) scaleX(1) rotate(5deg); }
+      70% { transform: translateY(1px) scaleY(0.94) scaleX(1.06) rotate(0deg); }
+      85%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+    }
+    @keyframes meltan-section-hop-shadow {
+      0%, 100% { transform: scaleX(1); opacity: 0.15; }
+      15% { transform: scaleX(1.15); opacity: 0.18; }
+      40%, 55% { transform: scaleX(0.5); opacity: 0.06; }
+      70% { transform: scaleX(1.1); opacity: 0.16; }
+    }
+
+    /* Footer Excited — 28px, 0.5s (double bounce) */
+    .footer-excited .meltan {
+      width: 28px; height: 28px;
+      animation: meltan-footer-excited 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    }
+    .footer-excited .meltan-shadow {
+      width: 18px; height: 3px;
+      animation: meltan-footer-excited-shadow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    }
+
+    @keyframes meltan-footer-excited {
+      0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
+      10% { transform: translateY(2px) scaleY(0.85) scaleX(1.15); }
+      35% { transform: translateY(-12px) scaleY(1.1) scaleX(0.9); }
+      50% { transform: translateY(0) scaleY(0.9) scaleX(1.1); }
+      65% { transform: translateY(-6px) scaleY(1.05) scaleX(0.95); }
+      80% { transform: translateY(1px) scaleY(0.93) scaleX(1.07); }
+    }
+    @keyframes meltan-footer-excited-shadow {
+      0%, 100% { transform: scaleX(1); opacity: 0.2; }
+      10% { transform: scaleX(1.3); opacity: 0.25; }
+      35% { transform: scaleX(0.45); opacity: 0.08; }
+      50% { transform: scaleX(1.2); opacity: 0.22; }
+      65% { transform: scaleX(0.6); opacity: 0.12; }
+      80% { transform: scaleX(1.15); opacity: 0.22; }
+    }
+
     .label {
       font-size: 13px;
       color: #94a3b8;
       font-weight: 500;
       margin-top: 8px;
+    }
+
+    .label small {
+      display: block;
+      font-size: 11px;
+      color: #cbd5e1;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    .section-title {
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: -40px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -171,6 +279,10 @@
   </style>
 </head>
 <body>
+
+  <!-- ===== Base Variants ===== -->
+  <div class="section-title">Base Variants</div>
+  <div class="row">
 
   <!-- Hop (gentle) -->
   <div class="meltan-wrap hop">
@@ -246,6 +358,50 @@
     <div class="meltan-shadow"></div>
     <span class="label">Excited</span>
   </div>
+
+  </div><!-- /row -->
+
+  <!-- ===== Showcase Variants (as used in index.html) ===== -->
+  <div class="section-title">Showcase Variants</div>
+  <div class="row">
+
+    <!-- Hero Bounce (48px, 2.4s with pause) -->
+    <div class="meltan-wrap hero-bounce">
+      <svg class="meltan" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/>
+        <path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/>
+        <path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/>
+        <path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/>
+      </svg>
+      <div class="meltan-shadow"></div>
+      <span class="label">Hero Bounce<small>48px · 2.4s · pause cycle</small></span>
+    </div>
+
+    <!-- Section Hop (20px, 2s) -->
+    <div class="meltan-wrap section-hop">
+      <svg class="meltan" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/>
+        <path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/>
+        <path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/>
+        <path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/>
+      </svg>
+      <div class="meltan-shadow"></div>
+      <span class="label">Section Hop<small>20px · 2s · head tilt</small></span>
+    </div>
+
+    <!-- Footer Excited (28px, 0.5s) -->
+    <div class="meltan-wrap footer-excited">
+      <svg class="meltan" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/>
+        <path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/>
+        <path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/>
+        <path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/>
+      </svg>
+      <div class="meltan-shadow"></div>
+      <span class="label">Footer Excited<small>28px · 0.5s · double bounce</small></span>
+    </div>
+
+  </div><!-- /row -->
 
 </body>
 </html>

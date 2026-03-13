@@ -259,6 +259,93 @@
 
 ---
 
+## 日付セレクト（年月日）
+
+年・月・日を個別の `<select>` で構成するパターン。均等幅（`grid-cols-3`）は月・日セレクトが不必要に広くなるため禁止。
+
+```html
+<div>
+  <label class="block text-sm font-medium text-slate-700 mb-1">生年月日</label>
+  <div class="flex items-center gap-2">
+    <div class="relative">
+      <select class="appearance-none w-28 h-11 pl-3 pr-10 text-base leading-normal border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 bg-white cursor-pointer">
+        <option value="">--</option>
+        <option>1990</option>
+        <!-- ... -->
+      </select>
+      <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+    <span class="text-sm text-slate-500">年</span>
+    <div class="relative">
+      <select class="appearance-none w-20 h-11 pl-3 pr-10 text-base leading-normal border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 bg-white cursor-pointer">
+        <option value="">--</option>
+        <option>1</option>
+        <!-- ... -->
+      </select>
+      <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+    <span class="text-sm text-slate-500">月</span>
+    <div class="relative">
+      <select class="appearance-none w-20 h-11 pl-3 pr-10 text-base leading-normal border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 bg-white cursor-pointer">
+        <option value="">--</option>
+        <option>1</option>
+        <!-- ... -->
+      </select>
+      <svg class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+    <span class="text-sm text-slate-500">日</span>
+  </div>
+</div>
+```
+
+### ルール
+- 年: `w-28`（112px）— 4桁の数字に十分な幅
+- 月・日: `w-20`（80px）— 1〜2桁に適した幅
+- `flex items-center gap-2` で横並び（`grid-cols-3` 禁止）
+- 各セレクトの後に年/月/日のサフィックスラベル（`text-sm text-slate-500`）を推奨
+- `cursor-pointer` を付与
+
+---
+
+## カード内のセクション見出し
+
+カード（`border` + `rounded-xl`）の直下に `<fieldset>` を配置すると、`<legend>` のブラウザデフォルト描画がカードのボーダーと干渉する。カードレベルのセクション見出しには `<div>` + `<h2>` を使用する。
+
+```html
+<!-- OK: カード内のセクション見出し -->
+<div class="bg-white rounded-xl border border-slate-200 p-6">
+  <h2 class="text-lg font-semibold text-slate-900 mb-4">基本情報</h2>
+  <div class="space-y-5">
+    <!-- フォームフィールド -->
+  </div>
+</div>
+
+<!-- OK: カード内部でのフォームコントロールグループ -->
+<div class="bg-white rounded-xl border border-slate-200 p-6">
+  <h2 class="text-lg font-semibold text-slate-900 mb-4">設定</h2>
+  <fieldset>
+    <legend class="text-sm font-medium text-slate-700 mb-3">通知方法</legend>
+    <!-- チェックボックス等 -->
+  </fieldset>
+</div>
+
+<!-- NG: カード直下の fieldset — legend がボーダーと干渉する -->
+<div class="bg-white rounded-xl border border-slate-200">
+  <fieldset class="p-6">
+    <legend class="text-lg font-semibold text-slate-900">基本情報</legend>
+    <!-- legend がカードのボーダー上に浮いて表示される -->
+  </fieldset>
+</div>
+```
+
+---
+
 ## Legend の使い分け
 
 フォーム内の `<legend>` には2つの用途がある。混同しないこと。
@@ -296,3 +383,5 @@
 | 離れた位置のエラー表示 | フィールドとの対応がわからない | フィールド直下に表示 |
 | エラーの自動非表示 | ユーザーが読む前に消える | 修正されるまで表示 |
 | 全フィールドの横並び | 視線移動が増え、ミスが増える | 縦並びを基本とする |
+| カード直下の `<fieldset>` + `<legend>` | `<legend>` がカードの `border` と干渉して浮く | カードのセクション見出しは `<div>` + `<h2>` を使用 |
+| 日付セレクトの均等幅（`grid-cols-3`） | 月・日が広すぎて選択しにくい | `flex` + 年 `w-28`、月・日 `w-20` + サフィックスラベル |
