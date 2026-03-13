@@ -13,7 +13,7 @@
 
 > クイックリファレンスだけで基本的なUIは生成可能。コンポーネント仕様が必要な場合のみ該当 md を追加で読み込む。
 
-**機械可読データ**: `tokens/tokens.json`（~120トークン）+ `metadata/components.json`（27コンポーネント）
+**機械可読データ**: `tokens/tokens.json`（~120トークン）+ `metadata/components.json`（28コンポーネント）
 
 **フル読み順**: CLAUDE.md → foundations/design_philosophy.md → foundations/theme.md → foundations/ → components/ → patterns/ → foundations/prohibited.md（プロジェクト側に `foundations/theme.md` がある場合はそちらを優先）
 
@@ -190,7 +190,7 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 
 **Foundations (10)**: color, spacing, typography, elevation, radius, motion, z-index, icons, accessibility, emotional-feedback — 各 `foundations/{name}.md`
 
-**Components (27)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton, datepicker, divider, stepper — 各 `components/{name}.md`（Icon は `foundations/icons.md`）
+**Components (28)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton, datepicker, divider, stepper, copy-button — 各 `components/{name}.md`（Icon は `foundations/icons.md`）
 
 **Patterns (5)**: layout, form, navigation, interaction-states, responsive — 各 `patterns/{name}.md`
 

@@ -38,9 +38,37 @@
   <link rel="stylesheet" href="../scripts/ds-theme.css">
 
   <style>
-    /* --- Icon cell hover --- */
-    .icon-cell { transition: background-color 150ms ease, box-shadow 150ms ease; cursor: pointer; }
-    .icon-cell:hover { background-color: var(--bg-surface-alt); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    /* --- Icon cell hover & pop animation --- */
+    .icon-cell {
+      transition: background-color 150ms ease, box-shadow 150ms ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      position: relative;
+    }
+    .icon-cell:hover { background-color: var(--bg-surface-alt); box-shadow: 0 1px 3px rgba(0,0,0,0.06); transform: scale(1.03); }
+    .icon-cell:active { transform: scale(0.92); transition: background-color 150ms ease, box-shadow 150ms ease, transform 0.1s ease-out; }
+
+    /* Copy check overlay */
+    .icon-cell .copy-check-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      background: var(--bg-surface);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+    .icon-cell.copied .copy-check-overlay {
+      opacity: 1;
+      transform: scale(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .icon-cell, .icon-cell .copy-check-overlay { transition-duration: 0.01ms; }
+      .icon-cell:hover, .icon-cell:active { transform: none; }
+    }
 
     /* --- Tab underline --- */
     .tab-btn { position: relative; }
@@ -64,7 +92,7 @@
     <div class="flex items-center gap-3">
       <span class="text-lg font-bold" style="color:var(--text-heading);">melta UI</span>
       <span class="text-xs font-medium px-2 py-0.5 rounded-full" style="color:var(--text-muted);background:var(--bg-page-alt);">Icons</span>
-      <a href="showcase.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 ml-2">&larr; Showcase へ戻る</a>
+      <a href="index.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 ml-2">&larr; Showcase へ戻る</a>
     </div>
     <button id="dark-mode-toggle" aria-label="ダークモード切替" class="w-10 h-10 inline-flex items-center justify-center rounded-lg border text-slate-500 hover:bg-gray-50 transition-colors" style="border-color:var(--border-default);">
       <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -663,7 +691,8 @@
       cell.setAttribute('data-icon-name', name);
       cell.setAttribute('title', name);
       cell.innerHTML = '<div class="icon-preview w-10 h-10 flex items-center justify-center rounded-lg mx-auto" style="color:var(--text-default);"></div>' +
-        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>';
+        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>' +
+        '<div class="copy-check-overlay"><svg class="w-8 h-8" viewBox="0 0 24 24" style="color:#059669;"><circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.15"/><polyline points="7 12.5 10.5 16 17 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
       allCells.push(cell);
     });
 
@@ -676,20 +705,28 @@
       cell.setAttribute('data-icon-name', name);
       cell.setAttribute('title', name + ' (Lucide)');
       cell.innerHTML = '<div class="icon-preview w-10 h-10 flex items-center justify-center rounded-lg mx-auto" style="color:var(--text-default);"></div>' +
-        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>';
+        '<p class="text-xs mt-1.5 truncate w-full font-mono" style="color:var(--text-muted);">' + name + '</p>' +
+        '<div class="copy-check-overlay"><svg class="w-8 h-8" viewBox="0 0 24 24" style="color:#059669;"><circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.15"/><polyline points="7 12.5 10.5 16 17 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
       allCells.push(cell);
     });
 
     // Append all cells to grid
     allCells.forEach(function(cell) { grid.appendChild(cell); });
 
-    // Click handler for copy
+    // Click handler for copy with pop animation — copies SVG code
     grid.addEventListener('click', function(e) {
       const cell = e.target.closest('.icon-cell');
       if (!cell) return;
       const name = cell.getAttribute('data-icon-name');
-      navigator.clipboard.writeText(name).then(function() {
-        showToast(name + ' をコピーしました');
+      const source = cell.getAttribute('data-source');
+      const svgCode = fetchSvg(name, source) || name;
+      navigator.clipboard.writeText(svgCode).then(function() {
+        showToast(name + ' SVG をコピーしました');
+        cell.classList.add('copied');
+        clearTimeout(cell._copyTimer);
+        cell._copyTimer = setTimeout(function() {
+          cell.classList.remove('copied');
+        }, 800);
       });
     });
 

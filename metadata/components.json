@@ -579,6 +579,29 @@
       },
       "prohibited": ["色だけでステップ状態区別", "aria-current=\"step\"省略", "w-6 h-6未満のIndicator"],
       "htmlSample": "<div role=\"list\" class=\"flex items-center\"><div role=\"listitem\" class=\"flex items-center\"><div class=\"w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm\"><span class=\"sr-only\">完了:</span><svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" stroke-width=\"2\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\"/></svg></div></div><div class=\"flex-1 h-0.5 mx-3 bg-primary-600\"></div><div role=\"listitem\"><div class=\"w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm\" aria-current=\"step\">2</div></div></div>"
+    },
+    {
+      "id": "copy-button",
+      "name": "CopyButton",
+      "category": "feedback",
+      "description": "クリップボードコピー + pop アニメーション付きアイコンボタン。",
+      "docPath": "components/copy-button.md",
+      "variants": [
+        { "name": "outlined", "css": "copy-button with border border-slate-200 bg-white" },
+        { "name": "subtle",   "css": "copy-button with border-none bg-transparent" }
+      ],
+      "sizes": [
+        { "name": "large",  "css": "48×48px, icon w-6 h-6, rounded-2xl" },
+        { "name": "medium", "css": "40×40px, icon w-5 h-5, rounded-xl" },
+        { "name": "small",  "css": "32×32px, icon w-4 h-4, rounded-lg" }
+      ],
+      "accessibility": {
+        "role": "button",
+        "required": ["aria-label=\"コピー\"", "aria-label update on copied"],
+        "focusRing": "focus-visible:ring-2 focus-visible:ring-primary-500/50"
+      },
+      "prohibited": ["aria-label省略", "フィードバックなし", "復帰タイマー省略"],
+      "htmlSample": "<button class=\"copy-button\" aria-label=\"コピー\"><svg class=\"cb-icon cb-icon-copy w-5 h-5\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"13\" height=\"13\" rx=\"2.5\"/><path d=\"M8 21h11a2 2 0 0 0 2-2v-11\"/></svg><svg class=\"cb-icon cb-icon-check w-5 h-5\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"11\" fill=\"currentColor\" opacity=\"0.15\"/><polyline points=\"7 12.5 10.5 16 17 9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>"
     }
   ]
 }
