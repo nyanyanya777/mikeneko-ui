@@ -174,6 +174,8 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 | `text-gray-400` for body | `text-body` (#3d4b5f) |
 | `py-0.5` for buttons | `h-8` 以上（S: `h-8` / M: `h-10` / L: `h-12`） |
 | カード/Alert上部・左端のカラーバー（`border-t-4` / `border-l-4` / 色付き `div`） | `border border-*-200 rounded-lg` で全周ボーダー |
+| カード直下の `<fieldset>` + `<legend>` | `<div>` + `<h2>` でセクション見出し |
+| 日付セレクトの均等幅（`grid-cols-3`） | `flex` + 年 `w-28`、月・日 `w-20` |
 | 色だけで情報伝達 | アイコン/テキストを併用 |
 | `tracking-tight` | 見出し1%、本文2%を基本 |
 | プレースホルダーのみのラベル | 必ず `<label>` を使用 |
@@ -183,7 +185,7 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 | `<th>` の `scope` 省略 | `<th scope="col">` 必須 |
 | `<nav>` の `aria-label` 省略 | `aria-label="メインナビゲーション"` 必須 |
 
-> 全禁止パターン（71項目）+ AI生成パターンの排除: `foundations/prohibited.md` 参照
+> 全禁止パターン（76項目）+ AI生成パターンの排除: `foundations/prohibited.md` 参照
 
 ---
 
@@ -191,7 +193,9 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 
 **Foundations (10)**: color, spacing, typography, elevation, radius, motion, z-index, icons, accessibility, emotional-feedback — 各 `foundations/{name}.md`
 
-**Components (28)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton, datepicker, divider, stepper, copy-button — 各 `components/{name}.md`（Icon は `foundations/icons.md`）
+**Components (28)**: button, card, checkbox, modal, sidebar, textfield, select, dropdown, radio, toggle, toast, list, badge, tag, table, tooltip, tabs, breadcrumb, pagination, avatar, progress, alert, accordion, skeleton, datepicker, divider, stepper, copy-button — 各 `components/{name}.md`
+
+**Skills (1)**: design-review — `skills/design-review/SKILL.md`（DSチェック・違反検出・修正提案）
 
 **Patterns (5)**: layout, form, navigation, interaction-states, responsive — 各 `patterns/{name}.md`
 
