@@ -277,6 +277,19 @@
       border-radius: 0.75rem;
       padding: 1rem;
     }
+    .dodont-btn-slow, .dodont-btn-fast {
+      background: #2563eb;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+    }
+    .dodont-btn-slow { transition: background 0.5s ease; }
+    .dodont-btn-fast { transition: background 0.15s ease; }
+    .dodont-btn-slow:hover, .dodont-btn-fast:hover { background: #1d4ed8; }
 
     /* ==========================================================================
        7. ds-category-badge — カテゴリバッジ
@@ -4548,15 +4561,15 @@ btn.addEventListener('click', () =&gt; {
             <p class="text-xs text-slate-500 mt-2">カードのセクション見出しは div + h2</p>
           </div>
 
-          <!-- duration-500 vs duration-300 -->
+          <!-- duration-500 vs duration-150 -->
           <div class="ds-dodont-dont">
             <p class="text-xs font-semibold text-red-600 mb-2">DON'T</p>
-            <button style="background:#2563eb;color:#fff;padding:0.5rem 1rem;border-radius:0.5rem;font-size:0.875rem;font-weight:500;border:none;transition:background 0.5s ease;cursor:pointer;" onmouseenter="this.style.background='#1d4ed8'" onmouseleave="this.style.background='#2563eb'">duration-500 のボタン</button>
+            <button class="dodont-btn-slow">duration-500 のボタン</button>
             <p class="text-xs text-slate-500 mt-2">500ms — 操作が鈍く感じる</p>
           </div>
           <div class="ds-dodont-do">
             <p class="text-xs font-semibold text-emerald-600 mb-2">DO</p>
-            <button style="background:#2563eb;color:#fff;padding:0.5rem 1rem;border-radius:0.5rem;font-size:0.875rem;font-weight:500;border:none;transition:background 0.15s ease;cursor:pointer;" onmouseenter="this.style.background='#1d4ed8'" onmouseleave="this.style.background='#2563eb'">duration-150 のボタン</button>
+            <button class="dodont-btn-fast">duration-150 のボタン</button>
             <p class="text-xs text-slate-500 mt-2">150ms — 即座に反応するフィードバック</p>
           </div>
         </div>
