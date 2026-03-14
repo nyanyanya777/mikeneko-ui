@@ -116,7 +116,7 @@
 .dot-loader span {
   width: 9px;
   height: 17px;
-  background: var(--color-primary-500, #2250df);
+  background: var(--color-primary-500, #2b70ef);
   border-radius: 3px;
   animation: dotWave 1.2s infinite ease-in-out;
 }

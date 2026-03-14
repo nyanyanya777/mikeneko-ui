@@ -309,7 +309,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  border-color: #2250df;       /* primary-500 */
+  border-color: #2b70ef;       /* primary-500 */
   border-width: 2px;
   background-color: #fff;
 }
@@ -323,7 +323,7 @@ input[type="radio"]:checked::after {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: #2250df;   /* primary-500 */
+  background-color: #2b70ef;   /* primary-500 */
 }
 
 input[type="radio"]:focus {
