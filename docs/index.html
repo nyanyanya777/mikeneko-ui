@@ -124,7 +124,7 @@
 
     <!-- Header Zone -->
     <div class="px-4 py-4 border-b flex-shrink-0 ds-sidebar-header-gradient" style="border-color:var(--border-default);">
-      <div class="flex items-center gap-2.5">
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="flex items-center gap-2.5 no-underline cursor-pointer" style="text-decoration:none;">
         <div class="w-8 h-8 rounded-lg ds-logo-ring inline-flex items-center justify-center flex-shrink-0 overflow-hidden bg-white p-0.5" style="border:1px solid var(--border-default);">
           <img src="Meltan.svg" alt="melta UI" class="w-full h-full" style="image-rendering:pixelated;">
         </div>
@@ -132,7 +132,7 @@
           <span class="text-sm font-bold leading-none" style="color:var(--text-heading);">melta UI</span>
           <span class="block text-[10px] leading-tight mt-0.5 ds-version-label" style="color:var(--text-muted);">Design System v1.0</span>
         </div>
-      </div>
+      </a>
     </div>
 
     <!-- Search -->
@@ -2378,7 +2378,7 @@
           </div>
           <div class="ds-stage-device-content">
           <div role="tablist" class="flex border-b border-slate-200">
-            <button role="tab" aria-selected="true" onclick="switchBarTab('demo-bar-tabs',0)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-semibold text-slate-900 hover:bg-slate-100 cursor-pointer transition-colors">投稿<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:var(--color-primary-500,#2250df);border-radius:2px"></span></button>
+            <button role="tab" aria-selected="true" onclick="switchBarTab('demo-bar-tabs',0)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-semibold text-slate-900 hover:bg-slate-100 cursor-pointer transition-colors">投稿<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:var(--color-primary-500,#2b70ef);border-radius:2px"></span></button>
             <button role="tab" aria-selected="false" onclick="switchBarTab('demo-bar-tabs',1)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors">いいね</button>
             <button role="tab" aria-selected="false" onclick="switchBarTab('demo-bar-tabs',2)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors">メディア</button>
           </div>
@@ -3794,7 +3794,7 @@ btn.addEventListener('click', () =&gt; {
         </div>
 
         <div class="flex gap-3 mb-6">
-          <button id="state-btn-loading" onclick="showState('loading')" style="background-color:#2250df;color:#fff;border-color:#2250df" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">Loading</button>
+          <button id="state-btn-loading" onclick="showState('loading')" style="background-color:#2b70ef;color:#fff;border-color:#2b70ef" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">Loading</button>
           <button id="state-btn-empty" onclick="showState('empty')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Empty</button>
           <button id="state-btn-error" onclick="showState('error')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Error</button>
           <button id="state-btn-complete" onclick="showState('complete')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Complete</button>
@@ -3894,7 +3894,7 @@ btn.addEventListener('click', () =&gt; {
 
         <!-- Variant selector -->
         <div class="flex gap-3 mb-6">
-          <button id="empty-btn-no-data" onclick="showEmptyVariant('no-data')" style="background-color:#2250df;color:#fff;border-color:#2250df" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">データ0件</button>
+          <button id="empty-btn-no-data" onclick="showEmptyVariant('no-data')" style="background-color:#2b70ef;color:#fff;border-color:#2b70ef" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">データ0件</button>
           <button id="empty-btn-no-results" onclick="showEmptyVariant('no-results')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">検索結果なし</button>
           <button id="empty-btn-first-use" onclick="showEmptyVariant('first-use')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">初回利用</button>
         </div>
