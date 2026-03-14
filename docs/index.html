@@ -76,9 +76,9 @@
       extend: {
         colors: {
           primary: {
-            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
-            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
-            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+            50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+            400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+            800:'#13318d',900:'#0e266a',950:'#07194e'
           },
           body: '#3d4b5f',
           wf: {
@@ -109,7 +109,7 @@
   </script>
   <!--
   @tailwind-config
-  {"theme.extend.colors.primary":{"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a5f","950":"#172554"},"theme.extend.colors.body":"#3d4b5f","theme.extend.colors.wf":{"bg":"#FFFFFF","surface":"#F5F5F5","border":"#E0E0E0","text":"#333333","text-sub":"#888888","accent":"#666666"},"theme.extend.fontSize":{"xs":["0.8125rem",{"lineHeight":"1.4"}],"sm":["0.9375rem",{"lineHeight":"1.7"}],"base":["1.125rem",{"lineHeight":"2.0"}],"lg":["1.25rem",{"lineHeight":"1.5"}],"xl":["1.375rem",{"lineHeight":"1.4"}],"2xl":["1.625rem",{"lineHeight":"1.4"}],"3xl":["2rem",{"lineHeight":"1.4"}]}}
+  {"theme.extend.colors.primary":{"50":"#f0f5ff","100":"#dde8ff","200":"#c0d4ff","300":"#95b6ff","400":"#6492ff","500":"#2b70ef","600":"#2250df","700":"#1a40b5","800":"#13318d","900":"#0e266a","950":"#07194e"},"theme.extend.colors.body":"#3d4b5f","theme.extend.colors.wf":{"bg":"#FFFFFF","surface":"#F5F5F5","border":"#E0E0E0","text":"#333333","text-sub":"#888888","accent":"#666666"},"theme.extend.fontSize":{"xs":["0.8125rem",{"lineHeight":"1.4"}],"sm":["0.9375rem",{"lineHeight":"1.7"}],"base":["1.125rem",{"lineHeight":"2.0"}],"lg":["1.25rem",{"lineHeight":"1.5"}],"xl":["1.375rem",{"lineHeight":"1.4"}],"2xl":["1.625rem",{"lineHeight":"1.4"}],"3xl":["2rem",{"lineHeight":"1.4"}]}}
   -->
   <link rel="stylesheet" href="../scripts/ds-theme.css">
 
@@ -125,7 +125,7 @@
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
     .ds-stage-gradient {
-      background-image: radial-gradient(circle at 20% 50%, rgba(37,99,235,0.03) 0%, transparent 50%),
+      background-image: radial-gradient(circle at 20% 50%, rgba(34,80,223,0.03) 0%, transparent 50%),
                         radial-gradient(circle at 80% 50%, rgba(96,165,250,0.03) 0%, transparent 50%);
     }
     .ds-stage-grid { /* form-like vertical layout — no extra styles beyond ds-preview */ }
@@ -278,7 +278,7 @@
       padding: 1rem;
     }
     .dodont-btn-slow, .dodont-btn-fast {
-      background: #2563eb;
+      background: #2250df;
       color: #fff;
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
@@ -289,7 +289,7 @@
     }
     .dodont-btn-slow { transition: background 0.5s ease; }
     .dodont-btn-fast { transition: background 0.15s ease; }
-    .dodont-btn-slow:hover, .dodont-btn-fast:hover { background: #1d4ed8; }
+    .dodont-btn-slow:hover, .dodont-btn-fast:hover { background: #1a40b5; }
 
     /* ==========================================================================
        7. ds-category-badge — カテゴリバッジ
@@ -302,7 +302,7 @@
       font-size: 0.8125rem;
       font-weight: 500;
     }
-    .ds-category-badge[data-category="foundation"] { background: #eff6ff; color: #2563eb; }
+    .ds-category-badge[data-category="foundation"] { background: #f0f5ff; color: #2250df; }
     .ds-category-badge[data-category="component"]  { background: #f1f5f9; color: #64748b; }
     .ds-category-badge[data-category="pattern"]     { background: #fefce8; color: #ca8a04; }
     .ds-category-badge[data-category="reference"]   { background: #faf5ff; color: #9333ea; }
@@ -328,7 +328,7 @@
     .melt-blob-3 { animation: meltMorph1 18s ease-in-out infinite; filter: blur(70px); }
 
     .melt-text-gradient {
-      background: linear-gradient(135deg, #2563eb 0%, #60a5fa 40%, #93c5fd 70%, #2563eb 100%);
+      background: linear-gradient(135deg, #2250df 0%, #6492ff 40%, #95b6ff 70%, #2250df 100%);
       background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -340,12 +340,12 @@
       50%      { background-position: 100% 50%; }
     }
     @keyframes meltGlow {
-      0%, 100% { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12), 0 0 20px rgba(37, 99, 235, 0.08); }
-      50%      { box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.18), 0 0 30px rgba(37, 99, 235, 0.15); }
+      0%, 100% { box-shadow: 0 0 0 4px rgba(34, 80, 223, 0.12), 0 0 20px rgba(34, 80, 223, 0.08); }
+      50%      { box-shadow: 0 0 0 6px rgba(34, 80, 223, 0.18), 0 0 30px rgba(34, 80, 223, 0.15); }
     }
     .melt-glow { animation: meltGlow 3s ease-in-out infinite; }
     .melt-shadow-lg {
-      box-shadow: 0 8px 32px -8px rgba(37, 99, 235, 0.25), 0 4px 12px -4px rgba(37, 99, 235, 0.12), 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      box-shadow: 0 8px 32px -8px rgba(34, 80, 223, 0.25), 0 4px 12px -4px rgba(34, 80, 223, 0.12), 0 1px 2px 0 rgb(0 0 0 / 0.05);
     }
 
     /* Meltan bounce */
@@ -387,7 +387,7 @@
     }
     /* Meltan hop (section dividers) */
     .meltan-hop { width: 20px; height: 20px; animation: meltanHop 2s ease-in-out infinite; }
-    .meltan-hop-shadow { width: 12px; height: 3px; border-radius: 50%; background: var(--sidebar-active-color, #2563eb); opacity: 0.15; margin-top: 2px; animation: meltanShadowHop 2s ease-in-out infinite; }
+    .meltan-hop-shadow { width: 12px; height: 3px; border-radius: 50%; background: var(--sidebar-active-color, #2250df); opacity: 0.15; margin-top: 2px; animation: meltanShadowHop 2s ease-in-out infinite; }
     @keyframes meltanHop {
       0%, 100% { transform: translateY(0) scaleY(1) scaleX(1); }
       15% { transform: translateY(1px) scaleY(0.95) scaleX(1.05); }
@@ -423,7 +423,7 @@
     .ds-source { position: relative; }
     .ds-source code .hl-tag { color: #6ee7b7; }
     .ds-source code .hl-attr { color: #fbbf24; }
-    .ds-source code .hl-val { color: #93c5fd; }
+    .ds-source code .hl-val { color: #95b6ff; }
     .ds-source code .hl-str { color: #a5b4fc; }
 
     /* ==========================================================================
@@ -434,7 +434,7 @@
     .dark-preview .dp-surface { background: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; padding: 1rem; }
 
     /* Motion demo */
-    .motion-demo-box { width: 48px; height: 48px; background: #2563eb; border-radius: 0.5rem; transition-property: transform; }
+    .motion-demo-box { width: 48px; height: 48px; background: #2250df; border-radius: 0.5rem; transition-property: transform; }
 
     /* Nav dot */
     .ds-nav-dot {
@@ -465,7 +465,7 @@
       background: linear-gradient(180deg, var(--bg-surface, #ffffff) 0%, var(--bg-surface-alt, #f9fafb) 100%);
     }
     .ds-logo-ring {
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      box-shadow: 0 0 0 3px rgba(34, 80, 223, 0.12);
     }
 
     /* Premium surface & hover card */
@@ -514,7 +514,7 @@
     <div class="px-3 pt-3 pb-1 flex-shrink-0">
       <div class="relative">
         <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5" style="color:var(--text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        <input type="text" id="sidebar-search" placeholder="セクション検索…" oninput="filterSidebarNav()" class="w-full pl-8 pr-3 py-1.5 text-xs border rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:outline-none" style="background:var(--input-bg);border-color:var(--input-border);color:var(--text-default);">
+        <input type="text" id="sidebar-search" placeholder="セクション検索…" aria-label="セクション検索" oninput="filterSidebarNav()" class="w-full pl-8 pr-3 py-1.5 text-xs border rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:outline-none" style="background:var(--input-bg);border-color:var(--input-border);color:var(--text-default);">
       </div>
     </div>
 
@@ -667,7 +667,7 @@
           <a href="../examples/index.html" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg text-xs font-medium transition-colors hover:bg-gray-100" style="color:var(--text-muted);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             Sample Sites
-            <span class="inline-flex items-center h-4 px-1.5 rounded text-[10px] font-semibold leading-none" style="background:var(--sidebar-active-bg, #eff6ff);color:var(--sidebar-active-color, #2563eb);">Variants</span>
+            <span class="inline-flex items-center h-4 px-1.5 rounded text-[10px] font-semibold leading-none" style="background:var(--sidebar-active-bg, #f0f5ff);color:var(--sidebar-active-color, #2250df);">Variants</span>
           </a>
           <a href="https://github.com/tsubotax/melta-ui" target="_blank" rel="noopener noreferrer" class="w-9 h-9 inline-flex items-center justify-center rounded-lg transition-colors hover:bg-gray-100" style="color:var(--text-muted);" aria-label="GitHub">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -676,7 +676,7 @@
       </div>
       <!-- Scroll Progress Bar -->
       <div class="h-0.5 w-full" style="background:var(--border-default);">
-        <div id="scroll-progress" class="h-full bg-primary-600 transition-[width] duration-150" style="width:0%"></div>
+        <div id="scroll-progress" class="h-full bg-primary-500 transition-[width] duration-150" style="width:0%"></div>
       </div>
     </header>
 
@@ -684,15 +684,15 @@
     <section id="section-overview" data-section="overview">
       <div class="relative overflow-hidden" style="background:#0f172a;">
         <!-- Radial light sources (4点散らし) -->
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse 50% 45% at 10% 15%, rgba(37,99,235,0.22) 0%, transparent 70%);"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 50% 45% at 10% 15%, rgba(34,80,223,0.22) 0%, transparent 70%);"></div>
         <div class="absolute inset-0" style="background:radial-gradient(ellipse 40% 50% at 75% 10%, rgba(96,165,250,0.14) 0%, transparent 65%);"></div>
-        <div class="absolute inset-0" style="background:radial-gradient(ellipse 45% 40% at 90% 75%, rgba(37,99,235,0.18) 0%, transparent 60%);"></div>
+        <div class="absolute inset-0" style="background:radial-gradient(ellipse 45% 40% at 90% 75%, rgba(34,80,223,0.18) 0%, transparent 60%);"></div>
         <div class="absolute inset-0" style="background:radial-gradient(ellipse 35% 45% at 35% 85%, rgba(96,165,250,0.12) 0%, transparent 65%);"></div>
         <!-- Mesh blobs -->
         <div class="melt-mesh">
-          <div class="melt-blob-1 w-[500px] h-[500px] -top-40 -left-24 opacity-20" style="background:#2563eb;"></div>
-          <div class="melt-blob-2 w-[400px] h-[400px] top-16 right-[-80px] opacity-15" style="background:#60a5fa;animation-delay:-3s;"></div>
-          <div class="melt-blob-3 w-[550px] h-[550px] -bottom-48 left-1/3 opacity-12" style="background:#1d4ed8;animation-delay:-7s;"></div>
+          <div class="melt-blob-1 w-[500px] h-[500px] -top-40 -left-24 opacity-20" style="background:#2250df;"></div>
+          <div class="melt-blob-2 w-[400px] h-[400px] top-16 right-[-80px] opacity-15" style="background:#6492ff;animation-delay:-3s;"></div>
+          <div class="melt-blob-3 w-[550px] h-[550px] -bottom-48 left-1/3 opacity-12" style="background:#1a40b5;animation-delay:-7s;"></div>
         </div>
 
         <!-- Content (centered) -->
@@ -959,17 +959,17 @@
 
         <!-- Gradient Strip -->
         <div class="ds-color-strip mb-6" id="color-strip">
-          <div style="background:#eff6ff" title="primary-50" data-hex="#eff6ff" data-label="50" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#dbeafe" title="primary-100" data-hex="#dbeafe" data-label="100" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#bfdbfe" title="primary-200" data-hex="#bfdbfe" data-label="200" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#93c5fd" title="primary-300" data-hex="#93c5fd" data-label="300" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#60a5fa" title="primary-400" data-hex="#60a5fa" data-label="400" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#3b82f6" title="primary-500" data-hex="#3b82f6" data-label="500" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#2563eb" title="primary-600" data-hex="#2563eb" data-label="600" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#1d4ed8" title="primary-700" data-hex="#1d4ed8" data-label="700" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#1e40af" title="primary-800" data-hex="#1e40af" data-label="800" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#1e3a5f" title="primary-900" data-hex="#1e3a5f" data-label="900" onclick="copyHex(this)" class="cursor-pointer"></div>
-          <div style="background:#172554" title="primary-950" data-hex="#172554" data-label="950" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#f0f5ff" title="primary-50" data-hex="#f0f5ff" data-label="50" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#dde8ff" title="primary-100" data-hex="#dde8ff" data-label="100" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#c0d4ff" title="primary-200" data-hex="#c0d4ff" data-label="200" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#95b6ff" title="primary-300" data-hex="#95b6ff" data-label="300" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#6492ff" title="primary-400" data-hex="#6492ff" data-label="400" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#2b70ef" title="primary-500" data-hex="#2b70ef" data-label="500" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#2250df" title="primary-600" data-hex="#2250df" data-label="600" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#1a40b5" title="primary-700" data-hex="#1a40b5" data-label="700" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#13318d" title="primary-800" data-hex="#13318d" data-label="800" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#0e266a" title="primary-900" data-hex="#0e266a" data-label="900" onclick="copyHex(this)" class="cursor-pointer"></div>
+          <div style="background:#07194e" title="primary-950" data-hex="#07194e" data-label="950" onclick="copyHex(this)" class="cursor-pointer"></div>
         </div>
 
         <table class="ds-token-table w-full mb-8" data-token-group="color-primary">
@@ -982,17 +982,17 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-200 text-sm">
-            <tr data-token="primary-50"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#eff6ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-50</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-50</td><td data-field="value" class="py-2 font-mono text-body">#eff6ff</td></tr>
-            <tr data-token="primary-100"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#dbeafe"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-100</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-100</td><td data-field="value" class="py-2 font-mono text-body">#dbeafe</td></tr>
-            <tr data-token="primary-200"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#bfdbfe"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-200</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-200</td><td data-field="value" class="py-2 font-mono text-body">#bfdbfe</td></tr>
-            <tr data-token="primary-300"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#93c5fd"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-300</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-300</td><td data-field="value" class="py-2 font-mono text-body">#93c5fd</td></tr>
-            <tr data-token="primary-400"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#60a5fa"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-400</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-400</td><td data-field="value" class="py-2 font-mono text-body">#60a5fa</td></tr>
-            <tr data-token="primary-500"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#3b82f6"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-500</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-500</td><td data-field="value" class="py-2 font-mono text-body">#3b82f6</td></tr>
-            <tr data-token="primary-600"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#2563eb"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-600</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-600</td><td data-field="value" class="py-2 font-mono text-body">#2563eb</td></tr>
-            <tr data-token="primary-700"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#1d4ed8"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-700</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-700</td><td data-field="value" class="py-2 font-mono text-body">#1d4ed8</td></tr>
-            <tr data-token="primary-800"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#1e40af"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-800</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-800</td><td data-field="value" class="py-2 font-mono text-body">#1e40af</td></tr>
-            <tr data-token="primary-900"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#1e3a5f"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-900</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-900</td><td data-field="value" class="py-2 font-mono text-body">#1e3a5f</td></tr>
-            <tr data-token="primary-950"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#172554"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-950</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-950</td><td data-field="value" class="py-2 font-mono text-body">#172554</td></tr>
+            <tr data-token="primary-50"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#f0f5ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-50</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-50</td><td data-field="value" class="py-2 font-mono text-body">#f0f5ff</td></tr>
+            <tr data-token="primary-100"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#dde8ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-100</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-100</td><td data-field="value" class="py-2 font-mono text-body">#dde8ff</td></tr>
+            <tr data-token="primary-200"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#c0d4ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-200</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-200</td><td data-field="value" class="py-2 font-mono text-body">#c0d4ff</td></tr>
+            <tr data-token="primary-300"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#95b6ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-300</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-300</td><td data-field="value" class="py-2 font-mono text-body">#95b6ff</td></tr>
+            <tr data-token="primary-400"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#6492ff"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-400</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-400</td><td data-field="value" class="py-2 font-mono text-body">#6492ff</td></tr>
+            <tr data-token="primary-500"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#2b70ef"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-500</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-500</td><td data-field="value" class="py-2 font-mono text-body">#2b70ef</td></tr>
+            <tr data-token="primary-600"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#2250df"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-600</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-600</td><td data-field="value" class="py-2 font-mono text-body">#2250df</td></tr>
+            <tr data-token="primary-700"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#1a40b5"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-700</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-700</td><td data-field="value" class="py-2 font-mono text-body">#1a40b5</td></tr>
+            <tr data-token="primary-800"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#13318d"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-800</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-800</td><td data-field="value" class="py-2 font-mono text-body">#13318d</td></tr>
+            <tr data-token="primary-900"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#0e266a"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-900</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-900</td><td data-field="value" class="py-2 font-mono text-body">#0e266a</td></tr>
+            <tr data-token="primary-950"><td class="py-2"><div class="color-swatch w-10 h-10" style="background-color:#07194e"></div></td><td data-field="name" class="py-2 font-mono text-slate-900">primary-950</td><td data-field="class" class="py-2 font-mono text-body">bg-primary-950</td><td data-field="value" class="py-2 font-mono text-body">#07194e</td></tr>
           </tbody>
         </table>
 
@@ -1016,8 +1016,8 @@
             <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">Neutral</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">slate-600</p></div>
           </div>
           <div class="inline-flex items-center gap-2.5 bg-white rounded-xl border border-slate-200 px-4 py-3 shadow-sm ds-premium-surface" style="background:var(--bg-surface);border-color:var(--border-default);">
-            <div class="ds-status-swatch" style="background:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,0.15);"></div>
-            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">Accent</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">primary-600</p></div>
+            <div class="ds-status-swatch" style="background:#2250df;box-shadow:0 0 0 3px rgba(34,80,223,0.15);"></div>
+            <div><p class="text-sm font-medium text-slate-900" style="color:var(--text-heading);">Accent</p><p class="text-xs font-mono text-slate-500" style="color:var(--text-muted);">primary-500</p></div>
           </div>
         </div>
 
@@ -1063,7 +1063,7 @@
               <tr><td class="py-2 text-slate-900" style="color:var(--text-heading);">本文テキスト</td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#3d4b5f"></div><span class="font-mono text-body" style="color:var(--text-default);">text-body</span></div></td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#cbd5e1"></div><span class="font-mono text-body" style="color:var(--text-default);">text-slate-300</span></div></td><td class="py-2 font-mono text-body" style="color:var(--text-default);">--text-default</td></tr>
               <tr><td class="py-2 text-slate-900" style="color:var(--text-heading);">補助テキスト</td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#64748b"></div><span class="font-mono text-body" style="color:var(--text-default);">text-slate-500</span></div></td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#94a3b8"></div><span class="font-mono text-body" style="color:var(--text-default);">text-slate-400</span></div></td><td class="py-2 font-mono text-body" style="color:var(--text-default);">--text-muted</td></tr>
               <tr><td class="py-2 text-slate-900" style="color:var(--text-heading);">ボーダー</td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#e2e8f0"></div><span class="font-mono text-body" style="color:var(--text-default);">border-slate-200</span></div></td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:#334155"></div><span class="font-mono text-body" style="color:var(--text-default);">border-slate-700</span></div></td><td class="py-2 font-mono text-body" style="color:var(--text-default);">--border-default</td></tr>
-              <tr><td class="py-2 text-slate-900" style="color:var(--text-heading);">フォーカス</td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:rgba(59,130,246,0.5)"></div><span class="font-mono text-body" style="color:var(--text-default);">ring-primary-500/50</span></div></td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:rgba(96,165,250,0.5)"></div><span class="font-mono text-body" style="color:var(--text-default);">ring-primary-400/50</span></div></td><td class="py-2 font-mono text-body" style="color:var(--text-default);">—</td></tr>
+              <tr><td class="py-2 text-slate-900" style="color:var(--text-heading);">フォーカス</td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:rgba(43,112,239,0.5)"></div><span class="font-mono text-body" style="color:var(--text-default);">ring-primary-500/50</span></div></td><td class="py-2"><div class="flex items-center gap-2"><div class="color-swatch w-6 h-6 flex-shrink-0" style="background-color:rgba(96,165,250,0.5)"></div><span class="font-mono text-body" style="color:var(--text-default);">ring-primary-400/50</span></div></td><td class="py-2 font-mono text-body" style="color:var(--text-default);">—</td></tr>
             </tbody>
           </table>
         </div>
@@ -1081,11 +1081,11 @@
             <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:rgba(16,185,129,0.12);color:#6ee7b7">成功</span>
             <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:rgba(245,158,11,0.12);color:#fcd34d">警告</span>
             <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:rgba(239,68,68,0.12);color:#fca5a5">エラー</span>
-            <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:rgba(59,130,246,0.12);color:#93c5fd">アクセント</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:rgba(43,112,239,0.12);color:#95b6ff">アクセント</span>
           </div>
           <div class="flex items-center gap-3">
             <input type="text" placeholder="メールアドレス" class="px-3 py-2 rounded-lg text-sm" style="background:#1e293b;border:1px solid #334155;color:#f1f5f9;flex:1;outline:none;">
-            <button class="h-10 px-4 rounded-lg text-sm font-medium text-white" style="background:#2563eb;">送信</button>
+            <button class="h-10 px-4 rounded-lg text-sm font-medium text-white" style="background:#2250df;">送信</button>
           </div>
         </div>
 
@@ -1191,7 +1191,7 @@
           <div>
             <p class="text-sm font-medium text-slate-500 mb-1">Monospace</p>
             <p class="text-base text-slate-900 font-mono">JetBrains Mono, SF Mono, monospace</p>
-            <p class="text-base text-body font-mono mt-1" style="color:var(--text-default);">const config = { color: '#2563eb' };</p>
+            <p class="text-base text-body font-mono mt-1" style="color:var(--text-default);">const config = { color: '#2250df' };</p>
           </div>
         </div>
 
@@ -1242,16 +1242,16 @@
 
         <h3 class="text-xl font-semibold text-slate-900 mb-4" style="color:var(--text-heading);">スペーシングルーラー</h3>
         <div class="ds-token-table bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-8 space-y-3" data-token-group="spacing">
-          <div class="flex items-center gap-4" data-token="space-1"><span class="text-xs font-mono text-slate-500 w-16">p-1</span><div class="h-5 rounded" style="width:4px;background-color:#bfdbfe"></div><span class="text-xs text-slate-500">4px</span></div>
-          <div class="flex items-center gap-4" data-token="space-2"><span class="text-xs font-mono text-slate-500 w-16">p-2</span><div class="h-5 rounded" style="width:8px;background-color:#93c5fd"></div><span class="text-xs text-slate-500">8px</span></div>
-          <div class="flex items-center gap-4" data-token="space-3"><span class="text-xs font-mono text-slate-500 w-16">p-3</span><div class="h-5 rounded" style="width:12px;background-color:#60a5fa"></div><span class="text-xs text-slate-500">12px</span></div>
-          <div class="flex items-center gap-4" data-token="space-4"><span class="text-xs font-mono text-slate-500 w-16">p-4</span><div class="h-5 rounded" style="width:16px;background-color:#3b82f6"></div><span class="text-xs text-slate-500">16px</span></div>
-          <div class="flex items-center gap-4" data-token="space-5"><span class="text-xs font-mono text-slate-500 w-16">p-5</span><div class="h-5 rounded" style="width:20px;background-color:#3b82f6"></div><span class="text-xs text-slate-500">20px</span></div>
-          <div class="flex items-center gap-4" data-token="space-6"><span class="text-xs font-mono text-slate-500 w-16">p-6</span><div class="h-5 rounded" style="width:24px;background-color:#2563eb"></div><span class="text-xs text-slate-500">24px</span></div>
-          <div class="flex items-center gap-4" data-token="space-8"><span class="text-xs font-mono text-slate-500 w-16">p-8</span><div class="h-5 rounded" style="width:32px;background-color:#2563eb"></div><span class="text-xs text-slate-500">32px</span></div>
-          <div class="flex items-center gap-4" data-token="space-10"><span class="text-xs font-mono text-slate-500 w-16">p-10</span><div class="h-5 rounded" style="width:40px;background-color:#1d4ed8"></div><span class="text-xs text-slate-500">40px</span></div>
-          <div class="flex items-center gap-4" data-token="space-12"><span class="text-xs font-mono text-slate-500 w-16">p-12</span><div class="h-5 rounded" style="width:48px;background-color:#1d4ed8"></div><span class="text-xs text-slate-500">48px</span></div>
-          <div class="flex items-center gap-4" data-token="space-16"><span class="text-xs font-mono text-slate-500 w-16">p-16</span><div class="h-5 rounded" style="width:64px;background-color:#1e40af"></div><span class="text-xs text-slate-500">64px</span></div>
+          <div class="flex items-center gap-4" data-token="space-1"><span class="text-xs font-mono text-slate-500 w-16">p-1</span><div class="h-5 rounded" style="width:4px;background-color:#c0d4ff"></div><span class="text-xs text-slate-500">4px</span></div>
+          <div class="flex items-center gap-4" data-token="space-2"><span class="text-xs font-mono text-slate-500 w-16">p-2</span><div class="h-5 rounded" style="width:8px;background-color:#95b6ff"></div><span class="text-xs text-slate-500">8px</span></div>
+          <div class="flex items-center gap-4" data-token="space-3"><span class="text-xs font-mono text-slate-500 w-16">p-3</span><div class="h-5 rounded" style="width:12px;background-color:#6492ff"></div><span class="text-xs text-slate-500">12px</span></div>
+          <div class="flex items-center gap-4" data-token="space-4"><span class="text-xs font-mono text-slate-500 w-16">p-4</span><div class="h-5 rounded" style="width:16px;background-color:#2b70ef"></div><span class="text-xs text-slate-500">16px</span></div>
+          <div class="flex items-center gap-4" data-token="space-5"><span class="text-xs font-mono text-slate-500 w-16">p-5</span><div class="h-5 rounded" style="width:20px;background-color:#2b70ef"></div><span class="text-xs text-slate-500">20px</span></div>
+          <div class="flex items-center gap-4" data-token="space-6"><span class="text-xs font-mono text-slate-500 w-16">p-6</span><div class="h-5 rounded" style="width:24px;background-color:#2250df"></div><span class="text-xs text-slate-500">24px</span></div>
+          <div class="flex items-center gap-4" data-token="space-8"><span class="text-xs font-mono text-slate-500 w-16">p-8</span><div class="h-5 rounded" style="width:32px;background-color:#2250df"></div><span class="text-xs text-slate-500">32px</span></div>
+          <div class="flex items-center gap-4" data-token="space-10"><span class="text-xs font-mono text-slate-500 w-16">p-10</span><div class="h-5 rounded" style="width:40px;background-color:#1a40b5"></div><span class="text-xs text-slate-500">40px</span></div>
+          <div class="flex items-center gap-4" data-token="space-12"><span class="text-xs font-mono text-slate-500 w-16">p-12</span><div class="h-5 rounded" style="width:48px;background-color:#1a40b5"></div><span class="text-xs text-slate-500">48px</span></div>
+          <div class="flex items-center gap-4" data-token="space-16"><span class="text-xs font-mono text-slate-500 w-16">p-16</span><div class="h-5 rounded" style="width:64px;background-color:#13318d"></div><span class="text-xs text-slate-500">64px</span></div>
         </div>
 
         <!-- Usage Context -->
@@ -1344,21 +1344,21 @@
             <span class="text-sm font-medium text-slate-900 w-32">Fast</span>
             <code class="text-xs font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-700">duration-150</code>
             <span class="text-xs text-slate-500">150ms</span>
-            <button onclick="playMotion(this, 150)" class="text-xs text-primary-600 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
+            <button onclick="playMotion(this, 150)" class="text-xs text-primary-500 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
             <div class="motion-demo-box" style="transition-duration:150ms"></div>
           </div>
           <div class="flex items-center gap-4" data-token="duration-normal">
             <span class="text-sm font-medium text-slate-900 w-32">Normal</span>
             <code class="text-xs font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-700">duration-200</code>
             <span class="text-xs text-slate-500">200ms</span>
-            <button onclick="playMotion(this, 200)" class="text-xs text-primary-600 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
+            <button onclick="playMotion(this, 200)" class="text-xs text-primary-500 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
             <div class="motion-demo-box" style="transition-duration:200ms"></div>
           </div>
           <div class="flex items-center gap-4" data-token="duration-slow">
             <span class="text-sm font-medium text-slate-900 w-32">Slow</span>
             <code class="text-xs font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-700">duration-300</code>
             <span class="text-xs text-slate-500">300ms</span>
-            <button onclick="playMotion(this, 300)" class="text-xs text-primary-600 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
+            <button onclick="playMotion(this, 300)" class="text-xs text-primary-500 hover:text-primary-700 font-medium ml-auto cursor-pointer">▶ Play</button>
             <div class="motion-demo-box" style="transition-duration:300ms"></div>
           </div>
         </div>
@@ -1528,7 +1528,7 @@
           </table>
         </div>
         <p class="text-sm text-slate-500" style="color:var(--text-muted);">→ 詳細: <code class="font-mono">foundations/icons.md</code></p>
-        <a href="icons.html" class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 mt-4">
+        <a href="icons.html" class="inline-flex items-center gap-2 text-sm font-medium text-primary-500 hover:text-primary-700 mt-4">
           全222アイコンを見る →
         </a>
       </section>
@@ -1537,8 +1537,8 @@
       <!-- Quote Banner: Foundation → Component transition (Melt) -->
       <div class="relative rounded-2xl overflow-hidden my-16" style="background:#0f172a;">
         <div class="melt-mesh" style="opacity:0.8;">
-          <div class="melt-blob-1 w-[300px] h-[300px] -top-20 left-10 opacity-25" style="background:#2563eb;"></div>
-          <div class="melt-blob-2 w-[250px] h-[250px] -bottom-16 right-20 opacity-20" style="background:#60a5fa;animation-delay:-4s;"></div>
+          <div class="melt-blob-1 w-[300px] h-[300px] -top-20 left-10 opacity-25" style="background:#2250df;"></div>
+          <div class="melt-blob-2 w-[250px] h-[250px] -bottom-16 right-20 opacity-20" style="background:#6492ff;animation-delay:-4s;"></div>
         </div>
         <div class="relative z-10 text-center py-14 px-8">
           <blockquote class="text-3xl font-medium text-white mb-4" style="letter-spacing:0.01em;line-height:1.6;">「機能的な黒子であり、たまに<span class="melt-text-gradient">微笑む</span>。」</blockquote>
@@ -1552,19 +1552,19 @@
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-l-1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0.3"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0.3"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 8 400 12 600 10" fill="none" stroke="url(#sub-grad-l-1)" stroke-width="1.5"/>
         </svg>
         <div class="flex flex-col items-center flex-shrink-0"><svg class="meltan-hop" viewBox="0 0 40 40" fill="none"><path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/><path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/><path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/><path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/></svg><div class="meltan-hop-shadow"></div></div>
-        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2563eb);white-space:nowrap;">アクション・入力</span>
+        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2250df);white-space:nowrap;">アクション・入力</span>
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-r-1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 12 400 8 600 10" fill="none" stroke="url(#sub-grad-r-1)" stroke-width="1.5"/>
@@ -1601,8 +1601,8 @@
               <!-- @variant: contained -->
               <tr class="ds-showcase-variant" data-variant="contained" data-component="button">
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Contained</td>
-                <td class="py-3 px-4"><button class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">保存する</button></td>
-                <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">bg-primary-600 text-white</code></td>
+                <td class="py-3 px-4"><button class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">保存する</button></td>
+                <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">bg-primary-500 text-white</code></td>
               </tr>
               <!-- @variant: outlined -->
               <tr class="ds-showcase-variant" data-variant="outlined" data-component="button">
@@ -1619,18 +1619,18 @@
               <!-- @variant: subtle -->
               <tr class="ds-showcase-variant" data-variant="subtle" data-component="button">
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Subtle</td>
-                <td class="py-3 px-4"><button class="text-primary-600 bg-primary-50 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-100 transition-colors">詳細を見る</button></td>
-                <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">bg-primary-50 text-primary-600</code></td>
+                <td class="py-3 px-4"><button class="text-primary-500 bg-primary-50 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-100 transition-colors">詳細を見る</button></td>
+                <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">bg-primary-50 text-primary-500</code></td>
               </tr>
               <tr>
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Disabled</td>
-                <td class="py-3 px-4"><button class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium opacity-50 cursor-not-allowed" disabled>保存する</button></td>
+                <td class="py-3 px-4"><button class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium opacity-50 cursor-not-allowed" disabled>保存する</button></td>
                 <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">opacity-50 cursor-not-allowed disabled</code></td>
               </tr>
               <!-- @variant: loading -->
               <tr>
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Loading</td>
-                <td class="py-3 px-4"><button class="inline-flex items-center gap-2 bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium opacity-75 cursor-not-allowed" disabled><div class="inline-spinner"></div> 送信中...</button></td>
+                <td class="py-3 px-4"><button class="inline-flex items-center gap-2 bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium opacity-75 cursor-not-allowed" disabled><div class="inline-spinner"></div> 送信中...</button></td>
                 <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">opacity-75 + inline-spinner</code></td>
               </tr>
             </tbody>
@@ -1650,17 +1650,17 @@
             <tbody class="divide-y divide-slate-200">
               <tr>
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Large</td>
-                <td class="py-3 px-4"><button class="bg-primary-600 text-white h-12 px-6 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Large</button></td>
+                <td class="py-3 px-4"><button class="bg-primary-500 text-white h-12 px-6 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Large</button></td>
                 <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">h-12 px-6 text-[1rem]</code></td>
               </tr>
               <tr>
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Medium</td>
-                <td class="py-3 px-4"><button class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Medium</button></td>
+                <td class="py-3 px-4"><button class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Medium</button></td>
                 <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">h-10 px-4 text-[1rem]</code></td>
               </tr>
               <tr>
                 <td class="py-3 px-4 text-sm font-medium text-slate-900">Small</td>
-                <td class="py-3 px-4"><button class="bg-primary-600 text-white h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-primary-700 transition-colors">Small</button></td>
+                <td class="py-3 px-4"><button class="bg-primary-500 text-white h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-primary-700 transition-colors">Small</button></td>
                 <td class="py-3 px-4"><code class="text-xs font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded">h-8 px-3 text-[0.875rem]</code></td>
               </tr>
               <!-- @variant: icon -->
@@ -1682,7 +1682,7 @@
             </div>
             <button onclick="event.stopPropagation();copyCode(this)" class="ds-copy-btn text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
           </div>
-          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="button-contained" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;button class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors"&gt;
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="button-contained" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;button class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors"&gt;
   保存する
 &lt;/button&gt;</code></pre>
         </div>
@@ -1712,12 +1712,12 @@
           <!-- @variant: default -->
           <div class="ds-showcase-variant" data-variant="default" data-component="textfield">
             <label for="tf-demo" class="block text-sm font-medium text-slate-900 mb-1">名前 <span class="text-red-500">*</span></label>
-            <input id="tf-demo" type="text" placeholder="山田 太郎" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors">
+            <input id="tf-demo" type="text" placeholder="山田 太郎" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors">
           </div>
           <!-- @variant: error -->
           <div class="ds-showcase-variant" data-variant="error" data-component="textfield">
             <label for="tf-err" class="block text-sm font-medium text-slate-900 mb-1">電話番号</label>
-            <input id="tf-err" type="tel" value="abc" aria-invalid="true" aria-describedby="tf-err-msg" class="w-full px-3 py-2 text-base border border-red-500 rounded-lg focus:ring-2 focus:ring-red-500/50 caret-primary-600 transition-colors">
+            <input id="tf-err" type="tel" value="abc" aria-invalid="true" aria-describedby="tf-err-msg" class="w-full px-3 py-2 text-base border border-red-500 rounded-lg focus:ring-2 focus:ring-red-500/50 caret-primary-500 transition-colors">
             <p id="tf-err-msg" role="alert" class="mt-1 text-sm text-red-500 flex items-center gap-1">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
               数字のみ入力してください
@@ -1742,7 +1742,7 @@
 &lt;input id="name" type="text" placeholder="山田 太郎"
   class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg
   focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500
-  caret-primary-600 transition-colors"&gt;</code></pre>
+  caret-primary-500 transition-colors"&gt;</code></pre>
         </div>
         <div class="ds-source-ref"><p class="text-sm flex items-center gap-1.5" style="color:var(--text-muted);"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>仕様詳細: <code class="font-mono">components/textfield.md</code></p></div>
       </section>
@@ -1831,11 +1831,11 @@
             <legend class="text-sm font-medium text-slate-900 mb-2">通知設定</legend>
             <div class="leading-normal space-y-3">
               <div class="flex items-center gap-2">
-                <input id="cb1" type="checkbox" checked class="rounded border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                <input id="cb1" type="checkbox" checked class="rounded border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                 <label for="cb1" class="text-sm text-body">メール通知</label>
               </div>
               <div class="flex items-center gap-2">
-                <input id="cb2" type="checkbox" class="rounded border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                <input id="cb2" type="checkbox" class="rounded border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                 <label for="cb2" class="text-sm text-body">プッシュ通知</label>
               </div>
               <div class="flex items-center gap-2">
@@ -1858,7 +1858,7 @@
   &lt;div class="leading-normal space-y-3"&gt;
     &lt;div class="flex items-center gap-2"&gt;
       &lt;input id="cb1" type="checkbox" checked
-        class="rounded border-slate-300 text-primary-600 focus:ring-primary-500/50"
+        class="rounded border-slate-300 text-primary-500 focus:ring-primary-500/50"
         style="width:1.125rem;height:1.125rem;"&gt;
       &lt;label for="cb1" class="text-sm text-body"&gt;メール通知&lt;/label&gt;
     &lt;/div&gt;
@@ -1892,11 +1892,11 @@
             <legend class="text-sm font-medium text-slate-900 mb-2">表示モード</legend>
             <div class="leading-normal space-y-3">
               <div class="flex items-center gap-2">
-                <input id="rd1" name="display" type="radio" checked class="border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                <input id="rd1" name="display" type="radio" checked class="border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                 <label for="rd1" class="text-sm text-body">リスト表示</label>
               </div>
               <div class="flex items-center gap-2">
-                <input id="rd2" name="display" type="radio" class="border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                <input id="rd2" name="display" type="radio" class="border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                 <label for="rd2" class="text-sm text-body">グリッド表示</label>
               </div>
             </div>
@@ -1915,13 +1915,13 @@
   &lt;div class="leading-normal space-y-3"&gt;
     &lt;div class="flex items-center gap-2"&gt;
       &lt;input id="rd1" name="display" type="radio" checked
-        class="border-slate-300 text-primary-600 focus:ring-primary-500/50"
+        class="border-slate-300 text-primary-500 focus:ring-primary-500/50"
         style="width:1.125rem;height:1.125rem;"&gt;
       &lt;label for="rd1" class="text-sm text-body"&gt;リスト表示&lt;/label&gt;
     &lt;/div&gt;
     &lt;div class="flex items-center gap-2"&gt;
       &lt;input id="rd2" name="display" type="radio"
-        class="border-slate-300 text-primary-600 focus:ring-primary-500/50"
+        class="border-slate-300 text-primary-500 focus:ring-primary-500/50"
         style="width:1.125rem;height:1.125rem;"&gt;
       &lt;label for="rd2" class="text-sm text-body"&gt;グリッド表示&lt;/label&gt;
     &lt;/div&gt;
@@ -1954,7 +1954,7 @@
           <div class="ds-stage-grid max-w-md space-y-4">
             <div class="leading-normal flex items-center justify-between">
               <div><p class="text-sm font-medium text-slate-900">メール通知</p><p class="text-sm text-slate-500" style="color:var(--text-muted);">新着メールの通知を受け取る</p></div>
-              <button role="switch" aria-checked="true" aria-label="メール通知" onclick="toggleSwitch(this)" class="relative w-11 h-6 bg-primary-600 rounded-full transition-colors">
+              <button role="switch" aria-checked="true" aria-label="メール通知" onclick="toggleSwitch(this)" class="relative w-11 h-6 bg-primary-500 rounded-full transition-colors">
                 <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-transform" style="transform:translateX(1.25rem)"></span>
               </button>
             </div>
@@ -2047,7 +2047,7 @@
                 </div>
                 <div id="showcase-dp-grid" role="grid" class="grid grid-cols-7 text-center"></div>
                 <div class="border-t border-slate-200 mt-3 pt-3">
-                  <button type="button" onclick="showcaseDpToday()" class="w-full text-center text-sm font-medium text-primary-600 hover:text-primary-700 py-1.5 rounded-lg hover:bg-primary-50 transition-colors">今日</button>
+                  <button type="button" onclick="showcaseDpToday()" class="w-full text-center text-sm font-medium text-primary-500 hover:text-primary-700 py-1.5 rounded-lg hover:bg-primary-50 transition-colors">今日</button>
                 </div>
               </div>
             </div>
@@ -2084,19 +2084,19 @@
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-l-2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0.3"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0.3"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 8 400 12 600 10" fill="none" stroke="url(#sub-grad-l-2)" stroke-width="1.5"/>
         </svg>
         <div class="flex flex-col items-center flex-shrink-0"><svg class="meltan-hop" style="animation-delay:-0.5s" viewBox="0 0 40 40" fill="none"><path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/><path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/><path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/><path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/></svg><div class="meltan-hop-shadow" style="animation-delay:-0.5s"></div></div>
-        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2563eb);white-space:nowrap;">データ表示</span>
+        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2250df);white-space:nowrap;">データ表示</span>
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-r-2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 12 400 8 600 10" fill="none" stroke="url(#sub-grad-r-2)" stroke-width="1.5"/>
@@ -2198,22 +2198,22 @@
               </tr></thead>
               <tbody class="divide-y divide-slate-200">
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm">YT</div><span class="text-sm font-medium text-slate-900">山田 太郎</span></div></td>
+                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm">YT</div><span class="text-sm font-medium text-slate-900">山田 太郎</span></div></td>
                   <td class="px-6 py-4 text-sm text-body" style="color:var(--text-default);">taro@example.com</td>
                   <td class="px-6 py-4"><span class="inline-flex items-center bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">アクティブ</span></td>
-                  <td class="px-6 py-4"><button class="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors">編集</button></td>
+                  <td class="px-6 py-4"><button class="text-sm text-primary-500 hover:text-primary-700 font-medium transition-colors">編集</button></td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm">SH</div><span class="text-sm font-medium text-slate-900">鈴木 花子</span></div></td>
+                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm">SH</div><span class="text-sm font-medium text-slate-900">鈴木 花子</span></div></td>
                   <td class="px-6 py-4 text-sm text-body" style="color:var(--text-default);">hanako@example.com</td>
                   <td class="px-6 py-4"><span class="inline-flex items-center bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">保留中</span></td>
-                  <td class="px-6 py-4"><button class="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors">編集</button></td>
+                  <td class="px-6 py-4"><button class="text-sm text-primary-500 hover:text-primary-700 font-medium transition-colors">編集</button></td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition-colors">
-                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm">TN</div><span class="text-sm font-medium text-slate-900">田中 次郎</span></div></td>
+                  <td class="px-6 py-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm">TN</div><span class="text-sm font-medium text-slate-900">田中 次郎</span></div></td>
                   <td class="px-6 py-4 text-sm text-body" style="color:var(--text-default);">jiro@example.com</td>
                   <td class="px-6 py-4"><span class="inline-flex items-center bg-red-50 text-red-700 px-3 py-1 rounded-full text-xs font-medium">無効</span></td>
-                  <td class="px-6 py-4"><button class="text-sm text-primary-600 hover:text-primary-700 font-medium transition-colors">編集</button></td>
+                  <td class="px-6 py-4"><button class="text-sm text-primary-500 hover:text-primary-700 font-medium transition-colors">編集</button></td>
                 </tr>
               </tbody>
             </table>
@@ -2268,7 +2268,7 @@
         <div class="ds-preview ds-showcase-variant" data-variant="default" data-component="list">
           <div class="bg-white rounded-xl border border-slate-200 shadow-sm divide-y divide-slate-200 max-w-lg">
             <div class="flex items-center gap-3 px-6 py-4 hover:bg-gray-50 transition-colors">
-              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm">YT</div>
+              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm">YT</div>
               <div class="flex-1 min-w-0">
                 <p class="text-sm font-medium text-slate-900">山田 太郎</p>
                 <p class="text-sm text-slate-500 truncate" style="color:var(--text-muted);">taro@example.com</p>
@@ -2276,7 +2276,7 @@
               <span class="inline-flex items-center bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">アクティブ</span>
             </div>
             <div class="flex items-center gap-3 px-6 py-4 hover:bg-gray-50 transition-colors">
-              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm">SH</div>
+              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm">SH</div>
               <div class="flex-1 min-w-0">
                 <p class="text-sm font-medium text-slate-900">鈴木 花子</p>
                 <p class="text-sm text-slate-500 truncate" style="color:var(--text-muted);">hanako@example.com</p>
@@ -2295,7 +2295,7 @@
           </div>
           <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="list-default" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div class="bg-white rounded-xl border border-slate-200 shadow-sm divide-y divide-slate-200"&gt;
   &lt;div class="flex items-center gap-3 px-6 py-4 hover:bg-gray-50 transition-colors"&gt;
-    &lt;div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm"&gt;YT&lt;/div&gt;
+    &lt;div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm"&gt;YT&lt;/div&gt;
     &lt;div class="flex-1 min-w-0"&gt;
       &lt;p class="text-sm font-medium text-slate-900"&gt;山田 太郎&lt;/p&gt;
       &lt;p class="text-sm text-slate-500 truncate"&gt;taro@example.com&lt;/p&gt;
@@ -2375,7 +2375,7 @@
           <div id="tag-demo-basic" role="list" class="flex flex-wrap gap-2">
             <span role="listitem" class="ds-showcase-variant inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700" data-variant="primary" data-component="tag">
               デザイン
-              <button type="button" aria-label="デザインを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+              <button type="button" aria-label="デザインを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
               </button>
             </span>
@@ -2438,17 +2438,17 @@
             <div id="tag-input-container" class="w-full max-w-md border border-slate-300 rounded-lg focus-within:ring-2 focus-within:ring-primary-500/50 focus-within:border-primary-500 px-3 py-2 flex flex-wrap gap-2 items-center transition-shadow">
               <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
                 JavaScript
-                <button type="button" aria-label="JavaScriptを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+                <button type="button" aria-label="JavaScriptを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
               </span>
               <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
                 React
-                <button type="button" aria-label="Reactを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+                <button type="button" aria-label="Reactを削除" onclick="removeTag(this)" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
               </span>
-              <input id="tag-input-demo" type="text" placeholder="タグを入力して Enter" onkeydown="handleTagInput(event)" class="flex-1 min-w-[120px] outline-none text-base text-slate-900 placeholder:text-slate-400 caret-primary-600 bg-transparent">
+              <input id="tag-input-demo" type="text" placeholder="タグを入力して Enter" onkeydown="handleTagInput(event)" class="flex-1 min-w-[120px] outline-none text-base text-slate-900 placeholder:text-slate-400 caret-primary-500 bg-transparent">
             </div>
           </div>
         </div>
@@ -2468,7 +2468,7 @@
   デザイン
   &lt;button type="button" aria-label="デザインを削除"
     class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full
-    text-primary-400 hover:text-primary-600 hover:bg-primary-100
+    text-primary-400 hover:text-primary-500 hover:bg-primary-100
     focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors"&gt;
     &lt;svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
       &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2524,7 +2524,7 @@
         <div class="ds-preview ds-stage-gradient mb-4" style="background:var(--bg-surface);border-color:var(--border-default);">
           <div class="flex items-center gap-4">
             <div class="ds-showcase-variant" data-variant="initial" data-component="avatar">
-              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="山田太郎">YT</div>
+              <div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="山田太郎">YT</div>
             </div>
             <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="佐藤花子">SH</div>
             <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 font-medium inline-flex items-center justify-center text-sm" role="img" aria-label="田中誠">TN</div>
@@ -2535,7 +2535,7 @@
         <div class="ds-preview ds-stage-gradient mb-4" style="background:var(--bg-surface);border-color:var(--border-default);">
           <div class="flex items-end gap-4">
             <div class="text-center">
-              <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="S">YT</div>
+              <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-500 font-medium inline-flex items-center justify-center text-xs" role="img" aria-label="S">YT</div>
               <p class="text-xs text-slate-500 mt-1">w-8</p>
             </div>
             <div class="text-center">
@@ -2562,7 +2562,7 @@
   role="img" aria-label="山田太郎"&gt;
 
 &lt;!-- イニシャル --&gt;
-&lt;div class="w-10 h-10 rounded-full bg-primary-50 text-primary-600
+&lt;div class="w-10 h-10 rounded-full bg-primary-50 text-primary-500
   font-medium inline-flex items-center justify-center text-sm"
   role="img" aria-label="山田太郎"&gt;YT&lt;/div&gt;</code></pre>
         </div>
@@ -2600,7 +2600,7 @@
         <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8" style="color:var(--text-heading);">テキスト付き</h3>
         <div class="ds-preview ds-stage-gradient mb-4" style="background:var(--bg-surface);border-color:var(--border-default);">
           <div class="space-y-4">
-            <button type="button" class="w-full inline-flex items-center justify-center gap-2 bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">メールでログイン</button>
+            <button type="button" class="w-full inline-flex items-center justify-center gap-2 bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">メールでログイン</button>
             <div role="separator" class="flex items-center gap-4">
               <div class="flex-1 border-t border-slate-200"></div>
               <span class="text-sm text-slate-500 flex-shrink-0">または</span>
@@ -2661,19 +2661,19 @@
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-l-3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0.3"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0.3"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 8 400 12 600 10" fill="none" stroke="url(#sub-grad-l-3)" stroke-width="1.5"/>
         </svg>
         <div class="flex flex-col items-center flex-shrink-0"><svg class="meltan-hop" style="animation-delay:-1s" viewBox="0 0 40 40" fill="none"><path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/><path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/><path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/><path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/></svg><div class="meltan-hop-shadow" style="animation-delay:-1s"></div></div>
-        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2563eb);white-space:nowrap;">ナビゲーション</span>
+        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2250df);white-space:nowrap;">ナビゲーション</span>
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-r-3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 12 400 8 600 10" fill="none" stroke="url(#sub-grad-r-3)" stroke-width="1.5"/>
@@ -2684,7 +2684,7 @@
            @section: tabs
            @type: component
            @label: タブ (Tabs)
-           @variants: default
+           @variants: underline, bar
            @see: components/tabs.md
            ====================================================================== -->
       <section id="section-tabs" data-section="tabs" data-component="tabs" class="ds-section-animate">
@@ -2696,19 +2696,23 @@
         </div>
         <p class="text-base text-body mb-6" style="color:var(--text-default);">コンテンツをカテゴリで切り替えるナビゲーション</p>
 
-        <div class="ds-preview ds-interactive-demo ds-showcase-variant ds-stage-device" data-variant="default" data-component="tabs" data-tab-group="demo-tabs">
+        <!-- underline variant -->
+        <h3 class="text-lg font-semibold mb-3" style="color:var(--text-heading);">underline</h3>
+        <p class="text-sm text-body mb-4" style="color:var(--text-default);">設定画面・詳細ページ向け。左寄せ、下線インジケーター。</p>
+        <div id="tabs-demo-underline">
+        <div class="ds-preview ds-interactive-demo ds-showcase-variant ds-stage-device" data-variant="underline" data-component="tabs" data-tab-group="demo-tabs">
           <div class="ds-stage-device-bar">
             <div class="ds-stage-device-dot"></div><div class="ds-stage-device-dot"></div><div class="ds-stage-device-dot"></div>
             <div class="ds-stage-device-url">melta-app.example.com/settings</div>
           </div>
           <div class="ds-stage-device-content">
           <div role="tablist" class="flex gap-6 border-b border-slate-200">
-            <button role="tab" aria-selected="true" onclick="switchTab('demo-tabs',0)" class="text-sm font-semibold text-primary-600 border-b-2 border-primary-600 pb-3 transition-colors">概要</button>
+            <button role="tab" aria-selected="true" onclick="switchTab('demo-tabs',0)" class="text-sm font-semibold text-primary-500 border-b-2 border-primary-500 pb-3 transition-colors">概要</button>
             <button role="tab" aria-selected="false" onclick="switchTab('demo-tabs',1)" class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700 transition-colors">プロジェクト設定</button>
             <button role="tab" aria-selected="false" onclick="switchTab('demo-tabs',2)" class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700 transition-colors">アクティビティ履歴</button>
             <button role="tab" aria-selected="false" onclick="switchTab('demo-tabs',3)" class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700 transition-colors">チームメンバー</button>
           </div>
-          <div role="tabpanel" class="mt-6"><p class="text-base text-body" style="color:var(--text-default);">概要タブのコンテンツ。アクティブタブは primary-600 のボーダーとテキスト。非アクティブは slate-500 + transparent ボーダーで、hover 時に slate-700 へ遷移します。タブラベルが長い場合でも、flex gap-6 により均等な間隔が保たれます。</p></div>
+          <div role="tabpanel" class="mt-6"><p class="text-base text-body" style="color:var(--text-default);">概要タブのコンテンツ。アクティブタブは primary-500 のボーダーとテキスト。非アクティブは slate-500 + transparent ボーダーで、hover 時に slate-700 へ遷移します。タブラベルが長い場合でも、flex gap-6 により均等な間隔が保たれます。</p></div>
           <div role="tabpanel" class="mt-6 hidden">
             <p class="text-base text-body mb-4" style="color:var(--text-default);">プロジェクト設定タブ。ここではプロジェクトの基本情報、通知設定、アクセス権限などを管理します。タブのラベルが長くても border-b-2 のアンダーラインがテキスト幅に追従するため、視認性を維持できます。</p>
             <div class="space-y-3">
@@ -2729,13 +2733,60 @@
             </div>
             <button onclick="event.stopPropagation();copyCode(this)" class="ds-copy-btn text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
           </div>
-          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="tabs-default" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div role="tablist" class="flex gap-6 border-b border-slate-200"&gt;
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="tabs-underline" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div role="tablist" class="flex gap-6 border-b border-slate-200"&gt;
   &lt;button role="tab" aria-selected="true"
-    class="text-sm font-semibold text-primary-600 border-b-2 border-primary-600 pb-3"&gt;概要&lt;/button&gt;
+    class="text-sm font-semibold text-primary-500 border-b-2 border-primary-500 pb-3"&gt;概要&lt;/button&gt;
   &lt;button role="tab" aria-selected="false"
     class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3"&gt;詳細&lt;/button&gt;
 &lt;/div&gt;</code></pre>
         </div>
+        </div><!-- /tabs-demo-underline -->
+
+        <!-- bar variant -->
+        <h3 class="text-lg font-semibold mt-10 mb-3" style="color:var(--text-heading);">bar</h3>
+        <p class="text-sm text-body mb-4" style="color:var(--text-default);">プロフィール・一覧ページ向け。均等幅、丸角バーインジケーター。</p>
+        <div id="tabs-demo-bar">
+        <div class="ds-preview ds-interactive-demo ds-showcase-variant ds-stage-device" data-variant="bar" data-component="tabs" data-tab-group="demo-bar-tabs">
+          <div class="ds-stage-device-bar">
+            <div class="ds-stage-device-dot"></div><div class="ds-stage-device-dot"></div><div class="ds-stage-device-dot"></div>
+            <div class="ds-stage-device-url">melta-app.example.com/profile</div>
+          </div>
+          <div class="ds-stage-device-content">
+          <div role="tablist" class="flex border-b border-slate-200">
+            <button role="tab" aria-selected="true" onclick="switchBarTab('demo-bar-tabs',0)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-semibold text-slate-900 hover:bg-slate-100 cursor-pointer transition-colors">投稿<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:var(--color-primary-500,#2250df);border-radius:2px"></span></button>
+            <button role="tab" aria-selected="false" onclick="switchBarTab('demo-bar-tabs',1)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors">いいね</button>
+            <button role="tab" aria-selected="false" onclick="switchBarTab('demo-bar-tabs',2)" class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors">メディア</button>
+          </div>
+          <div role="tabpanel" class="mt-6"><p class="text-base text-body" style="color:var(--text-default);">投稿タブのコンテンツ。bar バリアントは均等幅（flex-1）で、アクティブタブのテキスト下に丸角バーインジケーター（56px × 4px, primary-500）を表示します。SNSのプロフィールページなどに適しています。</p></div>
+          <div role="tabpanel" class="mt-6 hidden"><p class="text-base text-body" style="color:var(--text-default);">いいねタブ。お気に入りに追加したコンテンツの一覧を表示します。</p></div>
+          <div role="tabpanel" class="mt-6 hidden"><p class="text-base text-body" style="color:var(--text-default);">メディアタブ。投稿した画像や動画をグリッド形式で表示します。</p></div>
+          </div><!-- /ds-stage-device-content -->
+        </div>
+
+        <div class="ds-code-block mt-4 relative" data-collapsed="true">
+          <div class="flex items-center justify-between px-4 py-2 ds-code-header rounded-lg cursor-pointer" onclick="toggleCodeBlock(this.parentElement)">
+            <div class="flex items-center gap-2">
+              <svg class="ds-code-toggle w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+              <span class="ds-code-lang">HTML</span>
+            </div>
+            <button onclick="event.stopPropagation();copyCode(this)" class="ds-copy-btn text-xs text-slate-400 hover:text-white transition-colors">Copy</button>
+          </div>
+          <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="tabs-bar" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div role="tablist" class="flex border-b border-slate-200"&gt;
+  &lt;button role="tab" aria-selected="true"
+    class="flex-1 relative flex items-center justify-center py-4
+      text-sm font-semibold text-slate-900"&gt;
+    投稿
+    &lt;span style="position:absolute; bottom:0; left:50%;
+      transform:translateX(-50%); width:56px; height:4px;
+      background:var(--color-primary-500); border-radius:2px"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button role="tab" aria-selected="false"
+    class="flex-1 relative flex items-center justify-center py-4
+      text-sm font-medium text-slate-400"&gt;いいね&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        </div><!-- /tabs-demo-bar -->
+
         <div class="ds-source-ref"><p class="text-sm flex items-center gap-1.5" style="color:var(--text-muted);"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>仕様詳細: <code class="font-mono">components/tabs.md</code></p></div>
       </section>
       <!-- @end: tabs -->
@@ -2814,7 +2865,7 @@
             <button aria-label="前のページ" disabled class="w-10 h-10 rounded-lg bg-white border border-slate-200 inline-flex items-center justify-center text-slate-400 cursor-not-allowed">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
             </button>
-            <button aria-current="page" class="w-10 h-10 rounded-lg bg-primary-600 text-white font-medium text-sm">1</button>
+            <button aria-current="page" class="w-10 h-10 rounded-lg bg-primary-500 text-white font-medium text-sm">1</button>
             <button class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-gray-50 transition-colors">2</button>
             <button class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-gray-50 transition-colors">3</button>
             <button aria-label="次のページ" class="w-10 h-10 rounded-lg bg-white border border-slate-200 inline-flex items-center justify-center text-slate-700 hover:bg-gray-50 transition-colors">
@@ -2835,7 +2886,7 @@
     class="w-10 h-10 rounded-lg bg-white border border-slate-200 inline-flex items-center justify-center text-slate-400 cursor-not-allowed"&gt;
     &lt;svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/&gt;&lt;/svg&gt;
   &lt;/button&gt;
-  &lt;button aria-current="page" class="w-10 h-10 rounded-lg bg-primary-600 text-white font-medium text-sm"&gt;1&lt;/button&gt;
+  &lt;button aria-current="page" class="w-10 h-10 rounded-lg bg-primary-500 text-white font-medium text-sm"&gt;1&lt;/button&gt;
   &lt;button class="w-10 h-10 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-gray-50"&gt;2&lt;/button&gt;
   &lt;button aria-label="次のページ"
     class="w-10 h-10 rounded-lg bg-white border border-slate-200 inline-flex items-center justify-center text-slate-700 hover:bg-gray-50"&gt;
@@ -2948,7 +2999,7 @@
 
   &lt;!-- Navigation --&gt;
   &lt;nav class="flex-1 overflow-y-auto px-4 py-4 space-y-1" aria-label="メインナビゲーション"&gt;
-    &lt;a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg" aria-current="page"&gt;
+    &lt;a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg" aria-current="page"&gt;
       &lt;!-- Icon --&gt; ダッシュボード
     &lt;/a&gt;
     &lt;a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors"&gt;
@@ -2959,7 +3010,7 @@
   &lt;!-- Footer --&gt;
   &lt;div class="px-4 py-4 border-t border-slate-200 mt-auto"&gt;
     &lt;div class="flex items-center gap-3"&gt;
-      &lt;div class="w-8 h-8 bg-primary-50 text-primary-600 rounded-full flex items-center justify-center text-sm font-medium"&gt;T&lt;/div&gt;
+      &lt;div class="w-8 h-8 bg-primary-50 text-primary-500 rounded-full flex items-center justify-center text-sm font-medium"&gt;T&lt;/div&gt;
       &lt;span class="text-sm text-slate-700"&gt;Taro Yamada&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -2968,7 +3019,7 @@
 
         <!-- Demo link -->
         <div class="mt-6 flex items-center gap-4">
-          <a href="../examples/sidebar-demo.html" target="_blank" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">
+          <a href="../examples/sidebar-demo.html" target="_blank" class="inline-flex items-center justify-center gap-2 bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">
             フルデモを見る
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
@@ -3003,7 +3054,7 @@
             <!-- Step 1: Completed -->
             <div role="listitem" class="flex items-center">
               <div class="flex flex-col items-center">
-                <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-primary-500 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
                   <span class="sr-only">完了:</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -3013,14 +3064,14 @@
               </div>
             </div>
             <!-- Connector: Completed -->
-            <div class="flex-1 h-0.5 mx-3 bg-primary-600 -mt-6"></div>
+            <div class="flex-1 h-0.5 mx-3 bg-primary-500 -mt-6"></div>
             <!-- Step 2: Active -->
             <div role="listitem" class="flex items-center">
               <div class="flex flex-col items-center">
-                <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+                <div class="w-8 h-8 rounded-full border-2 border-primary-500 bg-white text-primary-500 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
                   2
                 </div>
-                <span class="text-sm font-semibold text-primary-600 mt-2">プロフィール</span>
+                <span class="text-sm font-semibold text-primary-500 mt-2">プロフィール</span>
               </div>
             </div>
             <!-- Connector: Upcoming -->
@@ -3044,13 +3095,13 @@
             <!-- Step 1: Completed -->
             <div role="listitem" class="flex gap-4">
               <div class="flex flex-col items-center">
-                <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+                <div class="w-8 h-8 rounded-full bg-primary-500 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
                   <span class="sr-only">完了:</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                   </svg>
                 </div>
-                <div class="w-0.5 flex-1 my-1 bg-primary-600"></div>
+                <div class="w-0.5 flex-1 my-1 bg-primary-500"></div>
               </div>
               <div class="pb-6">
                 <p class="text-sm font-medium text-slate-900">アカウント作成</p>
@@ -3060,13 +3111,13 @@
             <!-- Step 2: Active -->
             <div role="listitem" class="flex gap-4">
               <div class="flex flex-col items-center">
-                <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+                <div class="w-8 h-8 rounded-full border-2 border-primary-500 bg-white text-primary-500 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
                   2
                 </div>
                 <div class="w-0.5 flex-1 my-1 bg-slate-200"></div>
               </div>
               <div class="pb-6">
-                <p class="text-sm font-semibold text-primary-600">プロフィール設定</p>
+                <p class="text-sm font-semibold text-primary-500">プロフィール設定</p>
                 <p class="text-xs text-slate-500 mt-0.5">名前とアバターを設定してください</p>
               </div>
             </div>
@@ -3096,16 +3147,16 @@
           <pre class="ds-source bg-slate-900 rounded-b-lg p-4 overflow-x-auto" data-source-for="stepper-horizontal" data-lang="html"><code class="text-sm font-mono text-slate-300">&lt;div role="list" class="flex items-center"&gt;
   &lt;!-- Completed --&gt;
   &lt;div role="listitem"&gt;
-    &lt;div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center"&gt;
+    &lt;div class="w-8 h-8 rounded-full bg-primary-500 text-white inline-flex items-center justify-center"&gt;
       &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"&gt;
         &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/&gt;
       &lt;/svg&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class="flex-1 h-0.5 mx-3 bg-primary-600"&gt;&lt;/div&gt;
+  &lt;div class="flex-1 h-0.5 mx-3 bg-primary-500"&gt;&lt;/div&gt;
   &lt;!-- Active --&gt;
   &lt;div role="listitem"&gt;
-    &lt;div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center" aria-current="step"&gt;2&lt;/div&gt;
+    &lt;div class="w-8 h-8 rounded-full border-2 border-primary-500 bg-white text-primary-500 font-semibold inline-flex items-center justify-center" aria-current="step"&gt;2&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="flex-1 h-0.5 mx-3 bg-slate-200"&gt;&lt;/div&gt;
   &lt;!-- Upcoming --&gt;
@@ -3392,19 +3443,19 @@ btn.addEventListener('click', () =&gt; {
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-l-4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0.3"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0.3"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 8 400 12 600 10" fill="none" stroke="url(#sub-grad-l-4)" stroke-width="1.5"/>
         </svg>
         <div class="flex flex-col items-center flex-shrink-0"><svg class="meltan-hop" style="animation-delay:-1.5s" viewBox="0 0 40 40" fill="none"><path d="M8.69847 3L31.9113 3.01413C31.9109 4.16675 31.8852 5.42482 31.9149 6.56879C33.0534 6.57345 34.2582 6.59528 35.3916 6.57188C35.3835 11.7066 35.3324 16.9787 35.3919 22.1071L37.2432 22.1192C37.2445 22.5058 37.2705 24.685 37.2179 24.941C37.7259 25.028 39.4261 24.9717 40 24.977C39.9648 27.5561 39.9502 30.1355 39.9561 32.7148C37.2503 32.7217 34.4084 32.6707 31.7195 32.7191C31.7143 33.815 31.7156 34.9108 31.7235 36.0067L17.1802 35.9957L12.2487 35.9974C11.3793 35.9977 10.3715 36.0204 9.51019 35.988C9.4426 34.9315 9.4689 33.5352 9.46396 32.4515L2.89353 32.4392C2.84435 31.3283 2.90628 30.2183 2.8971 29.1041C2.23705 29.1089 0.563496 29.1551 0 29.0772L0.00537464 24.9745L2.85087 24.9704C2.78162 24.1409 2.81734 22.9716 2.82614 22.123L5.14328 22.1213C5.21239 16.9527 5.10133 11.7419 5.17096 6.56946C6.33676 6.58582 7.5311 6.56946 8.69938 6.56908C8.65971 5.42834 8.69424 4.15215 8.69847 3Z" fill="#8ED098"/><path d="M15.6982 21.3659L24.2036 21.3551L24.1913 24.2652C21.4417 24.2161 18.4534 24.2333 15.7009 24.2535L15.6982 21.3659Z" fill="#2B4730"/><path d="M12.8856 14.2206L16.068 14.2167C16.0606 15.1112 16.115 16.5959 16.0334 17.4303C14.9729 17.4219 13.9124 17.4257 12.852 17.4418C12.8506 16.4582 12.8199 15.1806 12.8856 14.2206Z" fill="#2B4730"/><path d="M24.0052 14.1977C24.8696 14.2567 26.2556 14.2048 27.1308 14.1817C27.1509 15.2612 27.1456 16.3647 27.1504 17.4463C26.1001 17.4112 25.0489 17.414 23.9988 17.4545C23.9643 16.5088 23.963 15.1399 24.0052 14.1977Z" fill="#2B4730"/></svg><div class="meltan-hop-shadow" style="animation-delay:-1.5s"></div></div>
-        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2563eb);white-space:nowrap;">フィードバック & オーバーレイ</span>
+        <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sidebar-active-color, #2250df);white-space:nowrap;">フィードバック & オーバーレイ</span>
         <svg class="flex-1" viewBox="0 0 600 20" preserveAspectRatio="none" style="height:16px;">
           <defs>
             <linearGradient id="sub-grad-r-4" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#2563eb" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#2250df" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2250df" stop-opacity="0"/>
             </linearGradient>
           </defs>
           <path d="M0 10 C200 12 400 8 600 10" fill="none" stroke="url(#sub-grad-r-4)" stroke-width="1.5"/>
@@ -3493,7 +3544,7 @@ btn.addEventListener('click', () =&gt; {
           <h3 class="text-lg font-semibold text-slate-900 mb-3" style="color:var(--text-heading);">インタラクティブデモ</h3>
           <div class="flex gap-3 mb-4">
             <button onclick="openModal('modal-confirm')" aria-haspopup="dialog" class="bg-red-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-red-600 transition-colors">確認ダイアログ</button>
-            <button onclick="openModal('modal-form')" aria-haspopup="dialog" class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">フォームモーダル</button>
+            <button onclick="openModal('modal-form')" aria-haspopup="dialog" class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">フォームモーダル</button>
             <button onclick="openModal('modal-alert')" aria-haspopup="dialog" class="bg-amber-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-amber-700 transition-colors">アラートモーダル</button>
           </div>
           <p class="text-sm text-slate-500" style="color:var(--text-muted);">ESC キーまたはオーバーレイクリックで閉じる（アラートモーダルはボタン操作のみ）</p>
@@ -3626,7 +3677,7 @@ btn.addEventListener('click', () =&gt; {
             <button onclick="showToast('success')" class="bg-emerald-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-emerald-700 transition-colors">Success</button>
             <button onclick="showToast('error')" class="bg-red-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-red-600 transition-colors">Error</button>
             <button onclick="showToast('warning')" class="bg-amber-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-amber-700 transition-colors">Warning</button>
-            <button onclick="showToast('info')" class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Info</button>
+            <button onclick="showToast('info')" class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">Info</button>
           </div>
         </div>
 
@@ -3801,7 +3852,7 @@ btn.addEventListener('click', () =&gt; {
         <h3 class="text-xl font-semibold text-slate-900 mb-4 mt-8" style="color:var(--text-heading);">インラインスピナー</h3>
         <div class="ds-preview mb-4">
           <div class="flex items-center gap-4">
-            <button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
+            <button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg opacity-75 cursor-not-allowed">
               <div class="inline-spinner"></div>
               送信中...
             </button>
@@ -3869,7 +3920,7 @@ btn.addEventListener('click', () =&gt; {
               <span class="text-sm text-slate-500">72%</span>
             </div>
             <div class="bg-slate-200 rounded-full h-2" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
-              <div id="progress-demo" class="bg-primary-600 rounded-full h-2" style="width:72%;transition:width 600ms cubic-bezier(0.4,0,0.2,1)"></div>
+              <div id="progress-demo" class="bg-primary-500 rounded-full h-2" style="width:72%;transition:width 600ms cubic-bezier(0.4,0,0.2,1)"></div>
             </div>
           </div>
           <div class="ds-showcase-variant" data-variant="complete" data-component="progress">
@@ -3882,7 +3933,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
           </div>
         </div>
-        <button onclick="animateProgress('progress-demo',72)" class="text-sm text-primary-600 hover:text-primary-700 font-medium">▶ アニメーション再生</button>
+        <button onclick="animateProgress('progress-demo',72)" class="text-sm text-primary-500 hover:text-primary-700 font-medium">▶ アニメーション再生</button>
         <div class="ds-code-block mt-4 relative" data-collapsed="true">
           <div class="flex items-center justify-between px-4 py-2 ds-code-header rounded-lg cursor-pointer" onclick="toggleCodeBlock(this.parentElement)">
             <div class="flex items-center gap-2">
@@ -3896,7 +3947,7 @@ btn.addEventListener('click', () =&gt; {
   &lt;span class="text-sm text-slate-500"&gt;72%&lt;/span&gt;
 &lt;/div&gt;
 &lt;div class="bg-slate-200 rounded-full h-2" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"&gt;
-  &lt;div class="bg-primary-600 rounded-full h-2 transition-all duration-500" style="width:72%"&gt;&lt;/div&gt;
+  &lt;div class="bg-primary-500 rounded-full h-2 transition-all duration-500" style="width:72%"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
         </div>
         <div class="ds-source-ref"><p class="text-sm flex items-center gap-1.5" style="color:var(--text-muted);"><svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>仕様詳細: <code class="font-mono">components/progress.md</code></p></div>
@@ -3907,16 +3958,16 @@ btn.addEventListener('click', () =&gt; {
       <!-- Quote Banner: Component → Pattern transition (Melt — Light) -->
       <div class="relative rounded-2xl overflow-hidden my-16" style="background:var(--bg-surface, #fff);">
         <div class="melt-mesh">
-          <div class="melt-blob-3 w-[600px] h-[600px] -top-48 -right-32 opacity-[0.12]" style="background:#2563eb;"></div>
-          <div class="melt-blob-3 w-[500px] h-[500px] -bottom-40 -left-24 opacity-[0.08]" style="background:#60a5fa;animation-delay:-10s;"></div>
+          <div class="melt-blob-3 w-[600px] h-[600px] -top-48 -right-32 opacity-[0.12]" style="background:#2250df;"></div>
+          <div class="melt-blob-3 w-[500px] h-[500px] -bottom-40 -left-24 opacity-[0.08]" style="background:#6492ff;animation-delay:-10s;"></div>
         </div>
         <div class="relative z-10 text-center py-14 px-8">
           <blockquote class="text-3xl font-medium mb-4" style="color:var(--text-heading);letter-spacing:0.01em;line-height:1.6;">「職種の境界を<span class="melt-text-gradient">溶かす</span>。」</blockquote>
           <cite class="text-sm not-italic font-normal" style="color:var(--text-muted);">— melta UI Design Philosophy</cite>
         </div>
-        <div class="melt-drip" style="left:20%;background:#2563eb;opacity:0.12;animation-delay:0s;"></div>
-        <div class="melt-drip" style="left:50%;background:#60a5fa;opacity:0.08;animation-delay:-1.5s;width:4px;height:10px;"></div>
-        <div class="melt-drip" style="left:80%;background:#2563eb;opacity:0.1;animation-delay:-2.8s;"></div>
+        <div class="melt-drip" style="left:20%;background:#2250df;opacity:0.12;animation-delay:0s;"></div>
+        <div class="melt-drip" style="left:50%;background:#6492ff;opacity:0.08;animation-delay:-1.5s;width:4px;height:10px;"></div>
+        <div class="melt-drip" style="left:80%;background:#2250df;opacity:0.1;animation-delay:-2.8s;"></div>
       </div>
 
       <!-- ======================================================================
@@ -3996,11 +4047,11 @@ btn.addEventListener('click', () =&gt; {
             <div class="space-y-6">
               <div>
                 <label for="fp-name" class="block text-sm font-medium text-slate-900 mb-1">名前 <span class="text-red-500">*</span></label>
-                <input id="fp-name" type="text" required placeholder="山田 太郎" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors">
+                <input id="fp-name" type="text" required placeholder="山田 太郎" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors">
               </div>
               <div>
                 <label for="fp-email" class="block text-sm font-medium text-slate-900 mb-1">メールアドレス</label>
-                <input id="fp-email" type="email" placeholder="taro@example.com" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors">
+                <input id="fp-email" type="email" placeholder="taro@example.com" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors">
               </div>
               <div>
                 <label for="fp-role" class="block text-sm font-medium text-slate-900 mb-1">権限</label>
@@ -4018,11 +4069,11 @@ btn.addEventListener('click', () =&gt; {
                 <legend class="text-sm font-medium text-slate-900 mb-2">通知設定</legend>
                 <div class="leading-normal space-y-3">
                   <div class="flex items-center gap-2">
-                    <input id="fp-cb1" type="checkbox" checked class="rounded border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                    <input id="fp-cb1" type="checkbox" checked class="rounded border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                     <label for="fp-cb1" class="text-sm text-body">メール通知</label>
                   </div>
                   <div class="flex items-center gap-2">
-                    <input id="fp-cb2" type="checkbox" class="rounded border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                    <input id="fp-cb2" type="checkbox" class="rounded border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                     <label for="fp-cb2" class="text-sm text-body">プッシュ通知</label>
                   </div>
                 </div>
@@ -4031,11 +4082,11 @@ btn.addEventListener('click', () =&gt; {
                 <legend class="text-sm font-medium text-slate-900 mb-2">表示モード</legend>
                 <div class="leading-normal space-y-3">
                   <div class="flex items-center gap-2">
-                    <input id="fp-rd1" name="fp-mode" type="radio" checked class="border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                    <input id="fp-rd1" name="fp-mode" type="radio" checked class="border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                     <label for="fp-rd1" class="text-sm text-body">リスト表示</label>
                   </div>
                   <div class="flex items-center gap-2">
-                    <input id="fp-rd2" name="fp-mode" type="radio" class="border-slate-300 text-primary-600 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
+                    <input id="fp-rd2" name="fp-mode" type="radio" class="border-slate-300 text-primary-500 focus:ring-primary-500/50" style="width:1.125rem;height:1.125rem;">
                     <label for="fp-rd2" class="text-sm text-body">グリッド表示</label>
                   </div>
                 </div>
@@ -4047,7 +4098,7 @@ btn.addEventListener('click', () =&gt; {
                 </button>
               </div>
               <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
-                <button type="submit" class="bg-primary-600 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">保存する</button>
+                <button type="submit" class="bg-primary-500 text-white h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-primary-700 transition-colors">保存する</button>
                 <button type="button" class="bg-white text-slate-700 border border-slate-200 h-10 px-4 rounded-lg text-[1rem] font-medium hover:bg-gray-50 transition-colors">キャンセル</button>
               </div>
             </div>
@@ -4076,7 +4127,7 @@ btn.addEventListener('click', () =&gt; {
 
         <div class="ds-preview bg-white rounded-xl border border-slate-200 shadow-sm max-w-xs">
           <nav aria-label="サイドバーナビゲーション" class="py-2">
-            <a href="#" aria-current="page" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium bg-primary-50 text-primary-600 rounded-lg mx-2">
+            <a href="#" aria-current="page" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium bg-primary-50 text-primary-500 rounded-lg mx-2">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
               ダッシュボード
             </a>
@@ -4115,9 +4166,9 @@ btn.addEventListener('click', () =&gt; {
           var b = document.getElementById('state-btn-' + keys[i]);
           if (p) p.style.display = (keys[i] === state) ? 'block' : 'none';
           if (b) {
-            b.style.backgroundColor = (keys[i] === state) ? '#2563eb' : '';
+            b.style.backgroundColor = (keys[i] === state) ? '#2250df' : '';
             b.style.color = (keys[i] === state) ? '#fff' : '';
-            b.style.borderColor = (keys[i] === state) ? '#2563eb' : '';
+            b.style.borderColor = (keys[i] === state) ? '#2250df' : '';
           }
         }
       }
@@ -4185,7 +4236,7 @@ btn.addEventListener('click', () =&gt; {
         </div>
 
         <div class="flex gap-3 mb-6">
-          <button id="state-btn-loading" onclick="showState('loading')" style="background-color:#2563eb;color:#fff;border-color:#2563eb" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">Loading</button>
+          <button id="state-btn-loading" onclick="showState('loading')" style="background-color:#2250df;color:#fff;border-color:#2250df" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">Loading</button>
           <button id="state-btn-empty" onclick="showState('empty')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Empty</button>
           <button id="state-btn-error" onclick="showState('error')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Error</button>
           <button id="state-btn-complete" onclick="showState('complete')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">Complete</button>
@@ -4209,7 +4260,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
             <!-- Inline Spinner -->
             <div class="px-6 pb-4">
-              <button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
+              <button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg opacity-75 cursor-not-allowed">
                 <div class="inline-spinner"></div> 送信中...
               </button>
             </div>
@@ -4230,7 +4281,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">データがありません</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">まだ項目が登録されていません。最初のデータを追加してみましょう。</p>
-              <button type="button" onclick="simulateAction('complete');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">新規作成</button>
+              <button type="button" onclick="simulateAction('complete');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">新規作成</button>
             </div>
           </div>
 
@@ -4244,7 +4295,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">読み込みに失敗しました</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">ネットワークに問題が発生しました。しばらくしてからもう一度お試しください。</p>
-              <button type="button" onclick="retryReload('error');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">再読み込み</button>
+              <button type="button" onclick="retryReload('error');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">再読み込み</button>
             </div>
           </div>
 
@@ -4258,7 +4309,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">送信が完了しました</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">お問い合わせありがとうございます。担当者から折り返しご連絡いたします。</p>
-              <button type="button" onclick="showState('empty');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-primary-600 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">ホームに戻る</button>
+              <button type="button" onclick="showState('empty');return false;" class="mt-4 h-10 px-4 text-[1rem] font-medium text-primary-500 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">ホームに戻る</button>
             </div>
           </div>
         </div>
@@ -4285,7 +4336,7 @@ btn.addEventListener('click', () =&gt; {
 
         <!-- Variant selector -->
         <div class="flex gap-3 mb-6">
-          <button id="empty-btn-no-data" onclick="showEmptyVariant('no-data')" style="background-color:#2563eb;color:#fff;border-color:#2563eb" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">データ0件</button>
+          <button id="empty-btn-no-data" onclick="showEmptyVariant('no-data')" style="background-color:#2250df;color:#fff;border-color:#2250df" class="border h-8 px-3 rounded-lg text-[0.875rem] font-medium transition-colors">データ0件</button>
           <button id="empty-btn-no-results" onclick="showEmptyVariant('no-results')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">検索結果なし</button>
           <button id="empty-btn-first-use" onclick="showEmptyVariant('first-use')" class="bg-white text-slate-700 border border-slate-200 h-8 px-3 rounded-lg text-[0.875rem] font-medium hover:bg-gray-50 transition-colors">初回利用</button>
         </div>
@@ -4301,7 +4352,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">データがありません</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">まだ項目が登録されていません。最初のデータを追加してみましょう。</p>
-              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">新規作成</button>
+              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">新規作成</button>
             </div>
           </div>
 
@@ -4315,7 +4366,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">一致する結果がありません</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">検索条件を変更するか、フィルターを調整してみてください。</p>
-              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">検索条件を変更</button>
+              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">検索条件を変更</button>
             </div>
           </div>
 
@@ -4329,7 +4380,7 @@ btn.addEventListener('click', () =&gt; {
               </div>
               <h4 class="text-base font-semibold text-slate-900">はじめましょう</h4>
               <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto" style="color:var(--text-muted);">最初のプロジェクトを作成して、チームでの共同作業を始めましょう。</p>
-              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">最初のプロジェクトを作成</button>
+              <button type="button" class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">最初のプロジェクトを作成</button>
             </div>
           </div>
         </div>
@@ -4362,7 +4413,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
             <p class="text-sm font-medium text-slate-900 mb-1">Success</p>
             <p class="text-xs text-slate-500 mb-3">scale 400ms</p>
-            <button onclick="playFeedback('success')" class="text-xs text-primary-600 hover:text-primary-700 font-medium">▶ Play</button>
+            <button onclick="playFeedback('success')" class="text-xs text-primary-500 hover:text-primary-700 font-medium">▶ Play</button>
           </div>
           <!-- Error -->
           <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm text-center">
@@ -4371,7 +4422,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
             <p class="text-sm font-medium text-slate-900 mb-1">Error</p>
             <p class="text-xs text-slate-500 mb-3">shake 200ms x2</p>
-            <button onclick="playFeedback('error')" class="text-xs text-primary-600 hover:text-primary-700 font-medium">▶ Play</button>
+            <button onclick="playFeedback('error')" class="text-xs text-primary-500 hover:text-primary-700 font-medium">▶ Play</button>
           </div>
           <!-- Warning -->
           <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm text-center">
@@ -4380,7 +4431,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
             <p class="text-sm font-medium text-slate-900 mb-1">Warning</p>
             <p class="text-xs text-slate-500 mb-3">fadeIn 200ms</p>
-            <button onclick="playFeedback('warning')" class="text-xs text-primary-600 hover:text-primary-700 font-medium">▶ Play</button>
+            <button onclick="playFeedback('warning')" class="text-xs text-primary-500 hover:text-primary-700 font-medium">▶ Play</button>
           </div>
           <!-- Info -->
           <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm text-center">
@@ -4389,7 +4440,7 @@ btn.addEventListener('click', () =&gt; {
             </div>
             <p class="text-sm font-medium text-slate-900 mb-1">Info</p>
             <p class="text-xs text-slate-500 mb-3">fadeIn 200ms</p>
-            <button onclick="playFeedback('info')" class="text-xs text-primary-600 hover:text-primary-700 font-medium">▶ Play</button>
+            <button onclick="playFeedback('info')" class="text-xs text-primary-500 hover:text-primary-700 font-medium">▶ Play</button>
           </div>
         </div>
         <p class="text-sm text-slate-500" style="color:var(--text-muted);">→ 詳細: <code class="font-mono">foundations/emotional-feedback.md</code></p>
@@ -4473,12 +4524,12 @@ btn.addEventListener('click', () =&gt; {
           <!-- border-l-4 color bar vs full border -->
           <div class="ds-dodont-dont">
             <p class="text-xs font-semibold text-red-600 mb-2">DON'T</p>
-            <div style="background:#fff;border-radius:0.75rem;padding:1rem;border:1px solid #e2e8f0;border-left:4px solid #2563eb;">border-l-4 カラーバー付き Alert</div>
+            <div style="background:#fff;border-radius:0.75rem;padding:1rem;border:1px solid #e2e8f0;border-left:4px solid #2250df;">border-l-4 カラーバー付き Alert</div>
             <p class="text-xs text-slate-500 mt-2">AI生成UIの典型パターン — 装飾過剰</p>
           </div>
           <div class="ds-dodont-do">
             <p class="text-xs font-semibold text-emerald-600 mb-2">DO</p>
-            <div style="background:#eff6ff;border-radius:0.75rem;padding:1rem;border:1px solid #bfdbfe;color:#1e40af;font-size:0.875rem;">全周ボーダーの Alert</div>
+            <div style="background:#f0f5ff;border-radius:0.75rem;padding:1rem;border:1px solid #c0d4ff;color:#13318d;font-size:0.875rem;">全周ボーダーの Alert</div>
             <p class="text-xs text-slate-500 mt-2">border border-*-200 rounded-lg で統一</p>
           </div>
 
@@ -4518,7 +4569,7 @@ btn.addEventListener('click', () =&gt; {
           <div class="ds-dodont-do">
             <p class="text-xs font-semibold text-emerald-600 mb-2">DO</p>
             <div style="background:#fff;border-radius:0.75rem;padding:0.75rem 1rem;border:1px solid #e2e8f0;display:flex;flex-direction:column;gap:0.375rem;">
-              <span style="color:#2563eb;font-size:0.8125rem;font-weight:500;background:#eff6ff;padding:0.25rem 0.5rem;border-radius:0.5rem;">ダッシュボード</span>
+              <span style="color:#2250df;font-size:0.8125rem;font-weight:500;background:#f0f5ff;padding:0.25rem 0.5rem;border-radius:0.5rem;">ダッシュボード</span>
               <span style="color:#3d4b5f;font-size:0.8125rem;padding:0.25rem 0.5rem;">設定</span>
             </div>
             <p class="text-xs text-slate-500 mt-2">bg-white + ボーダー — メインと調和する</p>
@@ -4658,12 +4709,12 @@ btn.addEventListener('click', () =&gt; {
           <button aria-label="閉じる" onclick="closeModal('modal-form')" class="text-slate-500 hover:text-body transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
         </div>
         <div class="px-6 py-4 space-y-4">
-          <div><label class="block text-sm font-medium text-slate-900 mb-1">タイトル</label><input type="text" placeholder="タイトルを入力" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors"></div>
-          <div><label class="block text-sm font-medium text-slate-900 mb-1">説明</label><textarea rows="3" placeholder="説明を入力" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors resize-y"></textarea></div>
+          <div><label class="block text-sm font-medium text-slate-900 mb-1">タイトル</label><input type="text" placeholder="タイトルを入力" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors"></div>
+          <div><label class="block text-sm font-medium text-slate-900 mb-1">説明</label><textarea rows="3" placeholder="説明を入力" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors resize-y"></textarea></div>
         </div>
         <div class="px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
           <button onclick="closeModal('modal-form')" class="h-10 px-4 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-50 transition-colors">キャンセル</button>
-          <button onclick="closeModal('modal-form')" class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
+          <button onclick="closeModal('modal-form')" class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
         </div>
       </div>
     </div>
@@ -4830,7 +4881,7 @@ btn.addEventListener('click', () =&gt; {
         success: { bg:'bg-emerald-50', border:'border-emerald-200', text:'text-emerald-800', icon:'text-emerald-600', close:'text-emerald-400 hover:text-emerald-600', msg:'保存しました', role:'status', live:'polite', iconPath:'<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>' },
         error: { bg:'bg-red-50', border:'border-red-200', text:'text-red-800', icon:'text-red-500', close:'text-red-400 hover:text-red-500', msg:'保存に失敗しました', role:'alert', live:'assertive', iconPath:'<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>' },
         warning: { bg:'bg-amber-50', border:'border-amber-200', text:'text-amber-800', icon:'text-amber-600', close:'text-amber-400 hover:text-amber-600', msg:'ストレージ容量が残りわずかです', role:'alert', live:'assertive', iconPath:'<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>' },
-        info: { bg:'bg-primary-50', border:'border-primary-200', text:'text-primary-800', icon:'text-primary-600', close:'text-primary-400 hover:text-primary-600', msg:'新しいアップデートがあります', role:'status', live:'polite', iconPath:'<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>' }
+        info: { bg:'bg-primary-50', border:'border-primary-200', text:'text-primary-800', icon:'text-primary-500', close:'text-primary-400 hover:text-primary-500', msg:'新しいアップデートがあります', role:'status', live:'polite', iconPath:'<path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>' }
       };
       var c = configs[type]; if (!c) return;
       toastCount++;
@@ -4863,8 +4914,32 @@ btn.addEventListener('click', () =&gt; {
         var active = i === index;
         t.setAttribute('aria-selected', active ? 'true' : 'false');
         t.className = active
-          ? 'text-sm font-semibold text-primary-600 border-b-2 border-primary-600 pb-3 transition-colors'
+          ? 'text-sm font-semibold text-primary-500 border-b-2 border-primary-500 pb-3 transition-colors'
           : 'text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700 transition-colors';
+      });
+      panels.forEach(function(p, i) {
+        p.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    /* --- Bar Tabs --- */
+    function switchBarTab(tabGroup, index) {
+      var group = document.querySelector('[data-tab-group="'+tabGroup+'"]');
+      if (!group) return;
+      var tabs = group.querySelectorAll('[role="tab"]');
+      var panels = group.querySelectorAll('[role="tabpanel"]');
+      var indicator = '<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:var(--color-primary-500,#2250df);border-radius:2px"></span>';
+      tabs.forEach(function(t, i) {
+        var active = i === index;
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        var bar = t.querySelector('span[style]');
+        if (bar) bar.remove();
+        if (active) {
+          t.className = 'flex-1 relative flex items-center justify-center py-4 text-sm font-semibold text-slate-900 hover:bg-slate-100 cursor-pointer transition-colors';
+          t.insertAdjacentHTML('beforeend', indicator);
+        } else {
+          t.className = 'flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors';
+        }
       });
       panels.forEach(function(p, i) {
         p.classList.toggle('hidden', i !== index);
@@ -4888,10 +4963,10 @@ btn.addEventListener('click', () =&gt; {
       var thumb = btn.querySelector('span');
       if (!checked) {
         btn.classList.remove('bg-slate-200');
-        btn.classList.add('bg-primary-600');
+        btn.classList.add('bg-primary-500');
         thumb.style.transform = 'translateX(1.25rem)';
       } else {
-        btn.classList.remove('bg-primary-600');
+        btn.classList.remove('bg-primary-500');
         btn.classList.add('bg-slate-200');
         thumb.style.transform = 'translateX(0)';
       }
@@ -4983,7 +5058,7 @@ btn.addEventListener('click', () =&gt; {
       btn.type = 'button';
       btn.setAttribute('aria-label', text + 'を削除');
       btn.setAttribute('onclick', 'removeTag(this)');
-      btn.className = 'ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors';
+      btn.className = 'ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors';
       btn.innerHTML = '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
       tag.appendChild(btn);
       container.insertBefore(tag, input);
@@ -5018,8 +5093,8 @@ btn.addEventListener('click', () =&gt; {
           var isToday = (d === dpToday.getDate() && dpMonth === dpToday.getMonth() && dpYear === dpToday.getFullYear());
           var isSel = dpSelected && (d === dpSelected.getDate() && dpMonth === dpSelected.getMonth() && dpYear === dpSelected.getFullYear());
           var cls = 'w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-inset';
-          if (isSel) { cls += ' bg-primary-600 text-white font-medium'; cell.setAttribute('aria-selected', 'true'); }
-          else if (isToday) { cls += ' font-semibold text-primary-600 hover:bg-primary-50'; cell.setAttribute('aria-current', 'date'); }
+          if (isSel) { cls += ' bg-primary-500 text-white font-medium'; cell.setAttribute('aria-selected', 'true'); }
+          else if (isToday) { cls += ' font-semibold text-primary-500 hover:bg-primary-50'; cell.setAttribute('aria-current', 'date'); }
           else { cls += ' text-slate-900 hover:bg-gray-50'; }
           cell.className = cls;
           (function(day) { cell.onclick = function() { dpSelect(dpYear, dpMonth, day); }; })(d);
@@ -5117,9 +5192,9 @@ btn.addEventListener('click', () =&gt; {
         if (panel) panel.style.display = (k === variant) ? 'block' : 'none';
         if (btn) {
           if (k === variant) {
-            btn.style.backgroundColor = '#2563eb';
+            btn.style.backgroundColor = '#2250df';
             btn.style.color = '#fff';
-            btn.style.borderColor = '#2563eb';
+            btn.style.borderColor = '#2250df';
           } else {
             btn.style.backgroundColor = '';
             btn.style.color = '';

@@ -33,7 +33,7 @@
       "name": "Button/Primary",
       "reusable": true,
       "height": 40,
-      "fill": "#2563eb",
+      "fill": "#2250df",
       "cornerRadius": 8,
       "gap": 8,
       "padding": [
@@ -359,7 +359,7 @@
           "height": 20,
           "iconFontName": "info",
           "iconFontFamily": "lucide",
-          "fill": "#93c5fd"
+          "fill": "#95b6ff"
         },
         {
           "type": "frame",
@@ -373,7 +373,7 @@
               "type": "text",
               "id": "8mPj8",
               "name": "Title",
-              "fill": "#93c5fd",
+              "fill": "#95b6ff",
               "content": "Information",
               "lineHeight": 1.5,
               "fontFamily": "Inter",
@@ -384,7 +384,7 @@
               "type": "text",
               "id": "32mhH",
               "name": "Description",
-              "fill": "#93c5fd",
+              "fill": "#95b6ff",
               "textGrowth": "fixed-width",
               "width": "fill_container",
               "content": "This is an informational alert message.",
@@ -673,7 +673,7 @@
           "name": "Box",
           "width": 18,
           "height": 18,
-          "fill": "#2563eb",
+          "fill": "#2250df",
           "cornerRadius": 4,
           "justifyContent": "center",
           "alignItems": "center",
@@ -723,7 +723,7 @@
           "stroke": {
             "align": "inside",
             "thickness": 2,
-            "fill": "#2563eb"
+            "fill": "#2250df"
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -732,7 +732,7 @@
               "type": "ellipse",
               "id": "DfOmK",
               "name": "Dot",
-              "fill": "#2563eb",
+              "fill": "#2250df",
               "width": 8,
               "height": 8
             }
@@ -767,7 +767,7 @@
           "name": "Track",
           "width": 44,
           "height": 24,
-          "fill": "#2563eb",
+          "fill": "#2250df",
           "cornerRadius": 9999,
           "padding": 2,
           "justifyContent": "end",
@@ -833,7 +833,7 @@
             "thickness": {
               "bottom": 2
             },
-            "fill": "#2563eb"
+            "fill": "#2250df"
           },
           "padding": [
             10,
@@ -844,7 +844,7 @@
               "type": "text",
               "id": "62WPz",
               "name": "Label",
-              "fill": "#93c5fd",
+              "fill": "#95b6ff",
               "content": "Overview",
               "lineHeight": 1.4,
               "fontFamily": "Inter",
@@ -988,7 +988,7 @@
           "name": "ActivePage",
           "width": 36,
           "height": 36,
-          "fill": "#2563eb",
+          "fill": "#2250df",
           "cornerRadius": 8,
           "justifyContent": "center",
           "alignItems": "center",
@@ -1085,7 +1085,7 @@
           "type": "text",
           "id": "LRbmh",
           "name": "Label",
-          "fill": "#93c5fd",
+          "fill": "#95b6ff",
           "content": "Design",
           "lineHeight": 1.4,
           "fontFamily": "Inter",
@@ -1100,7 +1100,7 @@
           "height": 14,
           "iconFontName": "x",
           "iconFontFamily": "lucide",
-          "fill": "#93c5fd"
+          "fill": "#95b6ff"
         }
       ]
     },
@@ -1134,7 +1134,7 @@
           "type": "text",
           "id": "XnxPl",
           "name": "Initials",
-          "fill": "#93c5fd",
+          "fill": "#95b6ff",
           "content": "JD",
           "lineHeight": 1.4,
           "fontFamily": "Inter",
@@ -1200,7 +1200,7 @@
               "name": "Fill",
               "width": 208,
               "height": 8,
-              "fill": "#2563eb",
+              "fill": "#2250df",
               "cornerRadius": 9999
             }
           ]
@@ -2032,7 +2032,7 @@
           "name": "Step1",
           "width": 32,
           "height": 32,
-          "fill": "#2563eb",
+          "fill": "#2250df",
           "cornerRadius": 9999,
           "justifyContent": "center",
           "alignItems": "center",
@@ -2055,7 +2055,7 @@
           "name": "Connector1",
           "width": 60,
           "height": 2,
-          "fill": "#2563eb"
+          "fill": "#2250df"
         },
         {
           "type": "frame",
@@ -2067,7 +2067,7 @@
           "stroke": {
             "align": "inside",
             "thickness": 2,
-            "fill": "#2563eb"
+            "fill": "#2250df"
           },
           "justifyContent": "center",
           "alignItems": "center",
@@ -2076,7 +2076,7 @@
               "type": "text",
               "id": "KuVPp",
               "name": "Number",
-              "fill": "#93c5fd",
+              "fill": "#95b6ff",
               "content": "2",
               "lineHeight": 1.4,
               "fontFamily": "Inter",
@@ -2804,7 +2804,7 @@
       "type": "color",
       "value": [
         {
-          "value": "#bfdbfe"
+          "value": "#c0d4ff"
         },
         {
           "value": "#2563EB3D",
@@ -2818,7 +2818,7 @@
       "type": "color",
       "value": [
         {
-          "value": "#eff6ff"
+          "value": "#f0f5ff"
         },
         {
           "value": "#2563EB1F",
@@ -2832,10 +2832,10 @@
       "type": "color",
       "value": [
         {
-          "value": "#1e40af"
+          "value": "#13318d"
         },
         {
-          "value": "#93c5fd",
+          "value": "#95b6ff",
           "theme": {
             "Mode": "Dark"
           }
@@ -2872,47 +2872,47 @@
     },
     "melta-primary-100": {
       "type": "color",
-      "value": "#dbeafe"
+      "value": "#dde8ff"
     },
     "melta-primary-200": {
       "type": "color",
-      "value": "#bfdbfe"
+      "value": "#c0d4ff"
     },
     "melta-primary-300": {
       "type": "color",
-      "value": "#93c5fd"
+      "value": "#95b6ff"
     },
     "melta-primary-400": {
       "type": "color",
-      "value": "#60a5fa"
+      "value": "#6492ff"
     },
     "melta-primary-50": {
       "type": "color",
-      "value": "#eff6ff"
+      "value": "#f0f5ff"
     },
     "melta-primary-500": {
       "type": "color",
-      "value": "#3b82f6"
+      "value": "#2b70ef"
     },
     "melta-primary-600": {
       "type": "color",
-      "value": "#2563eb"
+      "value": "#2250df"
     },
     "melta-primary-700": {
       "type": "color",
-      "value": "#1d4ed8"
+      "value": "#1a40b5"
     },
     "melta-primary-800": {
       "type": "color",
-      "value": "#1e40af"
+      "value": "#13318d"
     },
     "melta-primary-900": {
       "type": "color",
-      "value": "#1e3a5f"
+      "value": "#0e266a"
     },
     "melta-primary-950": {
       "type": "color",
-      "value": "#172554"
+      "value": "#07194e"
     },
     "melta-radius-full": {
       "type": "number",

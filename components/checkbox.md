@@ -136,7 +136,7 @@ Checked → Unchecked（クリックで全解除）
 ```html
 <label class="inline-flex items-center gap-3 cursor-pointer">
   <input type="checkbox" name="agree"
-    class="text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+    class="text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
   <span class="text-sm text-slate-700">利用規約に同意する</span>
 </label>
 ```
@@ -149,17 +149,17 @@ Checked → Unchecked（クリックで全解除）
   <div class="space-y-3 leading-normal">
     <label class="inline-flex items-center gap-3 cursor-pointer">
       <input type="checkbox" name="notifications[]" value="email"
-        class="text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">メール通知</span>
     </label>
     <label class="inline-flex items-center gap-3 cursor-pointer">
       <input type="checkbox" name="notifications[]" value="push"
-        class="text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">プッシュ通知</span>
     </label>
     <label class="inline-flex items-center gap-3 cursor-pointer">
       <input type="checkbox" name="notifications[]" value="sms"
-        class="text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">SMS通知</span>
     </label>
   </div>
@@ -174,7 +174,7 @@ Checked → Unchecked（クリックで全解除）
     <input type="checkbox" name="agree"
       aria-invalid="true"
       aria-describedby="agree_error"
-      class="text-primary-600 border-red-500 rounded focus:ring-2 focus:ring-red-500/50">
+      class="text-primary-500 border-red-500 rounded focus:ring-2 focus:ring-red-500/50">
     <span class="text-sm text-slate-700">利用規約に同意する</span>
   </label>
   <p id="agree_error" class="mt-1 ml-7 text-xs text-red-500 flex items-center gap-1">
@@ -191,7 +191,7 @@ Checked → Unchecked（クリックで全解除）
 ```html
 <label class="inline-flex items-center gap-3 cursor-not-allowed">
   <input type="checkbox" name="locked" checked disabled
-    class="text-primary-600 border-slate-300 rounded opacity-50 cursor-not-allowed">
+    class="text-primary-500 border-slate-300 rounded opacity-50 cursor-not-allowed">
   <span class="text-sm text-slate-400">メール通知（変更不可）</span>
 </label>
 ```

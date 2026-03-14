@@ -47,7 +47,7 @@
     <button class="h-10 px-4 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50 transition-colors">
       エクスポート
     </button>
-    <button class="h-10 px-4 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+    <button class="h-10 px-4 text-sm font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
       新規作成
     </button>
   </div>

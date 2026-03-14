@@ -158,17 +158,17 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
   <div class="flex flex-col gap-4">
     <label class="flex items-center gap-2 cursor-pointer">
       <input type="radio" name="payment" value="credit" checked
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">クレジットカード</span>
     </label>
     <label class="flex items-center gap-2 cursor-pointer">
       <input type="radio" name="payment" value="bank"
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">銀行振込</span>
     </label>
     <label class="flex items-center gap-2 cursor-pointer">
       <input type="radio" name="payment" value="convenience"
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">コンビニ払い</span>
     </label>
   </div>
@@ -183,17 +183,17 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
   <div class="flex flex-wrap gap-6">
     <label class="inline-flex items-center gap-2 cursor-pointer">
       <input type="radio" name="gender" value="male" checked
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">男性</span>
     </label>
     <label class="inline-flex items-center gap-2 cursor-pointer">
       <input type="radio" name="gender" value="female"
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">女性</span>
     </label>
     <label class="inline-flex items-center gap-2 cursor-pointer">
       <input type="radio" name="gender" value="other"
-        class="text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
+        class="text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50">
       <span class="text-sm text-slate-700">その他</span>
     </label>
   </div>
@@ -208,7 +208,7 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
   <div class="space-y-3">
     <label class="flex items-start gap-3 cursor-pointer p-4 border border-slate-200 rounded-lg hover:bg-gray-50 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 transition-colors">
       <input type="radio" name="plan" value="free" checked
-        class="mt-[3px] text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
+        class="mt-[3px] text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
       <div class="leading-normal">
         <span class="text-sm font-medium text-slate-900">フリー</span>
         <p class="text-sm text-body mt-0.5">基本機能のみ。無料でご利用いただけます</p>
@@ -216,7 +216,7 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
     </label>
     <label class="flex items-start gap-3 cursor-pointer p-4 border border-slate-200 rounded-lg hover:bg-gray-50 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 transition-colors">
       <input type="radio" name="plan" value="pro"
-        class="mt-[3px] text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
+        class="mt-[3px] text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
       <div class="leading-normal">
         <span class="text-sm font-medium text-slate-900">プロ</span>
         <p class="text-sm text-body mt-0.5">全機能が利用可能。月額 &yen;980</p>
@@ -224,7 +224,7 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
     </label>
     <label class="flex items-start gap-3 cursor-pointer p-4 border border-slate-200 rounded-lg hover:bg-gray-50 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 transition-colors">
       <input type="radio" name="plan" value="enterprise"
-        class="mt-[3px] text-primary-600 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
+        class="mt-[3px] text-primary-500 border-slate-300 focus:ring-2 focus:ring-primary-500/50 flex-shrink-0">
       <div class="leading-normal">
         <span class="text-sm font-medium text-slate-900">エンタープライズ</span>
         <p class="text-sm text-body mt-0.5">カスタマイズ対応。お問い合わせください</p>
@@ -246,13 +246,13 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
     <label class="flex items-center gap-2 cursor-pointer">
       <input type="radio" name="payment_err" value="credit"
         aria-invalid="true"
-        class="text-primary-600 border-red-500 focus:ring-2 focus:ring-red-500/50">
+        class="text-primary-500 border-red-500 focus:ring-2 focus:ring-red-500/50">
       <span class="text-sm text-slate-700">クレジットカード</span>
     </label>
     <label class="flex items-center gap-2 cursor-pointer">
       <input type="radio" name="payment_err" value="bank"
         aria-invalid="true"
-        class="text-primary-600 border-red-500 focus:ring-2 focus:ring-red-500/50">
+        class="text-primary-500 border-red-500 focus:ring-2 focus:ring-red-500/50">
       <span class="text-sm text-slate-700">銀行振込</span>
     </label>
   </div>
@@ -273,12 +273,12 @@ Selected → （同グループの別選択肢を選ぶまで Selected を維持
   <div class="flex flex-col gap-4">
     <label class="flex items-center gap-2 cursor-not-allowed">
       <input type="radio" name="plan_dis" value="pro" checked disabled
-        class="text-primary-600 border-slate-300 opacity-50 cursor-not-allowed">
+        class="text-primary-500 border-slate-300 opacity-50 cursor-not-allowed">
       <span class="text-sm text-slate-400">プロ（変更不可）</span>
     </label>
     <label class="flex items-center gap-2 cursor-not-allowed">
       <input type="radio" name="plan_dis" value="enterprise" disabled
-        class="text-primary-600 border-slate-300 opacity-50 cursor-not-allowed">
+        class="text-primary-500 border-slate-300 opacity-50 cursor-not-allowed">
       <span class="text-sm text-slate-400">エンタープライズ（変更不可）</span>
     </label>
   </div>
@@ -309,7 +309,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  border-color: #2563eb;       /* primary-600 */
+  border-color: #2250df;       /* primary-500 */
   border-width: 2px;
   background-color: #fff;
 }
@@ -323,7 +323,7 @@ input[type="radio"]:checked::after {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: #2563eb;   /* primary-600 */
+  background-color: #2250df;   /* primary-500 */
 }
 
 input[type="radio"]:focus {

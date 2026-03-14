@@ -243,7 +243,7 @@
       <!-- Footer -->
       <div class="px-6 py-4 border-t border-slate-200 flex justify-end gap-3">
         <button type="button" class="h-10 px-4 text-[1rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
-        <button type="submit" class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
+        <button type="submit" class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">保存する</button>
       </div>
     </form>
   </div>

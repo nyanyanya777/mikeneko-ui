@@ -41,9 +41,9 @@ tailwind.config = {
     extend: {
       colors: {
         primary: {
-          50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
-          400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
-          800:'#1e40af',900:'#1e3a5f',950:'#172554'
+          50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+          400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+          800:'#13318d',900:'#0e266a',950:'#07194e'
         },
         wf: { bg:'#FFFFFF', surface:'#F5F5F5', border:'#E0E0E0', text:'#333333', 'text-sub':'#888888', accent:'#666666' }
       },
@@ -83,15 +83,15 @@ tailwind.config = {
 ```
 カード             : bg-white rounded-xl border border-slate-200 p-6 shadow-sm
 カードグリッド     : grid grid-cols-2 md:grid-cols-3 gap-6
-CTAボタン（M）     : inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
-CTAボタン（L）     : inline-flex items-center justify-center gap-2 h-12 px-6 text-[1rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
-CTAボタン（S）     : inline-flex items-center justify-center gap-1.5 h-8 px-3 text-[0.875rem] font-medium bg-primary-600 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+CTAボタン（M）     : inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-primary-500 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+CTAボタン（L）     : inline-flex items-center justify-center gap-2 h-12 px-6 text-[1rem] font-medium bg-primary-500 text-white rounded-lg hover:bg-primary-700 cursor-pointer
+CTAボタン（S）     : inline-flex items-center justify-center gap-1.5 h-8 px-3 text-[0.875rem] font-medium bg-primary-500 text-white rounded-lg hover:bg-primary-700 cursor-pointer
 サブボタン         : inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 cursor-pointer
 Icon+Textボタン    : inline-flex items-center justify-center gap-2 h-10 pl-3 pr-4 text-[1rem] font-medium（アイコン側を狭く）
 アイコンボタン（M）: w-10 h-10 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-5 h-5）
 アイコンボタン（S）: w-8 h-8 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-4 h-4）
 アイコンボタン（L）: w-12 h-12 inline-flex items-center justify-center cursor-pointer + aria-label（icon w-5 h-5）
-入力欄             : w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600
+入力欄             : w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-500
 セレクト           : appearance-none pl-3 pr-10 + relative wrapper + SVG chevron（absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4）← ネイティブ矢印は使用禁止
 横並びフォーム     : flex flex-wrap items-end gap-4（外枠）+ 各 div.leading-normal > label + 要素 h-11 leading-normal（py-2 外す）+ ボタン h-11 inline-flex items-center（→ patterns/form.md 必読）
 バッジ（デフォルト）: bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium
@@ -110,11 +110,11 @@ Accordion トリガー : w-full flex items-center justify-between py-4 text-left
 ディバイダー（水平）: border-t border-slate-200（<hr> or role="separator"）
 ディバイダー（テキスト付き）: flex items-center gap-4 + 両側 flex-1 border-t border-slate-200 + 中央 text-sm text-slate-500
 ディバイダー（垂直）: border-l border-slate-200 self-stretch + role="separator" aria-orientation="vertical"
-Stepper Indicator  : w-8 h-8 rounded-full inline-flex items-center justify-center text-sm（Completed: bg-primary-600 text-white / Active: border-2 border-primary-600 / Upcoming: bg-slate-100 text-slate-500）
-Stepper Connector  : flex-1 h-0.5 mx-3（完了区間: bg-primary-600 / 未着手: bg-slate-200）
+Stepper Indicator  : w-8 h-8 rounded-full inline-flex items-center justify-center text-sm（Completed: bg-primary-500 text-white / Active: border-2 border-primary-500 / Upcoming: bg-slate-100 text-slate-500）
+Stepper Connector  : flex-1 h-0.5 mx-3（完了区間: bg-primary-500 / 未着手: bg-slate-200）
 Date Picker Trigger: w-full flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-base + Calendar アイコン
 Date Picker Popup  : absolute mt-1 w-[320px] bg-white rounded-xl border border-slate-200 shadow-md z-20 p-4
-Date Picker Day    : w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg（Selected: bg-primary-600 text-white / Today: font-semibold text-primary-600）
+Date Picker Day    : w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg（Selected: bg-primary-500 text-white / Today: font-semibold text-primary-500）
 ```
 
 ### アイコン
@@ -132,18 +132,20 @@ Lucide             : w-5 h-5 stroke="currentColor" fill="none" ← assets/icons/
 サイドバー構成       : 3ゾーン必須（Header + nav + Footer mt-auto border-t）
 サイドバー nav       : <nav aria-label="メインナビゲーション"> 必須
 ナビアイコン         : flex-shrink-0 を付与
-ナビ（Active）     : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg + aria-current="page"
+ナビ（Active）     : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg + aria-current="page"
 ナビ（Default）    : flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors
-タブ（Active）     : text-sm font-semibold text-primary-600 border-b-2 border-primary-600 cursor-default
-タブ（Inactive）   : text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 cursor-pointer
+タブ underline（Active）  : text-sm font-semibold text-primary-500 border-b-2 border-primary-500 cursor-default
+タブ underline（Inactive）: text-sm font-medium text-slate-500 border-b-2 border-transparent hover:text-slate-700 cursor-pointer
+タブ bar（Active）  : flex-1 relative flex items-center justify-center py-4 text-sm font-semibold text-slate-900 + インジケーターバー（w-56px h-4px bg-primary-500 rounded absolute bottom-0）
+タブ bar（Inactive）: flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100
 パンくずリスト     : text-sm + text-slate-500 hover:text-slate-700 / 現在ページ text-slate-900 font-medium
-ページネーション   : w-10 h-10 rounded-lg cursor-pointer + Active bg-primary-600 text-white / Inactive bg-white border
+ページネーション   : w-10 h-10 rounded-lg cursor-pointer + Active bg-primary-500 text-white / Inactive bg-white border
 ```
 
 ### データ・フィードバック
 ```
-アバター（M）      : w-10 h-10 rounded-full（イニシャル: bg-primary-50 text-primary-600 font-medium）+ role="img" aria-label="名前"
-プログレスバー     : bg-slate-200 rounded-full h-2（フィル: bg-primary-600 rounded-full h-2）+ role="progressbar" aria-valuenow aria-valuemin="0" aria-valuemax="100"
+アバター（M）      : w-10 h-10 rounded-full（イニシャル: bg-primary-50 text-primary-500 font-medium）+ role="img" aria-label="名前"
+プログレスバー     : bg-slate-200 rounded-full h-2（フィル: bg-primary-500 rounded-full h-2）+ role="progressbar" aria-valuenow aria-valuemin="0" aria-valuemax="100"
 スケルトン         : bg-slate-200 rounded-md skeleton-pulse + aria-busy="true" role="status"
 空状態             : text-center py-16 + アイコン(w-16 h-16 bg-slate-100 rounded-full) + 見出し + 説明 + CTAボタン
 ツールチップ       : bg-slate-600 text-white text-sm rounded-lg shadow-sm px-3 py-2（width: max-content, max-width: 20rem）

@@ -142,7 +142,7 @@
   </div>
   <div class="px-6 py-3 border-t border-slate-200 flex justify-end gap-3">
     <button class="h-8 px-3 text-[0.875rem] font-medium text-body rounded-lg hover:bg-gray-100 transition-colors">キャンセル</button>
-    <button class="h-8 px-3 text-[0.875rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">保存</button>
+    <button class="h-8 px-3 text-[0.875rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">保存</button>
   </div>
 </div>
 ```

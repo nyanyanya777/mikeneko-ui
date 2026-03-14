@@ -53,7 +53,7 @@
       キャンセル
     </button>
     <button type="submit"
-      class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+      class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
       送信する
     </button>
   </div>
@@ -89,12 +89,12 @@
     <div class="space-y-3 leading-normal">
       <label class="inline-flex items-start gap-3 cursor-pointer">
         <input type="checkbox" name="notifications[]" value="email"
-          class="mt-0.5 w-4 h-4 text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+          class="mt-0.5 w-4 h-4 text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
         <span class="text-sm text-slate-700">メール通知</span>
       </label>
       <label class="inline-flex items-start gap-3 cursor-pointer">
         <input type="checkbox" name="notifications[]" value="push"
-          class="mt-0.5 w-4 h-4 text-primary-600 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
+          class="mt-0.5 w-4 h-4 text-primary-500 border-slate-300 rounded focus:ring-2 focus:ring-primary-500/50">
         <span class="text-sm text-slate-700">プッシュ通知</span>
       </label>
     </div>
@@ -107,7 +107,7 @@
       キャンセル
     </button>
     <button type="submit"
-      class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+      class="h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
       保存する
     </button>
   </div>
@@ -147,7 +147,7 @@
     <div class="leading-normal">
       <label for="area" class="block text-sm font-medium text-slate-900 mb-1">エリア</label>
       <input id="area" type="text" placeholder="東京、京都..."
-        class="w-full h-11 px-3 text-base leading-normal border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-600 transition-colors">
+        class="w-full h-11 px-3 text-base leading-normal border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 caret-primary-500 transition-colors">
     </div>
   </div>
   <div class="min-w-[120px]">
@@ -164,7 +164,7 @@
       </div>
     </div>
   </div>
-  <button class="px-6 h-11 inline-flex items-center justify-center gap-2 text-base leading-normal font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+  <button class="px-6 h-11 inline-flex items-center justify-center gap-2 text-base leading-normal font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
     検索する
   </button>
 </div>

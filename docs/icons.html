@@ -12,9 +12,9 @@
       extend: {
         colors: {
           primary: {
-            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
-            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
-            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+            50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+            400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+            800:'#13318d',900:'#0e266a',950:'#07194e'
           },
           body: '#3d4b5f',
         },
@@ -77,7 +77,7 @@
       position: absolute;
       left: 0; right: 0; bottom: -1px;
       height: 2px;
-      background: #2563eb;
+      background: #2250df;
       border-radius: 1px;
     }
   </style>
@@ -92,7 +92,7 @@
     <div class="flex items-center gap-3">
       <span class="text-lg font-bold" style="color:var(--text-heading);">melta UI</span>
       <span class="text-xs font-medium px-2 py-0.5 rounded-full" style="color:var(--text-muted);background:var(--bg-page-alt);">Icons</span>
-      <a href="index.html" class="text-sm font-medium text-primary-600 hover:text-primary-700 ml-2">&larr; Showcase へ戻る</a>
+      <a href="index.html" class="text-sm font-medium text-primary-500 hover:text-primary-700 ml-2">&larr; Showcase へ戻る</a>
     </div>
     <button id="dark-mode-toggle" aria-label="ダークモード切替" class="w-10 h-10 inline-flex items-center justify-center rounded-lg border text-slate-500 hover:bg-gray-50 transition-colors" style="border-color:var(--border-default);">
       <svg id="icon-sun" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -173,7 +173,7 @@
 
         <!-- Tabs -->
         <div class="flex items-center gap-1 border-b mb-6" style="border-color:var(--border-default);">
-          <button data-tab="all" class="tab-btn active px-4 py-2 text-sm font-semibold text-primary-600 transition-colors">All <span class="text-xs font-normal" style="color:var(--text-muted);">(222)</span></button>
+          <button data-tab="all" class="tab-btn active px-4 py-2 text-sm font-semibold text-primary-500 transition-colors">All <span class="text-xs font-normal" style="color:var(--text-muted);">(222)</span></button>
           <button data-tab="charcoal" class="tab-btn px-4 py-2 text-sm font-medium transition-colors" style="color:var(--text-muted);">Charcoal <span class="text-xs font-normal">(207)</span></button>
           <button data-tab="lucide" class="tab-btn px-4 py-2 text-sm font-medium transition-colors" style="color:var(--text-muted);">Lucide <span class="text-xs font-normal">(15)</span></button>
         </div>
@@ -181,7 +181,7 @@
         <!-- Search -->
         <div class="relative mb-4 leading-normal">
           <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" style="color:var(--text-muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input id="icon-search" type="text" placeholder="アイコン名で検索..." class="w-full pl-10 pr-4 py-2 text-base border rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-600" style="background:var(--input-bg);border-color:var(--input-border);color:var(--text-default);">
+          <input id="icon-search" type="text" placeholder="アイコン名で検索..." class="w-full pl-10 pr-4 py-2 text-base border rounded-lg focus:ring-2 focus:ring-primary-500/50 caret-primary-500" style="background:var(--input-bg);border-color:var(--input-border);color:var(--text-default);">
         </div>
 
         <!-- Count -->
@@ -227,7 +227,7 @@
                 <svg id="size-icon-20" class="w-5 h-5" style="color:var(--text-default);" fill="currentColor" viewBox="0 0 24 24"></svg>
               </div>
               <p class="text-sm font-medium mt-2" style="color:var(--text-heading);">w-5 h-5</p>
-              <p class="text-xs text-primary-600 font-medium">20px (標準)</p>
+              <p class="text-xs text-primary-500 font-medium">20px (標準)</p>
               <p class="text-xs" style="color:var(--text-muted);">ボタン、ナビ、フォーム</p>
             </div>
             <div class="text-center">
@@ -285,9 +285,9 @@
               </tr>
               <tr>
                 <td class="px-6 py-3" style="color:var(--text-default);">アクティブ/選択中</td>
-                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-primary-600</td>
+                <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-primary-500</td>
                 <td class="px-6 py-3">
-                  <svg id="color-icon-active" class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 24 24"></svg>
+                  <svg id="color-icon-active" class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 24 24"></svg>
                 </td>
               </tr>
               <tr>
@@ -315,7 +315,7 @@
                 <td class="px-6 py-3" style="color:var(--text-default);">色付き背景上</td>
                 <td class="px-6 py-3 font-mono text-xs" style="color:var(--text-default);">text-white</td>
                 <td class="px-6 py-3">
-                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-600">
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary-500">
                     <svg id="color-icon-white" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"></svg>
                   </span>
                 </td>
@@ -815,11 +815,11 @@
       btn.addEventListener('click', function() {
         currentTab = btn.getAttribute('data-tab');
         tabBtns.forEach(function(b) {
-          b.classList.remove('active', 'text-primary-600', 'font-semibold');
+          b.classList.remove('active', 'text-primary-500', 'font-semibold');
           b.style.color = 'var(--text-muted)';
           b.classList.add('font-medium');
         });
-        btn.classList.add('active', 'text-primary-600', 'font-semibold');
+        btn.classList.add('active', 'text-primary-500', 'font-semibold');
         btn.classList.remove('font-medium');
         btn.style.color = '';
         applyFilters();

@@ -70,7 +70,7 @@ export interface ComponentMeta {
   sizes: ComponentSize[];
   accessibility: ComponentAccessibility;
   prohibited: string[];
-  htmlSample: string;
+  htmlSample: string | Record<string, string>;
 }
 
 /** components.json root structure */

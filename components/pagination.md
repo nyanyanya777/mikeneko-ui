@@ -36,7 +36,7 @@
 
 | 状態 | スタイル |
 |------|---------|
-| Active | `bg-primary-600 text-white rounded-lg` |
+| Active | `bg-primary-500 text-white rounded-lg` |
 | Inactive | `bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50` |
 | Disabled | `text-slate-300 cursor-not-allowed` |
 | Ellipsis | `text-slate-500`（クリック不可） |
@@ -62,7 +62,7 @@ w-10 h-10 inline-flex items-center justify-center text-base font-medium rounded-
 
 | 状態 | クラス |
 |------|--------|
-| Active | `text-white bg-primary-600` |
+| Active | `text-white bg-primary-500` |
 | Inactive | `text-slate-700 bg-white border border-slate-200 hover:bg-gray-50 transition-colors` |
 
 ### Prev/Next Button
@@ -116,7 +116,7 @@ flex items-center gap-1
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
       </button>
     </li>
-    <li><button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-white bg-primary-600 rounded-lg" aria-current="page" aria-label="ページ 1">1</button></li>
+    <li><button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-white bg-primary-500 rounded-lg" aria-current="page" aria-label="ページ 1">1</button></li>
     <li><button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50 transition-colors" aria-label="ページ 2">2</button></li>
     <li><button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50 transition-colors" aria-label="ページ 3">3</button></li>
     <li>
@@ -137,7 +137,7 @@ flex items-center gap-1
     <li><button class="..." aria-label="ページ 1">1</button></li>
     <li><span class="w-10 h-10 inline-flex items-center justify-center text-slate-500" aria-hidden="true">...</span></li>
     <li><button class="..." aria-label="ページ 4">4</button></li>
-    <li><button class="... text-white bg-primary-600" aria-current="page" aria-label="ページ 5">5</button></li>
+    <li><button class="... text-white bg-primary-500" aria-current="page" aria-label="ページ 5">5</button></li>
     <li><button class="..." aria-label="ページ 6">6</button></li>
     <li><span class="w-10 h-10 inline-flex items-center justify-center text-slate-500" aria-hidden="true">...</span></li>
     <li><button class="..." aria-label="ページ 20">20</button></li>

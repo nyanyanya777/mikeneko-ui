@@ -11,8 +11,8 @@
 - `bg-green-*` → `bg-emerald-*`
 - `bg-yellow-*` → `bg-amber-*`
 - `bg-rose-*` → `bg-red-*`
-- `text-blue-*` for links → `text-primary-600`
-- `bg-primary-400` → `bg-primary-600`
+- `text-blue-*` for links → `text-primary-500`
+- `bg-primary-400` → `bg-primary-500`
 - `bg-gray-300` 以上の暗い背景 → `bg-gray-50` 〜 `bg-gray-200`
 - サイドバーに暗い背景色（`bg-slate-800` 等）→ `bg-white` + ボーダー
 

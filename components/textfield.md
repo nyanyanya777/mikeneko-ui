@@ -12,7 +12,7 @@
 | 2 | エラーは即座に、具体的に | バリデーションエラーはフィールド直下に表示し、何が間違っているか・どう直すかを明示する。 |
 | 3 | 適切な入力タイプ | `type` 属性を正しく設定し、モバイルで最適なキーボードを表示する（`email`, `tel`, `url` など）。 |
 | 4 | 十分なタッチターゲット | 縦並び時は `py-2 text-base`（実高 52px）、横並び時は `h-11 leading-normal`（44px）でタップ領域を確保する。 |
-| 5 | カーソルカラー | テキストカーソル（キャレット）に `caret-color: primary-600` を適用し、入力中にブランドの存在を静かに伝える。 |
+| 5 | カーソルカラー | テキストカーソル（キャレット）に `caret-color: primary-500` を適用し、入力中にブランドの存在を静かに伝える。 |
 
 ---
 
@@ -141,7 +141,7 @@
            placeholder:text-slate-500
            hover:border-slate-400
            focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 outline-none
-           caret-primary-600 transition-colors"
+           caret-primary-500 transition-colors"
     placeholder="タイトルを入力" />
 </div>
 ```
@@ -164,7 +164,7 @@
            placeholder:text-slate-500
            hover:border-slate-400
            focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 outline-none
-           caret-primary-600 transition-colors"
+           caret-primary-500 transition-colors"
     placeholder="名前を入力" />
   <p class="mt-1 text-xs text-slate-500">表示名として使用されます</p>
 </div>
@@ -216,7 +216,7 @@
              placeholder:text-slate-500
              hover:border-slate-400
              focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 outline-none
-             transition-colors caret-primary-600"
+             transition-colors caret-primary-500"
       placeholder="パスワードを入力" />
     <!-- 表示切替ボタン（JS で type 属性を password/text に切り替える） -->
     <button

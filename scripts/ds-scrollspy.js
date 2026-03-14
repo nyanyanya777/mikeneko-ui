@@ -13,9 +13,11 @@
           navLinks.forEach(function(link) {
             var wasActive = link.classList.contains('active');
             link.classList.remove('active');
+            link.removeAttribute('aria-current');
             if (wasActive) link.classList.add('ds-visited');
             if (link.getAttribute('data-nav') === id) {
               link.classList.add('active');
+              link.setAttribute('aria-current', 'page');
               // Scroll active link into view in sidebar
               var nav = link.closest('nav');
               if (nav) {

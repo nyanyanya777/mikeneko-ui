@@ -46,7 +46,7 @@
 | 種類 | 説明 |
 |------|------|
 | 画像 | `<img>` + `rounded-full object-cover` |
-| イニシャル | `bg-primary-50 text-primary-600 font-medium` |
+| イニシャル | `bg-primary-50 text-primary-500 font-medium` |
 
 ### 3-3. ステータスドット
 
@@ -81,7 +81,7 @@ rounded-full object-cover
 ### イニシャルアバター
 
 ```
-rounded-full bg-primary-50 flex items-center justify-center font-medium text-primary-600
+rounded-full bg-primary-50 flex items-center justify-center font-medium text-primary-500
 ```
 
 ### ステータスドット
@@ -128,7 +128,7 @@ rounded-full border-2 border-white bg-slate-100 flex items-center justify-center
 ### イニシャルアバター
 
 ```html
-<div role="img" aria-label="田中 太郎" class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center text-sm font-medium text-primary-600">TK</div>
+<div role="img" aria-label="田中 太郎" class="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center text-sm font-medium text-primary-500">TK</div>
 ```
 
 ### ステータスドット付き

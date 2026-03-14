@@ -64,8 +64,8 @@
 | 状態 | スタイル |
 |------|----------|
 | Default | `text-slate-900 hover:bg-gray-50` |
-| Today | `font-semibold text-primary-600 hover:bg-primary-50` |
-| Selected | `bg-primary-600 text-white font-medium` |
+| Today | `font-semibold text-primary-500 hover:bg-primary-50` |
+| Selected | `bg-primary-500 text-white font-medium` |
 | Other Month | `text-slate-300`（表示しない、または薄く表示） |
 | Disabled | `text-slate-300 cursor-not-allowed` |
 | Focus | `ring-2 ring-primary-500/50 ring-inset` |
@@ -124,8 +124,8 @@ Cell           : w-10 h-10 inline-flex items-center justify-center text-sm round
                  transition-colors cursor-pointer
                  focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-inset
 
-Selected       : bg-primary-600 text-white font-medium
-Today          : font-semibold text-primary-600 hover:bg-primary-50
+Selected       : bg-primary-500 text-white font-medium
+Today          : font-semibold text-primary-500 hover:bg-primary-50
 Default        : text-slate-900 hover:bg-gray-50
 Disabled       : text-slate-300 cursor-not-allowed
 ```
@@ -134,7 +134,7 @@ Disabled       : text-slate-300 cursor-not-allowed
 
 ```
 Container      : border-t border-slate-200 mt-3 pt-3
-Button         : w-full text-center text-sm font-medium text-primary-600 hover:text-primary-700
+Button         : w-full text-center text-sm font-medium text-primary-500 hover:text-primary-700
                  py-1.5 rounded-lg hover:bg-primary-50 transition-colors
 ```
 
@@ -235,7 +235,7 @@ Button         : w-full text-center text-sm font-medium text-primary-600 hover:t
     </div>
     <!-- Today Button -->
     <div class="border-t border-slate-200 mt-3 pt-3">
-      <button type="button" onclick="dpSelectToday()" class="w-full text-center text-sm font-medium text-primary-600 hover:text-primary-700 py-1.5 rounded-lg hover:bg-primary-50 transition-colors">
+      <button type="button" onclick="dpSelectToday()" class="w-full text-center text-sm font-medium text-primary-500 hover:text-primary-700 py-1.5 rounded-lg hover:bg-primary-50 transition-colors">
         今日
       </button>
     </div>
@@ -334,10 +334,10 @@ Button         : w-full text-center text-sm font-medium text-primary-600 hover:t
 
       var cls = 'w-10 h-10 inline-flex items-center justify-center text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-inset';
       if (isSelected) {
-        cls += ' bg-primary-600 text-white font-medium';
+        cls += ' bg-primary-500 text-white font-medium';
         cell.setAttribute('aria-selected', 'true');
       } else if (isToday) {
-        cls += ' font-semibold text-primary-600 hover:bg-primary-50';
+        cls += ' font-semibold text-primary-500 hover:bg-primary-50';
         cell.setAttribute('aria-current', 'date');
       } else {
         cls += ' text-slate-900 hover:bg-gray-50';

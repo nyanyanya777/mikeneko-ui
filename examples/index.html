@@ -15,9 +15,9 @@
       extend: {
         colors: {
           primary: {
-            50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
-            400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
-            800:'#1e40af',900:'#1e3a5f',950:'#172554'
+            50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+            400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+            800:'#13318d',900:'#0e266a',950:'#07194e'
           },
           body: '#3d4b5f',
         },
@@ -93,7 +93,7 @@
       <a href="ec-home.html" class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden block" data-category="toc">
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <div class="color-dot" style="background:#2563eb;"></div>
+            <div class="color-dot" style="background:#2250df;"></div>
             <span class="text-xs font-medium text-slate-500">Blue &middot; EC/ToC</span>
           </div>
           <h2 class="text-lg font-bold text-slate-900">melta store</h2>
@@ -111,7 +111,7 @@
       <a href="kintsugi.html" class="sample-card card-hover bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden block" data-category="saas tob">
         <div class="p-6">
           <div class="flex items-center gap-3 mb-3">
-            <div class="color-dot" style="background:#2563eb;"></div>
+            <div class="color-dot" style="background:#2250df;"></div>
             <span class="text-xs font-medium text-slate-500">Blue &middot; SaaS/ToB</span>
           </div>
           <h2 class="text-lg font-bold text-slate-900">Kintsugi</h2>
@@ -313,8 +313,8 @@
       <p class="text-sm text-body mb-6">1つの DS から12のブランド表現。プライマリーカラーを差し替えるだけで、異なる業種のサービスに対応できます。</p>
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg shadow-sm" style="background:#2563eb;"></div>
-          <div><p class="text-sm font-medium text-slate-900">Blue</p><p class="text-xs text-slate-500">#2563eb</p></div>
+          <div class="w-10 h-10 rounded-lg shadow-sm" style="background:#2250df;"></div>
+          <div><p class="text-sm font-medium text-slate-900">Blue</p><p class="text-xs text-slate-500">#2250df</p></div>
         </div>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-lg shadow-sm" style="background:#e11d48;"></div>
@@ -365,7 +365,7 @@
   <footer class="border-t border-slate-200 mt-16">
     <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
       <p class="text-xs text-slate-500">melta UI &middot; MIT License</p>
-      <a href="../docs/index.html" class="text-xs text-primary-600 hover:text-primary-700 font-medium transition-colors">Showcase に戻る</a>
+      <a href="../docs/index.html" class="text-xs text-primary-500 hover:text-primary-700 font-medium transition-colors">Showcase に戻る</a>
     </div>
   </footer>
 
@@ -377,7 +377,7 @@
       chips.forEach(function(chip) {
         var isActive = chip.getAttribute('data-filter') === category;
         chip.className = isActive
-          ? 'filter-chip active inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium border border-primary-600 bg-primary-50 text-primary-700 transition-colors'
+          ? 'filter-chip active inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium border border-primary-500 bg-primary-50 text-primary-700 transition-colors'
           : 'filter-chip inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition-colors';
       });
       cards.forEach(function(card) {

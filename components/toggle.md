@@ -38,7 +38,7 @@
 | 状態 | Track | Thumb | 説明 |
 |------|-------|-------|------|
 | OFF | `bg-slate-200` | 左寄せ・白 | 初期状態（無効） |
-| ON | `bg-primary-600` | 右寄せ・白 | 有効状態 |
+| ON | `bg-primary-500` | 右寄せ・白 | 有効状態 |
 | OFF + Hover | `bg-slate-300` | 左寄せ・白 | マウスオーバー時 |
 | ON + Hover | `bg-primary-700` | 右寄せ・白 | マウスオーバー時 |
 | Focus | `ring-2 ring-primary-500/50` | | フォーカスリング表示 |
@@ -157,7 +157,7 @@ ON → OFF（クリック / Space / Enter）
     role="switch"
     aria-checked="true"
     aria-labelledby="toggle-on-label"
-    class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-600
+    class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-500
            hover:bg-primary-700
            focus:outline-none focus:ring-2 focus:ring-primary-500/50
            transition-colors">
@@ -182,7 +182,7 @@ ON → OFF（クリック / Space / Enter）
     aria-checked="true"
     aria-labelledby="toggle-desc-label"
     aria-describedby="toggle-desc"
-    class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-600 flex-shrink-0
+    class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-500 flex-shrink-0
            hover:bg-primary-700
            focus:outline-none focus:ring-2 focus:ring-primary-500/50
            transition-colors">
@@ -204,7 +204,7 @@ ON → OFF（クリック / Space / Enter）
       <p class="text-sm text-slate-500 mt-1">新しいメッセージの通知を受け取る</p>
     </div>
     <button type="button" role="switch" aria-checked="true" aria-labelledby="setting-1"
-      class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-600 flex-shrink-0
+      class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary-500 flex-shrink-0
              hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <span class="inline-block h-5 w-5 rounded-full bg-white shadow-sm translate-x-[22px] transition-transform"></span>
     </button>
@@ -242,7 +242,7 @@ ON → OFF（クリック / Space / Enter）
 ```html
 <div class="flex items-center gap-3">
   <button type="button" role="switch" aria-checked="true" aria-label="有効"
-    class="relative inline-flex h-5 w-8 items-center rounded-full bg-primary-600
+    class="relative inline-flex h-5 w-8 items-center rounded-full bg-primary-500
            hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <span class="inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm translate-x-[14px] transition-transform"></span>
   </button>

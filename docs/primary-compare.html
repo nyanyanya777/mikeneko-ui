@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary Scale Comparison — melta UI</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        /* Original Tailwind blue */
+        orig: {
+          50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',
+          400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',
+          800:'#1e40af',900:'#1e3a5f',950:'#172554'
+        },
+        /* New scale: #2b70ef at 500, OKLCH-regenerated */
+        nw: {
+          50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+          400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+          800:'#13318d',900:'#0e266a',950:'#07194e'
+        }
+      },
+      fontFamily: {
+        sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  .text-body { color: #3d4b5f; }
+  body { background: #f8fafc; }
+  .case-label {
+    position: sticky; top: 0; z-index: 10;
+    background: white; border-bottom: 1px solid #e2e8f0;
+    padding: 12px 24px; font-size: 1.125rem; font-weight: 700;
+  }
+  .case-panel { padding: 24px; }
+  .section-title {
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; color: #64748b; margin-bottom: 12px;
+  }
+  .component-row {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 24px;
+  }
+</style>
+</head>
+<body class="min-h-screen">
+
+<div class="max-w-7xl mx-auto py-8 px-4">
+  <h1 class="text-2xl font-bold text-slate-900 mb-2">Primary Scale Comparison</h1>
+  <p class="text-base text-body mb-8">現行スケール（Tailwind blue）vs 新スケール（#2b70ef base, OKLCH再生成）</p>
+
+  <!-- ================================================================
+       Scale comparison strip
+       ================================================================ -->
+  <div class="bg-white rounded-xl border border-slate-200 p-6 mb-6">
+    <h2 class="text-lg font-bold text-slate-900 mb-4">スケール比較</h2>
+
+    <div class="mb-4">
+      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">現行（Tailwind blue）</p>
+      <div class="flex gap-1">
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-50 border border-slate-200"></div><span class="text-[10px] text-slate-500">50</span><span class="text-[10px] text-slate-400">#eff6ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-100"></div><span class="text-[10px] text-slate-500">100</span><span class="text-[10px] text-slate-400">#dbeafe</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-200"></div><span class="text-[10px] text-slate-500">200</span><span class="text-[10px] text-slate-400">#bfdbfe</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-300"></div><span class="text-[10px] text-slate-500">300</span><span class="text-[10px] text-slate-400">#93c5fd</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-400"></div><span class="text-[10px] text-slate-500">400</span><span class="text-[10px] text-slate-400">#60a5fa</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-500"></div><span class="text-[10px] font-bold text-slate-700">500</span><span class="text-[10px] text-slate-400">#3b82f6</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-600"></div><span class="text-[10px] text-slate-500">600</span><span class="text-[10px] text-slate-400">#2563eb</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-700"></div><span class="text-[10px] text-slate-500">700</span><span class="text-[10px] text-slate-400">#1d4ed8</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-800"></div><span class="text-[10px] text-slate-500">800</span><span class="text-[10px] text-slate-400">#1e40af</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-900"></div><span class="text-[10px] text-slate-500">900</span><span class="text-[10px] text-slate-400">#1e3a5f</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-orig-950"></div><span class="text-[10px] text-slate-500">950</span><span class="text-[10px] text-slate-400">#172554</span></div>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">新スケール（#2b70ef base, OKLCH再生成）</p>
+      <div class="flex gap-1">
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-50 border border-slate-200"></div><span class="text-[10px] text-slate-500">50</span><span class="text-[10px] text-slate-400">#f0f5ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-100"></div><span class="text-[10px] text-slate-500">100</span><span class="text-[10px] text-slate-400">#dde8ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-200"></div><span class="text-[10px] text-slate-500">200</span><span class="text-[10px] text-slate-400">#c0d4ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-300"></div><span class="text-[10px] text-slate-500">300</span><span class="text-[10px] text-slate-400">#95b6ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-400"></div><span class="text-[10px] text-slate-500">400</span><span class="text-[10px] text-slate-400">#6492ff</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-500 ring-2 ring-offset-2" style="--tw-ring-color:#2b70ef"></div><span class="text-[10px] font-bold text-nw-500">500</span><span class="text-[10px] text-slate-400">#2b70ef</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-600"></div><span class="text-[10px] text-slate-500">600</span><span class="text-[10px] text-slate-400">#2250df</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-700"></div><span class="text-[10px] text-slate-500">700</span><span class="text-[10px] text-slate-400">#1a40b5</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-800"></div><span class="text-[10px] text-slate-500">800</span><span class="text-[10px] text-slate-400">#13318d</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-900"></div><span class="text-[10px] text-slate-500">900</span><span class="text-[10px] text-slate-400">#0e266a</span></div>
+        <div class="flex flex-col items-center gap-1"><div class="w-14 h-14 rounded-lg bg-nw-950"></div><span class="text-[10px] text-slate-500">950</span><span class="text-[10px] text-slate-400">#07194e</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+
+    <!-- ================================================================
+         LEFT: 現行スケール (Tailwind blue, primary-500 = #3b82f6)
+         ================================================================ -->
+    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div class="case-label">現行 — Tailwind blue <span class="text-sm font-normal text-slate-500 ml-2">#3b82f6 (3.24:1)</span></div>
+      <div class="case-panel space-y-8">
+
+        <!-- Buttons -->
+        <div>
+          <div class="section-title">ボタン</div>
+          <div class="component-row">
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-orig-500 text-white rounded-lg hover:bg-orig-600 cursor-pointer transition-colors">保存する</button>
+            <button class="inline-flex items-center justify-center gap-2 h-8 px-3 text-[0.875rem] font-medium bg-orig-500 text-white rounded-lg hover:bg-orig-600 cursor-pointer transition-colors">Small</button>
+            <button class="inline-flex items-center justify-center gap-2 h-12 px-6 text-[1rem] font-medium bg-orig-500 text-white rounded-lg hover:bg-orig-600 cursor-pointer transition-colors">Large</button>
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">キャンセル</button>
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-orig-50 text-orig-500 rounded-lg hover:bg-orig-100 cursor-pointer transition-colors">Lighted</button>
+          </div>
+        </div>
+
+        <!-- Tabs underline -->
+        <div>
+          <div class="section-title">タブ — underline</div>
+          <div class="flex gap-6 border-b border-slate-200">
+            <button class="text-sm font-semibold text-orig-500 border-b-2 border-orig-500 pb-3">概要</button>
+            <button class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700">設定</button>
+            <button class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700">履歴</button>
+          </div>
+        </div>
+
+        <!-- Tabs bar -->
+        <div>
+          <div class="section-title">タブ — bar</div>
+          <div class="flex border-b border-slate-200">
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-bold text-slate-900 hover:bg-slate-100 cursor-pointer">投稿<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:#3b82f6;border-radius:2px"></span></button>
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer">いいね</button>
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer">メディア</button>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div>
+          <div class="section-title">入力欄</div>
+          <div class="leading-normal max-w-sm">
+            <label class="block text-sm font-medium text-slate-900 mb-1.5">メールアドレス</label>
+            <input type="email" placeholder="user@example.com" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-orig-400/50 caret-orig-500 outline-none transition-colors">
+          </div>
+        </div>
+
+        <!-- Badge / Link / Avatar -->
+        <div>
+          <div class="section-title">バッジ・リンク・アバター</div>
+          <div class="component-row">
+            <span class="bg-orig-50 text-orig-500 px-3 py-1 rounded-full text-xs font-medium">Primary Badge</span>
+            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">Default</span>
+            <a href="#" class="text-sm text-orig-500 hover:text-orig-600 font-medium underline">リンクテキスト</a>
+            <div class="w-10 h-10 rounded-full bg-orig-50 text-orig-500 font-medium inline-flex items-center justify-center text-sm">田中</div>
+          </div>
+        </div>
+
+        <!-- Sidebar nav -->
+        <div>
+          <div class="section-title">サイドバーナビ</div>
+          <div class="w-56 bg-white border border-slate-200 rounded-xl p-3 space-y-1">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-orig-500 bg-orig-50 rounded-lg">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+              ダッシュボード</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              ユーザー</a>
+          </div>
+        </div>
+
+        <!-- Toggle / Progress -->
+        <div>
+          <div class="section-title">トグル・プログレス</div>
+          <div class="component-row">
+            <div class="relative inline-flex h-6 w-11 items-center rounded-full bg-orig-500 cursor-pointer">
+              <span class="inline-block h-4 w-4 rounded-full bg-white transform translate-x-6 transition-transform"></span>
+            </div>
+            <div class="w-48 bg-slate-200 rounded-full h-2"><div class="bg-orig-500 rounded-full h-2" style="width:65%"></div></div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div>
+          <div class="section-title">ページネーション</div>
+          <div class="flex items-center gap-1">
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-white bg-orig-500 rounded-lg">1</button>
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">2</button>
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">3</button>
+          </div>
+        </div>
+
+        <!-- Alert -->
+        <div>
+          <div class="section-title">アラート</div>
+          <div class="flex items-start gap-3 p-4 bg-orig-50 border border-orig-200 text-orig-800 rounded-lg">
+            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+            <p class="text-sm">新しいバージョンが利用可能です。</p>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <div>
+          <div class="section-title">ステッパー</div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 rounded-full bg-orig-500 text-white inline-flex items-center justify-center text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div class="flex-1 h-0.5 mx-3 bg-orig-500"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-orig-500 bg-white text-orig-500 font-semibold inline-flex items-center justify-center text-sm">2</div>
+            <div class="flex-1 h-0.5 mx-3 bg-slate-200"></div>
+            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 inline-flex items-center justify-center text-sm">3</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================================================================
+         RIGHT: 新スケール (#2b70ef at 500, OKLCH-regenerated)
+         500: #2b70ef (base) / 600: #2250df (hover) / 400: #6492ff (ring)
+         ================================================================ -->
+    <div class="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div class="case-label">新スケール — OKLCH再生成 <span class="text-sm font-normal ml-2" style="color:#2b70ef">#2b70ef (4.50:1)</span></div>
+      <div class="case-panel space-y-8">
+
+        <!-- Buttons -->
+        <div>
+          <div class="section-title">ボタン</div>
+          <div class="component-row">
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-nw-500 text-white rounded-lg hover:bg-nw-600 cursor-pointer transition-colors">保存する</button>
+            <button class="inline-flex items-center justify-center gap-2 h-8 px-3 text-[0.875rem] font-medium bg-nw-500 text-white rounded-lg hover:bg-nw-600 cursor-pointer transition-colors">Small</button>
+            <button class="inline-flex items-center justify-center gap-2 h-12 px-6 text-[1rem] font-medium bg-nw-500 text-white rounded-lg hover:bg-nw-600 cursor-pointer transition-colors">Large</button>
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">キャンセル</button>
+            <button class="inline-flex items-center justify-center gap-2 h-10 px-4 text-[1rem] font-medium bg-nw-50 text-nw-500 rounded-lg hover:bg-nw-100 cursor-pointer transition-colors">Lighted</button>
+          </div>
+        </div>
+
+        <!-- Tabs underline -->
+        <div>
+          <div class="section-title">タブ — underline</div>
+          <div class="flex gap-6 border-b border-slate-200">
+            <button class="text-sm font-semibold text-nw-500 border-b-2 border-nw-500 pb-3">概要</button>
+            <button class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700">設定</button>
+            <button class="text-sm font-medium text-slate-500 border-b-2 border-transparent pb-3 hover:text-slate-700">履歴</button>
+          </div>
+        </div>
+
+        <!-- Tabs bar -->
+        <div>
+          <div class="section-title">タブ — bar</div>
+          <div class="flex border-b border-slate-200">
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-bold text-slate-900 hover:bg-slate-100 cursor-pointer">投稿<span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:56px;height:4px;background:#2b70ef;border-radius:2px"></span></button>
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer">いいね</button>
+            <button class="flex-1 relative flex items-center justify-center py-4 text-sm font-medium text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer">メディア</button>
+          </div>
+        </div>
+
+        <!-- Input -->
+        <div>
+          <div class="section-title">入力欄</div>
+          <div class="leading-normal max-w-sm">
+            <label class="block text-sm font-medium text-slate-900 mb-1.5">メールアドレス</label>
+            <input type="email" placeholder="user@example.com" class="w-full px-3 py-2 text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-nw-400/50 caret-nw-500 outline-none transition-colors">
+          </div>
+        </div>
+
+        <!-- Badge / Link / Avatar -->
+        <div>
+          <div class="section-title">バッジ・リンク・アバター</div>
+          <div class="component-row">
+            <span class="bg-nw-50 text-nw-500 px-3 py-1 rounded-full text-xs font-medium">Primary Badge</span>
+            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">Default</span>
+            <a href="#" class="text-sm text-nw-500 hover:text-nw-600 font-medium underline">リンクテキスト</a>
+            <div class="w-10 h-10 rounded-full bg-nw-50 text-nw-500 font-medium inline-flex items-center justify-center text-sm">田中</div>
+          </div>
+        </div>
+
+        <!-- Sidebar nav -->
+        <div>
+          <div class="section-title">サイドバーナビ</div>
+          <div class="w-56 bg-white border border-slate-200 rounded-xl p-3 space-y-1">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-nw-500 bg-nw-50 rounded-lg">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+              ダッシュボード</a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-body hover:bg-gray-50 rounded-lg transition-colors">
+              <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              ユーザー</a>
+          </div>
+        </div>
+
+        <!-- Toggle / Progress -->
+        <div>
+          <div class="section-title">トグル・プログレス</div>
+          <div class="component-row">
+            <div class="relative inline-flex h-6 w-11 items-center rounded-full bg-nw-500 cursor-pointer">
+              <span class="inline-block h-4 w-4 rounded-full bg-white transform translate-x-6 transition-transform"></span>
+            </div>
+            <div class="w-48 bg-slate-200 rounded-full h-2"><div class="bg-nw-500 rounded-full h-2" style="width:65%"></div></div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div>
+          <div class="section-title">ページネーション</div>
+          <div class="flex items-center gap-1">
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-white bg-nw-500 rounded-lg">1</button>
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">2</button>
+            <button class="w-10 h-10 inline-flex items-center justify-center text-base font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-gray-50">3</button>
+          </div>
+        </div>
+
+        <!-- Alert -->
+        <div>
+          <div class="section-title">アラート</div>
+          <div class="flex items-start gap-3 p-4 bg-nw-50 border border-nw-200 text-nw-800 rounded-lg">
+            <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+            <p class="text-sm">新しいバージョンが利用可能です。</p>
+          </div>
+        </div>
+
+        <!-- Stepper -->
+        <div>
+          <div class="section-title">ステッパー</div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 rounded-full bg-nw-500 text-white inline-flex items-center justify-center text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div class="flex-1 h-0.5 mx-3 bg-nw-500"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-nw-500 bg-white text-nw-500 font-semibold inline-flex items-center justify-center text-sm">2</div>
+            <div class="flex-1 h-0.5 mx-3 bg-slate-200"></div>
+            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 inline-flex items-center justify-center text-sm">3</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+
+  <!-- Summary table -->
+  <div class="mt-10 bg-white rounded-xl border border-slate-200 p-6">
+    <h2 class="text-lg font-bold text-slate-900 mb-4">スケール値一覧</h2>
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b border-slate-200 bg-gray-50">
+          <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">Step</th>
+          <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">現行（Tailwind blue）</th>
+          <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">新スケール（OKLCH）</th>
+          <th scope="col" class="text-left py-3 px-4 text-xs font-medium text-slate-500 uppercase tracking-wider">用途</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <tr><td class="py-3 px-4">50</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-50 border border-slate-200 inline-block"></span>#eff6ff</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-50 border border-slate-200 inline-block"></span>#f0f5ff</span></td><td class="py-3 px-4 text-slate-500">薄い背景</td></tr>
+        <tr><td class="py-3 px-4">100</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-100 inline-block"></span>#dbeafe</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-100 inline-block"></span>#dde8ff</span></td><td class="py-3 px-4 text-slate-500">hover背景</td></tr>
+        <tr><td class="py-3 px-4">200</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-200 inline-block"></span>#bfdbfe</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-200 inline-block"></span>#c0d4ff</span></td><td class="py-3 px-4 text-slate-500">ボーダー</td></tr>
+        <tr><td class="py-3 px-4">300</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-300 inline-block"></span>#93c5fd</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-300 inline-block"></span>#95b6ff</span></td><td class="py-3 px-4 text-slate-500">—</td></tr>
+        <tr><td class="py-3 px-4">400</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-400 inline-block"></span>#60a5fa</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-400 inline-block"></span>#6492ff</span></td><td class="py-3 px-4 text-slate-500">フォーカスリング</td></tr>
+        <tr class="bg-blue-50/50 font-medium"><td class="py-3 px-4">500</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-500 inline-block"></span>#3b82f6 <span class="text-xs text-slate-400 font-normal">(3.24:1)</span></span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-500 inline-block"></span>#2b70ef <span class="text-xs text-slate-400 font-normal">(4.50:1)</span></span></td><td class="py-3 px-4 text-slate-900">ベース / アクション色</td></tr>
+        <tr><td class="py-3 px-4">600</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-600 inline-block"></span>#2563eb</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-600 inline-block"></span>#2250df</span></td><td class="py-3 px-4 text-slate-500">ホバー</td></tr>
+        <tr><td class="py-3 px-4">700</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-700 inline-block"></span>#1d4ed8</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-700 inline-block"></span>#1a40b5</span></td><td class="py-3 px-4 text-slate-500">pressed</td></tr>
+        <tr><td class="py-3 px-4">800</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-800 inline-block"></span>#1e40af</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-800 inline-block"></span>#13318d</span></td><td class="py-3 px-4 text-slate-500">アラートテキスト</td></tr>
+        <tr><td class="py-3 px-4">900</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-900 inline-block"></span>#1e3a5f</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-900 inline-block"></span>#0e266a</span></td><td class="py-3 px-4 text-slate-500">—</td></tr>
+        <tr><td class="py-3 px-4">950</td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-orig-950 inline-block"></span>#172554</span></td><td class="py-3 px-4"><span class="inline-flex items-center gap-2"><span class="w-4 h-4 rounded bg-nw-950 inline-block"></span>#07194e</span></td><td class="py-3 px-4 text-slate-500">—</td></tr>
+      </tbody>
+    </table>
+    <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+      <p class="text-sm font-medium text-slate-900 mb-1">移行方法</p>
+      <p class="text-sm text-body">Tailwind config の primary hex 値を差し替えるだけ。クラス名（primary-500, hover:primary-600 等）は変更不要。</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -122,11 +122,11 @@ SVGは全て24px基準。表示サイズはTailwindクラスで制御する。
 |------|---------------|
 | 標準（ナビ、補助） | `text-body` |
 | 無効/プレースホルダー | `text-slate-400` |
-| アクティブ/選択中 | `text-primary-600` |
+| アクティブ/選択中 | `text-primary-500` |
 | 成功 | `text-emerald-600` |
 | 警告 | `text-amber-600` |
 | エラー/危険 | `text-red-500` |
-| 白背景上のアクセント | `text-primary-600` |
+| 白背景上のアクセント | `text-primary-500` |
 | 色付き背景上 | `text-white` |
 
 > コントラスト比 3:1 以上を担保すること（WCAG AA — UI要素基準）。
@@ -253,7 +253,7 @@ Charcoal に存在しない SaaS / ダッシュボード向けアイコン。`as
 ### ボタン内アイコン
 
 ```html
-<button class="inline-flex items-center gap-2 h-10 px-4 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700">
+<button class="inline-flex items-center gap-2 h-10 px-4 text-sm font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700">
   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
     <!-- assets/icons/Add.svg の中身 -->
   </svg>

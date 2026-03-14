@@ -38,7 +38,7 @@
 | スケルトン色 | `bg-slate-200` |
 | スケルトンアニメーション | pulse 1.5s ease-in-out infinite |
 | スピナー | clip-path arc（0.8s clip + 1.6s rotate）、`currentColor` で親要素の色を継承 |
-| ドットローダー | 3バー波打ち、1.2s ease-in-out、primary-600 |
+| ドットローダー | 3バー波打ち、1.2s ease-in-out、primary-500 |
 | コンテナ | `text-center py-16` |
 | アクセシビリティ | `aria-busy="true"` + `role="status"` |
 
@@ -98,7 +98,7 @@
 ```
 
 ```html
-<button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
+<button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg opacity-75 cursor-not-allowed">
   <div class="inline-spinner"></div>
   送信中...
 </button>
@@ -116,7 +116,7 @@
 .dot-loader span {
   width: 9px;
   height: 17px;
-  background: var(--color-primary-600, #2563eb);
+  background: var(--color-primary-500, #2250df);
   border-radius: 3px;
   animation: dotWave 1.2s infinite ease-in-out;
 }
@@ -185,7 +185,7 @@
   </div>
   <h4 class="text-base font-semibold text-slate-900">データがありません</h4>
   <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto">まだ項目が登録されていません。最初のデータを追加してみましょう。</p>
-  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
     新規作成
   </button>
 </div>
@@ -202,7 +202,7 @@
   </div>
   <h4 class="text-base font-semibold text-slate-900">一致する結果がありません</h4>
   <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto">検索条件を変更するか、フィルターを調整してみてください。</p>
-  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
     検索条件を変更
   </button>
 </div>
@@ -219,7 +219,7 @@
   </div>
   <h4 class="text-base font-semibold text-slate-900">はじめましょう</h4>
   <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto">最初のプロジェクトを作成して、チームでの共同作業を始めましょう。</p>
-  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
     最初のプロジェクトを作成
   </button>
 </div>
@@ -251,7 +251,7 @@
   </div>
   <h4 class="text-base font-semibold text-slate-900">読み込みに失敗しました</h4>
   <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto">ネットワークに問題が発生しました。しばらくしてからもう一度お試しください。</p>
-  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg hover:bg-primary-700 transition-colors">
     再読み込み
   </button>
 </div>
@@ -283,7 +283,7 @@
   </div>
   <h4 class="text-base font-semibold text-slate-900">送信が完了しました</h4>
   <p class="text-sm text-slate-500 mt-1 max-w-xs mx-auto">お問い合わせありがとうございます。担当者から折り返しご連絡いたします。</p>
-  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-primary-600 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">
+  <button class="mt-4 h-10 px-4 text-[1rem] font-medium text-primary-500 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors">
     ホームに戻る
   </button>
 </div>

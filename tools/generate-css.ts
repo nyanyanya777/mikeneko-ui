@@ -103,7 +103,7 @@ const staticCSS = `
 }
 
 .dot-loader { display:flex; align-items:center; gap:5px; height:34px; }
-.dot-loader span { width:9px; height:17px; background:#2563eb; border-radius:3px; animation:dotWave 1.2s infinite ease-in-out; }
+.dot-loader span { width:9px; height:17px; background:#2250df; border-radius:3px; animation:dotWave 1.2s infinite ease-in-out; }
 .dot-loader span:nth-child(2){animation-delay:0.2s}
 .dot-loader span:nth-child(3){animation-delay:0.4s}
 @keyframes dotWave { 0%,100%{transform:translateY(0)} 25%{transform:translateY(-50%)} 50%{transform:translateY(50%)} 75%{transform:translateY(0)} }
@@ -135,16 +135,16 @@ h1, h2, h3, h4, h5, h6 { line-height: ${headingLineHeight}; letter-spacing: ${he
 /* --- CSS Variables (Light Theme) --- */
 :root {
 ${lightVars}
-  --sidebar-active-color: #2563eb;
-  --sidebar-active-bg: #eff6ff;
+  --sidebar-active-color: #2250df;
+  --sidebar-active-bg: #f0f5ff;
 ${wfVars ? `\n${wfVars}` : ""}
 }
 
 /* --- Dark Theme --- */
 html[data-theme="dark"] {
 ${darkVars}
-  --sidebar-active-color: #93c5fd;
-  --sidebar-active-bg: #1e3a5f;
+  --sidebar-active-color: #95b6ff;
+  --sidebar-active-bg: #0e266a;
 }
 
 /* Bug fix: dark mode body background */

@@ -10,13 +10,13 @@
 |------|------|------|
 | `text-black` | 純黒はコントラストが強すぎて長時間の利用で目が疲れる | `text-slate-900`（#0f172a） |
 | `bg-gray-300` 以上の暗い背景 | テキストのコントラスト確保が困難になる | `bg-gray-50` 〜 `bg-gray-200` |
-| `bg-primary-400`（薄いアクセント） | CTAとして弱く、目立たない | `bg-primary-600` |
+| `bg-primary-400`（薄いアクセント） | CTAとして弱く、目立たない | `bg-primary-500` |
 | `text-gray-400` for body text | WCAG不適合（コントラスト比不足） | `text-body`（#3d4b5f） |
 | `border-gray-100` | 薄すぎて境界が見えない | `border-slate-200`（#e2e8f0） |
 | `bg-green-*` | emeraldで統一する | `bg-emerald-*` |
 | `bg-yellow-*` | amberで統一する | `bg-amber-*` |
 | `bg-rose-*` | redで統一する | `bg-red-*` |
-| `text-blue-*` for links | primaryで統一する | `text-primary-600` |
+| `text-blue-*` for links | primaryで統一する | `text-primary-500` |
 | 色だけで情報伝達 | 色覚多様性への非対応。アクセシビリティ違反 | アイコン/テキストを必ず併用 |
 
 ---
@@ -161,7 +161,7 @@
 | 色だけでステップ状態を区別 | 色覚多様性への非対応 | アイコン + ボーダー + 背景色を併用 |
 | `aria-current="step"` の省略 | スクリーンリーダーが現在ステップを識別できない | Active ステップに必ず付与 |
 | Indicator `w-6 h-6` 未満のサイズ | タップターゲットが小さすぎる | `w-8 h-8`（標準）/ `w-6 h-6`（コンパクト最小） |
-| Connector に `bg-slate-400` 以上 | 線が強すぎてノイズになる | `bg-primary-600`（完了区間）/ `bg-slate-200`（未着手区間） |
+| Connector に `bg-slate-400` 以上 | 線が強すぎてノイズになる | `bg-primary-500`（完了区間）/ `bg-slate-200`（未着手区間） |
 
 ### Date Picker
 

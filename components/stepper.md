@@ -48,8 +48,8 @@
 
 | 状態 | 説明 | 視覚表現 |
 |------|------|----------|
-| Completed | 完了済み | `bg-primary-600 text-white` + Check アイコン |
-| Active | 現在のステップ | `border-2 border-primary-600 bg-white text-primary-600` + 番号 |
+| Completed | 完了済み | `bg-primary-500 text-white` + Check アイコン |
+| Active | 現在のステップ | `border-2 border-primary-500 bg-white text-primary-500` + 番号 |
 | Upcoming | 未着手 | `bg-slate-100 text-slate-500` + 番号 |
 
 ### 3-2. 方向
@@ -77,17 +77,17 @@
 標準サイズ     : w-8 h-8 rounded-full inline-flex items-center justify-center text-sm flex-shrink-0
 コンパクト     : w-6 h-6 rounded-full inline-flex items-center justify-center text-xs flex-shrink-0
 
-Completed      : bg-primary-600 text-white
-Active         : border-2 border-primary-600 bg-white text-primary-600 font-semibold
+Completed      : bg-primary-500 text-white
+Active         : border-2 border-primary-500 bg-white text-primary-500 font-semibold
 Upcoming       : bg-slate-100 text-slate-500 font-medium
 ```
 
 ### 4-2. Connector
 
 ```
-水平 Completed : flex-1 h-0.5 mx-3 bg-primary-600
+水平 Completed : flex-1 h-0.5 mx-3 bg-primary-500
 水平 Upcoming  : flex-1 h-0.5 mx-3 bg-slate-200
-垂直 Completed : w-0.5 flex-1 my-1 bg-primary-600（Indicator の中央に配置）
+垂直 Completed : w-0.5 flex-1 my-1 bg-primary-500（Indicator の中央に配置）
 垂直 Upcoming  : w-0.5 flex-1 my-1 bg-slate-200
 ```
 
@@ -95,7 +95,7 @@ Upcoming       : bg-slate-100 text-slate-500 font-medium
 
 ```
 Completed Label    : text-sm font-medium text-slate-900
-Active Label       : text-sm font-semibold text-primary-600
+Active Label       : text-sm font-semibold text-primary-500
 Upcoming Label     : text-sm font-medium text-slate-500
 
 Description        : text-xs text-slate-500 mt-0.5
@@ -139,7 +139,7 @@ Path: M5 13l4 4L19 7（stroke-linecap="round" stroke-linejoin="round"）
   <!-- Step 1: Completed -->
   <div role="listitem" class="flex items-center">
     <div class="flex flex-col items-center">
-      <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+      <div class="w-8 h-8 rounded-full bg-primary-500 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
         <span class="sr-only">完了:</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
@@ -149,14 +149,14 @@ Path: M5 13l4 4L19 7（stroke-linecap="round" stroke-linejoin="round"）
     </div>
   </div>
   <!-- Connector: Completed -->
-  <div class="flex-1 h-0.5 mx-3 bg-primary-600 -mt-6"></div>
+  <div class="flex-1 h-0.5 mx-3 bg-primary-500 -mt-6"></div>
   <!-- Step 2: Active -->
   <div role="listitem" class="flex items-center">
     <div class="flex flex-col items-center">
-      <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+      <div class="w-8 h-8 rounded-full border-2 border-primary-500 bg-white text-primary-500 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
         2
       </div>
-      <span class="text-sm font-semibold text-primary-600 mt-2">プロフィール</span>
+      <span class="text-sm font-semibold text-primary-500 mt-2">プロフィール</span>
     </div>
   </div>
   <!-- Connector: Upcoming -->
@@ -180,13 +180,13 @@ Path: M5 13l4 4L19 7（stroke-linecap="round" stroke-linejoin="round"）
   <!-- Step 1: Completed -->
   <div role="listitem" class="flex gap-4">
     <div class="flex flex-col items-center">
-      <div class="w-8 h-8 rounded-full bg-primary-600 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
+      <div class="w-8 h-8 rounded-full bg-primary-500 text-white inline-flex items-center justify-center text-sm flex-shrink-0">
         <span class="sr-only">完了:</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
         </svg>
       </div>
-      <div class="w-0.5 flex-1 my-1 bg-primary-600"></div>
+      <div class="w-0.5 flex-1 my-1 bg-primary-500"></div>
     </div>
     <div class="pb-6">
       <p class="text-sm font-medium text-slate-900">アカウント作成</p>
@@ -197,13 +197,13 @@ Path: M5 13l4 4L19 7（stroke-linecap="round" stroke-linejoin="round"）
   <!-- Step 2: Active -->
   <div role="listitem" class="flex gap-4">
     <div class="flex flex-col items-center">
-      <div class="w-8 h-8 rounded-full border-2 border-primary-600 bg-white text-primary-600 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
+      <div class="w-8 h-8 rounded-full border-2 border-primary-500 bg-white text-primary-500 font-semibold inline-flex items-center justify-center text-sm flex-shrink-0" aria-current="step">
         2
       </div>
       <div class="w-0.5 flex-1 my-1 bg-slate-200"></div>
     </div>
     <div class="pb-6">
-      <p class="text-sm font-semibold text-primary-600">プロフィール設定</p>
+      <p class="text-sm font-semibold text-primary-500">プロフィール設定</p>
       <p class="text-xs text-slate-500 mt-0.5">名前とアバターを設定してください</p>
     </div>
   </div>

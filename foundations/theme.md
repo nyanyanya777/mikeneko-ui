@@ -7,35 +7,35 @@
 
 ## Brand
 
-- Primary color: `#3B82F6`（Blue-500 — デフォルト値）
+- Primary color: `#2B70EF`（OKLCH再生成 — WCAG AA 4.50:1）
 - Brand name: （プロジェクトで設定）
 
 ## Primary Palette
 
 ```css
---color-primary-50:  #eff6ff;
---color-primary-100: #dbeafe;
---color-primary-200: #bfdbfe;
---color-primary-300: #93c5fd;
---color-primary-400: #60a5fa;
---color-primary-500: #3b82f6;
---color-primary-600: #2563eb;   /* ★ CTA・ボタン・アクティブ状態 */
---color-primary-700: #1d4ed8;
---color-primary-800: #1e40af;
---color-primary-900: #1e3a5f;
---color-primary-950: #172554;
+--color-primary-50:  #f0f5ff;
+--color-primary-100: #dde8ff;
+--color-primary-200: #c0d4ff;
+--color-primary-300: #95b6ff;
+--color-primary-400: #6492ff;
+--color-primary-500: #2b70ef;
+--color-primary-600: #2250df;   /* ★ CTA・ボタン・アクティブ状態 */
+--color-primary-700: #1a40b5;
+--color-primary-800: #13318d;
+--color-primary-900: #0e266a;
+--color-primary-950: #07194e;
 ```
 
 WCAGコントラスト比:
-- 白文字 on primary-600: **8.6:1** — AAA準拠
-- primary-600 on 白背景: **8.6:1** — AAA準拠
+- 白文字 on primary-500: **4.50:1** — AA準拠
+- primary-500 on 白背景: **4.50:1** — AA準拠
 
 ダークモードでの使い分け:
 
 | 用途 | Light | Dark | 理由 |
 |------|-------|------|------|
-| CTAボタン背景 | primary-600 | primary-500 | 暗い背景での視認性確保 |
-| テキストリンク | primary-600 | primary-400 | slate-800上でのコントラスト比確保 |
+| CTAボタン背景 | primary-500 | primary-500 | 暗い背景での視認性確保 |
+| テキストリンク | primary-500 | primary-400 | slate-800上でのコントラスト比確保 |
 | Subtle背景 | primary-50 | primary-500/12% | 透過で暗い背景に馴染ませる |
 | フォーカスリング | primary-500/50 | primary-400/50 | 同上 |
 
@@ -90,17 +90,17 @@ font-mono: "JetBrains Mono", "SF Mono", monospace
 
 ```css
 @theme {
-  --color-primary-50:  #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a5f;
-  --color-primary-950: #172554;
+  --color-primary-50:  #f0f5ff;
+  --color-primary-100: #dde8ff;
+  --color-primary-200: #c0d4ff;
+  --color-primary-300: #95b6ff;
+  --color-primary-400: #6492ff;
+  --color-primary-500: #2b70ef;
+  --color-primary-600: #2250df;
+  --color-primary-700: #1a40b5;
+  --color-primary-800: #13318d;
+  --color-primary-900: #0e266a;
+  --color-primary-950: #07194e;
 
   /* text-body: 本文デフォルト色（slate-600〜700の中間） */
   --color-body: #3d4b5f;

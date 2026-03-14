@@ -125,7 +125,7 @@
 .dot-loader span {
   width: 9px;
   height: 17px;
-  background: var(--color-primary-600, #2563eb);
+  background: var(--color-primary-500, #2250df);
   border-radius: 3px;
   animation: dotWave 1.2s infinite ease-in-out;
 }
@@ -246,7 +246,7 @@
 ### インラインスピナー（ボタン内）
 
 ```html
-<button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-600 rounded-lg opacity-75 cursor-not-allowed">
+<button disabled class="inline-flex items-center gap-2 h-10 px-4 text-[1rem] font-medium text-white bg-primary-500 rounded-lg opacity-75 cursor-not-allowed">
   <div class="inline-spinner"></div>
   送信中...
 </button>

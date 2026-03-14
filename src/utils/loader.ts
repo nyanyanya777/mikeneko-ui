@@ -49,7 +49,7 @@ export function getProhibitionRules(): ProhibitionRule[] {
     { pattern: "bg-green-", reason: "emeraldで統一", alternative: "bg-emerald-*" },
     { pattern: "bg-yellow-", reason: "amberで統一", alternative: "bg-amber-*" },
     { pattern: "bg-rose-", reason: "redで統一", alternative: "bg-red-*" },
-    { pattern: "text-blue-", reason: "primaryで統一", alternative: "text-primary-600" },
+    { pattern: "text-blue-", reason: "primaryで統一", alternative: "text-primary-500" },
     { pattern: "bg-indigo-", reason: "primaryで統一", alternative: "bg-primary-*" },
     { pattern: "tracking-tight", reason: "日本語の可読性低下", alternative: "tracking-normal以上" },
     { pattern: "font-light", reason: "細すぎて可読性が低い", alternative: "font-normal (400) 以上" },

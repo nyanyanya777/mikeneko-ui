@@ -139,7 +139,7 @@ Inactive:  ┌──────────────────┐
 <!-- Primary -->
 <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
   デザイン
-  <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+  <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
 </span>
@@ -198,13 +198,13 @@ Inactive:  ┌──────────────────┐
 <div role="list" class="flex flex-wrap gap-2">
   <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     デザイン
-    <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+    <button type="button" aria-label="デザインを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
   <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     開発
-    <button type="button" aria-label="開発を削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+    <button type="button" aria-label="開発を削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
@@ -239,18 +239,18 @@ Inactive:  ┌──────────────────┐
   <!-- 既存タグ -->
   <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     JavaScript
-    <button type="button" aria-label="JavaScriptを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+    <button type="button" aria-label="JavaScriptを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
   <span role="listitem" class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
     React
-    <button type="button" aria-label="Reactを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-600 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
+    <button type="button" aria-label="Reactを削除" class="ml-0.5 -mr-1 p-0.5 flex items-center justify-center rounded-full text-primary-400 hover:text-primary-500 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-colors">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </span>
   <!-- 入力欄 -->
-  <input type="text" placeholder="タグを入力して Enter" class="flex-1 min-w-[120px] outline-none text-base text-slate-900 placeholder:text-slate-400 caret-primary-600 bg-transparent">
+  <input type="text" placeholder="タグを入力して Enter" class="flex-1 min-w-[120px] outline-none text-base text-slate-900 placeholder:text-slate-400 caret-primary-500 bg-transparent">
 </div>
 ```
 

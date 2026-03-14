@@ -79,7 +79,7 @@
 
 | 状態 | スタイル | 説明 |
 |------|---------|------|
-| Active | `text-primary-600 bg-primary-50 font-medium rounded-lg` + `aria-current="page"` | 現在のページ |
+| Active | `text-primary-500 bg-primary-50 font-medium rounded-lg` + `aria-current="page"` | 現在のページ |
 | Default | `text-body font-medium hover:bg-gray-50 rounded-lg transition-colors` | 通常状態 |
 | Hover | `text-body bg-gray-50` | マウスオーバー時 |
 | Focus | `focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:outline-none` | キーボードフォーカス時 |
@@ -192,7 +192,7 @@
     <!-- Header -->
     <div class="px-4 py-4 border-b border-slate-200">
       <div class="flex items-center gap-2">
-        <svg class="w-7 h-7 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
+        <svg class="w-7 h-7 text-primary-500" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
         <span class="text-lg font-bold text-slate-900">AppName</span>
       </div>
     </div>
@@ -202,7 +202,7 @@
       <!-- Group Label -->
       <p class="text-xs font-medium text-slate-500 uppercase tracking-wider px-4 pb-1">メイン</p>
       <!-- Active -->
-      <a href="#" aria-current="page" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg">
+      <a href="#" aria-current="page" class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-primary-500 bg-primary-50 rounded-lg">
         <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
         </svg>
@@ -247,7 +247,7 @@
     <!-- Footer -->
     <div class="mt-auto border-t border-slate-200 p-4">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-medium text-sm flex items-center justify-center flex-shrink-0">YT</div>
+        <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-500 font-medium text-sm flex items-center justify-center flex-shrink-0">YT</div>
         <div class="min-w-0">
           <p class="text-sm font-medium text-slate-900 truncate">山田 太郎</p>
           <p class="text-xs text-slate-500 truncate">taro@example.com</p>
@@ -270,13 +270,13 @@
 <aside class="w-16 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col items-center h-screen">
   <!-- Header -->
   <div class="py-4">
-    <svg class="w-7 h-7 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
+    <svg class="w-7 h-7 text-primary-500" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
   </div>
 
   <!-- Navigation -->
   <nav class="flex-1 overflow-y-auto py-4 space-y-1 w-full flex flex-col items-center" aria-label="メインナビゲーション">
     <!-- Active -->
-    <a href="#" aria-current="page" aria-label="ダッシュボード" title="ダッシュボード" class="w-10 h-10 inline-flex items-center justify-center text-primary-600 bg-primary-50 rounded-lg">
+    <a href="#" aria-current="page" aria-label="ダッシュボード" title="ダッシュボード" class="w-10 h-10 inline-flex items-center justify-center text-primary-500 bg-primary-50 rounded-lg">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
       </svg>
@@ -307,7 +307,7 @@
 
   <!-- Footer -->
   <div class="mt-auto border-t border-slate-200 py-4">
-    <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-600 font-medium text-sm flex items-center justify-center">YT</div>
+    <div class="w-8 h-8 rounded-full bg-primary-50 text-primary-500 font-medium text-sm flex items-center justify-center">YT</div>
   </div>
 </aside>
 ```
@@ -324,7 +324,7 @@
   <!-- Mobile Header (lg: 未満で表示) -->
   <div class="lg:hidden fixed top-0 left-0 right-0 z-30 bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
     <div class="flex items-center gap-2">
-      <svg class="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
+      <svg class="w-6 h-6 text-primary-500" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
       <span class="text-lg font-bold text-slate-900">AppName</span>
     </div>
     <button id="sidebar-trigger" aria-label="メニューを開く" aria-expanded="false" aria-controls="sidebar-drawer"
@@ -344,7 +344,7 @@
     <!-- Header（閉じるボタン付き） -->
     <div class="px-4 py-4 border-b border-slate-200 flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <svg class="w-7 h-7 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
+        <svg class="w-7 h-7 text-primary-500" viewBox="0 0 24 24" fill="currentColor"><!-- ロゴ --></svg>
         <span class="text-lg font-bold text-slate-900">AppName</span>
       </div>
       <button onclick="closeSidebarDrawer()" aria-label="メニューを閉じる"
