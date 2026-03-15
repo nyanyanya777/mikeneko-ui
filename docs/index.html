@@ -10,6 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://melta.tsubotax.com">
   <meta property="og:image" content="https://melta.tsubotax.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:site_name" content="melta UI">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="melta UI — 人間にも、AIにも、読めるデザインシステム">
@@ -282,14 +286,19 @@
   <!-- ====================================================================
        Main Content
        ==================================================================== -->
+  <div class="ds-sidebar-overlay" onclick="toggleMobileSidebar()"></div>
   <main class="ml-64">
     <!-- Sticky Header Bar -->
     <header id="showcase-header" class="sticky top-0 z-20 backdrop-blur-sm border-b" style="background:color-mix(in srgb, var(--bg-page) 85%, transparent);border-color:var(--border-default);">
       <div class="max-w-5xl mx-auto px-8 flex items-center justify-between h-14">
         <div class="flex items-center gap-2 text-sm" style="color:var(--text-muted);">
+          <!-- モバイルメニューボタン -->
+          <button onclick="toggleMobileSidebar()" class="ds-mobile-menu-btn w-9 h-9 inline-flex items-center justify-center rounded-lg hover:bg-gray-100 mr-1 cursor-pointer" style="color:var(--text-default);" aria-label="メニューを開く">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
           <span style="color:var(--text-heading);" class="font-medium">melta UI</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
-          <span>Showcase</span>
+          <svg class="w-3.5 h-3.5 ds-breadcrumb-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+          <span class="ds-breadcrumb-chevron">Showcase</span>
         </div>
         <div class="flex items-center gap-3">
           <a href="../examples/index.html" class="inline-flex items-center gap-1.5 h-8 px-3 rounded-lg text-xs font-medium transition-colors hover:bg-gray-100" style="color:var(--text-muted);">
