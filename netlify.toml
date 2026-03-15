@@ -19,6 +19,17 @@
   to = "/docs/icons.html"
   status = 200
 
+# OGP image / favicon
+[[redirects]]
+  from = "/og-image.png"
+  to = "/docs/og-image.png"
+  status = 200
+
+[[redirects]]
+  from = "/Meltan_favicon.svg"
+  to = "/docs/Meltan_favicon.svg"
+  status = 200
+
 # Cache static assets
 [[headers]]
   for = "/scripts/*"
