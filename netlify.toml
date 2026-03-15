@@ -2,11 +2,11 @@
   publish = "."
   command = "echo 'Static site — no build needed'"
 
-# Redirect root to showcase
+# Root → showcase（200 プロキシ: Slack 等の OGP クローラーがリダイレクトを追わない問題を回避）
 [[redirects]]
   from = "/"
-  to = "/docs/"
-  status = 301
+  to = "/docs/index.html"
+  status = 200
 
 # Pretty URLs for docs
 [[redirects]]
