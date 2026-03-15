@@ -3,6 +3,8 @@
 .vscode/
 .netlify/
 node_modules/
+.env
+.env.*
 dist/
 verification/
 .agents/

@@ -2,7 +2,13 @@
   "name": "@melta/design-system",
   "version": "1.1.0",
   "description": "melta UI — AI-Ready Design System with MCP server",
+  "private": true,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsubotax/melta-ui.git"
+  },
+  "homepage": "https://melta.tsubotax.com",
   "bin": {
     "melta-ds-mcp": "./dist/index.js"
   },
