@@ -46,6 +46,13 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+# OGP 画像はクローラーに制限なしで配信
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Cache-Control = "public, max-age=86400"
+
 # Security headers
 [[headers]]
   for = "/*"
