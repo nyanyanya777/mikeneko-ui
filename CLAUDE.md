@@ -272,3 +272,20 @@ CSS変数            : --wf-bg / --wf-surface / --wf-border / --wf-text / --wf-t
 3. **Inclusive by Default** — WCAG 2.1 AA準拠はオプションではなくデフォルト。あらゆるユーザーが迷わず使える
 4. **Systematic Warmth** — 4px グリッド・セマンティックカラー・制限されたシャドウで一貫性を保ちつつ、Success 時の微細なアニメーションで人間味を添える
 5. **Machine-Readable** — トークン・メタデータ・セマンティック命名により、AIエージェントが正確にUIを生成できる
+
+---
+
+## デプロイ
+
+| 項目 | 値 |
+|------|-----|
+| ホスティング | Netlify（手動デプロイ） |
+| 本番URL | https://melta.tsubotax.com |
+| publish ディレクトリ | `.`（リポジトリルート）— `netlify.toml` で設定済み |
+
+```bash
+# 本番デプロイ（--dir 指定不要。netlify.toml の publish = "." が使われる）
+netlify deploy --prod
+```
+
+> **注意**: `netlify deploy --prod --dir=docs` は NG。`publish = "."` なのでルートからデプロイしないとリダイレクトが 404 になる。

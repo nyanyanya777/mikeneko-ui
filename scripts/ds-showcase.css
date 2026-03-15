@@ -413,3 +413,67 @@
   .copy-button, .copy-button .cb-icon { transition-duration: 0.01ms; }
   .copy-button:hover, .copy-button:active { transform: none; }
 }
+
+/* ==========================================================================
+   レスポンシブ — モバイル対応（< 768px）
+   ========================================================================== */
+
+/* デスクトップではモバイルメニューボタン非表示 */
+.ds-mobile-menu-btn { display: none; }
+
+/* モバイルサイドバーオーバーレイ */
+.ds-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 29;
+}
+.ds-sidebar-overlay.active { display: block; }
+
+@media (max-width: 767px) {
+  /* モバイルメニューボタン表示 */
+  .ds-mobile-menu-btn { display: inline-flex; }
+
+  /* ヘッダーのパンくず・Sample Sites 非表示 */
+  .ds-breadcrumb-chevron { display: none; }
+  header .flex.items-center.gap-3 a[href*="examples"] { display: none; }
+
+  /* サイドバー: デフォルト非表示、トグルで表示 */
+  .ds-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  .ds-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* メインコンテンツのマージン解除 */
+  main.ml-64 { margin-left: 0 !important; }
+
+  /* パディング縮小 */
+  .max-w-5xl.px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+  /* タイポグラフィグリッドをスタック */
+  .ds-typo-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  /* 固定グリッドをモバイル対応 */
+  .grid.grid-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid.grid-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid.grid-cols-2 { grid-template-columns: 1fr !important; }
+
+  /* コードブロックの横スクロール */
+  .ds-code-block, pre { overflow-x: auto; }
+
+  /* テーブルの横スクロール */
+  .ds-preview { overflow-x: auto; }
+
+  /* whitespace-nowrap 解除 */
+  .whitespace-nowrap { white-space: normal !important; }
+
+  /* ヒーローセクションのパディング調整 */
+  section[data-section="overview"] h2.text-3xl { font-size: 1.5rem; }
+}

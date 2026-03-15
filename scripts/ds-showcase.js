@@ -3,6 +3,26 @@
    インタラクション状態デモ + ページ固有の26関数
    ========================================================================== */
 
+/* --- モバイルサイドバートグル --- */
+function toggleMobileSidebar() {
+  var sidebar = document.querySelector('.ds-sidebar');
+  var overlay = document.querySelector('.ds-sidebar-overlay');
+  if (!sidebar || !overlay) return;
+  var isOpen = sidebar.classList.contains('mobile-open');
+  sidebar.classList.toggle('mobile-open', !isOpen);
+  overlay.classList.toggle('active', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
+}
+/* サイドバーのナビリンククリックでモバイルメニューを閉じる */
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelectorAll('.ds-sidebar .ds-nav-link');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      if (window.innerWidth < 768) { toggleMobileSidebar(); }
+    });
+  }
+});
+
 /* --- Interaction States Demo --- */
 function showState(state) {
   var keys = ['loading','empty','error','complete'];
