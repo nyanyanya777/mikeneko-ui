@@ -30,6 +30,12 @@
   to = "/docs/Meltan_favicon.svg"
   status = 200
 
+# ルート 200 プロキシ時の相対パス解決
+[[redirects]]
+  from = "/Meltan.svg"
+  to = "/docs/Meltan.svg"
+  status = 200
+
 # Cache static assets
 [[headers]]
   for = "/scripts/*"
