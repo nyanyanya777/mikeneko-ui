@@ -39,6 +39,21 @@
 - 親要素の角丸 > 子要素の角丸 の関係を維持する（カード `rounded-xl` > 内部ボタン `rounded-lg`）
 - 同一コンポーネント内で角丸を混在させない
 
+### 入れ子の角丸計算（Nested Radius Rule）
+
+> **outer radius = inner radius + padding**
+
+親と子で同じ radius を使うと、角の余白が不均一になり視覚的に破綻する。内側の radius は `outer radius − padding` で算出する。
+
+| 親 radius | padding | 子 radius（計算値） | Tailwind の対応 |
+|-----------|---------|-------------------|----------------|
+| 12px (`rounded-xl`) | 24px (`p-6`) | −12px → **0px** | `rounded-none`（padding が radius を超える場合は角丸不要） |
+| 12px (`rounded-xl`) | 8px (`p-2`) | 4px | `rounded`（radius-sm） |
+| 12px (`rounded-xl`) | 4px (`p-1`) | 8px | `rounded-lg`（radius-md） |
+| 8px (`rounded-lg`) | 4px (`p-1`) | 4px | `rounded`（radius-sm） |
+
+**適用例**: カード（`rounded-xl` + `p-6`）内のボタンやカードは padding が大きいため角丸の同心円関係は視覚的に問題にならない。注意が必要なのは **padding が小さい入れ子**（カード内のインナーカード、ヘッダー背景、画像ラッパーなど）。
+
 ---
 
 ## 禁止パターン
