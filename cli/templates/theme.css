@@ -1,0 +1,118 @@
+/* ============================================
+   mikeneko UI Theme — Primary: #2b70ef (Blue)
+   Font: Inter + Hiragino Sans + Noto Sans JP
+   ============================================ */
+
+:root {
+  /* Surface & Background */
+  --background: oklch(0.9846 0.0017 247.84);   /* #f9fafb */
+  --foreground: oklch(0.2077 0.0398 265.75);   /* #0f172a */
+
+  /* Card */
+  --card: oklch(1.0000 0 0);
+  --card-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Popover */
+  --popover: oklch(1.0000 0 0);
+  --popover-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Primary — #2b70ef */
+  --primary: oklch(0.5765 0.2038 261.31);
+  --primary-foreground: oklch(1.0000 0 0);
+
+  /* Secondary */
+  --secondary: oklch(0.9693 0.0144 264.50);
+  --secondary-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Muted */
+  --muted: oklch(0.9288 0.0126 255.51);
+  --muted-foreground: oklch(0.5544 0.0407 257.42); /* #64748b */
+
+  /* Accent */
+  --accent: oklch(0.9693 0.0144 264.50);
+  --accent-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Destructive — #ef4444 */
+  --destructive: oklch(0.6368 0.2078 25.33);
+
+  /* Border & Input */
+  --border: oklch(0.9288 0.0126 255.51);        /* #e2e8f0 */
+  --input: oklch(0.8690 0.0198 252.89);         /* #cbd5e1 */
+  --ring: oklch(0.5765 0.2038 261.31);          /* primary */
+
+  /* Chart */
+  --chart-1: oklch(0.5765 0.2038 261.31);
+  --chart-2: oklch(0.5960 0.1274 163.23);
+  --chart-3: oklch(0.6658 0.1574 58.32);
+  --chart-4: oklch(0.6788 0.1687 265.02);
+  --chart-5: oklch(0.4996 0.2226 265.02);
+
+  /* Radius — 12px */
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: oklch(1.0000 0 0);
+  --sidebar-foreground: oklch(0.4090 0.0382 257.28);
+  --sidebar-primary: oklch(0.5765 0.2038 261.31);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.9693 0.0144 264.50);
+  --sidebar-accent-foreground: oklch(0.2077 0.0398 265.75);
+  --sidebar-border: oklch(0.9288 0.0126 255.51);
+  --sidebar-ring: oklch(0.5765 0.2038 261.31);
+}
+
+.dark {
+  --background: oklch(0.2077 0.0398 265.75);
+  --foreground: oklch(0.9683 0.0069 247.90);
+
+  --card: oklch(0.2795 0.0368 260.03);
+  --card-foreground: oklch(0.9683 0.0069 247.90);
+
+  --popover: oklch(0.2795 0.0368 260.03);
+  --popover-foreground: oklch(0.9683 0.0069 247.90);
+
+  --primary: oklch(0.5765 0.2038 261.31);
+  --primary-foreground: oklch(1.0000 0 0);
+
+  --secondary: oklch(0.2795 0.0368 260.03);
+  --secondary-foreground: oklch(0.9683 0.0069 247.90);
+
+  --muted: oklch(0.2795 0.0368 260.03);
+  --muted-foreground: oklch(0.7107 0.0351 256.79);
+
+  --accent: oklch(0.2795 0.0368 260.03);
+  --accent-foreground: oklch(0.9683 0.0069 247.90);
+
+  --destructive: oklch(0.6368 0.2078 25.33);
+
+  --border: oklch(0.3717 0.0392 257.29);
+  --input: oklch(0.3717 0.0392 257.29);
+  --ring: oklch(0.5765 0.2038 261.31);
+
+  --chart-1: oklch(0.6788 0.1687 265.02);
+  --chart-2: oklch(0.5960 0.1274 163.23);
+  --chart-3: oklch(0.6658 0.1574 58.32);
+  --chart-4: oklch(0.7801 0.1110 265.26);
+  --chart-5: oklch(0.5765 0.2038 261.31);
+
+  --sidebar: oklch(0.2077 0.0398 265.75);
+  --sidebar-foreground: oklch(0.8690 0.0198 252.89);
+  --sidebar-primary: oklch(0.6788 0.1687 265.02);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.2795 0.0368 260.03);
+  --sidebar-accent-foreground: oklch(0.9683 0.0069 247.90);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.5765 0.2038 261.31);
+}
+
+@layer base {
+  body {
+    font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    letter-spacing: 0.02em;
+    line-height: 2.0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+}

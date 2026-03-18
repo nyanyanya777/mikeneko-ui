@@ -1,0 +1,20 @@
+{
+  "name": "melta-ui-mcp",
+  "version": "1.0.0",
+  "description": "melta UI Design System MCP Server",
+  "type": "module",
+  "bin": {
+    "melta-ui-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}

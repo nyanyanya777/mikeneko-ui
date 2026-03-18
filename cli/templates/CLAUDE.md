@@ -1,4 +1,4 @@
-# melta UI — AI Quick Reference
+# mikeneko UI — AI Quick Reference
 
 > ShadCN/ui ベースのデザインシステム。Primary: Blue (#2b70ef)、日本語ファーストのタイポグラフィ。
 
@@ -157,7 +157,7 @@ Easing: ease-in-out (default)
 ## ファイル構成
 
 ```
-melta-ui/
+mikeneko-ui/
 ├── CLAUDE.md              ← このファイル (AI Quick Reference)
 ├── tokens/
 │   └── tokens.json        ← デザイントークン (SSOT)
@@ -207,7 +207,7 @@ melta-ui/
 ```json
 {
   "mcpServers": {
-    "melta-ui": {
+    "mikeneko-ui": {
       "command": "node",
       "args": ["./ai/mcp/dist/index.js"]
     }

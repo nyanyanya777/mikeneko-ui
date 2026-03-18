@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "melta UI Design System",
+    "name": "mikeneko UI Design System",
     "version": "2.0.0",
     "base": "shadcn/ui",
     "totalComponents": 45

@@ -1,0 +1,174 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ============================================
+   melta UI Theme — Primary: #2b70ef (Blue)
+   Font: Inter + Hiragino Sans + Noto Sans JP
+   ============================================ */
+
+:root {
+  /* Surface & Background */
+  --background: oklch(0.9846 0.0017 247.84);   /* #f9fafb — bg-page */
+  --foreground: oklch(0.2077 0.0398 265.75);   /* #0f172a — text-heading */
+
+  /* Card */
+  --card: oklch(1.0000 0 0);                    /* #ffffff */
+  --card-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Popover */
+  --popover: oklch(1.0000 0 0);
+  --popover-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Primary — melta primary-500: #2b70ef */
+  --primary: oklch(0.5765 0.2038 261.31);
+  --primary-foreground: oklch(1.0000 0 0);
+
+  /* Secondary */
+  --secondary: oklch(0.9693 0.0144 264.50);     /* primary-50 as subtle bg */
+  --secondary-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Muted */
+  --muted: oklch(0.9288 0.0126 255.51);         /* border-default area */
+  --muted-foreground: oklch(0.5544 0.0407 257.42); /* text-muted #64748b */
+
+  /* Accent */
+  --accent: oklch(0.9693 0.0144 264.50);        /* primary-50 */
+  --accent-foreground: oklch(0.2077 0.0398 265.75);
+
+  /* Destructive — danger: #ef4444 */
+  --destructive: oklch(0.6368 0.2078 25.33);
+
+  /* Border & Input */
+  --border: oklch(0.9288 0.0126 255.51);        /* #e2e8f0 */
+  --input: oklch(0.8690 0.0198 252.89);         /* #cbd5e1 — input-border */
+  --ring: oklch(0.5765 0.2038 261.31);          /* primary-500 */
+
+  /* Chart — primary scale */
+  --chart-1: oklch(0.5765 0.2038 261.31);       /* primary-500 */
+  --chart-2: oklch(0.5960 0.1274 163.23);       /* success */
+  --chart-3: oklch(0.6658 0.1574 58.32);        /* warning */
+  --chart-4: oklch(0.6788 0.1687 265.02);       /* primary-400 */
+  --chart-5: oklch(0.4996 0.2226 265.02);       /* primary-600 */
+
+  /* Radius — melta lg: 12px = 0.75rem */
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: oklch(1.0000 0 0);
+  --sidebar-foreground: oklch(0.4090 0.0382 257.28);  /* body #3d4b5f */
+  --sidebar-primary: oklch(0.5765 0.2038 261.31);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.9693 0.0144 264.50);
+  --sidebar-accent-foreground: oklch(0.2077 0.0398 265.75);
+  --sidebar-border: oklch(0.9288 0.0126 255.51);
+  --sidebar-ring: oklch(0.5765 0.2038 261.31);
+}
+
+.dark {
+  --background: oklch(0.2077 0.0398 265.75);    /* #0f172a */
+  --foreground: oklch(0.9683 0.0069 247.90);    /* #f1f5f9 */
+
+  --card: oklch(0.2795 0.0368 260.03);           /* #1e293b */
+  --card-foreground: oklch(0.9683 0.0069 247.90);
+
+  --popover: oklch(0.2795 0.0368 260.03);
+  --popover-foreground: oklch(0.9683 0.0069 247.90);
+
+  --primary: oklch(0.5765 0.2038 261.31);
+  --primary-foreground: oklch(1.0000 0 0);
+
+  --secondary: oklch(0.2795 0.0368 260.03);
+  --secondary-foreground: oklch(0.9683 0.0069 247.90);
+
+  --muted: oklch(0.2795 0.0368 260.03);
+  --muted-foreground: oklch(0.7107 0.0351 256.79); /* #94a3b8 */
+
+  --accent: oklch(0.2795 0.0368 260.03);
+  --accent-foreground: oklch(0.9683 0.0069 247.90);
+
+  --destructive: oklch(0.6368 0.2078 25.33);
+
+  --border: oklch(0.3717 0.0392 257.29);         /* #334155 */
+  --input: oklch(0.3717 0.0392 257.29);
+  --ring: oklch(0.5765 0.2038 261.31);
+
+  --chart-1: oklch(0.6788 0.1687 265.02);
+  --chart-2: oklch(0.5960 0.1274 163.23);
+  --chart-3: oklch(0.6658 0.1574 58.32);
+  --chart-4: oklch(0.7801 0.1110 265.26);
+  --chart-5: oklch(0.5765 0.2038 261.31);
+
+  --sidebar: oklch(0.2077 0.0398 265.75);
+  --sidebar-foreground: oklch(0.8690 0.0198 252.89);
+  --sidebar-primary: oklch(0.6788 0.1687 265.02);
+  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-accent: oklch(0.2795 0.0368 260.03);
+  --sidebar-accent-foreground: oklch(0.9683 0.0069 247.90);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.5765 0.2038 261.31);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    letter-spacing: 0.02em;
+    line-height: 2.0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+  html {
+    @apply font-sans;
+  }
+}

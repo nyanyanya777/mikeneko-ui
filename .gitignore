@@ -6,6 +6,18 @@ node_modules/
 .env
 .env.*
 dist/
+
+# App build output
+app/.next/
+app/node_modules/
+
+# CLI build output
+cli/dist/
+cli/node_modules/
+
+# MCP build output
+ai/mcp/dist/
+ai/mcp/node_modules/
 verification/
 .agents/
 skills-lock.json

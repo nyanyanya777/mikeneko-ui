@@ -1,0 +1,27 @@
+{
+  "name": "mikeneko-ui",
+  "version": "1.0.1",
+  "description": "mikeneko UI — AI-ready design system CLI. Injects theme + rules into your React/Next.js project.",
+  "type": "module",
+  "bin": {
+    "mikeneko-ui": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "keywords": ["design-system", "shadcn", "tailwind", "react", "nextjs", "mcp"],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0"
+  }
+}
