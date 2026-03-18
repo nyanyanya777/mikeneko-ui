@@ -104,7 +104,7 @@ AI ツール（Claude Code, Cursor 等）が以下のツールを使える:
 ### Typography
 
 ```
-Font: Inter, Hiragino Sans, Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif
+Font: Noto Sans JP, sans-serif
 Body: 18px / line-height 2.0 / letter-spacing 0.02em
 Heading: line-height 1.4 / letter-spacing 0.01em
 ```

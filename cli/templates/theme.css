@@ -1,6 +1,6 @@
 /* ============================================
    mikeneko UI Theme — Primary: #2b70ef (Blue)
-   Font: Inter + Hiragino Sans + Noto Sans JP
+   Font: Noto Sans JP
    ============================================ */
 
 :root {
@@ -107,7 +107,7 @@
 
 @layer base {
   body {
-    font-family: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     letter-spacing: 0.02em;
     line-height: 2.0;
   }

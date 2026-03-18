@@ -230,7 +230,7 @@
   {
     "name": "melta-font-sans",
     "type": "string",
-    "value": "Inter, Hiragino Sans, Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif"
+    "value": "Noto Sans JP, sans-serif"
   },
   {
     "name": "melta-font-mono",

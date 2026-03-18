@@ -42,7 +42,7 @@ WCAGコントラスト比:
 ## Font Stack
 
 ```
-font-sans: "Inter", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif
+font-sans: "Noto Sans JP", sans-serif
 font-mono: "JetBrains Mono", "SF Mono", monospace
 ```
 

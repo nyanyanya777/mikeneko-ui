@@ -17,7 +17,7 @@ Danger:   #ef4444
 
 ### Typography
 ```
-Font: Inter, Hiragino Sans, Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif
+Font: Noto Sans JP, sans-serif
 H1: 32px/1.4 bold (text-3xl)
 H2: 26px/1.4 bold (text-2xl)
 H3: 22px/1.4 semibold (text-xl)
