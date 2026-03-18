@@ -41,13 +41,14 @@ Easing: ease-in-out (default)
 
 ---
 
-## 設計原則（5つ）
+## 設計原則（6つ）
 
 1. **Layered** — Background → Surface → Text/Object の3層でUIを構成する
 2. **Contrast** — テキストは背景に対してWCAG 2.1準拠（4.5:1以上）
 3. **Semantic** — 色は用途で指定する（`bg-primary` ≠ 生の `bg-blue-500`）
 4. **Minimal** — 1つのViewに使う色は3色まで（背景・アクセント・テキスト）
 5. **Grid** — スペーシングは4の倍数を基本、8の倍数を推奨する
+6. **State-Complete** — 新規コンポーネントは全状態（default / hover / focus / active / disabled / error / loading 等）を網羅して作る
 
 ---
 
