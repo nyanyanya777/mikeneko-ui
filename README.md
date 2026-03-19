@@ -1,6 +1,6 @@
 # mikeneko UI
 
-**[melta UI](https://github.com/tsubotax/melta-ui) をフォークし、shadcn/ui + Next.js で実装したデザインシステム。**
+**[melta UI](https://github.com/tsubotax/melta-ui) をフォークし、shadcn/ui で実装したデザインシステム。React (Vite) / Next.js 対応。**
 
 ---
 
@@ -11,7 +11,7 @@ mikeneko UI は [melta UI](https://github.com/tsubotax/melta-ui) のフォーク
 | 変更 | 内容 |
 |------|------|
 | **shadcn/ui 統合** | 45 コンポーネントを `app/src/components/ui/` に実装 |
-| **Next.js リファレンス実装** | `app/` に Next.js 16 ベースの動作するアプリケーション |
+| **リファレンス実装** | `app/` に Next.js 16 ベースの動作するアプリケーション |
 | **Storybook** | 全 45 コンポーネントのストーリーを収録（a11y アドオン付き） |
 | **CLI** | `npx mikeneko-ui` でテーマ・ルールをプロジェクトに注入（npm publish 済み） |
 | **フォント統一** | Noto Sans JP に一本化（Inter / Hiragino / Geist を廃止） |
