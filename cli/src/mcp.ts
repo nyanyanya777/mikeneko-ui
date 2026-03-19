@@ -37,8 +37,26 @@ export async function startMcp() {
     return readFileSync(full, "utf-8");
   }
 
+  /**
+   * Load prohibition rules from rules.json (SSoT) and flatten into patterns.
+   * Falls back to bundled template.
+   */
+  function loadProhibitionRules(): { pattern: string; reason: string; alternative: string }[] {
+    const rulesData = loadJSON("metadata/rules.json") ?? loadJSON(resolve(TEMPLATES, "rules.json"));
+    if (!rulesData) return [];
+
+    const flat: { pattern: string; reason: string; alternative: string }[] = [];
+    for (const rule of rulesData.rules) {
+      const patterns = rule.patterns ?? (rule.pattern ? [rule.pattern] : []);
+      for (const p of patterns) {
+        flat.push({ pattern: p, reason: rule.reason, alternative: rule.alternative });
+      }
+    }
+    return flat;
+  }
+
   const server = new Server(
-    { name: "mikeneko-ui-mcp", version: "1.0.0" },
+    { name: "mikeneko-ui-cli-mcp", version: "2.0.0" },
     { capabilities: { tools: {} } }
   );
 
@@ -73,7 +91,7 @@ export async function startMcp() {
       },
       {
         name: "get_prohibited",
-        description: "mikeneko UI 禁止パターンを取得。",
+        description: "mikeneko UI 禁止パターンを取得（rules.json SSoT対応）。",
         inputSchema: {
           type: "object" as const,
           properties: {
@@ -82,11 +100,41 @@ export async function startMcp() {
         },
       },
       {
+        name: "check_rule",
+        description:
+          "Tailwind クラスを禁止ルールに照合。違反があれば理由と代替を返す。",
+        inputSchema: {
+          type: "object" as const,
+          properties: {
+            classes: {
+              type: "string",
+              description: "スペース区切りの Tailwind クラス (例: 'text-black shadow-lg')",
+            },
+          },
+          required: ["classes"],
+        },
+      },
+      {
         name: "get_quick_reference",
         description: "CLAUDE.md (AI Quick Reference) を返す。",
         inputSchema: {
           type: "object" as const,
           properties: {},
+        },
+      },
+      {
+        name: "search",
+        description:
+          "トークンとコンポーネントをキーワード横断検索。",
+        inputSchema: {
+          type: "object" as const,
+          properties: {
+            query: {
+              type: "string",
+              description: "検索キーワード",
+            },
+          },
+          required: ["query"],
         },
       },
     ],
@@ -100,7 +148,6 @@ export async function startMcp() {
 
     switch (name) {
       case "get_token": {
-        // Try project-local tokens first, then bundled template
         const tokens = loadJSON("tokens/tokens.json") ?? loadJSON(resolve(TEMPLATES, "tokens.json"));
         if (!tokens) return text("tokens.json not found");
         const result = tokens[a.category];
@@ -119,6 +166,16 @@ export async function startMcp() {
       }
 
       case "get_prohibited": {
+        // Try rules.json first (SSoT), fall back to prohibited.md
+        const rulesData = loadJSON("metadata/rules.json") ?? loadJSON(resolve(TEMPLATES, "rules.json"));
+        if (rulesData) {
+          if (!a.section) return text(JSON.stringify(rulesData, null, 2));
+          const filtered = rulesData.rules.filter(
+            (r: { category: string }) => r.category.toLowerCase().includes(a.section.toLowerCase())
+          );
+          return text(JSON.stringify(filtered, null, 2));
+        }
+        // Fallback to prohibited.md
         const content = loadFile("foundations/prohibited.md") ?? loadTemplate("prohibited.md");
         if (!content) return text("prohibited.md not found");
         if (!a.section) return text(content);
@@ -127,9 +184,46 @@ export async function startMcp() {
         return text(match ? match[1].trim() : `Section "${a.section}" not found`);
       }
 
+      case "check_rule": {
+        const rules = loadProhibitionRules();
+        const classList = a.classes.split(/\s+/).filter(Boolean);
+        const violations: { class: string; reason: string; alternative: string }[] = [];
+
+        for (const cls of classList) {
+          for (const rule of rules) {
+            if (cls.includes(rule.pattern)) {
+              violations.push({ class: cls, reason: rule.reason, alternative: rule.alternative });
+            }
+          }
+        }
+
+        return violations.length === 0
+          ? text("✅ No violations found.")
+          : text(JSON.stringify({ violationCount: violations.length, violations }, null, 2));
+      }
+
       case "get_quick_reference": {
         const content = loadFile("CLAUDE.md") ?? loadTemplate("CLAUDE.md");
         return text(content ?? "CLAUDE.md not found");
+      }
+
+      case "search": {
+        const tokens = loadJSON("tokens/tokens.json") ?? loadJSON(resolve(TEMPLATES, "tokens.json"));
+        const components = loadJSON("metadata/components.json") ?? loadJSON(resolve(TEMPLATES, "components.json"));
+        const q = a.query.toLowerCase();
+        const results: unknown[] = [];
+
+        // Search components
+        if (components) {
+          for (const comp of components.components) {
+            const searchable = [comp.id, comp.name, comp.description, comp.category].join(" ").toLowerCase();
+            if (searchable.includes(q)) {
+              results.push({ type: "component", id: comp.id, name: comp.name, data: comp });
+            }
+          }
+        }
+
+        return text(JSON.stringify(results, null, 2));
       }
 
       default:
@@ -139,5 +233,5 @@ export async function startMcp() {
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("mikeneko UI MCP Server running on stdio");
+  console.error("mikeneko UI CLI MCP Server v2.0.0 running on stdio");
 }

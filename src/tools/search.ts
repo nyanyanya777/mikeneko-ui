@@ -1,7 +1,7 @@
-import { loadTokens, loadComponents } from "../utils/loader.js";
+import { loadTokens, loadComponents, loadScreens, loadRules } from "../utils/loader.js";
 
 interface SearchResult {
-  type: "token" | "component";
+  type: "token" | "component" | "screen" | "rule";
   path?: string;
   id?: string;
   name?: string;
@@ -9,7 +9,7 @@ interface SearchResult {
 }
 
 /**
- * Search tokens and components by query string.
+ * Search tokens, components, screens, and rules by query string.
  * Matches against keys, names, descriptions, and tailwind values.
  */
 export function search(query: string): SearchResult[] {
@@ -39,6 +39,54 @@ export function search(query: string): SearchResult[] {
         id: comp.id,
         name: comp.name,
         data: comp,
+      });
+    }
+  }
+
+  // Search screens
+  const screens = loadScreens();
+  for (const screen of screens.screens) {
+    const searchable = [
+      screen.id,
+      screen.label,
+      screen.category ?? "",
+      ...screen.components,
+      ...screen.states.map((s) => s.label),
+      ...screen.variants.map((v) => v.label),
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    if (searchable.includes(q)) {
+      results.push({
+        type: "screen",
+        id: screen.id,
+        name: screen.label,
+        data: screen,
+      });
+    }
+  }
+
+  // Search rules
+  const rules = loadRules();
+  for (const rule of rules.rules) {
+    const patterns = rule.patterns ?? (rule.pattern ? [rule.pattern] : []);
+    const searchable = [
+      rule.id,
+      rule.category,
+      rule.reason,
+      rule.alternative,
+      ...patterns,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    if (searchable.includes(q)) {
+      results.push({
+        type: "rule",
+        id: rule.id,
+        name: patterns.join(", "),
+        data: rule,
       });
     }
   }

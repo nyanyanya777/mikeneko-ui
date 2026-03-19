@@ -1,0 +1,278 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "color-text-black",
+      "category": "color",
+      "pattern": "text-black",
+      "reason": "純黒はコントラストが強すぎて長時間の利用で目が疲れる",
+      "alternative": "text-slate-900",
+      "severity": "high"
+    },
+    {
+      "id": "color-bg-gray-dark",
+      "category": "color",
+      "patterns": ["bg-gray-300", "bg-gray-400", "bg-gray-500", "bg-gray-600", "bg-gray-700", "bg-gray-800", "bg-gray-900"],
+      "reason": "暗い背景でテキストのコントラスト確保が困難",
+      "alternative": "bg-gray-50 〜 bg-gray-200",
+      "severity": "high"
+    },
+    {
+      "id": "color-bg-primary-weak",
+      "category": "color",
+      "pattern": "bg-primary-400",
+      "reason": "CTAとして弱く、目立たない",
+      "alternative": "bg-primary-500",
+      "severity": "medium"
+    },
+    {
+      "id": "color-text-gray-400",
+      "category": "color",
+      "pattern": "text-gray-400",
+      "reason": "WCAG不適合（コントラスト比不足）",
+      "alternative": "text-body (#3d4b5f)",
+      "severity": "high"
+    },
+    {
+      "id": "color-border-gray-100",
+      "category": "color",
+      "pattern": "border-gray-100",
+      "reason": "薄すぎて境界が見えない",
+      "alternative": "border-slate-200 (#e2e8f0)",
+      "severity": "medium"
+    },
+    {
+      "id": "color-green-not-emerald",
+      "category": "color",
+      "pattern": "bg-green-",
+      "reason": "emeraldで統一する",
+      "alternative": "bg-emerald-*",
+      "severity": "medium"
+    },
+    {
+      "id": "color-yellow-not-amber",
+      "category": "color",
+      "pattern": "bg-yellow-",
+      "reason": "amberで統一する",
+      "alternative": "bg-amber-*",
+      "severity": "medium"
+    },
+    {
+      "id": "color-rose-not-red",
+      "category": "color",
+      "pattern": "bg-rose-",
+      "reason": "redで統一する",
+      "alternative": "bg-red-*",
+      "severity": "medium"
+    },
+    {
+      "id": "color-text-blue-link",
+      "category": "color",
+      "pattern": "text-blue-",
+      "reason": "primaryで統一する",
+      "alternative": "text-primary-500",
+      "severity": "medium"
+    },
+    {
+      "id": "color-indigo",
+      "category": "color",
+      "pattern": "bg-indigo-",
+      "reason": "primaryで統一する",
+      "alternative": "bg-primary-*",
+      "severity": "medium"
+    },
+    {
+      "id": "motion-duration-slow",
+      "category": "motion",
+      "patterns": ["duration-500", "duration-700", "duration-1000"],
+      "reason": "操作が鈍く感じる（Progress フィルバーは例外）",
+      "alternative": "duration-300 以下",
+      "severity": "medium"
+    },
+    {
+      "id": "typography-tracking-tight",
+      "category": "typography",
+      "pattern": "tracking-tight",
+      "reason": "日本語の可読性が低下する",
+      "alternative": "tracking-normal 以上（本文2%、見出し1%）",
+      "severity": "high"
+    },
+    {
+      "id": "typography-xs-body",
+      "category": "typography",
+      "pattern": "text-xs",
+      "reason": "本文には小さすぎて読みづらい（ラベル・注釈は例外）",
+      "alternative": "text-base (16px)",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "typography-font-light",
+      "category": "typography",
+      "pattern": "font-light",
+      "reason": "細すぎて可読性が低い",
+      "alternative": "font-normal (400) 以上",
+      "severity": "high"
+    },
+    {
+      "id": "spacing-rounded-none",
+      "category": "spacing",
+      "pattern": "rounded-none",
+      "reason": "UIの統一感を損なう",
+      "alternative": "rounded-xl (12px) for cards",
+      "severity": "medium"
+    },
+    {
+      "id": "spacing-shadow-heavy",
+      "category": "spacing",
+      "patterns": ["shadow-lg", "shadow-2xl"],
+      "reason": "影が強すぎてノイズになる",
+      "alternative": "shadow-sm 〜 shadow-md（オーバーレイ: shadow-xl）",
+      "severity": "high"
+    },
+    {
+      "id": "spacing-button-small",
+      "category": "spacing",
+      "pattern": "py-0.5",
+      "reason": "タップターゲットが小さすぎる",
+      "alternative": "h-8 以上 (S: h-8 / M: h-10 / L: h-12)",
+      "severity": "high"
+    },
+    {
+      "id": "spacing-card-no-padding",
+      "category": "spacing",
+      "pattern": "p-0",
+      "reason": "コンテンツが窮屈になる（カード等）",
+      "alternative": "p-5 以上",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "spacing-gap-zero",
+      "category": "spacing",
+      "pattern": "gap-0",
+      "reason": "セクションの区切りが不明瞭",
+      "alternative": "gap-6 以上",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "spacing-sidebar-dark-bg",
+      "category": "spacing",
+      "patterns": ["bg-slate-800", "bg-slate-900", "bg-gray-800", "bg-gray-900"],
+      "reason": "サイドバーの暗い背景色はメインコンテンツとのコントラストが強すぎる",
+      "alternative": "bg-white + ボーダー",
+      "severity": "medium"
+    },
+    {
+      "id": "spacing-sidebar-width",
+      "category": "spacing",
+      "pattern": "w-60",
+      "reason": "サイドバー幅の非標準値。実装ごとにバラつく",
+      "alternative": "w-64（標準）or w-16（コンパクト）",
+      "severity": "low"
+    },
+    {
+      "id": "spacing-nav-rounded-xl",
+      "category": "spacing",
+      "pattern": "rounded-xl",
+      "reason": "ナビアイテムに使うと他コンポーネントとの一貫性を損なう（カード用途は例外）",
+      "alternative": "rounded-lg",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "spacing-nav-icon-large",
+      "category": "spacing",
+      "patterns": ["w-7", "h-7", "w-8", "h-8"],
+      "reason": "DS標準アイコンサイズからの逸脱（ナビアイコン）",
+      "alternative": "w-5 h-5",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "ai-color-bar-top",
+      "category": "ai-pattern",
+      "pattern": "border-t-4",
+      "reason": "AI生成UIの典型パターン。装飾過剰で汎用性が低い",
+      "alternative": "border border-slate-200 のみでカード構成",
+      "severity": "high"
+    },
+    {
+      "id": "ai-color-stripe-left",
+      "category": "ai-pattern",
+      "pattern": "border-l-4",
+      "reason": "AI生成UIの典型パターン。Alert含め全コンポーネントで禁止",
+      "alternative": "border border-*-200 rounded-lg で全周ボーダー",
+      "severity": "high"
+    },
+    {
+      "id": "a11y-outline-none",
+      "category": "accessibility",
+      "pattern": "outline-none",
+      "reason": "フォーカスインジケーターが消える",
+      "alternative": "focus:ring-2 focus:ring-primary-500/50",
+      "severity": "critical"
+    },
+    {
+      "id": "a11y-tabindex-positive",
+      "category": "accessibility",
+      "pattern": "tabindex=\"",
+      "reason": "tabindex > 0 はフォーカス順序を混乱させる（0 と -1 のみ許可）",
+      "alternative": "DOM順に従い tabindex=\"0\" or \"-1\" のみ使用",
+      "severity": "high",
+      "contextual": true
+    },
+    {
+      "id": "component-divider-div-border",
+      "category": "component",
+      "pattern": "border-b",
+      "reason": "div + border-b での水平区切りはセマンティクス違反",
+      "alternative": "<hr> or role=\"separator\"",
+      "severity": "medium",
+      "contextual": true
+    },
+    {
+      "id": "component-divider-gray-100",
+      "category": "component",
+      "pattern": "border-gray-100",
+      "reason": "ディバイダーとして薄すぎて境界が見えない",
+      "alternative": "border-slate-200",
+      "severity": "medium"
+    },
+    {
+      "id": "component-divider-dark",
+      "category": "component",
+      "patterns": ["border-slate-400", "border-slate-500", "border-slate-600"],
+      "reason": "区切り線が強すぎてノイズになる",
+      "alternative": "border-slate-200（標準）/ border-slate-300（強調）",
+      "severity": "medium"
+    },
+    {
+      "id": "component-skeleton-wrong-color",
+      "category": "component",
+      "patterns": ["bg-slate-100", "bg-slate-300", "bg-gray-100", "bg-gray-200", "bg-gray-300"],
+      "reason": "スケルトンは bg-slate-200 固定",
+      "alternative": "bg-slate-200",
+      "severity": "low",
+      "contextual": true
+    },
+    {
+      "id": "component-datepicker-shadow",
+      "category": "component",
+      "pattern": "shadow-lg",
+      "reason": "カレンダーポップアップに shadow-lg 以上は影が強すぎる",
+      "alternative": "shadow-md",
+      "severity": "medium"
+    },
+    {
+      "id": "component-datepicker-zindex",
+      "category": "component",
+      "patterns": ["z-10", "z-30", "z-40", "z-50"],
+      "reason": "Dropdown レイヤーの z-index 統一が崩れる",
+      "alternative": "z-20 (Dropdown レイヤー)",
+      "severity": "low",
+      "contextual": true
+    }
+  ]
+}

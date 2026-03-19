@@ -127,3 +127,35 @@ export interface ProhibitionRule {
   reason: string;
   alternative: string;
 }
+
+/** Enhanced prohibition rule from rules.json (SSoT) */
+export interface ProhibitionRuleV2 {
+  id: string;
+  category: string;
+  /** Single pattern string */
+  pattern?: string;
+  /** Multiple patterns (expanded into individual rules at load time) */
+  patterns?: string[];
+  reason: string;
+  alternative: string;
+  severity: "critical" | "high" | "medium" | "low";
+  /** If true, may produce false positives depending on context */
+  contextual?: boolean;
+}
+
+/** rules.json root structure */
+export interface RulesData {
+  version: string;
+  rules: ProhibitionRuleV2[];
+}
+
+/** Violation found by check_rule / check_html */
+export interface Violation {
+  ruleId: string;
+  class: string;
+  category: string;
+  reason: string;
+  alternative: string;
+  severity: "critical" | "high" | "medium" | "low";
+  contextual?: boolean;
+}
