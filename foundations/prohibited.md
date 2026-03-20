@@ -185,6 +185,29 @@
 
 ---
 
+## 素のHTML要素の使用禁止
+
+> shadcn/ui コンポーネントが存在するHTML要素を素で使うことを禁止する。素のHTML要素はデザイントークン・アクセシビリティ・一貫したスタイリングが適用されず、melta UI の品質基準を満たせない。
+
+| 禁止 | 理由 | 代替 |
+|------|------|------|
+| `<button>` | DSのスタイル・バリアント・サイズが適用されない | `<Button>` (`@/components/ui/button`) |
+| `<input>` | ボーダー・フォーカスリング・エラー状態が未適用 | `<Input>` (`@/components/ui/input`) |
+| `<input type="checkbox">` | チェックボックスのスタイル・アニメーションが未適用 | `<Checkbox>` (`@/components/ui/checkbox`) |
+| `<input type="radio">` | ラジオボタンのスタイル・グループ制御が未適用 | `<RadioGroupItem>` (`@/components/ui/radio-group`) |
+| `<textarea>` | フォーム入力のスタイル統一が崩れる | `<Textarea>` (`@/components/ui/textarea`) |
+| `<select>` / `<option>` | ブラウザネイティブUIでスタイル制御不可 | `<Select>` + `<SelectItem>` (`@/components/ui/select`) |
+| `<label>` | フォームラベルのスタイル・間隔が未適用 | `<Label>` (`@/components/ui/label`) |
+| `<table>` / `<thead>` / `<tbody>` / `<tr>` / `<th>` / `<td>` | テーブルのスタイル・レスポンシブ対応が未適用 | `<Table>` / `<TableHeader>` / `<TableBody>` / `<TableRow>` / `<TableHead>` / `<TableCell>` (`@/components/ui/table`) |
+| `<dialog>` | フォーカストラップ・オーバーレイ・アニメーションが未適用 | `<Dialog>` (`@/components/ui/dialog`) |
+| `<progress>` | プログレスバーのスタイル・アニメーションが未適用 | `<Progress>` (`@/components/ui/progress`) |
+| `<hr>` | 区切り線のスタイル・セマンティクスが未適用 | `<Separator>` (`@/components/ui/separator`) |
+
+> **例外**: `components/ui/` 内の shadcn/ui コンポーネント実装では素のHTML要素を使用してよい。
+> **ESLint**: `eslint-plugin-melta` の `melta/no-raw-html-elements` ルールで自動検出される。
+
+---
+
 ## アクセシビリティ（全般）
 
 | 禁止 | 理由 | 代替 |
