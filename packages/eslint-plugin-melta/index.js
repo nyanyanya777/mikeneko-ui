@@ -1,14 +1,16 @@
 "use strict";
 
 const noRawHtmlElements = require("./rules/no-raw-html-elements");
+const noProhibitedClasses = require("./rules/no-prohibited-classes");
 
 const plugin = {
   meta: {
     name: "eslint-plugin-melta",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   rules: {
     "no-raw-html-elements": noRawHtmlElements,
+    "no-prohibited-classes": noProhibitedClasses,
   },
   configs: {},
 };
@@ -21,6 +23,7 @@ plugin.configs.recommended = {
   },
   rules: {
     "melta/no-raw-html-elements": "error",
+    "melta/no-prohibited-classes": "error",
   },
   files: ["**/*.tsx"],
 };

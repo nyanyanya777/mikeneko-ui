@@ -25,6 +25,7 @@ const eslintConfig = defineConfig([
     plugins: { melta },
     rules: {
       "melta/no-raw-html-elements": "error",
+      "melta/no-prohibited-classes": "error",
     },
   },
 ]);
