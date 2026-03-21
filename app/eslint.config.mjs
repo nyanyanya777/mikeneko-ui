@@ -1,5 +1,6 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from "eslint-plugin-storybook";
+import melta from "eslint-plugin-melta";
 
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
@@ -16,7 +17,17 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
-  ...storybook.configs["flat/recommended"]
+  ...storybook.configs["flat/recommended"],
+  // melta UI: 素のHTML要素の使用を禁止（components/ui/ は除外）
+  {
+    files: ["src/**/*.tsx"],
+    ignores: ["src/components/ui/**"],
+    plugins: { melta },
+    rules: {
+      "melta/no-raw-html-elements": "error",
+      "melta/no-prohibited-classes": "error",
+    },
+  },
 ]);
 
 export default eslintConfig;

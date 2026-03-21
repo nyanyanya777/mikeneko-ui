@@ -1,0 +1,10 @@
+{
+  "name": "eslint-plugin-melta",
+  "version": "1.0.0",
+  "description": "melta UI の shadcn/ui コンポーネント使用を強制する ESLint プラグイン",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=9"
+  }
+}

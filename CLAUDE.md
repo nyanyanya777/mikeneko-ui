@@ -151,7 +151,35 @@ Easing: ease-in-out (default)
 | 300ms超のアニメーション | 150〜300ms に制限 |
 | `<th>` の `scope` 省略 | Table コンポーネント使用 |
 
-> 全禁止パターン（76項目）: `foundations/prohibited.md` 参照
+> 全禁止パターン: `foundations/prohibited.md` 参照
+
+---
+
+## HTML要素 → コンポーネント マッピング（必須）
+
+> 素のHTML要素を使わず、必ず対応する shadcn/ui コンポーネントを使用すること。
+> `components/ui/` 内のコンポーネント実装は例外。
+> ESLint: `eslint-plugin-melta` の `melta/no-raw-html-elements` ルールで自動検出。
+
+| HTML要素 | melta UI コンポーネント | インポート元 |
+|----------|----------------------|-------------|
+| `<button>` | `<Button>` | `@/components/ui/button` |
+| `<input>` | `<Input>` | `@/components/ui/input` |
+| `<input type="checkbox">` | `<Checkbox>` | `@/components/ui/checkbox` |
+| `<input type="radio">` | `<RadioGroupItem>` | `@/components/ui/radio-group` |
+| `<textarea>` | `<Textarea>` | `@/components/ui/textarea` |
+| `<select>` | `<Select>` + `<SelectTrigger>` + `<SelectContent>` | `@/components/ui/select` |
+| `<option>` | `<SelectItem>` | `@/components/ui/select` |
+| `<label>` | `<Label>` | `@/components/ui/label` |
+| `<table>` | `<Table>` | `@/components/ui/table` |
+| `<thead>` | `<TableHeader>` | `@/components/ui/table` |
+| `<tbody>` | `<TableBody>` | `@/components/ui/table` |
+| `<tr>` | `<TableRow>` | `@/components/ui/table` |
+| `<th>` | `<TableHead>` | `@/components/ui/table` |
+| `<td>` | `<TableCell>` | `@/components/ui/table` |
+| `<dialog>` | `<Dialog>` | `@/components/ui/dialog` |
+| `<progress>` | `<Progress>` | `@/components/ui/progress` |
+| `<hr>` | `<Separator>` | `@/components/ui/separator` |
 
 ---
 
@@ -182,6 +210,8 @@ melta-ui/
 │   └── mcp/               ← MCP Server
 │       ├── src/index.ts
 │       └── dist/index.js
+├── packages/
+│   └── eslint-plugin-melta/   ← 素のHTML要素検出 ESLint プラグイン
 ├── app/                   ← Next.js + shadcn/ui 実装
 │   ├── src/
 │   │   ├── app/globals.css    ← テーマ (CSS変数)

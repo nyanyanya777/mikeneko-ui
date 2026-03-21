@@ -39,6 +39,7 @@
     "culori": "^4.0.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.7",
+    "eslint-plugin-melta": "file:../packages/eslint-plugin-melta",
     "tailwindcss": "^4",
     "typescript": "^5",
     "storybook": "^10.3.0",
