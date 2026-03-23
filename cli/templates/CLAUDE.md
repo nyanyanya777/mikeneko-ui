@@ -49,6 +49,7 @@ Easing: ease-in-out (default)
 4. **Minimal** — 1つのViewに使う色は3色まで（背景・アクセント・テキスト）
 5. **Grid** — スペーシングは4の倍数を基本、8の倍数を推奨する
 6. **State-Complete** — 新規コンポーネントは全状態（default / hover / focus / active / disabled / error / loading 等）を網羅して作る
+7. **Storybook-First** — フロント作業はストーリーから始める。新規コンポーネントは `.stories.tsx` を先に作成し、既存コンポーネント変更時はストーリーも必ず更新する。ストーリーが State-Complete の証明となる
 
 ---
 

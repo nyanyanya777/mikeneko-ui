@@ -29,6 +29,15 @@ const eslintConfig = defineConfig([
       "melta/no-button-right-align": "error",
     },
   },
+  // Storybook-First: components/ui/ のコンポーネントには .stories.tsx を必須化
+  {
+    files: ["src/components/ui/*.tsx"],
+    ignores: ["src/components/ui/*.stories.tsx"],
+    plugins: { melta },
+    rules: {
+      "melta/require-component-story": "error",
+    },
+  },
 ]);
 
 export default eslintConfig;
