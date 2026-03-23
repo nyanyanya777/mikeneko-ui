@@ -1,4 +1,4 @@
-# mikeneko UI — AI Quick Reference
+# melta UI — AI Quick Reference
 
 > ShadCN/ui ベースのデザインシステム。Primary: Blue (#2b70ef)、日本語ファーストのタイポグラフィ。
 
@@ -150,15 +150,48 @@ Easing: ease-in-out (default)
 | 色だけで情報伝達 | アイコン/テキストを併用 |
 | 300ms超のアニメーション | 150〜300ms に制限 |
 | `<th>` の `scope` 省略 | Table コンポーネント使用 |
+| **Button** の右寄せ（`ml-auto` / `justify-end` / `text-right` 等）※ Button 以外の要素には適用しない。カードヘッダーの `justify-between` 等は許可 | 左寄せ（デフォルト）または中央寄せ |
+| アイコンをテキストの **後** に配置（シェブロン・外部リンク等の Trailing 許可リスト以外） | アイコンはテキストの **前（Leading）** に配置する |
+| `flex-row-reverse` でアイコン位置制御 | DOM順 = 視覚順にする |
+| 定義外アイコンサイズ（`w-3 h-3` / `w-7 h-7` 等） | 4段階のみ: 16/20/24/32px |
 
-> 全禁止パターン（76項目）: `foundations/prohibited.md` 参照
+> 全禁止パターン: `foundations/prohibited.md` 参照
+> アイコン配置ルール詳細: `foundations/icons.md` 参照
+
+---
+
+## HTML要素 → コンポーネント マッピング（必須）
+
+> 素のHTML要素を使わず、必ず対応する shadcn/ui コンポーネントを使用すること。
+> `components/ui/` 内のコンポーネント実装は例外。
+> ESLint: `eslint-plugin-melta` の `melta/no-raw-html-elements` ルールで自動検出。
+
+| HTML要素 | melta UI コンポーネント | インポート元 |
+|----------|----------------------|-------------|
+| `<button>` | `<Button>` | `@/components/ui/button` |
+| `<input>` | `<Input>` | `@/components/ui/input` |
+| `<input type="checkbox">` | `<Checkbox>` | `@/components/ui/checkbox` |
+| `<input type="radio">` | `<RadioGroupItem>` | `@/components/ui/radio-group` |
+| `<textarea>` | `<Textarea>` | `@/components/ui/textarea` |
+| `<select>` | `<Select>` + `<SelectTrigger>` + `<SelectContent>` | `@/components/ui/select` |
+| `<option>` | `<SelectItem>` | `@/components/ui/select` |
+| `<label>` | `<Label>` | `@/components/ui/label` |
+| `<table>` | `<Table>` | `@/components/ui/table` |
+| `<thead>` | `<TableHeader>` | `@/components/ui/table` |
+| `<tbody>` | `<TableBody>` | `@/components/ui/table` |
+| `<tr>` | `<TableRow>` | `@/components/ui/table` |
+| `<th>` | `<TableHead>` | `@/components/ui/table` |
+| `<td>` | `<TableCell>` | `@/components/ui/table` |
+| `<dialog>` | `<Dialog>` | `@/components/ui/dialog` |
+| `<progress>` | `<Progress>` | `@/components/ui/progress` |
+| `<hr>` | `<Separator>` | `@/components/ui/separator` |
 
 ---
 
 ## ファイル構成
 
 ```
-mikeneko-ui/
+melta-ui/
 ├── CLAUDE.md              ← このファイル (AI Quick Reference)
 ├── tokens/
 │   └── tokens.json        ← デザイントークン (SSOT)
@@ -182,6 +215,8 @@ mikeneko-ui/
 │   └── mcp/               ← MCP Server
 │       ├── src/index.ts
 │       └── dist/index.js
+├── packages/
+│   └── eslint-plugin-melta/   ← 素のHTML要素検出 ESLint プラグイン
 ├── app/                   ← Next.js + shadcn/ui 実装
 │   ├── src/
 │   │   ├── app/globals.css    ← テーマ (CSS変数)
@@ -208,7 +243,7 @@ mikeneko-ui/
 ```json
 {
   "mcpServers": {
-    "mikeneko-ui": {
+    "melta-ui": {
       "command": "node",
       "args": ["./ai/mcp/dist/index.js"]
     }
@@ -227,7 +262,7 @@ mikeneko-ui/
 | ダークモード対応 | + foundations/theme.md → foundations/color.md |
 | フォーム画面 | + patterns/form.md → Input / Select / Checkbox / Button |
 | データ一覧 | + Table → Pagination → Badge |
-| ダッシュボード | + Card / Table / Progress / Chart / Badge |
+| ダッシュボード | + **patterns/dashboard.md** → Card / Table / Progress / Chart / Badge |
 | 設定画面 | + Tabs → Switch / Select / RadioGroup |
 | モーダル / 確認 | + Dialog / AlertDialog → Button |
 | Loading / 空状態 | + Skeleton → interaction-states.md |

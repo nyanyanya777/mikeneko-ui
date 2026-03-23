@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "rules": [
     {
       "id": "color-text-black",
@@ -273,6 +273,43 @@
       "alternative": "z-20 (Dropdown レイヤー)",
       "severity": "low",
       "contextual": true
+    },
+    {
+      "id": "component-button-right-align",
+      "category": "component",
+      "patterns": ["ml-auto", "ms-auto", "self-end", "float-right"],
+      "reason": "ボタンの右寄せは視線動線（Zパターン）から外れ、モバイルでは親指が届きにくい",
+      "alternative": "左寄せ（デフォルト）または中央寄せ。フォーム送信は w-full またはコンテンツ左寄せ",
+      "severity": "high",
+      "note": "Button コンポーネントのみ対象。カードヘッダーの justify-between 等は許可"
+    },
+    {
+      "id": "component-button-parent-right-align",
+      "category": "component",
+      "patterns": ["justify-end", "text-right"],
+      "reason": "子に Button を含む要素での右寄せはボタンの発見性を低下させる",
+      "alternative": "左寄せ（デフォルト）または中央寄せ",
+      "severity": "high",
+      "contextual": true,
+      "note": "Button を子に持つ要素のみ対象"
+    },
+    {
+      "id": "icon-trailing-placement",
+      "category": "icon",
+      "pattern": "flex-row-reverse",
+      "reason": "DOM順と視覚順の不一致。スクリーンリーダーの読み上げ順序が逆転する",
+      "alternative": "DOM順をそのまま視覚順にする。アイコンはテキストの前（Leading）に配置",
+      "severity": "high"
+    },
+    {
+      "id": "icon-size-nonstandard",
+      "category": "icon",
+      "patterns": ["w-3 h-3", "w-7 h-7", "w-9 h-9", "w-10 h-10", "w-11 h-11", "w-12 h-12"],
+      "reason": "定義外のアイコンサイズ。サイズ体系の崩壊",
+      "alternative": "4段階のみ: w-4 h-4 (16px) / w-5 h-5 (20px) / w-6 h-6 (24px) / w-8 h-8 (32px)",
+      "severity": "medium",
+      "contextual": true,
+      "note": "アイコンのサイズのみ対象。ボタン等のサイズには適用しない"
     }
   ]
 }

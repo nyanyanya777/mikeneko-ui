@@ -79,6 +79,8 @@
 |------|------|------|
 | カード上部/左部のカラーバー（`border-t-4` や色付き `div`） | AI生成UIの典型パターン。装飾過剰で汎用性が低い | ボーダー（`border border-slate-200`）のみでカードを構成する |
 | 左端/上端のカラーストライプ（`border-l-4 border-*-500`） | Alert含め全コンポーネントで禁止 | `border border-*-200 rounded-lg` で全周ボーダー |
+| アイコンをタイトル/ラベルの **後（右側）** に配置 | AI が "Content First" を「テキストを先に書く」と解釈し、アイコンがタイトルの反対側に出る | アイコンはテキストの **前（Leading）** に配置。Trailing 許可はシェブロン・外部リンク等に限定（`foundations/icons.md` 参照） |
+| `flex-row-reverse` でアイコン位置を調整 | DOM順と視覚順が逆転し、スクリーンリーダーの読み上げ順序が壊れる | DOM順をそのまま視覚順にする |
 
 ---
 
@@ -92,6 +94,9 @@
 | Lighted Buttonの単独使用 | トグル状態の対比がないと意味不明 | Neutralとペアで使用する |
 | `aria-label` なしのアイコンボタン | 操作内容がスクリーンリーダーに伝わらない | `aria-label="閉じる"` 等を付与 |
 | 44px未満のタップ領域 | 操作困難（インラインテキストリンクを除く） | パディングでタップ領域を確保 |
+| ボタンの右寄せ配置（`ml-auto` / `justify-end` / `text-right` / `self-end` / `float-right`） | 右端のボタンは視線動線（左→右の Z パターン）から外れやすく、特にモバイルでは親指が届きにくい。また右寄せは「補助的な操作」という暗黙の意味を持ち、主要アクションの発見性が低下する | ボタンは左寄せ（デフォルト）または中央寄せで配置する。フォーム送信ボタンはフォーム幅に合わせて `w-full` またはコンテンツ左寄せ |
+
+> **注意**: この禁止は `<Button>` コンポーネントの配置のみが対象。カードヘッダーでタイトルとアイコンを `justify-between` で左右に配置するなど、ボタン以外の要素のレイアウトには適用しない。
 
 ### フォーム
 
@@ -182,6 +187,29 @@
 | 常時回転スピナーのみの全画面表示 | 進捗が伝わらず不安を与える | スケルトン or プログレスバーを併用 |
 | `aria-busy="true"` の省略 | スクリーンリーダーがローディング状態を認識できない | コンテナに `aria-busy="true"` + `role="status"` |
 | 実コンテンツ到着後の `aria-busy` 未解除 | ローディング完了が伝わらない | `aria-busy="false"` に変更する |
+
+---
+
+## 素のHTML要素の使用禁止
+
+> shadcn/ui コンポーネントが存在するHTML要素を素で使うことを禁止する。素のHTML要素はデザイントークン・アクセシビリティ・一貫したスタイリングが適用されず、melta UI の品質基準を満たせない。
+
+| 禁止 | 理由 | 代替 |
+|------|------|------|
+| `<button>` | DSのスタイル・バリアント・サイズが適用されない | `<Button>` (`@/components/ui/button`) |
+| `<input>` | ボーダー・フォーカスリング・エラー状態が未適用 | `<Input>` (`@/components/ui/input`) |
+| `<input type="checkbox">` | チェックボックスのスタイル・アニメーションが未適用 | `<Checkbox>` (`@/components/ui/checkbox`) |
+| `<input type="radio">` | ラジオボタンのスタイル・グループ制御が未適用 | `<RadioGroupItem>` (`@/components/ui/radio-group`) |
+| `<textarea>` | フォーム入力のスタイル統一が崩れる | `<Textarea>` (`@/components/ui/textarea`) |
+| `<select>` / `<option>` | ブラウザネイティブUIでスタイル制御不可 | `<Select>` + `<SelectItem>` (`@/components/ui/select`) |
+| `<label>` | フォームラベルのスタイル・間隔が未適用 | `<Label>` (`@/components/ui/label`) |
+| `<table>` / `<thead>` / `<tbody>` / `<tr>` / `<th>` / `<td>` | テーブルのスタイル・レスポンシブ対応が未適用 | `<Table>` / `<TableHeader>` / `<TableBody>` / `<TableRow>` / `<TableHead>` / `<TableCell>` (`@/components/ui/table`) |
+| `<dialog>` | フォーカストラップ・オーバーレイ・アニメーションが未適用 | `<Dialog>` (`@/components/ui/dialog`) |
+| `<progress>` | プログレスバーのスタイル・アニメーションが未適用 | `<Progress>` (`@/components/ui/progress`) |
+| `<hr>` | 区切り線のスタイル・セマンティクスが未適用 | `<Separator>` (`@/components/ui/separator`) |
+
+> **例外**: `components/ui/` 内の shadcn/ui コンポーネント実装では素のHTML要素を使用してよい。
+> **ESLint**: `eslint-plugin-melta` の `melta/no-raw-html-elements` ルールで自動検出される。
 
 ---
 
