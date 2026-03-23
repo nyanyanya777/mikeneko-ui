@@ -1,29 +1,28 @@
 "use strict";
 
 /**
- * Button コンポーネントの右寄せ配置を禁止するルール。
+ * Button コンポーネントの左寄せ配置を禁止するルール。
+ *
+ * 日本の UI 慣習では、確認・送信ボタンはコンテナの右側に配置する。
+ * 左寄せ（デフォルト配置）のままボタンを置くと、ユーザーの期待する位置と異なる。
  *
  * 検出パターン:
- * 1. Button 自身に ml-auto / self-end / float-right が付いている
- * 2. 親要素に justify-end / text-right が付いており、子に Button がある
+ * 1. 親要素に justify-start / text-left が明示的に付いており、子に Button がある
+ * 2. Button を含む親要素に flex/grid の水平配置があるが、justify-end / justify-center / justify-between がない
+ *    → このケースは誤検出が多いため検出しない（ドキュメントでカバー）
+ *
+ * ※ このルールは「明示的な左寄せ指定」のみを検出する。
+ *   デフォルト配置（何も指定しない）はドキュメント・レビューでカバーする。
  */
 
-// Button 自身に付けてはいけないクラス
-const BUTTON_SELF_CLASSES = new Set([
-  "ml-auto",
-  "ms-auto",
-  "self-end",
-  "float-right",
-]);
-
-// 親要素に付いている場合、子 Button が右寄せになるクラス
-const PARENT_CLASSES = new Set([
-  "justify-end",
-  "text-right",
+// 親要素に付いている場合、子 Button が明示的に左寄せになるクラス
+const PARENT_LEFT_CLASSES = new Set([
+  "justify-start",
+  "text-left",
 ]);
 
 const ALTERNATIVE =
-  "ボタンは左寄せ（デフォルト）または中央寄せで配置する。フォーム送信ボタンは w-full またはコンテンツ左寄せ";
+  "ボタンは右寄せ（justify-end / ml-auto）または中央寄せで配置する。ダイアログ・フォームの確認ボタンは右端に置く";
 
 /**
  * AST ノードから文字列リテラル値を再帰的に収集する。
@@ -126,7 +125,6 @@ function containsButton(node) {
       if (containsButton(child)) return true;
     }
     if (child.type === "JSXExpressionContainer" && child.expression) {
-      // {condition && <Button />} のようなパターン
       if (
         child.expression.type === "LogicalExpression" &&
         child.expression.right &&
@@ -141,7 +139,6 @@ function containsButton(node) {
           return true;
         }
       }
-      // {condition ? <Button /> : null}
       if (child.expression.type === "ConditionalExpression") {
         for (const branch of [
           child.expression.consequent,
@@ -169,17 +166,14 @@ module.exports = {
     type: "problem",
     docs: {
       description:
-        "Button コンポーネントの右寄せ配置（ml-auto / justify-end / text-right 等）を禁止する",
+        "Button コンポーネントの明示的な左寄せ配置（justify-start / text-left）を禁止する。ボタンは右寄せまたは中央寄せで配置する",
       recommended: true,
     },
     fixable: null,
     schema: [],
     messages: {
-      buttonSelfRightAlign:
-        'Button に右寄せクラス "{{ className }}" が使用されています。代替: ' +
-        ALTERNATIVE,
-      parentRightAlign:
-        '子に Button を含む要素に右寄せクラス "{{ className }}" が使用されています。代替: ' +
+      parentLeftAlign:
+        '子に Button を含む要素に左寄せクラス "{{ className }}" が使用されています。代替: ' +
         ALTERNATIVE,
     },
   },
@@ -194,34 +188,21 @@ module.exports = {
         const elementName =
           name.type === "JSXIdentifier" ? name.name : null;
 
+        // Button 自身ではなく親要素のみチェック
+        if (elementName === "Button") return;
+
         const classes = getClassNamesFromElement(opening);
 
-        // パターン1: Button 自身に右寄せクラスが付いている
-        if (elementName === "Button") {
-          for (const cls of classes) {
-            if (BUTTON_SELF_CLASSES.has(cls)) {
-              context.report({
-                node: opening,
-                messageId: "buttonSelfRightAlign",
-                data: { className: cls },
-              });
-            }
-          }
-        }
-
-        // パターン2: 親要素に右寄せクラスがあり、子に Button がある
-        if (elementName !== "Button") {
-          const rightAlignClasses = classes.filter((cls) =>
-            PARENT_CLASSES.has(cls)
-          );
-          if (rightAlignClasses.length > 0 && containsButton(node)) {
-            for (const cls of rightAlignClasses) {
-              context.report({
-                node: opening,
-                messageId: "parentRightAlign",
-                data: { className: cls },
-              });
-            }
+        const leftAlignClasses = classes.filter((cls) =>
+          PARENT_LEFT_CLASSES.has(cls)
+        );
+        if (leftAlignClasses.length > 0 && containsButton(node)) {
+          for (const cls of leftAlignClasses) {
+            context.report({
+              node: opening,
+              messageId: "parentLeftAlign",
+              data: { className: cls },
+            });
           }
         }
       },

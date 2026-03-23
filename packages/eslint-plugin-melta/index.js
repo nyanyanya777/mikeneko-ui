@@ -2,7 +2,7 @@
 
 const noRawHtmlElements = require("./rules/no-raw-html-elements");
 const noProhibitedClasses = require("./rules/no-prohibited-classes");
-const noButtonRightAlign = require("./rules/no-button-right-align");
+const noButtonLeftAlign = require("./rules/no-button-left-align");
 const requireComponentStory = require("./rules/require-component-story");
 
 const plugin = {
@@ -13,7 +13,7 @@ const plugin = {
   rules: {
     "no-raw-html-elements": noRawHtmlElements,
     "no-prohibited-classes": noProhibitedClasses,
-    "no-button-right-align": noButtonRightAlign,
+    "no-button-left-align": noButtonLeftAlign,
     "require-component-story": requireComponentStory,
   },
   configs: {},
@@ -28,7 +28,7 @@ plugin.configs.recommended = {
   rules: {
     "melta/no-raw-html-elements": "error",
     "melta/no-prohibited-classes": "error",
-    "melta/no-button-right-align": "error",
+    "melta/no-button-left-align": "error",
     "melta/require-component-story": "error",
   },
   files: ["**/*.tsx"],

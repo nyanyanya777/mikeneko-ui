@@ -26,7 +26,7 @@ const eslintConfig = defineConfig([
     rules: {
       "melta/no-raw-html-elements": "error",
       "melta/no-prohibited-classes": "error",
-      "melta/no-button-right-align": "error",
+      "melta/no-button-left-align": "error",
     },
   },
   // Storybook-First: components/ui/ のコンポーネントには .stories.tsx を必須化

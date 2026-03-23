@@ -275,20 +275,11 @@
       "contextual": true
     },
     {
-      "id": "component-button-right-align",
+      "id": "component-button-left-align",
       "category": "component",
-      "patterns": ["ml-auto", "ms-auto", "self-end", "float-right"],
-      "reason": "ボタンの右寄せは視線動線（Zパターン）から外れ、モバイルでは親指が届きにくい",
-      "alternative": "左寄せ（デフォルト）または中央寄せ。フォーム送信は w-full またはコンテンツ左寄せ",
-      "severity": "high",
-      "note": "Button コンポーネントのみ対象。カードヘッダーの justify-between 等は許可"
-    },
-    {
-      "id": "component-button-parent-right-align",
-      "category": "component",
-      "patterns": ["justify-end", "text-right"],
-      "reason": "子に Button を含む要素での右寄せはボタンの発見性を低下させる",
-      "alternative": "左寄せ（デフォルト）または中央寄せ",
+      "patterns": ["justify-start", "text-left"],
+      "reason": "日本の UI 慣習では確認・送信ボタンはコンテナの右側に配置する。左寄せはユーザーの期待する位置と異なる",
+      "alternative": "右寄せ（justify-end / ml-auto）または中央寄せ。ダイアログ・フォームの確認ボタンは右端",
       "severity": "high",
       "contextual": true,
       "note": "Button を子に持つ要素のみ対象"

@@ -151,7 +151,7 @@ Easing: ease-in-out (default)
 | 色だけで情報伝達 | アイコン/テキストを併用 |
 | 300ms超のアニメーション | 150〜300ms に制限 |
 | `<th>` の `scope` 省略 | Table コンポーネント使用 |
-| **Button** の右寄せ（`ml-auto` / `justify-end` / `text-right` 等）※ Button 以外の要素には適用しない。カードヘッダーの `justify-between` 等は許可 | 左寄せ（デフォルト）または中央寄せ |
+| **Button** の左寄せ（`justify-start` / `text-left` 等で明示的に左寄せ）※ Button 以外の要素には適用しない | 右寄せ（`justify-end` / `ml-auto`）または中央寄せ。ダイアログ・フォームの確認ボタンは右端 |
 | アイコンをテキストの **後** に配置（シェブロン・外部リンク等の Trailing 許可リスト以外） | アイコンはテキストの **前（Leading）** に配置する |
 | `flex-row-reverse` でアイコン位置制御 | DOM順 = 視覚順にする |
 | 定義外アイコンサイズ（`w-3 h-3` / `w-7 h-7` 等） | 4段階のみ: 16/20/24/32px |
