@@ -2,6 +2,7 @@
 
 const noRawHtmlElements = require("./rules/no-raw-html-elements");
 const noProhibitedClasses = require("./rules/no-prohibited-classes");
+const noButtonRightAlign = require("./rules/no-button-right-align");
 
 const plugin = {
   meta: {
@@ -11,6 +12,7 @@ const plugin = {
   rules: {
     "no-raw-html-elements": noRawHtmlElements,
     "no-prohibited-classes": noProhibitedClasses,
+    "no-button-right-align": noButtonRightAlign,
   },
   configs: {},
 };
@@ -24,6 +26,7 @@ plugin.configs.recommended = {
   rules: {
     "melta/no-raw-html-elements": "error",
     "melta/no-prohibited-classes": "error",
+    "melta/no-button-right-align": "error",
   },
   files: ["**/*.tsx"],
 };

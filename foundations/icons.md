@@ -104,15 +104,103 @@ assets/icons/
 
 SVGは全て24px基準。表示サイズはTailwindクラスで制御する。
 
-| 表示サイズ | Tailwindクラス | 主な用途 |
-|-----------|---------------|---------|
-| 16px | `w-4 h-4` | テーブル行アクション、バッジ内、テキスト横の補助 |
-| 20px | `w-5 h-5` | ボタン、ナビゲーション、フォーム（★ 標準） |
-| 24px | `w-6 h-6` | 大きめのアクション、ページヘッダー |
-| 32px | `w-8 h-8` | タブバー、空状態イラスト |
+| 表示サイズ | Tailwindクラス | 主な用途 | テキストペアリング |
+|-----------|---------------|---------|-----------------|
+| 16px | `w-4 h-4` | テーブル行アクション、バッジ内、テキスト横の補助 | text-xs（13px）〜 text-sm（15px） |
+| 20px | `w-5 h-5` | ボタン、ナビゲーション、フォーム（★ 標準） | text-sm（15px）〜 text-base（18px） |
+| 24px | `w-6 h-6` | 大きめのアクション、ページヘッダー | text-base（18px）〜 text-xl（22px） |
+| 32px | `w-8 h-8` | タブバー、空状態イラスト、オンボーディング | text-xl（22px）以上 |
 
 - アイコンとテキストの間隔: `gap-1`（4px）〜 `gap-2`（8px）
 - アイコンボタンの最小タップ領域: `w-10 h-10`（40px）
+- **この4段階以外のサイズ（`w-3 h-3` や `w-7 h-7` 等）は使用禁止**。CSSの `transform: scale()` によるサイズ変更も禁止
+- 同一行・同一グループ内ではアイコンサイズを統一する
+
+---
+
+## 配置ルール（Leading / Trailing）
+
+> 出典: Material Design 3 / Carbon / Polaris の共通コンセンサス。
+> アイコンのDOM順 = 視覚的な表示順。`flex-row-reverse` でのDOM順反転は禁止。
+
+### 基本原則: アイコンはテキストの **前（Leading）** に配置する
+
+```jsx
+// ✅ 正しい: アイコン → テキスト（Leading）
+<div className="flex items-center gap-2">
+  <TrendingUpIcon className="w-5 h-5" />
+  <span>売上推移</span>
+</div>
+
+// ❌ 間違い: テキスト → アイコン
+<div className="flex items-center gap-2">
+  <span>売上推移</span>
+  <TrendingUpIcon className="w-5 h-5" />
+</div>
+```
+
+### 配置パターン一覧
+
+| 位置 | 用途 | 例 |
+|------|------|-----|
+| **Leading（テキストの前）** | ほとんどのケース。ボタン、ナビ、リスト項目、カードヘッダー、見出し | `[🏠] ダッシュボード` |
+| **Trailing（テキストの後）** | 展開/折りたたみ（シェブロン）、外部リンク、ソート方向 | `メニュー [▼]`、`詳細 [↗]` |
+| **アイコンのみ** | 普遍的に理解される操作のみ（閉じる、検索、ハンバーガーメニュー） | `[✕]`、`[🔍]` |
+
+### Trailing が許可されるアイコン（限定リスト）
+
+| アイコン | 用途 |
+|---------|------|
+| `PullDown` / `Down` | ドロップダウン/セレクトの展開 |
+| `Expand` / `Collapse` | アコーディオンの開閉 |
+| `Next` | 次へ、詳細遷移（リスト項目の右端） |
+| `OpenInNew` | 外部リンク |
+| `ArrowUp` / `ArrowDown` | テーブルのソート方向 |
+
+> 上記以外のアイコンを Trailing に配置する場合は設計判断を要する。
+
+### カードヘッダーの配置
+
+```jsx
+// ✅ 正しい: アイコン → タイトル → （右端にアクション）
+<CardHeader className="flex-row items-center justify-between space-y-0">
+  <div className="flex items-center gap-2">
+    <TrendingUpIcon className="w-5 h-5 text-muted-foreground" />
+    <CardTitle>売上推移</CardTitle>
+  </div>
+  <Button variant="ghost" size="icon">
+    <MoreHorizontalIcon className="w-4 h-4" />
+  </Button>
+</CardHeader>
+```
+
+### ナビゲーション項目の配置
+
+```jsx
+// ✅ 正しい: アイコン → ラベル
+<a className="flex items-center gap-3 px-4 py-2.5">
+  <HomeIcon className="w-5 h-5" />
+  ダッシュボード
+</a>
+```
+
+---
+
+## 状態によるスタイル変化
+
+> 出典: Material Design 3（Filled = active）、Fluent 2（Regular/Filled 切替）のコンセンサスを melta UI に適応。
+
+| 状態 | スタイル変化 | 例 |
+|------|------------|-----|
+| Default | `text-muted-foreground` | ナビの非選択項目 |
+| Hover | 親要素のホバーに追従（アイコン単体のホバー色変更は不要） | — |
+| Active / Selected | `text-primary` に変更 | ナビの選択中項目、アクティブタブ |
+| Disabled | `text-muted-foreground opacity-50` | 無効化されたボタン内 |
+| Error | `text-destructive` | エラー状態のフォーム |
+
+- melta UI は **Filled/Outlined の切替で状態を表現しない**（Charcoal は fill ベース固定のため）
+- 状態変化は **色の変更のみ** で表現する
+- 色だけでは状態を伝達しきれない場合は、テキストラベル・背景色・ボーダーを併用する
 
 ---
 
@@ -301,12 +389,46 @@ Charcoal に存在しない SaaS / ダッシュボード向けアイコン。`as
 
 ---
 
+## アクセシビリティ詳細
+
+> 出典: Lucide 公式ガイド、Polaris、Atlassian のコンセンサス。
+
+| シナリオ | ルール | 実装 |
+|---------|--------|------|
+| アイコン + テキストラベル | SVG に `aria-hidden="true"` を付与。テキストがラベルの役割を果たす | `<svg aria-hidden="true">` |
+| アイコンのみボタン | `aria-label` は **ボタン要素** に付与。SVG には `aria-hidden="true"` | `<Button aria-label="閉じる"><svg aria-hidden="true">` |
+| 装飾的アイコン | `aria-hidden="true"` のみ。ラベル不要 | `<svg aria-hidden="true">` |
+| ステータス表示アイコン | `aria-label` または隣接する `sr-only` テキストで状態を説明 | `<svg aria-label="エラー">` or `<span className="sr-only">エラー</span>` |
+
+- `aria-label` を SVG とラッパー要素の **両方** に付けない（二重読み上げになる）
+- テキストラベルが隣接している場合、SVG に `aria-label` を付けない
+
+---
+
+## タッチターゲット
+
+| コンテキスト | 最小サイズ | Tailwind |
+|------------|----------|---------|
+| デスクトップのアイコンボタン | 36px | `w-9 h-9` |
+| モバイル / タッチのアイコンボタン | 44px | `w-11 h-11` |
+| より大きなクリック領域内のアイコン | 制限なし（親が担保） | — |
+
+- アイコン自体は 20px でもよいが、**インタラクティブなラッパー**が最小サイズを満たすこと
+
+---
+
 ## 禁止パターン
 
 | 禁止 | 理由 | 代替 |
 |------|------|------|
-| `aria-label` なしのアイコンボタン | 操作内容が不明 | `aria-label="閉じる"` 等を付与 |
+| `aria-label` なしのアイコンボタン | 操作内容が不明 | `aria-label` をボタン要素に付与 |
 | アイコンのみでの情報伝達 | 色覚・認知多様性への非対応 | テキストラベルを併用 |
-| `w-3 h-3` 以下のアイコン | 視認性・タップ領域不足 | 最小 `w-4 h-4`（16px） |
+| `w-3 h-3` 以下のアイコン | 視認性不足 | 最小 `w-4 h-4`（16px） |
+| 定義外サイズ（`w-7 h-7` 等） | サイズ体系の崩壊 | 4段階（16/20/24/32px）のみ使用 |
+| CSS `transform: scale()` でのサイズ変更 | レンダリングがぼやける | Tailwind の `w-*/h-*` で制御 |
 | 色ハードコード（`fill="#333"`） | テーマ変更に追従しない | `fill="currentColor"` |
 | Charcoal に存在するアイコンの Lucide 使用 | ソース統一 | Charcoal を優先使用 |
+| テキストの **後** にアイコン配置（Trailing 許可リスト以外） | 視線動線が乱れる。ダッシュボード等でアイコンがタイトルの反対側に出る | アイコンはテキストの前（Leading）に配置 |
+| `flex-row-reverse` でアイコン位置を制御 | DOM順と視覚順の不一致。スクリーンリーダーの読み上げ順序が逆転する | DOM順をそのまま視覚順にする |
+| 同一行/グループ内でのサイズ混在 | 視覚的一貫性が崩れる | グループ内ではサイズを統一 |
+| `viewBox` 属性のない SVG | レスポンシブサイジングが壊れる | `viewBox="0 0 24 24"` を必ず付与 |
