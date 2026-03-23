@@ -26,6 +26,7 @@ const eslintConfig = defineConfig([
     rules: {
       "melta/no-raw-html-elements": "error",
       "melta/no-prohibited-classes": "error",
+      "melta/no-button-right-align": "error",
     },
   },
 ]);
