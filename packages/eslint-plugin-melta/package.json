@@ -1,9 +1,27 @@
 {
   "name": "eslint-plugin-melta",
-  "version": "1.0.0",
-  "description": "melta UI の shadcn/ui コンポーネント使用を強制する ESLint プラグイン",
+  "version": "1.1.0",
+  "description": "melta UI デザインシステムの ESLint プラグイン — 素の HTML 要素禁止・禁止クラス検出・ボタン右寄せ禁止",
   "main": "index.js",
   "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "melta",
+    "design-system",
+    "shadcn-ui",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nyanyanya777/mikeneko-ui",
+    "directory": "packages/eslint-plugin-melta"
+  },
+  "files": [
+    "index.js",
+    "rules/"
+  ],
   "peerDependencies": {
     "eslint": ">=9"
   }
